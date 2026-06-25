@@ -1,4 +1,4 @@
-Slipstream Oracle
+# Slipstream Oracle
 
 A Formula 1 prediction engine built on historical race data,
 feature engineering and machine learning.

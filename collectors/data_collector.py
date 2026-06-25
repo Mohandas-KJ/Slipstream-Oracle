@@ -10,10 +10,10 @@ import pandas as pd
 
 YEARS = [2022, 2023, 2024, 2025, 2026]
 
-DATA_DIR = Path("../data")
+DATA_DIR = Path("data")
 
 # Enable FastF1 cache
-fastf1.Cache.enable_cache("../cache")
+fastf1.Cache.enable_cache("cache")
 
 # =========================
 # COLLECT
