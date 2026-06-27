@@ -25,58 +25,120 @@ def add_round_number(df: pd.DataFrame) -> pd.DataFrame:
     df["Round"] = pd.to_numeric(df["Round"], errors="coerce").astype("Int64")
     return df
 
-def extract_feature_35(year):
+import pandas as pd
 
-    new_df = {"Year": [],
-              "RoundNumber": [],
-              "Race": [],
-              "Driver": [],
-              "Team": [],
-              "QualiPosition": [],
-              "GridPosition": [],
-              "AvgFinishLast3": [],
-              "AvgFinishLast5": [],
-              "AvgGridLast3": [],
-              "AvgGridLast5": [],
-              "AvgPointsLast3": [],
-              "AvgPointsLast5": [],
-              "TargetFinish": []}
 
-    df = pd.read_csv("outputs/oracle_v1.csv")
-    df = add_round_number(df).drop(columns=["Unnamed: 0"]).sort_values(by=["Year","Round"],ascending=True).reset_index(drop=True)
+def extract_feature_35(year: int, df_all: pd.DataFrame) -> pd.DataFrame:
+    """
+    Build oracle_v2 style feature rows for a given year.
 
-    target_data = df[df["Year"] == year]
+    For each (round, driver), the rolling averages (last 3 and last 5 races)
+    are computed from the races STRICTLY BEFORE the current round.
+    If there aren't enough races in the current year, it walks back into
+    the previous year (from the last round backwards) to fill the window.
 
-    rounds = target_data["Round"].unique()
-    drivers = target_data["Driver"].unique()
+    Parameters
+    ----------
+    year     : the season year to generate features for
+    df_all   : the full oracle_v1 dataframe (all years), with a 'Round' column
+               (add it via add_round_number() before calling this function)
 
-    last3 = target_data["Round"].unique()[::-1][:3].tolist()
-    last5 = target_data["Round"].unique()[::-1][:5].tolist()
+    Returns
+    -------
+    DataFrame in oracle_v2 format.
+    """
+
+    # ── sort entire history once ─────────────────────────────────────────────
+    df_all = df_all.copy()
+    df_all["TargetFinish_num"] = pd.to_numeric(df_all["TargetFinish"], errors="coerce")
+    df_all["GridPosition_num"] = pd.to_numeric(df_all["GridPosition"],  errors="coerce")
+    df_all["Points_num"]       = pd.to_numeric(df_all["Points"],        errors="coerce")
+
+    # canonical sort key: (Year, Round)
+    df_all = df_all.sort_values(["Year", "Round"]).reset_index(drop=True)
+
+    # ── target year slice ────────────────────────────────────────────────────
+    target = df_all[df_all["Year"] == year]
+    rounds  = sorted(target["Round"].unique())
+
+    # ── history = everything BEFORE this year (for cross-season look-back) ──
+    history_prev = df_all[df_all["Year"] < year]
+
+    rows = []
 
     for r in rounds:
+
+        race_name = target[target["Round"] == r]["Race"].iloc[0]
+        drivers   = target[target["Round"] == r]["Driver"].unique()
+
+        # races in the CURRENT year that come BEFORE round r
+        prev_rounds_this_year = [x for x in rounds if x < r]
+
         for d in drivers:
 
-            new_df["Year"].append(year)
-            new_df["RoundNumber"].append(r)
-            new_df["Race"].append(target_data[target_data["Round"] == r]["Race"].iloc[0])
+            cur = target[(target["Round"] == r) & (target["Driver"] == d)]
+            if cur.empty:
+                continue
 
-            new_df["Driver"].append(d)
-            new_df["Team"].append(target_data[target_data["Driver"] == d]["Team"].iloc[0])
-            new_df["QualiPosition"].append(target_data[(target_data["Round"] == r) & (target_data["Driver"] == d)]["QualiPosition"].iloc[0])
-            new_df["GridPosition"].append(target_data[(target_data["Round"] == r) & (target_data["Driver"] == d)]["GridPosition"].iloc[0])
-            new_df["AvgFinishLast3"].append(pd.to_numeric(target_data[(target_data["Round"].isin(last3)) &(target_data["Driver"] == d)]["TargetFinish"],errors="coerce").mean().round(2))
-            new_df["AvgFinishLast5"].append(pd.to_numeric(target_data[(target_data["Round"].isin(last5)) &(target_data["Driver"] == d)]["TargetFinish"],errors="coerce").mean().round(2))
-            new_df["AvgGridLast3"].append(pd.to_numeric(target_data[(target_data["Round"].isin(last3)) &(target_data["Driver"] == d)]["GridPosition"],errors="coerce").mean().round(2))
-            new_df["AvgGridLast5"].append(pd.to_numeric(target_data[(target_data["Round"].isin(last5)) &(target_data["Driver"] == d)]["GridPosition"],errors="coerce").mean().round(2))
-            new_df["AvgPointsLast3"].append(pd.to_numeric(target_data[(target_data["Round"].isin(last3)) &(target_data["Driver"] == d)]["Points"],errors="coerce").mean().round(2))
-            new_df["AvgPointsLast5"].append(pd.to_numeric(target_data[(target_data["Round"].isin(last5)) &(target_data["Driver"] == d)]["Points"],errors="coerce").mean().round(2))
-            new_df["TargetFinish"].append(target_data[(target_data["Round"].isin(last3)) &(target_data["Driver"] == d)]["TargetFinish"].iloc[0])
+            # ── build the driver's ordered history up to (not including) round r ──
+            # current year races before r
+            dr_this = df_all[
+                (df_all["Year"] == year) &
+                (df_all["Round"].isin(prev_rounds_this_year)) &
+                (df_all["Driver"] == d)
+            ].sort_values(["Year", "Round"])
 
-    
-    df = pd.DataFrame(new_df)
-    df.to_csv("outputs/oracle_v2.csv",index=False)
+            # how many more do we need to fill a window of 5?
+            need = 5 - len(dr_this)
 
-extract_feature_35(2026)
+            if need > 0:
+                # pull from previous years, most recent first
+                dr_prev = history_prev[history_prev["Driver"] == d] \
+                    .sort_values(["Year", "Round"]) \
+                    .tail(need)
+                dr_history = pd.concat([dr_prev, dr_this], ignore_index=True)
+            else:
+                dr_history = dr_this
+
+            # last N rows  (already sorted oldest→newest, so tail gives most recent N)
+            last3 = dr_history.tail(3)
+            last5 = dr_history.tail(5)
+
+            def avg(series): return round(series.mean(), 2) if len(series) else float("nan")
+
+            rows.append({
+                "Year":            year,
+                "RoundNumber":     r,
+                "Race":            race_name,
+                "Driver":          d,
+                "Team":            cur["Team"].iloc[0],
+                "QualiPosition":   cur["QualiPosition"].iloc[0],
+                "GridPosition":    cur["GridPosition"].iloc[0],
+                "AvgFinishLast3":  avg(last3["TargetFinish_num"]),
+                "AvgFinishLast5":  avg(last5["TargetFinish_num"]),
+                "AvgGridLast3":    avg(last3["GridPosition_num"]),
+                "AvgGridLast5":    avg(last5["GridPosition_num"]),
+                "AvgPointsLast3":  avg(last3["Points_num"]),
+                "AvgPointsLast5":  avg(last5["Points_num"]),
+                "TargetFinish":    cur["TargetFinish"].iloc[0],
+            })
+
+    return pd.DataFrame(rows)
+
+
+# ── usage ────────────────────────────────────────────────────────────────────
+if __name__ == "__main__":
+
+    df_v1 = pd.read_csv("outputs/oracle_v1.csv")
+    df_v1 = add_round_number(df_v1)
+
+    # drop the unnamed index column if present
+    df_v1 = df_v1.loc[:, ~df_v1.columns.str.startswith("Unnamed")]
+
+    result = extract_feature_35(2026, df_v1)
+    result.to_csv("outputs/oracle_v2.csv", index=False)
+    print(result.head(10).to_string())
+    print(f"\nDone. Shape: {result.shape}")
 
     
 
