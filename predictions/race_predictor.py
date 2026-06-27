@@ -18,7 +18,7 @@ FEATURES = [
     "AvgPointsLast5",
 ]
 
-df["PredictedFinish"] = model.predict(df[FEATURES])
+df["PredictedFinish"] = model.predict(df[FEATURES]).round(2)
 
 df = df.sort_values("PredictedFinish").reset_index(drop=True)
 

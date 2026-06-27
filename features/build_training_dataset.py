@@ -49,12 +49,35 @@ def get_event_list(year):
     return fin_list
 
 def get_drivers_GP(year):
+   
+    
+    year_path = DATA_DIR / str(year)
 
-    const_path = DATA_DIR / str(year) / "Australian_Grand_Prix" / "race_laps.csv"
+    if not year_path.exists():
+        raise FileNotFoundError(f"No data found for year {year} at {year_path}")
 
-    df = pd.read_csv(const_path)
+    drivers = set()
 
-    return df["Driver"].unique().tolist()
+    for gp_folder in sorted(year_path.iterdir()):
+        if not gp_folder.is_dir():
+            continue
+
+        # race_laps has every driver per lap — most complete source
+        laps_csv    = gp_folder / "race_laps.csv"
+        results_csv = gp_folder / "race_results.csv"
+
+        if laps_csv.exists():
+            df = pd.read_csv(laps_csv, usecols=["Driver"])
+            drivers.update(df["Driver"].dropna().unique().tolist())
+
+        elif results_csv.exists():
+            df = pd.read_csv(results_csv, usecols=["Abbreviation"])
+            drivers.update(df["Abbreviation"].dropna().unique().tolist())
+
+    if not drivers:
+        raise ValueError(f"No driver data found in any GP folder for {year}")
+
+    return sorted(drivers)
 
 for y in YEAR:
     events[y] = get_event_list(y)

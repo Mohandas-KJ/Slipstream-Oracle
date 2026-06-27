@@ -1,141 +1,155 @@
 Year,RoundNumber,Race,Driver,Team,Predicted,Actual,Error
-2026,1,Australian_Grand_Prix,NOR,McLaren,3.5,5.0,1.5
-2026,1,Australian_Grand_Prix,GAS,Alpine,16.0,10.0,6.0
-2026,1,Australian_Grand_Prix,PER,Cadillac,10.0,16.0,6.0
-2026,1,Australian_Grand_Prix,ANT,Mercedes,7.67,2.0,5.67
-2026,1,Australian_Grand_Prix,ALO,Aston Martin,8.0,,
-2026,1,Australian_Grand_Prix,LEC,Ferrari,5.33,3.0,2.33
-2026,1,Australian_Grand_Prix,STR,Aston Martin,13.5,,
 2026,1,Australian_Grand_Prix,ALB,Williams,13.5,12.0,1.5
-2026,1,Australian_Grand_Prix,VER,Red Bull Racing,1.0,6.0,5.0
-2026,1,Australian_Grand_Prix,LAW,Racing Bulls,13.67,13.0,0.6699999999999999
-2026,1,Australian_Grand_Prix,OCO,Haas F1 Team,10.33,11.0,0.6699999999999999
-2026,1,Australian_Grand_Prix,LIN,Racing Bulls,,8.0,
-2026,1,Australian_Grand_Prix,COL,Alpine,,14.0,
-2026,1,Australian_Grand_Prix,HAM,Ferrari,9.33,4.0,5.33
-2026,1,Australian_Grand_Prix,BOR,Audi,12.0,9.0,3.0
-2026,1,Australian_Grand_Prix,SAI,Williams,7.0,15.0,8.0
-2026,1,Australian_Grand_Prix,HAD,Red Bull Racing,13.67,,
-2026,1,Australian_Grand_Prix,RUS,Mercedes,4.33,1.0,3.33
-2026,1,Australian_Grand_Prix,BOT,Cadillac,14.5,,
+2026,1,Australian_Grand_Prix,ALO,Aston Martin,8.0,,
+2026,1,Australian_Grand_Prix,ANT,Mercedes,7.67,2.0,5.67
 2026,1,Australian_Grand_Prix,BEA,Haas F1 Team,11.0,7.0,4.0
-2026,2,Chinese_Grand_Prix,NOR,McLaren,4.0,,
-2026,2,Chinese_Grand_Prix,GAS,Alpine,15.0,6.0,9.0
-2026,2,Chinese_Grand_Prix,PER,Cadillac,16.0,15.0,1.0
-2026,2,Chinese_Grand_Prix,ANT,Mercedes,7.33,1.0,6.33
-2026,2,Chinese_Grand_Prix,ALO,Aston Martin,6.5,,
-2026,2,Chinese_Grand_Prix,LEC,Ferrari,5.0,4.0,1.0
-2026,2,Chinese_Grand_Prix,STR,Aston Martin,13.5,,
+2026,1,Australian_Grand_Prix,BOR,Audi,12.0,9.0,3.0
+2026,1,Australian_Grand_Prix,BOT,Cadillac,14.5,,
+2026,1,Australian_Grand_Prix,COL,Alpine,16.33,14.0,2.3299999999999983
+2026,1,Australian_Grand_Prix,GAS,Alpine,16.0,10.0,6.0
+2026,1,Australian_Grand_Prix,HAD,Red Bull Racing,13.67,,
+2026,1,Australian_Grand_Prix,HAM,Ferrari,9.33,4.0,5.33
+2026,1,Australian_Grand_Prix,HUL,Audi,8.0,,
+2026,1,Australian_Grand_Prix,LAW,Racing Bulls,13.67,13.0,0.6699999999999999
+2026,1,Australian_Grand_Prix,LEC,Ferrari,5.33,3.0,2.33
+2026,1,Australian_Grand_Prix,LIN,Racing Bulls,,8.0,
+2026,1,Australian_Grand_Prix,NOR,McLaren,3.5,5.0,1.5
+2026,1,Australian_Grand_Prix,OCO,Haas F1 Team,10.33,11.0,0.6699999999999999
+2026,1,Australian_Grand_Prix,PER,Cadillac,10.0,16.0,6.0
+2026,1,Australian_Grand_Prix,PIA,McLaren,2.0,,
+2026,1,Australian_Grand_Prix,RUS,Mercedes,4.33,1.0,3.33
+2026,1,Australian_Grand_Prix,SAI,Williams,7.0,15.0,8.0
+2026,1,Australian_Grand_Prix,STR,Aston Martin,13.5,,
+2026,1,Australian_Grand_Prix,VER,Red Bull Racing,1.0,6.0,5.0
 2026,2,Chinese_Grand_Prix,ALB,Williams,13.0,,
-2026,2,Chinese_Grand_Prix,VER,Red Bull Racing,2.67,,
-2026,2,Chinese_Grand_Prix,LAW,Racing Bulls,13.33,7.0,6.33
-2026,2,Chinese_Grand_Prix,OCO,Haas F1 Team,11.0,14.0,3.0
-2026,2,Chinese_Grand_Prix,LIN,Racing Bulls,8.0,12.0,4.0
-2026,2,Chinese_Grand_Prix,COL,Alpine,14.0,10.0,4.0
-2026,2,Chinese_Grand_Prix,HAM,Ferrari,8.0,3.0,5.0
-2026,2,Chinese_Grand_Prix,BOR,Audi,11.0,,
-2026,2,Chinese_Grand_Prix,SAI,Williams,10.33,9.0,1.33
-2026,2,Chinese_Grand_Prix,HAD,Red Bull Racing,17.5,8.0,9.5
-2026,2,Chinese_Grand_Prix,RUS,Mercedes,4.0,2.0,2.0
-2026,2,Chinese_Grand_Prix,BOT,Cadillac,11.0,13.0,2.0
+2026,2,Chinese_Grand_Prix,ALO,Aston Martin,6.5,,
+2026,2,Chinese_Grand_Prix,ANT,Mercedes,7.33,1.0,6.33
 2026,2,Chinese_Grand_Prix,BEA,Haas F1 Team,9.5,5.0,4.5
-2026,3,Japanese_Grand_Prix,NOR,McLaren,4.0,5.0,1.0
-2026,3,Japanese_Grand_Prix,GAS,Alpine,11.67,7.0,4.67
-2026,3,Japanese_Grand_Prix,PER,Cadillac,15.5,17.0,1.5
-2026,3,Japanese_Grand_Prix,ANT,Mercedes,6.0,1.0,5.0
-2026,3,Japanese_Grand_Prix,ALO,Aston Martin,6.0,18.0,12.0
-2026,3,Japanese_Grand_Prix,LEC,Ferrari,3.67,3.0,0.6699999999999999
-2026,3,Japanese_Grand_Prix,STR,Aston Martin,10.0,,
+2026,2,Chinese_Grand_Prix,BOR,Audi,11.0,,
+2026,2,Chinese_Grand_Prix,BOT,Cadillac,11.0,13.0,2.0
+2026,2,Chinese_Grand_Prix,COL,Alpine,16.0,10.0,6.0
+2026,2,Chinese_Grand_Prix,GAS,Alpine,15.0,6.0,9.0
+2026,2,Chinese_Grand_Prix,HAD,Red Bull Racing,17.5,8.0,9.5
+2026,2,Chinese_Grand_Prix,HAM,Ferrari,8.0,3.0,5.0
+2026,2,Chinese_Grand_Prix,HUL,Audi,9.0,11.0,2.0
+2026,2,Chinese_Grand_Prix,LAW,Racing Bulls,13.33,7.0,6.33
+2026,2,Chinese_Grand_Prix,LEC,Ferrari,5.0,4.0,1.0
+2026,2,Chinese_Grand_Prix,LIN,Racing Bulls,8.0,12.0,4.0
+2026,2,Chinese_Grand_Prix,NOR,McLaren,4.0,,
+2026,2,Chinese_Grand_Prix,OCO,Haas F1 Team,11.0,14.0,3.0
+2026,2,Chinese_Grand_Prix,PER,Cadillac,16.0,15.0,1.0
+2026,2,Chinese_Grand_Prix,PIA,McLaren,2.0,,
+2026,2,Chinese_Grand_Prix,RUS,Mercedes,4.0,2.0,2.0
+2026,2,Chinese_Grand_Prix,SAI,Williams,10.33,9.0,1.33
+2026,2,Chinese_Grand_Prix,STR,Aston Martin,13.5,,
+2026,2,Chinese_Grand_Prix,VER,Red Bull Racing,2.67,,
 2026,3,Japanese_Grand_Prix,ALB,Williams,14.0,20.0,6.0
-2026,3,Japanese_Grand_Prix,VER,Red Bull Racing,3.5,8.0,4.5
-2026,3,Japanese_Grand_Prix,LAW,Racing Bulls,12.67,9.0,3.67
-2026,3,Japanese_Grand_Prix,OCO,Haas F1 Team,10.67,10.0,0.6699999999999999
-2026,3,Japanese_Grand_Prix,LIN,Racing Bulls,10.0,14.0,4.0
-2026,3,Japanese_Grand_Prix,COL,Alpine,12.0,16.0,4.0
-2026,3,Japanese_Grand_Prix,HAM,Ferrari,5.0,6.0,1.0
-2026,3,Japanese_Grand_Prix,BOR,Audi,10.0,13.0,3.0
-2026,3,Japanese_Grand_Prix,SAI,Williams,12.33,15.0,2.67
-2026,3,Japanese_Grand_Prix,HAD,Red Bull Racing,12.5,12.0,0.5
-2026,3,Japanese_Grand_Prix,RUS,Mercedes,2.67,4.0,1.33
-2026,3,Japanese_Grand_Prix,BOT,Cadillac,13.0,19.0,6.0
+2026,3,Japanese_Grand_Prix,ALO,Aston Martin,6.0,18.0,12.0
+2026,3,Japanese_Grand_Prix,ANT,Mercedes,6.0,1.0,5.0
 2026,3,Japanese_Grand_Prix,BEA,Haas F1 Team,8.0,,
-2026,4,Miami_Grand_Prix,NOR,McLaren,5.0,2.0,3.0
-2026,4,Miami_Grand_Prix,GAS,Alpine,7.67,,
-2026,4,Miami_Grand_Prix,PER,Cadillac,16.0,16.0,0.0
-2026,4,Miami_Grand_Prix,ANT,Mercedes,1.33,1.0,0.33000000000000007
-2026,4,Miami_Grand_Prix,ALO,Aston Martin,18.0,15.0,3.0
-2026,4,Miami_Grand_Prix,LEC,Ferrari,3.33,8.0,4.67
-2026,4,Miami_Grand_Prix,STR,Aston Martin,,17.0,
+2026,3,Japanese_Grand_Prix,BOR,Audi,10.0,13.0,3.0
+2026,3,Japanese_Grand_Prix,BOT,Cadillac,13.0,19.0,6.0
+2026,3,Japanese_Grand_Prix,COL,Alpine,14.67,16.0,1.33
+2026,3,Japanese_Grand_Prix,GAS,Alpine,11.67,7.0,4.67
+2026,3,Japanese_Grand_Prix,HAD,Red Bull Racing,12.5,12.0,0.5
+2026,3,Japanese_Grand_Prix,HAM,Ferrari,5.0,6.0,1.0
+2026,3,Japanese_Grand_Prix,HUL,Audi,10.0,11.0,1.0
+2026,3,Japanese_Grand_Prix,LAW,Racing Bulls,12.67,9.0,3.67
+2026,3,Japanese_Grand_Prix,LEC,Ferrari,3.67,3.0,0.6699999999999999
+2026,3,Japanese_Grand_Prix,LIN,Racing Bulls,10.0,14.0,4.0
+2026,3,Japanese_Grand_Prix,NOR,McLaren,4.0,5.0,1.0
+2026,3,Japanese_Grand_Prix,OCO,Haas F1 Team,10.67,10.0,0.6699999999999999
+2026,3,Japanese_Grand_Prix,PER,Cadillac,15.5,17.0,1.5
+2026,3,Japanese_Grand_Prix,PIA,McLaren,2.0,2.0,0.0
+2026,3,Japanese_Grand_Prix,RUS,Mercedes,2.67,4.0,1.33
+2026,3,Japanese_Grand_Prix,SAI,Williams,12.33,15.0,2.67
+2026,3,Japanese_Grand_Prix,STR,Aston Martin,10.0,,
+2026,3,Japanese_Grand_Prix,VER,Red Bull Racing,3.5,8.0,4.5
 2026,4,Miami_Grand_Prix,ALB,Williams,16.0,10.0,6.0
-2026,4,Miami_Grand_Prix,VER,Red Bull Racing,7.0,5.0,2.0
-2026,4,Miami_Grand_Prix,LAW,Racing Bulls,9.67,,
-2026,4,Miami_Grand_Prix,OCO,Haas F1 Team,11.67,13.0,1.33
-2026,4,Miami_Grand_Prix,LIN,Racing Bulls,11.33,14.0,2.67
-2026,4,Miami_Grand_Prix,COL,Alpine,13.33,7.0,6.33
-2026,4,Miami_Grand_Prix,HAM,Ferrari,4.33,6.0,1.67
-2026,4,Miami_Grand_Prix,BOR,Audi,11.0,12.0,1.0
-2026,4,Miami_Grand_Prix,SAI,Williams,13.0,9.0,4.0
-2026,4,Miami_Grand_Prix,HAD,Red Bull Racing,10.0,,
-2026,4,Miami_Grand_Prix,RUS,Mercedes,2.33,4.0,1.67
-2026,4,Miami_Grand_Prix,BOT,Cadillac,16.0,18.0,2.0
+2026,4,Miami_Grand_Prix,ALO,Aston Martin,18.0,15.0,3.0
+2026,4,Miami_Grand_Prix,ANT,Mercedes,1.33,1.0,0.33000000000000007
 2026,4,Miami_Grand_Prix,BEA,Haas F1 Team,6.0,11.0,5.0
-2026,5,Canadian_Grand_Prix,NOR,McLaren,3.5,,
-2026,5,Canadian_Grand_Prix,GAS,Alpine,6.5,8.0,1.5
-2026,5,Canadian_Grand_Prix,PER,Cadillac,16.0,,
-2026,5,Canadian_Grand_Prix,ANT,Mercedes,1.0,1.0,0.0
-2026,5,Canadian_Grand_Prix,ALO,Aston Martin,16.5,,
-2026,5,Canadian_Grand_Prix,LEC,Ferrari,5.0,4.0,1.0
-2026,5,Canadian_Grand_Prix,STR,Aston Martin,17.0,15.0,2.0
+2026,4,Miami_Grand_Prix,BOR,Audi,11.0,12.0,1.0
+2026,4,Miami_Grand_Prix,BOT,Cadillac,16.0,18.0,2.0
+2026,4,Miami_Grand_Prix,COL,Alpine,13.33,7.0,6.33
+2026,4,Miami_Grand_Prix,GAS,Alpine,7.67,,
+2026,4,Miami_Grand_Prix,HAD,Red Bull Racing,10.0,,
+2026,4,Miami_Grand_Prix,HAM,Ferrari,4.33,6.0,1.67
+2026,4,Miami_Grand_Prix,HUL,Audi,11.0,,
+2026,4,Miami_Grand_Prix,LAW,Racing Bulls,9.67,,
+2026,4,Miami_Grand_Prix,LEC,Ferrari,3.33,8.0,4.67
+2026,4,Miami_Grand_Prix,LIN,Racing Bulls,11.33,14.0,2.67
+2026,4,Miami_Grand_Prix,NOR,McLaren,5.0,2.0,3.0
+2026,4,Miami_Grand_Prix,OCO,Haas F1 Team,11.67,13.0,1.33
+2026,4,Miami_Grand_Prix,PER,Cadillac,16.0,16.0,0.0
+2026,4,Miami_Grand_Prix,PIA,McLaren,2.0,3.0,1.0
+2026,4,Miami_Grand_Prix,RUS,Mercedes,2.33,4.0,1.67
+2026,4,Miami_Grand_Prix,SAI,Williams,13.0,9.0,4.0
+2026,4,Miami_Grand_Prix,STR,Aston Martin,,17.0,
+2026,4,Miami_Grand_Prix,VER,Red Bull Racing,7.0,5.0,2.0
 2026,5,Canadian_Grand_Prix,ALB,Williams,15.0,,
-2026,5,Canadian_Grand_Prix,VER,Red Bull Racing,6.5,3.0,3.5
-2026,5,Canadian_Grand_Prix,LAW,Racing Bulls,8.0,7.0,1.0
-2026,5,Canadian_Grand_Prix,OCO,Haas F1 Team,12.33,14.0,1.67
-2026,5,Canadian_Grand_Prix,LIN,Racing Bulls,13.33,,
-2026,5,Canadian_Grand_Prix,COL,Alpine,11.0,6.0,5.0
-2026,5,Canadian_Grand_Prix,HAM,Ferrari,5.0,2.0,3.0
-2026,5,Canadian_Grand_Prix,BOR,Audi,12.5,13.0,0.5
-2026,5,Canadian_Grand_Prix,SAI,Williams,11.0,9.0,2.0
-2026,5,Canadian_Grand_Prix,HAD,Red Bull Racing,10.0,5.0,5.0
-2026,5,Canadian_Grand_Prix,RUS,Mercedes,3.33,,
-2026,5,Canadian_Grand_Prix,BOT,Cadillac,16.67,16.0,0.6700000000000017
+2026,5,Canadian_Grand_Prix,ALO,Aston Martin,16.5,,
+2026,5,Canadian_Grand_Prix,ANT,Mercedes,1.0,1.0,0.0
 2026,5,Canadian_Grand_Prix,BEA,Haas F1 Team,8.0,10.0,2.0
-2026,6,Monaco_Grand_Prix,NOR,McLaren,3.5,,
-2026,6,Monaco_Grand_Prix,GAS,Alpine,7.5,3.0,4.5
-2026,6,Monaco_Grand_Prix,PER,Cadillac,16.5,15.0,1.5
-2026,6,Monaco_Grand_Prix,ANT,Mercedes,1.0,1.0,0.0
-2026,6,Monaco_Grand_Prix,ALO,Aston Martin,16.5,10.0,6.5
-2026,6,Monaco_Grand_Prix,LEC,Ferrari,5.0,,
-2026,6,Monaco_Grand_Prix,STR,Aston Martin,16.0,,
+2026,5,Canadian_Grand_Prix,BOR,Audi,12.5,13.0,0.5
+2026,5,Canadian_Grand_Prix,BOT,Cadillac,16.67,16.0,0.6700000000000017
+2026,5,Canadian_Grand_Prix,COL,Alpine,11.0,6.0,5.0
+2026,5,Canadian_Grand_Prix,GAS,Alpine,6.5,8.0,1.5
+2026,5,Canadian_Grand_Prix,HAD,Red Bull Racing,10.0,5.0,5.0
+2026,5,Canadian_Grand_Prix,HAM,Ferrari,5.0,2.0,3.0
+2026,5,Canadian_Grand_Prix,HUL,Audi,11.0,12.0,1.0
+2026,5,Canadian_Grand_Prix,LAW,Racing Bulls,8.0,7.0,1.0
+2026,5,Canadian_Grand_Prix,LEC,Ferrari,5.0,4.0,1.0
+2026,5,Canadian_Grand_Prix,LIN,Racing Bulls,13.33,,
+2026,5,Canadian_Grand_Prix,NOR,McLaren,3.5,,
+2026,5,Canadian_Grand_Prix,OCO,Haas F1 Team,12.33,14.0,1.67
+2026,5,Canadian_Grand_Prix,PER,Cadillac,16.0,,
+2026,5,Canadian_Grand_Prix,PIA,McLaren,2.5,11.0,8.5
+2026,5,Canadian_Grand_Prix,RUS,Mercedes,3.33,,
+2026,5,Canadian_Grand_Prix,SAI,Williams,11.0,9.0,2.0
+2026,5,Canadian_Grand_Prix,STR,Aston Martin,17.0,15.0,2.0
+2026,5,Canadian_Grand_Prix,VER,Red Bull Racing,6.5,3.0,3.5
 2026,6,Monaco_Grand_Prix,ALB,Williams,15.0,8.0,7.0
-2026,6,Monaco_Grand_Prix,VER,Red Bull Racing,5.33,,
-2026,6,Monaco_Grand_Prix,LAW,Racing Bulls,8.0,6.0,2.0
-2026,6,Monaco_Grand_Prix,OCO,Haas F1 Team,12.33,9.0,3.33
-2026,6,Monaco_Grand_Prix,LIN,Racing Bulls,14.0,7.0,7.0
-2026,6,Monaco_Grand_Prix,COL,Alpine,9.67,14.0,4.33
-2026,6,Monaco_Grand_Prix,HAM,Ferrari,4.67,2.0,2.67
-2026,6,Monaco_Grand_Prix,BOR,Audi,12.67,11.0,1.67
-2026,6,Monaco_Grand_Prix,SAI,Williams,11.0,16.0,5.0
-2026,6,Monaco_Grand_Prix,HAD,Red Bull Racing,8.5,4.0,4.5
-2026,6,Monaco_Grand_Prix,RUS,Mercedes,4.0,12.0,8.0
-2026,6,Monaco_Grand_Prix,BOT,Cadillac,17.67,,
+2026,6,Monaco_Grand_Prix,ALO,Aston Martin,16.5,10.0,6.5
+2026,6,Monaco_Grand_Prix,ANT,Mercedes,1.0,1.0,0.0
 2026,6,Monaco_Grand_Prix,BEA,Haas F1 Team,10.5,,
-2026,7,Barcelona_Grand_Prix,NOR,McLaren,2.0,3.0,1.0
-2026,7,Barcelona_Grand_Prix,GAS,Alpine,5.5,7.0,1.5
-2026,7,Barcelona_Grand_Prix,PER,Cadillac,15.5,14.0,1.5
-2026,7,Barcelona_Grand_Prix,ANT,Mercedes,1.0,16.0,15.0
-2026,7,Barcelona_Grand_Prix,ALO,Aston Martin,12.5,,
-2026,7,Barcelona_Grand_Prix,LEC,Ferrari,6.0,15.0,9.0
-2026,7,Barcelona_Grand_Prix,STR,Aston Martin,16.0,,
+2026,6,Monaco_Grand_Prix,BOR,Audi,12.67,11.0,1.67
+2026,6,Monaco_Grand_Prix,BOT,Cadillac,17.67,,
+2026,6,Monaco_Grand_Prix,COL,Alpine,9.67,14.0,4.33
+2026,6,Monaco_Grand_Prix,GAS,Alpine,7.5,3.0,4.5
+2026,6,Monaco_Grand_Prix,HAD,Red Bull Racing,8.5,4.0,4.5
+2026,6,Monaco_Grand_Prix,HAM,Ferrari,4.67,2.0,2.67
+2026,6,Monaco_Grand_Prix,HUL,Audi,11.5,13.0,1.5
+2026,6,Monaco_Grand_Prix,LAW,Racing Bulls,8.0,6.0,2.0
+2026,6,Monaco_Grand_Prix,LEC,Ferrari,5.0,,
+2026,6,Monaco_Grand_Prix,LIN,Racing Bulls,14.0,7.0,7.0
+2026,6,Monaco_Grand_Prix,NOR,McLaren,3.5,,
+2026,6,Monaco_Grand_Prix,OCO,Haas F1 Team,12.33,9.0,3.33
+2026,6,Monaco_Grand_Prix,PER,Cadillac,16.5,15.0,1.5
+2026,6,Monaco_Grand_Prix,PIA,McLaren,5.33,5.0,0.33000000000000007
+2026,6,Monaco_Grand_Prix,RUS,Mercedes,4.0,12.0,8.0
+2026,6,Monaco_Grand_Prix,SAI,Williams,11.0,16.0,5.0
+2026,6,Monaco_Grand_Prix,STR,Aston Martin,16.0,,
+2026,6,Monaco_Grand_Prix,VER,Red Bull Racing,5.33,,
 2026,7,Barcelona_Grand_Prix,ALB,Williams,9.0,,
-2026,7,Barcelona_Grand_Prix,VER,Red Bull Racing,4.0,4.0,0.0
-2026,7,Barcelona_Grand_Prix,LAW,Racing Bulls,6.5,8.0,1.5
-2026,7,Barcelona_Grand_Prix,OCO,Haas F1 Team,12.0,13.0,1.0
-2026,7,Barcelona_Grand_Prix,LIN,Racing Bulls,10.5,9.0,1.5
-2026,7,Barcelona_Grand_Prix,COL,Alpine,9.0,10.0,1.0
-2026,7,Barcelona_Grand_Prix,HAM,Ferrari,3.33,1.0,2.33
-2026,7,Barcelona_Grand_Prix,BOR,Audi,12.0,11.0,1.0
-2026,7,Barcelona_Grand_Prix,SAI,Williams,11.33,12.0,0.6699999999999999
-2026,7,Barcelona_Grand_Prix,HAD,Red Bull Racing,4.5,6.0,1.5
-2026,7,Barcelona_Grand_Prix,RUS,Mercedes,8.0,2.0,6.0
-2026,7,Barcelona_Grand_Prix,BOT,Cadillac,17.0,,
+2026,7,Barcelona_Grand_Prix,ALO,Aston Martin,12.5,,
+2026,7,Barcelona_Grand_Prix,ANT,Mercedes,1.0,16.0,15.0
 2026,7,Barcelona_Grand_Prix,BEA,Haas F1 Team,10.5,17.0,6.5
+2026,7,Barcelona_Grand_Prix,BOR,Audi,12.0,11.0,1.0
+2026,7,Barcelona_Grand_Prix,BOT,Cadillac,17.0,,
+2026,7,Barcelona_Grand_Prix,COL,Alpine,9.0,10.0,1.0
+2026,7,Barcelona_Grand_Prix,GAS,Alpine,5.5,7.0,1.5
+2026,7,Barcelona_Grand_Prix,HAD,Red Bull Racing,4.5,6.0,1.5
+2026,7,Barcelona_Grand_Prix,HAM,Ferrari,3.33,1.0,2.33
+2026,7,Barcelona_Grand_Prix,HUL,Audi,12.5,,
+2026,7,Barcelona_Grand_Prix,LAW,Racing Bulls,6.5,8.0,1.5
+2026,7,Barcelona_Grand_Prix,LEC,Ferrari,6.0,15.0,9.0
+2026,7,Barcelona_Grand_Prix,LIN,Racing Bulls,10.5,9.0,1.5
+2026,7,Barcelona_Grand_Prix,NOR,McLaren,2.0,3.0,1.0
+2026,7,Barcelona_Grand_Prix,OCO,Haas F1 Team,12.0,13.0,1.0
+2026,7,Barcelona_Grand_Prix,PER,Cadillac,15.5,14.0,1.5
+2026,7,Barcelona_Grand_Prix,PIA,McLaren,6.33,5.0,1.33
+2026,7,Barcelona_Grand_Prix,RUS,Mercedes,8.0,2.0,6.0
+2026,7,Barcelona_Grand_Prix,SAI,Williams,11.33,12.0,0.6699999999999999
+2026,7,Barcelona_Grand_Prix,STR,Aston Martin,16.0,,
+2026,7,Barcelona_Grand_Prix,VER,Red Bull Racing,4.0,4.0,0.0
