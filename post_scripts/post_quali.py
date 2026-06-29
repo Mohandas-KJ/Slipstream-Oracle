@@ -23,7 +23,8 @@ def add_grid(data,drivers,position):
     df1.to_csv("outputs/austria.csv",index=False)
     print("CSV Exported Successfully!")
 
-d = ["RUS","LEC","HAM","ANT","VER","NOR","PIA","HAD","LAW","LIN","GAS","BOR","BEA","HUL","OCO","COL","SAI","ALB","PER","BOT","ALO","STR"]
-pos = [i for i in range(1,23)]
+# Example: VER RUS HAM ...
+d = input("Enter Drivers (GRID): ")
+pos = [i for i in range(1,len(d)+1)]
 
 add_grid(df,d,pos)
