@@ -145,7 +145,6 @@ def build_austria_dataset() -> pd.DataFrame:
     print("  Next step:")
     print("    1. Fill in QualiPosition + GridPosition once qualifying is done")
     print("    2. Add any extra/reserve drivers to EXTRA_DRIVERS in this script")
-    print("    3. Run:  python predict_austria.py")
 
     return df_out
 
