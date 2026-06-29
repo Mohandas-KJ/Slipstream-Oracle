@@ -1,0 +1,23 @@
+PredictedPosition,Year,RoundNumber,Race,Driver,Team,QualiPosition,GridPosition,AvgFinishLast3,AvgFinishLast5,AvgGridLast3,AvgGridLast5,AvgPointsLast3,AvgPointsLast5,TargetFinish,PredictedFinish,Error
+1,2026,8,Austrian_Grand_Prix,RUS,Mercedes,1.0,1.0,6.0,4.8,2.67,3.0,6.0,8.4,1.0,2.86,1.8599999999999999
+2,2026,8,Austrian_Grand_Prix,LEC,Ferrari,2.0,2.0,9.0,6.8,7.33,5.8,4.0,6.2,8.0,3.19,4.8100000000000005
+3,2026,8,Austrian_Grand_Prix,VER,Red Bull Racing,5.0,5.0,4.0,5.2,4.33,5.2,9.0,8.2,2.0,4.69,2.6900000000000004
+4,2026,8,Austrian_Grand_Prix,HAM,Ferrari,3.0,3.0,1.67,3.4,3.33,4.4,20.33,15.4,5.0,4.72,0.28000000000000025
+5,2026,8,Austrian_Grand_Prix,PIA,McLaren,7.0,7.0,7.0,5.2,6.0,5.6,6.67,10.6,4.0,4.99,0.9900000000000002
+6,2026,8,Austrian_Grand_Prix,NOR,McLaren,6.0,6.0,3.33,3.75,5.0,4.8,5.0,8.6,7.0,5.36,1.6399999999999997
+7,2026,8,Austrian_Grand_Prix,HAD,Red Bull Racing,8.0,8.0,5.0,7.0,6.0,9.6,10.0,6.0,6.0,6.89,0.8899999999999997
+8,2026,8,Austrian_Grand_Prix,ANT,Mercedes,4.0,4.0,6.0,4.0,2.0,1.6,16.67,20.0,3.0,7.14,4.14
+9,2026,8,Austrian_Grand_Prix,LAW,Racing Bulls,9.0,9.0,7.0,7.4,10.0,11.0,6.0,4.0,9.0,7.52,1.4800000000000004
+10,2026,8,Austrian_Grand_Prix,GAS,Alpine,11.0,11.0,6.0,6.2,12.33,10.6,8.33,6.2,13.0,8.77,4.23
+11,2026,8,Austrian_Grand_Prix,LIN,Racing Bulls,10.0,10.0,10.0,11.2,11.67,12.2,2.67,1.6,10.0,9.89,0.10999999999999943
+12,2026,8,Austrian_Grand_Prix,BOR,Audi,12.0,12.0,11.67,12.0,13.67,14.2,0.0,0.0,11.0,10.8,0.1999999999999993
+13,2026,8,Austrian_Grand_Prix,HUL,Audi,14.0,14.0,12.0,11.75,11.0,11.2,0.0,0.0,12.0,11.15,0.8499999999999996
+14,2026,8,Austrian_Grand_Prix,OCO,Haas F1 Team,15.0,15.0,12.0,11.8,17.0,15.4,0.67,0.6,16.0,11.65,4.35
+15,2026,8,Austrian_Grand_Prix,BEA,Haas F1 Team,13.0,13.0,12.67,10.0,16.67,16.0,0.33,0.2,14.0,11.67,2.33
+16,2026,8,Austrian_Grand_Prix,SAI,Williams,17.0,17.0,12.33,12.2,14.33,14.4,0.67,0.8,20.0,11.79,8.21
+17,2026,8,Austrian_Grand_Prix,COL,Alpine,16.0,16.0,10.0,10.6,12.33,12.0,3.0,3.0,15.0,11.96,3.039999999999999
+18,2026,8,Austrian_Grand_Prix,ALB,Williams,18.0,18.0,12.67,12.5,15.67,15.8,1.33,1.0,17.0,13.58,3.42
+19,2026,8,Austrian_Grand_Prix,PER,Cadillac,19.0,19.0,15.0,15.4,19.0,19.2,0.0,0.0,21.0,14.05,6.949999999999999
+20,2026,8,Austrian_Grand_Prix,ALO,Aston Martin,21.0,21.0,14.33,14.33,20.67,20.0,0.33,0.2,18.0,14.31,3.6899999999999995
+21,2026,8,Austrian_Grand_Prix,STR,Aston Martin,22.0,22.0,16.0,16.0,21.67,21.0,0.0,0.0,19.0,14.35,4.65
+22,2026,8,Austrian_Grand_Prix,BOT,Cadillac,20.0,20.0,17.67,16.5,20.33,20.0,0.0,0.0,22.0,14.47,7.529999999999999
