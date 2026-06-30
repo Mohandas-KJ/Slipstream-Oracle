@@ -15,6 +15,7 @@ Usage
 
 import numpy as np
 import pandas as pd
+import json
 
 # ============================================================
 # CONFIG
@@ -23,9 +24,12 @@ import pandas as pd
 V1_CSV      = "outputs/oracle_v1.csv"
 OUTPUT_CSV  = "outputs/austria_2026_predict.csv"
 
+
 RACE_NAME   = "Austrian_Grand_Prix"
 ROUND       = 8
 YEAR        = 2026
+
+CATALOG_COMP = f"catalog/{YEAR}/completed.json"
 
 # Map every completed 2026 race → round number
 ROUND_MAP_2026 = {
