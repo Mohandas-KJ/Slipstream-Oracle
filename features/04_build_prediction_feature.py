@@ -23,6 +23,8 @@ import json
 
 V1_CSV      = "outputs/oracle_v1.csv"
 OUTPUT_CSV  = "outputs/austria_2026_predict.csv"
+COMPLETED_TAB = "catalog/2026/completed.json" # Hardcoded Year for now
+ROUND_MAP = "catalog/2026/Schedule.csv"
 
 
 RACE_NAME   = "Austrian_Grand_Prix"
@@ -31,6 +33,11 @@ YEAR        = 2026
 
 CATALOG_COMP = f"catalog/{YEAR}/completed.json"
 
+
+with open(COMPLETED_TAB) as f:
+    ROUND_MAP_2026 = json.load(f)
+
+"""
 # Map every completed 2026 race → round number
 ROUND_MAP_2026 = {
     "Australian_Grand_Prix": 1,
@@ -41,6 +48,7 @@ ROUND_MAP_2026 = {
     "Monaco_Grand_Prix":     6,
     "Barcelona_Grand_Prix":  7,
 }
+"""
 
 # ── 2 extra drivers for Austria (reserve / new entries) ─────
 # Fill in their real team once confirmed.

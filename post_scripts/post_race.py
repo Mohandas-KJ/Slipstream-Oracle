@@ -8,6 +8,7 @@ This Script is used to evaluate post Race Scenario
 # Imports
 import pandas as pd
 from pathlib import Path
+import json
 
 def read_prediction(location):
     df = pd.read_csv(location)
@@ -38,6 +39,15 @@ def calculate_error(loc):
     df = pd.read_csv(loc)
 
     return df["Error"].mean()
+
+def mark_round_complete():
+    """
+    1. This Function maps the current round as completed
+    2. It reads the json
+    3. Gets the Highest RoundNumber's Key -> EventName
+    4. Increment the RoundNumber and access the Schedule
+    5. Write the key and It's RoundNumber to json
+    """
 
 if __name__ == "__main__":
     LOCATION = input("Prediction File (Relative): ")
