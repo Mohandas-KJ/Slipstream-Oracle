@@ -10,6 +10,10 @@ import pandas as pd
 from pathlib import Path
 import json
 
+# CONFIG
+COMPLETED_TAB = "catalog/2026/completed.json" # Hardcoded Year for now
+ROUND_MAP = "catalog/2026/Schedule.csv"
+
 def read_prediction(location):
     df = pd.read_csv(location)
     return df
@@ -49,7 +53,26 @@ def mark_round_complete():
     5. Write the key and It's RoundNumber to json
     """
 
+    # Open the json file
+    with open(COMPLETED_TAB) as f:
+        Completed_RM = json.load(f)
+    
+    # Select Highest Key
+    current_event_no = Completed_RM[max(Completed_RM,key=Completed_RM.get)] + 1
+
+    # Import the Scedule 
+    round_mp = pd.read_csv(ROUND_MAP)
+    
+    # Get the EventName and RoundNumber and write it to json
+    Completed_RM[round_mp[round_mp["RoundNumber"] == current_event_no]["EventName"].iloc[0]] = current_event_no
+
+    # Write it Safely
+    with open(COMPLETED_TAB,"w") as fl:
+        json.dump(Completed_RM,fl,indent=4)
+
+
 if __name__ == "__main__":
+    
     LOCATION = input("Prediction File (Relative): ")
     df = read_prediction(LOCATION)
     print("Prediction File Loaded!\n")
@@ -59,7 +82,10 @@ if __name__ == "__main__":
     file = get_post_position_calc_error(df,Driver,pos,LOCATION)
 
     error = calculate_error(file)
-    print(f"The Average Error: {error}")
+    print(f"The Average Error: {error}\n")
+
+    print(f"{df["EventName"].unique().iloc[0]} is marked as completed!")
+    mark_round_complete()
 
     print("\nScript Execution Complete!")
 
