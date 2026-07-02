@@ -26,12 +26,12 @@ OUTPUT_CSV  = "outputs/austria_2026_predict.csv"
 COMPLETED_TAB = "catalog/2026/completed.json" # Hardcoded Year for now
 ROUND_MAP = "catalog/2026/Schedule.csv"
 
-
-RACE_NAME   = "Austrian_Grand_Prix"
-ROUND       = 8
 YEAR        = 2026
 
 CATALOG_COMP = f"catalog/{YEAR}/completed.json"
+
+# Read Schedule
+R_Schedule = pd.read_csv(ROUND_MAP)
 
 
 with open(COMPLETED_TAB) as f:
@@ -49,6 +49,9 @@ ROUND_MAP_2026 = {
     "Barcelona_Grand_Prix":  7,
 }
 """
+ROUND       = ROUND_MAP_2026[max(ROUND_MAP_2026,key=ROUND_MAP_2026.get)] + 1
+RACE_NAME   = R_Schedule[R_Schedule["RoundNumber"] == ROUND]["EventName"].iloc[0]
+
 
 # ── 2 extra drivers for Austria (reserve / new entries) ─────
 # Fill in their real team once confirmed.
