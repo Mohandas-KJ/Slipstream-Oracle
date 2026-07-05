@@ -8,7 +8,7 @@ This Script is used to evaluate post Race Scenario
 # Imports
 import pandas as pd
 from pathlib import Path
-import json
+import json,fastf1
 
 # CONFIG
 COMPLETED_TAB = "catalog/2026/completed.json" # Hardcoded Year for now
@@ -18,6 +18,12 @@ DATA_DIR = Path("data/2026")
 def read_prediction(location):
     df = pd.read_csv(location)
     return df
+
+def get_latest():
+    with open(COMPLETED_TAB) as f:
+        completed = json.load(f)
+    
+    return max(completed,key=completed.get)
 
 def get_post_position_calc_error(data,drivers,pos,loc):
     
@@ -82,10 +88,37 @@ def get_post_event_data(round_no):
     """
 
     # Get the event
-    Round_name = 
+    round_sc = pd.read_csv(ROUND_MAP)
+    Round_name = round_sc[round_sc["RoundNumber"] == round_no]["EventName"].iloc[0] # We use this for Path
 
+    # Path Building
+    Target_path = DATA_DIR / Round_name
 
+    # Load F1
+    fastf1.Cache.enable_cache("cache")
+    # Load session
+    events = ["Q","R"]
+    for e in events:
+        session = fastf1.get_session(2026,str(Round_name).replace("_"," "),e)
+        session.load()
+
+        if e.__eq__("Q"):
+            Q_Results = session.results
+            Q_Results.to_csv(Target_path / "qualifying_results.csv",index=False)
+            print("Qualifying Results saved!")
+        else:
+            R_Laps = session.laps
+            R_Results = session.results
+            
+            # Export
+            R_Laps.to_csv(Target_path / "race_laps.csv",index=False)
+            print("Race Lap Results saved!")
+            R_Results.to_csv(Target_path / "race_results.csv",index=False)
+            print("Race Results Saved!")
+
+        
 if __name__ == "__main__":
+
     
     LOCATION = input("Prediction File (Relative): ")
     df = read_prediction(LOCATION)
@@ -100,6 +133,8 @@ if __name__ == "__main__":
 
     print(f"{df["EventName"].unique().iloc[0]} is marked as completed!")
     mark_round_complete()
+
+    get_post_event_data(get_latest())
 
     print("\nScript Execution Complete!")
 
