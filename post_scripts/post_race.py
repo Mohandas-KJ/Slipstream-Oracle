@@ -13,6 +13,7 @@ import json
 # CONFIG
 COMPLETED_TAB = "catalog/2026/completed.json" # Hardcoded Year for now
 ROUND_MAP = "catalog/2026/Schedule.csv"
+DATA_DIR = Path("data/2026")
 
 def read_prediction(location):
     df = pd.read_csv(location)
@@ -69,6 +70,19 @@ def mark_round_complete():
     # Write it Safely
     with open(COMPLETED_TAB,"w") as fl:
         json.dump(Completed_RM,fl,indent=4)
+
+def get_post_event_data(round_no):
+    """
+    1. This function downloads the post race data and save it to data
+    2. Get the event name with Round Number
+    3. Build Path
+    4. Load qualifying results and export
+    5. Load Race Results and export
+    6. Load Race Laps and export
+    """
+
+    # Get the event
+    Round_name = 
 
 
 if __name__ == "__main__":
