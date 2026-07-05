@@ -16,24 +16,29 @@ import pickle
 import numpy as np
 import pandas as pd
 from pathlib import Path
-from Generals import streamlib
+import Generals.streamlib as stlib
 
 # ============================================================
 # CONFIG
 # ============================================================
 
-INPUT_CSV  = "outputs/austria.csv"
+INPUT_CSV  = f"outputs/2026_{stlib.get_eventname(stlib.get_current_gp_no())}/Prediction.csv"
 OUTPUT_CSV = Path("predictions/2026")
 MODEL_PKL  = "models/random_forest.pkl"
 
-def create_dir():
+def create_output_dir():
     """
     1. Check the dir exists
     2. If not create a new one
     """
 
     # Save Path
-    Save_Path = OUTPUT_CSV / streamlib.get_eventname()
+    Save_Path = OUTPUT_CSV / stlib.get_eventname(stlib.get_current_gp_no())
+
+    if not Save_Path.exists():
+        Save_Path.mkdir(parents=True,exist_ok=True)
+    
+    return Save_Path / "Predicted.csv"
 
 # ============================================================
 # LOAD
@@ -141,8 +146,9 @@ def print_podium(result: pd.DataFrame) -> None:
 
 
 def save(result: pd.DataFrame) -> None:
-    result.to_csv(OUTPUT_CSV, index_label="PredictedPosition")
-    print(f"  ✓  Saved → {OUTPUT_CSV}")
+    SAVE_PATH = create_output_dir()
+    result.to_csv(SAVE_PATH, index_label="PredictedPosition")
+    print(f"  ✓  Saved → {SAVE_PATH}")
 
 
 # ============================================================

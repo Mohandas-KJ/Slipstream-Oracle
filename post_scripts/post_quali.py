@@ -1,8 +1,9 @@
 # Imports
 import pandas as pd
+import Generals.streamlib as stlib
 
 # Read the dataset
-df = pd.read_csv("outputs/austria_2026_predict.csv")
+df = pd.read_csv(f"outputs/2026_{stlib.get_eventname(stlib.get_current_gp_no())}/Prediction.csv")
 
 # Function to add
 def add_grid(data,drivers,position):
@@ -20,11 +21,11 @@ def add_grid(data,drivers,position):
 
     df1 = df1.sort_values(by="GridPosition",ascending=True).reset_index(drop=True)
     
-    df1.to_csv("outputs/austria.csv",index=False)
+    df1.to_csv(f"outputs/2026_{stlib.get_eventname(stlib.get_current_gp_no())}/Prediction.csv",index=False)
     print("CSV Exported Successfully!")
 
 # Example: VER RUS HAM ...
-d = input("Enter Drivers (GRID): ")
+d = input("Enter Drivers (GRID): ").split()
 pos = [i for i in range(1,len(d)+1)]
 
 add_grid(df,d,pos)
