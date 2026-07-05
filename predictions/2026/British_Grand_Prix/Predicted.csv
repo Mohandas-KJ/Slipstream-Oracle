@@ -1,23 +1,23 @@
 PredictedPosition,Year,RoundNumber,Race,Driver,Team,QualiPosition,GridPosition,AvgFinishLast3,AvgFinishLast5,AvgGridLast3,AvgGridLast5,AvgPointsLast3,AvgPointsLast5,TargetFinish,PredictedFinish
-1,2026,9,British_Grand_Prix,LEC,Ferrari,2.0,2.0,9.0,7.6,5.33,5.4,1.33,4.0,,3.38
-2,2026,9,British_Grand_Prix,HAD,Red Bull Racing,5.0,5.0,5.33,6.6,6.33,9.6,9.33,7.6,,4.89
-3,2026,9,British_Grand_Prix,HAM,Ferrari,3.0,3.0,2.67,3.2,2.67,3.8,17.67,15.8,,4.93
-4,2026,9,British_Grand_Prix,NOR,McLaren,6.0,6.0,4.0,4.4,6.0,5.0,7.0,7.8,,5.13
-5,2026,9,British_Grand_Prix,RUS,Mercedes,4.0,4.0,5.0,4.6,2.67,2.8,14.33,11.0,,5.15
-6,2026,9,British_Grand_Prix,ANT,Mercedes,1.0,1.0,6.67,4.4,2.67,2.2,13.33,18.0,,5.49
-7,2026,9,British_Grand_Prix,VER,Red Bull Racing,7.0,7.0,3.0,4.4,4.0,4.0,10.0,11.0,,5.69
-8,2026,9,British_Grand_Prix,PIA,McLaren,8.0,8.0,4.67,5.6,7.0,6.4,10.67,9.4,,7.39
-9,2026,9,British_Grand_Prix,LAW,Racing Bulls,10.0,10.0,7.67,7.8,9.0,10.0,4.67,4.0,,8.54
-10,2026,9,British_Grand_Prix,LIN,Racing Bulls,9.0,9.0,8.67,10.8,12.0,12.2,3.0,1.8,,8.84
-11,2026,9,British_Grand_Prix,GAS,Alpine,12.0,12.0,7.67,7.6,11.33,11.4,7.0,5.0,,8.93
-12,2026,9,British_Grand_Prix,SAI,Williams,15.0,15.0,12.33,12.2,15.0,14.6,0.0,0.8,,10.51
-13,2026,9,British_Grand_Prix,BOR,Audi,11.0,11.0,11.0,11.6,13.33,14.8,0.0,0.0,,10.78
-14,2026,9,British_Grand_Prix,HUL,Audi,13.0,13.0,12.33,11.8,12.0,11.4,0.0,0.0,,10.96
-15,2026,9,British_Grand_Prix,BEA,Haas F1 Team,14.0,14.0,13.67,11.4,15.67,15.0,0.0,0.2,,11.72
-16,2026,9,British_Grand_Prix,ALB,Williams,16.0,16.0,11.67,13.4,15.67,16.0,1.33,1.0,,12.76
-17,2026,9,British_Grand_Prix,OCO,Haas F1 Team,17.0,17.0,12.67,13.0,16.33,16.0,0.67,0.4,,13.16
-18,2026,9,British_Grand_Prix,COL,Alpine,19.0,19.0,13.0,10.4,14.33,12.2,0.33,3.0,,13.26
-19,2026,9,British_Grand_Prix,BOT,Cadillac,18.0,18.0,17.67,16.5,20.0,20.0,0.0,0.0,,14.05
-20,2026,9,British_Grand_Prix,PER,Cadillac,20.0,20.0,15.0,15.4,18.67,19.2,0.0,0.0,,14.15
-21,2026,9,British_Grand_Prix,STR,Aston Martin,21.0,21.0,16.0,16.0,21.67,21.0,0.0,0.0,,14.33
-22,2026,9,British_Grand_Prix,ALO,Aston Martin,22.0,22.0,14.33,15.25,21.33,20.0,0.33,0.2,,14.35
+1,2026,9,British_Grand_Prix,ANT,Mercedes,1.0,1.0,6.67,4.4,2.67,2.2,13.33,18.0,,2.72
+2,2026,9,British_Grand_Prix,RUS,Mercedes,4.0,4.0,5.0,4.6,2.67,2.8,14.33,11.0,,3.53
+3,2026,9,British_Grand_Prix,NOR,McLaren,6.0,6.0,4.0,4.4,6.0,5.0,7.0,7.8,,4.12
+4,2026,9,British_Grand_Prix,HAM,Ferrari,3.0,3.0,2.67,3.2,2.67,3.8,17.67,15.8,,4.25
+5,2026,9,British_Grand_Prix,VER,Red Bull Racing,7.0,7.0,3.0,4.4,4.0,4.0,10.0,11.0,,4.37
+6,2026,9,British_Grand_Prix,HAD,Red Bull Racing,5.0,5.0,5.33,6.6,6.33,9.6,9.33,7.6,,4.55
+7,2026,9,British_Grand_Prix,LEC,Ferrari,2.0,2.0,9.0,7.6,5.33,5.4,1.33,4.0,,5.16
+8,2026,9,British_Grand_Prix,PIA,McLaren,8.0,8.0,4.67,5.6,7.0,6.4,10.67,9.4,,6.14
+9,2026,9,British_Grand_Prix,LAW,Racing Bulls,10.0,10.0,7.67,7.8,9.0,10.0,4.67,4.0,,8.91
+10,2026,9,British_Grand_Prix,LIN,Racing Bulls,9.0,9.0,8.67,10.8,12.0,12.2,3.0,1.8,,8.92
+11,2026,9,British_Grand_Prix,SAI,Williams,15.0,15.0,12.33,12.2,15.0,14.6,0.0,0.8,,10.53
+12,2026,9,British_Grand_Prix,BOR,Audi,11.0,11.0,11.0,11.6,13.33,14.8,0.0,0.0,,11.04
+13,2026,9,British_Grand_Prix,GAS,Alpine,12.0,12.0,7.67,7.6,11.33,11.4,7.0,5.0,,11.11
+14,2026,9,British_Grand_Prix,HUL,Audi,13.0,13.0,12.33,11.8,12.0,11.4,0.0,0.0,,11.22
+15,2026,9,British_Grand_Prix,BEA,Haas F1 Team,14.0,14.0,13.67,11.4,15.67,15.0,0.0,0.2,,11.57
+16,2026,9,British_Grand_Prix,ALB,Williams,16.0,16.0,11.67,13.4,15.67,16.0,1.33,1.0,,13.5
+17,2026,9,British_Grand_Prix,COL,Alpine,19.0,19.0,13.0,10.4,14.33,12.2,0.33,3.0,,14.17
+18,2026,9,British_Grand_Prix,PER,Cadillac,20.0,20.0,15.0,15.4,18.67,19.2,0.0,0.0,,14.51
+19,2026,9,British_Grand_Prix,STR,Aston Martin,21.0,21.0,16.0,16.0,21.67,21.0,0.0,0.0,,14.75
+20,2026,9,British_Grand_Prix,OCO,Haas F1 Team,17.0,17.0,12.67,13.0,16.33,16.0,0.67,0.4,,14.79
+21,2026,9,British_Grand_Prix,BOT,Cadillac,18.0,18.0,17.67,16.5,20.0,20.0,0.0,0.0,,15.04
+22,2026,9,British_Grand_Prix,ALO,Aston Martin,22.0,22.0,14.33,15.25,21.33,20.0,0.33,0.2,,15.75
