@@ -15,14 +15,25 @@ Usage
 import pickle
 import numpy as np
 import pandas as pd
+from pathlib import Path
+from Generals import streamlib
 
 # ============================================================
 # CONFIG
 # ============================================================
 
 INPUT_CSV  = "outputs/austria.csv"
-OUTPUT_CSV = "outputs/austria_2026_predictions.csv"
+OUTPUT_CSV = Path("predictions/2026")
 MODEL_PKL  = "models/random_forest.pkl"
+
+def create_dir():
+    """
+    1. Check the dir exists
+    2. If not create a new one
+    """
+
+    # Save Path
+    Save_Path = OUTPUT_CSV / streamlib.get_eventname()
 
 # ============================================================
 # LOAD
