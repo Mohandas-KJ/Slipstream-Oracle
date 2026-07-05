@@ -16,13 +16,14 @@ Usage
 import numpy as np
 import pandas as pd
 import json
+from pathlib import Path
 
 # ============================================================
 # CONFIG
 # ============================================================
 
 V1_CSV      = "outputs/oracle_v1.csv"
-OUTPUT_CSV  = "outputs/austria_2026_predict.csv"
+OUTPUT_CSV  = Path("outputs")
 COMPLETED_TAB = "catalog/2026/completed.json" # Hardcoded Year for now
 ROUND_MAP = "catalog/2026/Schedule.csv"
 
@@ -51,6 +52,13 @@ ROUND_MAP_2026 = {
 """
 ROUND       = ROUND_MAP_2026[max(ROUND_MAP_2026,key=ROUND_MAP_2026.get)] + 1
 RACE_NAME   = R_Schedule[R_Schedule["RoundNumber"] == ROUND]["EventName"].iloc[0]
+
+Save_Path = OUTPUT_CSV / f"{YEAR}_{R_Schedule[R_Schedule['RoundNumber'] == ROUND]['EventName'].iloc[0]}"
+
+if not Save_Path.exists():
+    print("Directory not Found")
+    Save_Path.mkdir(parents=True,exist_ok=True)
+    print("Directory created!")
 
 
 # ── 2 extra drivers for Austria (reserve / new entries) ─────
@@ -139,7 +147,7 @@ def build_austria_dataset() -> pd.DataFrame:
 
     df_out = pd.DataFrame(rows)
 
-    df_out.to_csv(OUTPUT_CSV, index=False)
+    df_out.to_csv(Save_Path / "Prediction.csv", index=False)
 
     # ── print preview ────────────────────────────────────────
     print(f"\n  {'Driver':<8} {'Team':<18} {'AvgF3':>6} {'AvgF5':>6} {'AvgG3':>6} {'AvgG5':>6} {'AvgP3':>6} {'AvgP5':>6}")
@@ -155,7 +163,7 @@ def build_austria_dataset() -> pd.DataFrame:
             f" {r['AvgPointsLast5']:>6}"
         )
     print()
-    print(f"  ✓  {len(df_out)} drivers  →  {OUTPUT_CSV}")
+    print(f"  ✓  {len(df_out)} drivers  →  {Save_Path}")
     print()
     print("  Next step:")
     print("    1. Fill in QualiPosition + GridPosition once qualifying is done")
