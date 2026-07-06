@@ -23,7 +23,7 @@ def get_latest():
     with open(COMPLETED_TAB) as f:
         completed = json.load(f)
     
-    return max(completed,key=completed.get)
+    return completed[max(completed,key=completed.get)]
 
 def get_post_position_calc_error(data,drivers,pos,loc):
     
@@ -131,7 +131,7 @@ if __name__ == "__main__":
     error = calculate_error(file)
     print(f"The Average Error: {error}\n")
 
-    print(f"{df["EventName"].unique().iloc[0]} is marked as completed!")
+    print(f"{df["Race"].unique()[0]} is marked as completed!")
     mark_round_complete()
 
     get_post_event_data(get_latest())
