@@ -1,5 +1,6 @@
 import fastf1
 import pandas as pd
+from sliplog import logs
 
 fastf1.Cache.enable_cache("cache")
 
@@ -139,6 +140,7 @@ if __name__ == "__main__":
     result.to_csv("outputs/oracle_v2.csv", index=False)
     print(result.head(10).to_string())
     print(f"\nDone. Shape: {result.shape}")
+    logs.write("Generated Feature Dataset: oracle_v2.csv")
 
     
 

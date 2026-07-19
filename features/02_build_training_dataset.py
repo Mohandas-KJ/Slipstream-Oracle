@@ -1,6 +1,7 @@
 # Import
 import pandas as pd
 from pathlib import Path
+from sliplog import logs
 import numpy as np
 import fastf1
 import sys
@@ -111,6 +112,7 @@ dataframe.to_csv("outputs/oracle_v1.csv")
 print("CSV Exported Successfully!")
 dataframe.to_pickle("outputs/oracle_v1_pickle.pkl")
 print("Pickle File Generated!")
+logs.write("Generated Training dataset: Updated files oracle_v1.csv and pickle file")
 
 
 

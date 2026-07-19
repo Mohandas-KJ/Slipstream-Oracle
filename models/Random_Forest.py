@@ -14,6 +14,7 @@ All numeric columns → used as-is
 
 import pickle
 from pathlib import Path
+from sliplog import logs
 
 import numpy as np
 import pandas as pd
@@ -240,6 +241,8 @@ def main() -> None:
     save_model(model, encoders)
 
     print_summary(X_train, X_test, metrics, fi)
+    logs.write("Trained Random Forest model on new datas")
+    
 
 
 if __name__ == "__main__":

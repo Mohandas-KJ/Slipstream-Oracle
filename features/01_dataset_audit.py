@@ -1,5 +1,6 @@
 import sys,os
 from pathlib import Path
+from sliplog import logs
 
 import fastf1
 import pandas as pd
@@ -149,7 +150,9 @@ def main() -> None:
         for issue in issues:
             print(f"    {RED}•{RESET} {issue}")
         print(f"\n  {YELLOW}Tip: Re-run data_collector.py — it will skip files that are OK{RESET}")
-        print(f"  {YELLOW}     and only re-fetch the ones listed above.{RESET}")              
+        print(f"  {YELLOW}     and only re-fetch the ones listed above.{RESET}")   
+
+    logs.write("Run Data Audit")
 
     print()
     sys.exit(1 if issues else 0)
