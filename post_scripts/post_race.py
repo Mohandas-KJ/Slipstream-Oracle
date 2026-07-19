@@ -9,6 +9,7 @@ This Script is used to evaluate post Race Scenario
 import pandas as pd
 from pathlib import Path
 import json,fastf1
+from sliplog import logs
 
 # CONFIG
 COMPLETED_TAB = "catalog/2026/completed.json" # Hardcoded Year for now
@@ -137,6 +138,7 @@ if __name__ == "__main__":
     get_post_event_data(get_latest())
 
     print("\nScript Execution Complete!")
+    logs.write("Performed post race routines: Calculated Errors")
 
 
     

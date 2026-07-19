@@ -1,6 +1,7 @@
 # Imports
 import pandas as pd
 import Generals.streamlib as stlib
+from sliplog import logs
 
 # Read the dataset
 df = pd.read_csv(f"outputs/2026_{stlib.get_eventname(stlib.get_current_gp_no())}/Prediction.csv")
@@ -23,6 +24,7 @@ def add_grid(data,drivers,position):
     
     df1.to_csv(f"outputs/2026_{stlib.get_eventname(stlib.get_current_gp_no())}/Prediction.csv",index=False)
     print("CSV Exported Successfully!")
+    logs.write("Performed Postquali check and updated grid")
 
 # Example: VER RUS HAM ...
 d = input("Enter Drivers (GRID): ").split()

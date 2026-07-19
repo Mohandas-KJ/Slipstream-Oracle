@@ -17,6 +17,7 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 import Generals.streamlib as stlib
+from sliplog import logs
 
 # ============================================================
 # CONFIG
@@ -181,3 +182,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+    logs.write("Race Prediction Generated")
