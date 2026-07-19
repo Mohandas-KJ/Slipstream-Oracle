@@ -1,0 +1,6 @@
+[19-07-2026 09:10:08][10 - Belgian_Grand_Prix] - Generated Training dataset: Updated files oracle_v1.csv and pickle file
+[19-07-2026 09:11:39][10 - Belgian_Grand_Prix] - Generated Feature Dataset: oracle_v2.csv
+[19-07-2026 09:14:03][10 - Belgian_Grand_Prix] - Generated Training Dataset
+[19-07-2026 09:15:20][10 - Belgian_Grand_Prix] - Trained Random Forest model on new datas
+[19-07-2026 09:21:03][10 - Belgian_Grand_Prix] - Performed Postquali check and updated grid
+[19-07-2026 09:21:51][10 - Belgian_Grand_Prix] - Race Prediction Generated
