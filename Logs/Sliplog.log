@@ -4,3 +4,4 @@
 [19-07-2026 09:15:20][10 - Belgian_Grand_Prix] - Trained Random Forest model on new datas
 [19-07-2026 09:21:03][10 - Belgian_Grand_Prix] - Performed Postquali check and updated grid
 [19-07-2026 09:21:51][10 - Belgian_Grand_Prix] - Race Prediction Generated
+[21-07-2026 20:18:29][10 - Belgian_Grand_Prix] - Performed post race routines: Calculated Errors

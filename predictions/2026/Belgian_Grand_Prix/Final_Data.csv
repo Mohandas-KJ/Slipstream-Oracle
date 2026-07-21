@@ -1,0 +1,23 @@
+PredictedPosition,Year,RoundNumber,Race,Driver,Team,QualiPosition,GridPosition,AvgFinishLast3,AvgFinishLast5,AvgGridLast3,AvgGridLast5,AvgPointsLast3,AvgPointsLast5,TargetFinish,PredictedFinish,Error
+1,2026,10,Belgian_Grand_Prix,RUS,Mercedes,3.0,3.0,1.67,4.2,2.0,2.6,20.33,12.2,22.0,5.34,16.66
+2,2026,10,Belgian_Grand_Prix,VER,Red Bull Racing,2.0,2.0,8.67,6.8,5.67,5.0,10.0,9.0,3.0,5.41,2.41
+3,2026,10,Belgian_Grand_Prix,LEC,Ferrari,4.0,4.0,8.0,7.2,4.67,5.2,9.67,8.2,2.0,5.47,3.4699999999999998
+4,2026,10,Belgian_Grand_Prix,PIA,McLaren,6.0,6.0,6.67,7.2,7.33,6.6,7.33,6.4,5.0,6.87,1.87
+5,2026,10,Belgian_Grand_Prix,HAM,Ferrari,5.0,5.0,3.0,2.6,2.67,3.2,16.67,17.2,4.0,7.52,3.5199999999999996
+6,2026,10,Belgian_Grand_Prix,ANT,Mercedes,1.0,1.0,11.33,7.2,2.67,2.2,5.0,13.0,1.0,7.63,6.63
+7,2026,10,Belgian_Grand_Prix,LIN,Racing Bulls,7.0,7.0,8.67,9.4,10.0,10.8,3.0,3.0,9.0,7.7,1.2999999999999998
+8,2026,10,Belgian_Grand_Prix,LAW,Racing Bulls,9.0,9.0,7.67,7.2,9.0,9.8,4.67,5.6,12.0,7.99,4.01
+9,2026,10,Belgian_Grand_Prix,BOR,Audi,8.0,8.0,10.0,10.8,11.67,12.8,1.33,0.8,8.0,9.01,1.0099999999999998
+10,2026,10,Belgian_Grand_Prix,GAS,Alpine,10.0,10.0,10.0,8.2,13.33,12.6,2.33,5.2,11.0,9.24,1.7599999999999998
+11,2026,10,Belgian_Grand_Prix,HUL,Audi,12.0,12.0,12.33,11.8,11.67,11.8,0.0,0.0,13.0,10.38,2.619999999999999
+12,2026,10,Belgian_Grand_Prix,NOR,McLaren,13.0,13.0,4.67,4.2,5.33,5.4,11.0,6.6,7.0,10.53,3.5299999999999994
+13,2026,10,Belgian_Grand_Prix,HAD,Red Bull Racing,21.0,21.0,5.67,5.2,6.33,6.2,8.67,9.6,6.0,11.09,5.09
+14,2026,10,Belgian_Grand_Prix,COL,Alpine,11.0,11.0,11.33,10.8,16.0,14.4,1.0,2.2,10.0,11.36,1.3599999999999994
+15,2026,10,Belgian_Grand_Prix,BEA,Haas F1 Team,15.0,15.0,14.33,12.8,13.67,15.2,0.0,0.2,14.0,11.87,2.130000000000001
+16,2026,10,Belgian_Grand_Prix,SAI,Williams,14.0,14.0,15.0,12.6,15.67,14.8,0.0,0.4,16.0,12.89,3.1099999999999994
+17,2026,10,Belgian_Grand_Prix,PER,Cadillac,19.0,19.0,14.33,15.2,19.33,19.2,0.0,0.0,21.0,14.72,6.279999999999999
+18,2026,10,Belgian_Grand_Prix,OCO,Haas F1 Team,17.0,17.0,14.0,13.0,16.33,16.6,0.0,0.4,17.0,14.81,2.1899999999999995
+19,2026,10,Belgian_Grand_Prix,STR,Aston Martin,20.0,20.0,17.0,17.0,21.67,21.8,0.0,0.0,20.0,14.82,5.18
+20,2026,10,Belgian_Grand_Prix,ALB,Williams,16.0,16.0,11.67,13.4,17.33,16.2,0.0,0.8,15.0,14.89,0.10999999999999943
+21,2026,10,Belgian_Grand_Prix,BOT,Cadillac,18.0,18.0,16.67,16.4,19.33,19.8,0.0,0.0,18.0,15.45,2.5500000000000007
+22,2026,10,Belgian_Grand_Prix,ALO,Aston Martin,22.0,22.0,15.33,15.8,21.33,20.8,0.0,0.2,19.0,15.86,3.1400000000000006

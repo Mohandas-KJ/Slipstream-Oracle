@@ -131,6 +131,7 @@ if __name__ == "__main__":
 
     error = calculate_error(file)
     print(f"The Average Error: {error}\n")
+    logs.write("Performed post race routines: Calculated Errors")
 
     print(f"{df["Race"].unique()[0]} is marked as completed!")
     mark_round_complete()
@@ -138,7 +139,3 @@ if __name__ == "__main__":
     get_post_event_data(get_latest())
 
     print("\nScript Execution Complete!")
-    logs.write("Performed post race routines: Calculated Errors")
-
-
-    
