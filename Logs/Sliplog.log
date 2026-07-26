@@ -5,3 +5,10 @@
 [19-07-2026 09:21:03][10 - Belgian_Grand_Prix] - Performed Postquali check and updated grid
 [19-07-2026 09:21:51][10 - Belgian_Grand_Prix] - Race Prediction Generated
 [21-07-2026 20:18:29][10 - Belgian_Grand_Prix] - Performed post race routines: Calculated Errors
+
+[26-07-2026 18:05:14][11 - Hungarian_Grand_Prix] - Generated Training dataset: Updated files oracle_v1.csv and pickle file
+[26-07-2026 18:05:15][11 - Hungarian_Grand_Prix] - Generated Feature Dataset: oracle_v2.csv
+[26-07-2026 18:05:16][11 - Hungarian_Grand_Prix] - Generated Training Dataset
+[26-07-2026 18:05:29][11 - Hungarian_Grand_Prix] - Trained Random Forest model on new datas
+[26-07-2026 18:10:00][11 - Hungarian_Grand_Prix] - Performed Postquali check and updated grid
+[26-07-2026 18:10:02][11 - Hungarian_Grand_Prix] - Race Prediction Generated

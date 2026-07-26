@@ -82,10 +82,24 @@ def main():
         print("\nValidation Successful!\n")
 
     if display_event():
-        print("\nModel Ready to Run....")
+        print("\nModel Ready to Run....\n")
 
         subprocess.run([sys.executable, features / "02_build_training_dataset.py"],check=True)
-        subprocess.run([sys.executable, features / "03_build_feature.py"],check=True)
+        print()
+        subprocess.run([sys.executable, features / "03_building_feature.py"],check=True)
+        print()
+        subprocess.run([sys.executable, features / "04_build_prediction_feature.py"],check=True)
+
+        print("\nRunning Model Training.....\n")
+
+        subprocess.run([sys.executable, models / "Random_Forest.py"],check=True)
+
+        print("\nRunning Post Quali scenario....")
+
+        if input("Grid Data available? [y/n]").lower() == "y":
+            subprocess.run([sys.executable, post_scripts / "post_quali.py"],check=True)
+            print("\nLoading Prediction Model!\n")
+            subprocess.run([sys.executable, predictions / "race_predictor.py"],check=True)
         
     else:
         print("You are entering Evaluation phase")
