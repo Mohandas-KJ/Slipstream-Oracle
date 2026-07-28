@@ -9,6 +9,7 @@ This Script is used to evaluate post Race Scenario
 import pandas as pd
 from pathlib import Path
 import json,fastf1
+from Generals import streamlib
 from sliplog import logs
 
 # CONFIG
@@ -26,18 +27,18 @@ def get_latest():
     
     return completed[max(completed,key=completed.get)]
 
-def get_post_position_calc_error(data,drivers,pos,loc):
-    
-    temp_df = pd.DataFrame({"Driver": drivers,
-                            "Position": pos})
+def get_post_position_calc_error(pos_df,data,loc):
     
     df1 = data.copy()
     
-    for d in temp_df["Driver"]:
-        pos = temp_df.loc[temp_df["Driver"] == d, "Position"].iloc[0]
+    for d in pos_df["Driver"]:
+        pos = pos_df.loc[pos_df["Driver"] == d, "Position"].iloc[0]
 
         df1.loc[df1["Driver"] == d, "TargetFinish"] = pos
-    
+
+    df1["RaceStatus"] = df1["TargetFinish"]
+
+    df1["TargetFinish"] = pd.to_numeric(df1["TargetFinish"],errors="coerce")
     df1["Error"] = abs(df1["TargetFinish"] - df1["PredictedFinish"])
 
     dir_save = Path(loc).parent
