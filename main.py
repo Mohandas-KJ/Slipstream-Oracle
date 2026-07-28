@@ -70,7 +70,7 @@ def display_event() -> bool:
     eve_no = streamlib.get_current_gp_no()
     print(f"CURRENT EVENT DETAILS:\nRound Number: {eve_no}\nRound Name: {streamlib.get_eventname(eve_no)}\n")
 
-    if input("Want to Proceed to the SO Prediction Phase? [y/n]: ").lower() == "y":
+    if input("Want to Proceed to next Phase? [y/n]: ").lower() == "y":
         return True
 
     return False
@@ -95,6 +95,27 @@ def run_training_prediction():
         print("\nLoading Prediction Model!\n")
         subprocess.run([sys.executable, predictions / "race_predictor.py"],check=True)
 
+def run_validation():
+    print("\nRunning Validation Phase.....\n")
+    subprocess.run([sys.executable, post_scripts / "post_race.py"],check=True)
+    print()
+    print("Validation Completed!")
+
+def choice_chooser():
+    print("Choose One:\n1. Slipstream Prediction\n2. Slipstream Validation (post-race)")
+
+    usr = int(input("$ "))
+
+    if usr == 1:
+        print("\nPrediction Phase Selected")
+        return 1
+    elif usr == 2:
+        print("\nValidation Phase Selected")
+        return 2
+    else:
+        print("Invalid Option!")
+        exit(-1)
+
 def main():
     banner()
 
@@ -102,9 +123,12 @@ def main():
         print("\nValidation Successful!\n")
 
     if display_event():
-        run_training_prediction()
+        if choice_chooser() == 1:
+            run_training_prediction()
+        else:
+            run_validation()
     else:
-        print("You are entering Evaluation phase")
+        print("Operation Cancelled by user.....\nShutdown Complete!")
 
 if __name__ == "__main__":
     main()

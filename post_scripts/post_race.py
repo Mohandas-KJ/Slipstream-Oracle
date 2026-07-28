@@ -27,6 +27,17 @@ def get_latest():
     
     return completed[max(completed,key=completed.get)]
 
+def get_race_result(round_no):
+
+    fastf1.Cache.enable_cache("cache")
+
+    session = fastf1.get_session(2026,streamlib.get_eventname(round_no),"R")
+    session.load()
+
+    return session.results[["Abbreviation", "ClassifiedPosition"]].rename(
+    columns={"Abbreviation": "Driver", "ClassifiedPosition": "Position"}
+    ).reset_index(drop=True)
+
 def get_post_position_calc_error(pos_df,data,loc):
     
     df1 = data.copy()
@@ -126,9 +137,8 @@ if __name__ == "__main__":
     df = read_prediction(LOCATION)
     print("Prediction File Loaded!\n")
 
-    Driver = input("Enter Drivers (Rank): ").split()
-    pos = [i for i in range(1,len(Driver)+1)]
-    file = get_post_position_calc_error(df,Driver,pos,LOCATION)
+    print("Loading Race data....")
+    file = get_post_position_calc_error(get_race_result(streamlib.get_current_gp_no()),df,LOCATION)
 
     error = calculate_error(file)
     print(f"The Average Error: {error}\n")
