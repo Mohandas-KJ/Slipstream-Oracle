@@ -102,7 +102,7 @@ def run_validation():
     print("Validation Completed!")
 
 def choice_chooser():
-    print("Choose One:\n1. Slipstream Prediction\n2. Slipstream Validation (post-race)")
+    print("\nChoose One:\n1. Slipstream Prediction\n2. Slipstream Validation (post-race)\n")
 
     usr = int(input("$ "))
 
