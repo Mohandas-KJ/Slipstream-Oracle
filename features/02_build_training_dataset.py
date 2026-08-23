@@ -36,9 +36,11 @@ def get_event_list(year):
         include_testing=False
     )
 
+    event["Session5DateUtc"] = pd.to_datetime(event["Session5DateUtc"],utc=True)
+
     # Keep only completed events
     event = event[
-        event["EventDate"] < pd.Timestamp.now()
+        event["Session5DateUtc"] < pd.Timestamp.now(tz="UTC")
     ]
 
     fin_list = (

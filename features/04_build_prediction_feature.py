@@ -13,6 +13,7 @@ Usage
     python build_austria_dataset.py
 """
 
+import os  # spl-cl: needed to read SLIP_DRIVER_CHANGES env var from main.py
 import numpy as np
 import pandas as pd
 import json
@@ -66,8 +67,8 @@ if not Save_Path.exists():
 # Fill in their real team once confirmed.
 # QualiPosition / GridPosition will be filled before prediction.
 EXTRA_DRIVERS = [
-    # {"Driver": "XXX", "Team": "Some Team"},
-    # {"Driver": "YYY", "Team": "Some Team"},
+    {"Driver": "LAW", "Team": "Red Bull Racing"},
+    {"Driver": "TSU", "Team": "Racing Bulls"},
 ]
 
 # ============================================================
@@ -80,6 +81,81 @@ def rolling_avgs(series: pd.Series, n: int) -> float:
     if vals.empty:
         return np.nan
     return round(vals.tail(n).mean(), 2)
+
+
+# spl-cl: handle_driver_changes — processes runtime lineup changes passed via env var
+# spl-cl: reads full oracle_v1 for career history so reserve drivers get real avgs not NaN
+def handle_driver_changes(df_all: pd.DataFrame, rows: list, changes: dict) -> list:
+    """
+    Apply driver lineup changes to the rows list in-place.
+
+    Args:
+        df_all   : full oracle_v1 dataframe (all years) for career history lookup
+        rows     : list of row dicts already built for base drivers
+        changes  : {"add": [{"Driver":..,"Team":..}], "remove": ["CODE",..]}
+
+    Returns:
+        Updated rows list with removals applied and additions appended.
+    """
+
+    # spl-cl: REMOVE — drop rows for absent/replaced drivers
+    remove_set = set(changes.get("remove", []))
+    if remove_set:
+        before = len(rows)
+        rows = [r for r in rows if r["Driver"] not in remove_set]
+        print(f"  ✗  Removed {before - len(rows)} driver(s): {remove_set}")
+
+    # spl-cl: ADD — build proper feature rows for incoming drivers using career history
+    for entry in changes.get("add", []):
+        code = entry["Driver"]
+        team = entry["Team"]
+
+        # spl-cl: check if driver already exists in rows (duplicate guard)
+        if any(r["Driver"] == code for r in rows):
+            # spl-cl: driver already present (e.g. LAW in 2026 base) — just update team
+            for r in rows:
+                if r["Driver"] == code:
+                    r["Team"] = team
+                    print(f"  ↻  {code} already in lineup — team updated to '{team}'")
+            continue
+
+        # spl-cl: search career history across ALL years in oracle_v1
+        career = df_all[df_all["Driver"] == code].copy()
+
+        if career.empty:
+            print(f"  ⚠  {code}: no career history found in oracle_v1 — avgs will be NaN")
+            avg_f3 = avg_f5 = avg_g3 = avg_g5 = avg_p3 = avg_p5 = np.nan
+        else:
+            # spl-cl: sort by year so tail() gives most recent N races correctly
+            career = career.sort_values(["Year"]).reset_index(drop=True)
+            avg_f3 = rolling_avgs(career["TargetFinish"], 3)
+            avg_f5 = rolling_avgs(career["TargetFinish"], 5)
+            avg_g3 = rolling_avgs(career["GridPosition"],  3)
+            avg_g5 = rolling_avgs(career["GridPosition"],  5)
+            avg_p3 = rolling_avgs(career["Points"],        3)
+            avg_p5 = rolling_avgs(career["Points"],        5)
+            print(f"  ★  {code}: history found ({len(career)} rows across {sorted(career['Year'].unique())})")
+            print(f"       AvgF3={avg_f3}  AvgF5={avg_f5}  AvgG3={avg_g3}  AvgG5={avg_g5}")
+
+        rows.append({
+            "Year":           YEAR,
+            "RoundNumber":    ROUND,
+            "Race":           RACE_NAME,
+            "Driver":         code,
+            "Team":           team,
+            "QualiPosition":  np.nan,
+            "GridPosition":   np.nan,
+            "AvgFinishLast3": avg_f3,
+            "AvgFinishLast5": avg_f5,
+            "AvgGridLast3":   avg_g3,
+            "AvgGridLast5":   avg_g5,
+            "AvgPointsLast3": avg_p3,
+            "AvgPointsLast5": avg_p5,
+            "TargetFinish":   np.nan,
+        })
+
+    return rows
+# spl-cl: end handle_driver_changes
 
 # ============================================================
 # BUILD
@@ -126,25 +202,24 @@ def build_austria_dataset() -> pd.DataFrame:
             "TargetFinish":    np.nan,
         })
 
-    # ── extra / reserve drivers ─────────────────────────────
-    for extra in EXTRA_DRIVERS:
-        rows.append({
-            "Year":            YEAR,
-            "RoundNumber":     ROUND,
-            "Race":            RACE_NAME,
-            "Driver":          extra["Driver"],
-            "Team":            extra["Team"],
-            "QualiPosition":   np.nan,
-            "GridPosition":    np.nan,
-            # No history → all NaN; model will use NaN (fill or impute before predict)
-            "AvgFinishLast3":  np.nan,
-            "AvgFinishLast5":  np.nan,
-            "AvgGridLast3":    np.nan,
-            "AvgGridLast5":    np.nan,
-            "AvgPointsLast3":  np.nan,
-            "AvgPointsLast5":  np.nan,
-            "TargetFinish":    np.nan,
-        })
+    # ── extra / reserve drivers (static list defined at top) ─
+    # spl-cl: EXTRA_DRIVERS handled via handle_driver_changes below — keeping block for
+    # spl-cl: backward compat when script is run standalone without main.py env injection
+    static_changes = {"add": EXTRA_DRIVERS, "remove": []}
+    rows = handle_driver_changes(df, rows, static_changes)
+
+    # spl-cl: runtime driver changes — injected by main.py via SLIP_DRIVER_CHANGES env var
+    # spl-cl: overrides/extends the static EXTRA_DRIVERS list above
+    _env_changes = os.environ.get("SLIP_DRIVER_CHANGES")
+    if _env_changes:
+        try:
+            runtime_changes = json.loads(_env_changes)
+            if runtime_changes.get("add") or runtime_changes.get("remove"):
+                print("\n  Applying runtime driver changes from main.py...")
+                rows = handle_driver_changes(df, rows, runtime_changes)
+        except json.JSONDecodeError:
+            print("  ⚠  Could not parse SLIP_DRIVER_CHANGES env var — skipping runtime changes")
+    # spl-cl: end runtime driver changes block
 
     df_out = pd.DataFrame(rows)
 

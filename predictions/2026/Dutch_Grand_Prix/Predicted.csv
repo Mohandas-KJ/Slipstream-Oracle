@@ -1,0 +1,23 @@
+PredictedPosition,Year,RoundNumber,Race,Driver,Team,QualiPosition,GridPosition,AvgFinishLast3,AvgFinishLast5,AvgGridLast3,AvgGridLast5,AvgPointsLast3,AvgPointsLast5,TargetFinish,PredictedFinish
+1,2026,12,Dutch_Grand_Prix,NOR,McLaren,1.0,1.0,4.0,4.4,6.67,6.0,14.33,12.8,,2.17
+2,2026,12,Dutch_Grand_Prix,RUS,Mercedes,2.0,2.0,3.33,4.8,4.33,3.0,8.0,13.4,,2.76
+3,2026,12,Dutch_Grand_Prix,ANT,Mercedes,3.0,3.0,6.33,7.6,3.0,3.2,13.33,11.0,,3.51
+4,2026,12,Dutch_Grand_Prix,HAM,Ferrari,5.0,5.0,4.0,3.6,4.33,3.6,12.33,14.4,,3.93
+5,2026,12,Dutch_Grand_Prix,PIA,McLaren,4.0,4.0,6.67,6.0,5.67,6.2,3.33,6.4,,4.19
+6,2026,12,Dutch_Grand_Prix,LEC,Ferrari,6.0,6.0,2.33,6.0,2.67,4.0,18.33,11.8,,6.57
+7,2026,12,Dutch_Grand_Prix,LAW,Red Bull Racing,8.0,8.0,8.67,8.6,10.0,9.4,4.0,3.6,,7.81
+8,2026,12,Dutch_Grand_Prix,LIN,Racing Bulls,10.0,10.0,8.67,9.0,8.33,9.2,3.0,2.4,,8.92
+9,2026,12,Dutch_Grand_Prix,BOR,Audi,9.0,9.0,9.0,9.8,11.0,11.4,2.67,1.6,,9.06
+10,2026,12,Dutch_Grand_Prix,VER,Red Bull Racing,7.0,7.0,8.33,6.2,4.33,4.6,11.0,12.6,,9.12
+11,2026,12,Dutch_Grand_Prix,TSU,Racing Bulls,12.0,12.0,12.0,12.8,15.0,14.4,0.33,0.2,,10.6
+12,2026,12,Dutch_Grand_Prix,GAS,Alpine,11.0,11.0,11.0,10.6,12.33,12.4,0.33,1.4,,10.72
+13,2026,12,Dutch_Grand_Prix,HUL,Audi,13.0,13.0,11.33,11.8,11.33,11.4,0.67,0.4,,12.03
+14,2026,12,Dutch_Grand_Prix,COL,Alpine,14.0,14.0,11.33,11.8,14.33,14.4,1.0,0.8,,12.22
+15,2026,12,Dutch_Grand_Prix,STR,Aston Martin,19.0,19.0,15.67,16.0,20.67,21.0,0.0,0.0,,14.72
+16,2026,12,Dutch_Grand_Prix,ALB,Williams,16.0,16.0,16.33,13.4,16.67,17.2,0.0,0.0,,14.78
+17,2026,12,Dutch_Grand_Prix,OCO,Haas F1 Team,15.0,15.0,15.33,15.0,16.0,16.0,0.0,0.0,,15.12
+18,2026,12,Dutch_Grand_Prix,SAI,Williams,17.0,17.0,17.0,15.8,17.0,16.8,0.0,0.0,,15.37
+19,2026,12,Dutch_Grand_Prix,PER,Cadillac,22.0,22.0,14.33,15.2,20.0,19.6,0.0,0.0,,15.49
+20,2026,12,Dutch_Grand_Prix,BOT,Cadillac,21.0,21.0,16.67,17.4,18.67,19.2,0.0,0.0,,15.68
+21,2026,12,Dutch_Grand_Prix,ALO,Aston Martin,18.0,18.0,17.0,15.8,19.67,20.4,0.0,0.0,,15.78
+22,2026,12,Dutch_Grand_Prix,BEA,Haas F1 Team,20.0,20.0,15.0,15.2,14.67,14.4,0.0,0.0,,16.87

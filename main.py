@@ -75,9 +75,61 @@ def display_event() -> bool:
 
     return False
 
+# spl-cl: collect_driver_changes — interactive prompt for lineup changes before dataset build
+def collect_driver_changes() -> dict:
+    """
+    Ask the user if there are any driver lineup changes for this GP.
+    Returns a dict:
+        {
+            "add":    [{"Driver": "TSU", "Team": "Racing Bulls"}, ...],
+            "remove": ["HAD", ...]
+        }
+    If no changes, returns {"add": [], "remove": []}.
+    """
+    changes = {"add": [], "remove": []}
+
+    print("\n── Driver Lineup Changes ─────────────────────────────")
+    # spl-cl: ask once upfront — skip entire block if no changes
+    if input("Any driver changes for this GP? [y/n]: ").strip().lower() != "y":
+        print("  No changes. Continuing with default lineup.\n")
+        return changes
+
+    # spl-cl: collect drivers to REMOVE (injured / absent / replaced)
+    print("\nDrivers to REMOVE from this GP (e.g. HAD, BEA)")
+    print("Enter codes one per line. Empty line to finish:")
+    while True:
+        code = input("  Remove > ").strip().upper()
+        if not code:
+            break
+        changes["remove"].append(code)
+        print(f"  ✗  {code} marked for removal")
+
+    # spl-cl: collect drivers to ADD (reserve / replacement entries)
+    print("\nDrivers to ADD for this GP (reserve / replacement)")
+    print("Enter code and team. Empty driver code to finish:")
+    while True:
+        code = input("  Driver code > ").strip().upper()
+        if not code:
+            break
+        team = input(f"  Team for {code} > ").strip()
+        changes["add"].append({"Driver": code, "Team": team})
+        print(f"  ★  {code} ({team}) marked for addition")
+
+    # spl-cl: confirm summary before proceeding
+    print(f"\n  Summary → Remove: {changes['remove']}  |  Add: {[d['Driver'] for d in changes['add']]}")
+    return changes
+# spl-cl: end collect_driver_changes
+
+
 def run_training_prediction():
     print("\nModel Ready to Run....\n")
-    
+
+    # spl-cl: collect lineup changes here — passed via env to 04_build_prediction_feature.py
+    import json, os
+    driver_changes = collect_driver_changes()
+    # spl-cl: serialize changes to env var so subprocess can read without a temp file
+    os.environ["SLIP_DRIVER_CHANGES"] = json.dumps(driver_changes)
+
     subprocess.run([sys.executable, features / "02_build_training_dataset.py"],check=True)
     print()
     subprocess.run([sys.executable, features / "03_building_feature.py"],check=True)
