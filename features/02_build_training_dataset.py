@@ -114,7 +114,7 @@ dataframe.to_csv("outputs/oracle_v1.csv")
 print("CSV Exported Successfully!")
 dataframe.to_pickle("outputs/oracle_v1_pickle.pkl")
 print("Pickle File Generated!")
-logs.write("Generated Training dataset: Updated files oracle_v1.csv and pickle file")
+logs.write("\nGenerated Training dataset: Updated files oracle_v1.csv and pickle file")
 
 
 
