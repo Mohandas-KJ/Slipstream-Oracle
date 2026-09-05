@@ -49,7 +49,7 @@ FEATURES = [
     "AvgGridLast5",
     "AvgPointsLast3",
     "AvgPointsLast5",
-    "PositionsGainedLastRace"
+    "PositionsGainedLastRace",
     "FinishStdLast5"
 ]
 

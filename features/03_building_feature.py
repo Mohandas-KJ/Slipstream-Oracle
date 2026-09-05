@@ -27,6 +27,7 @@ def add_round_number(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 import pandas as pd
+import numpy as np
 
 
 def extract_feature_35(year: int, df_all: pd.DataFrame) -> pd.DataFrame:

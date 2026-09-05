@@ -82,6 +82,26 @@ def rolling_avgs(series: pd.Series, n: int) -> float:
         return np.nan
     return round(vals.tail(n).mean(), 2)
 
+def rolling_std(series: pd.Series, n: int) -> float:
+    vals = pd.to_numeric(series, errors="coerce").dropna()
+    if vals.empty:
+        return 0
+    return round(vals.tail(n).std(), 2)
+
+def poslast(df: pd.DataFrame) -> float:
+
+    last = df.tail(1)
+    
+    if last.empty:
+        return 0
+
+    grid = pd.to_numeric(last["GridPosition"].iloc[0],errors="coerce")
+    finish = pd.to_numeric(last["TargetFinish"].iloc[0],errors="coerce")
+
+    if pd.isna(grid) or pd.isna(finish):
+        return 0
+
+    return round(grid - finish,2)
 
 # spl-cl: handle_driver_changes — processes runtime lineup changes passed via env var
 # spl-cl: reads full oracle_v1 for career history so reserve drivers get real avgs not NaN
@@ -124,7 +144,7 @@ def handle_driver_changes(df_all: pd.DataFrame, rows: list, changes: dict) -> li
 
         if career.empty:
             print(f"  ⚠  {code}: no career history found in oracle_v1 — avgs will be NaN")
-            avg_f3 = avg_f5 = avg_g3 = avg_g5 = avg_p3 = avg_p5 = np.nan
+            avg_f3 = avg_f5 = avg_g3 = avg_g5 = avg_p3 = avg_p5 = std_f5 = pos_gained = np.nan
         else:
             # spl-cl: sort by year so tail() gives most recent N races correctly
             career = career.sort_values(["Year"]).reset_index(drop=True)
@@ -134,6 +154,8 @@ def handle_driver_changes(df_all: pd.DataFrame, rows: list, changes: dict) -> li
             avg_g5 = rolling_avgs(career["GridPosition"],  5)
             avg_p3 = rolling_avgs(career["Points"],        3)
             avg_p5 = rolling_avgs(career["Points"],        5)
+            std_f5 = rolling_std(career["TargetFinish"], 5)
+            pos_gained = poslast(career)
             print(f"  ★  {code}: history found ({len(career)} rows across {sorted(career['Year'].unique())})")
             print(f"       AvgF3={avg_f3}  AvgF5={avg_f5}  AvgG3={avg_g3}  AvgG5={avg_g5}")
 
@@ -151,6 +173,8 @@ def handle_driver_changes(df_all: pd.DataFrame, rows: list, changes: dict) -> li
             "AvgGridLast5":   avg_g5,
             "AvgPointsLast3": avg_p3,
             "AvgPointsLast5": avg_p5,
+            "PositionsGainedLastRace":  pos_gained,
+            "FinishStdLast5": std_f5,
             "TargetFinish":   np.nan,
         })
 
@@ -198,6 +222,8 @@ def build_austria_dataset() -> pd.DataFrame:
             "AvgGridLast5":    rolling_avgs(dr["GridPosition"],  5),
             "AvgPointsLast3":  rolling_avgs(dr["Points"],        3),
             "AvgPointsLast5":  rolling_avgs(dr["Points"],        5),
+            "PositionsGainedLastRace":  poslast(dr),
+            "FinishStdLast5": rolling_std(dr["TargetFinish"],5),
             # Target is unknown — model will predict this
             "TargetFinish":    np.nan,
         })
