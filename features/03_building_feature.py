@@ -104,8 +104,20 @@ def extract_feature_35(year: int, df_all: pd.DataFrame) -> pd.DataFrame:
             # last N rows  (already sorted oldest→newest, so tail gives most recent N)
             last3 = dr_history.tail(3)
             last5 = dr_history.tail(5)
+            last = dr_history.tail(1)
 
             def avg(series): return round(series.mean(), 2) if len(series) else float("nan")
+
+            if last.empty:
+                positions_gained = np.nan
+            else:
+                grid = last["GridPosition_num"].iloc[0]
+                finish = last["TargetFinish_num"].iloc[0]
+                            
+                if pd.isna(grid) or pd.isna(finish):
+                    positions_gained = np.nan
+                else:
+                    positions_gained = round(grid - finish, 2)
 
             rows.append({
                 "Year":            year,
@@ -121,6 +133,8 @@ def extract_feature_35(year: int, df_all: pd.DataFrame) -> pd.DataFrame:
                 "AvgGridLast5":    avg(last5["GridPosition_num"]),
                 "AvgPointsLast3":  avg(last3["Points_num"]),
                 "AvgPointsLast5":  avg(last5["Points_num"]),
+                "PositionsGainedLastRace":  positions_gained,
+                "FinishStdLast5": round(np.std(last5["TargetFinish_num"]), 2),
                 "TargetFinish":    cur["TargetFinish"].iloc[0],
             })
 
