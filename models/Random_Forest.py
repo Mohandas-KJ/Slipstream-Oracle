@@ -49,6 +49,8 @@ FEATURES = [
     "AvgGridLast5",
     "AvgPointsLast3",
     "AvgPointsLast5",
+    "PositionsGainedLastRace"
+    "FinishStdLast5"
 ]
 
 TARGET       = "TargetFinish"
