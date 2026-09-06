@@ -90,31 +90,53 @@ def extract_feature_35(year: int, df_all: pd.DataFrame) -> pd.DataFrame:
                 (df_all["Driver"] == d)
             ].sort_values(["Year", "Round"])
 
-            # how many more do we need to fill a window of 5?
-            need = 5 - len(dr_this)
+            # spl-cl: Fix Bug1&2 — split history into two streams from the start.
+            # spl-cl: FULL history (all rows incl. DNF/W) → used for grid, points, row count.
+            # spl-cl: CLEAN finish history (NaN rows dropped) → used for finish averages/std.
+            # spl-cl: The old code used a single dr_history for everything. When a DNF row
+            # spl-cl: (e.g. NOR Las Vegas 2025 = D, NOR China 2026 = W) sat in tail(5),
+            # spl-cl: it occupied a slot, pushed out a valid earlier race, then .mean()
+            # spl-cl: silently skipped the NaN — averaging fewer races than intended.
+            # spl-cl: need must also be computed on CLEAN history so the prev-year fill
+            # spl-cl: tops up to 5 real finishes, not 5 rows (some of which may be NaN).
 
-            if need > 0:
-                # pull from previous years, most recent first
-                dr_prev = history_prev[history_prev["Driver"] == d] \
-                    .sort_values(["Year", "Round"]) \
-                    .tail(need)
-                dr_history = pd.concat([dr_prev, dr_this], ignore_index=True)
+            dr_this_fin  = dr_this.dropna(subset=["TargetFinish_num"])   # spl-cl: clean current-year slice
+            need_full    = 5 - len(dr_this)                              # spl-cl: for grid/points (all rows)
+            need_fin     = 5 - len(dr_this_fin)                         # spl-cl: for finish avgs (valid finishes only)
+
+            dr_prev_all = history_prev[history_prev["Driver"] == d].sort_values(["Year", "Round"])
+
+            if need_full > 0:
+                dr_history = pd.concat([dr_prev_all.tail(need_full), dr_this], ignore_index=True)
             else:
                 dr_history = dr_this
 
-            # last N rows  (already sorted oldest→newest, so tail gives most recent N)
-            last3 = dr_history.tail(3)
-            last5 = dr_history.tail(5)
-            last = dr_history.tail(1)
+            if need_fin > 0:  # spl-cl: fill finish window separately using only valid prev finishes
+                dr_prev_fin = dr_prev_all.dropna(subset=["TargetFinish_num"])
+                dr_history_fin = pd.concat([dr_prev_fin.tail(need_fin), dr_this_fin], ignore_index=True)
+            else:
+                dr_history_fin = dr_this_fin
+
+            # last N rows — sorted oldest→newest so tail() gives most recent N
+            last3 = dr_history_fin.tail(3)   # spl-cl: finish avgs: clean history
+            last5 = dr_history_fin.tail(5)   # spl-cl: finish avgs: clean history
+            last3_full = dr_history.tail(3)  # spl-cl: grid/points: full history
+            last5_full = dr_history.tail(5)  # spl-cl: grid/points: full history
+            last = dr_history.tail(1)        # spl-cl: kept for reference; PositionsGained uses last_valid below
 
             def avg(series): return round(series.mean(), 2) if len(series) else float("nan")
 
-            if last.empty:
+            # spl-cl: Fix Bug3 — use last row from clean finish history (dr_history_fin)
+            # spl-cl: instead of dr_history.tail(1). If tail(1) lands on a DNF/W row,
+            # spl-cl: finish=NaN → positions_gained=NaN even though the prev valid race exists.
+            # spl-cl: Example: NOR R3 Japan — R2 was W, tail(1) gave NaN finish → wrong NaN.
+            # spl-cl: Fix: look at the last race where the driver actually had a finish.
+            last_valid = dr_history_fin.tail(1)  # spl-cl: last race with a real finish
+            if last_valid.empty:
                 positions_gained = np.nan
             else:
-                grid = last["GridPosition_num"].iloc[0]
-                finish = last["TargetFinish_num"].iloc[0]
-                            
+                grid   = last_valid["GridPosition_num"].iloc[0]
+                finish = last_valid["TargetFinish_num"].iloc[0]
                 if pd.isna(grid) or pd.isna(finish):
                     positions_gained = np.nan
                 else:
@@ -128,14 +150,14 @@ def extract_feature_35(year: int, df_all: pd.DataFrame) -> pd.DataFrame:
                 "Team":            cur["Team"].iloc[0],
                 "QualiPosition":   cur["QualiPosition"].iloc[0],
                 "GridPosition":    cur["GridPosition"].iloc[0],
-                "AvgFinishLast3":  avg(last3["TargetFinish_num"]),
-                "AvgFinishLast5":  avg(last5["TargetFinish_num"]),
-                "AvgGridLast3":    avg(last3["GridPosition_num"]),
-                "AvgGridLast5":    avg(last5["GridPosition_num"]),
-                "AvgPointsLast3":  avg(last3["Points_num"]),
-                "AvgPointsLast5":  avg(last5["Points_num"]),
+                "AvgFinishLast3":  avg(last3["TargetFinish_num"]),          # spl-cl: clean finish window
+                "AvgFinishLast5":  avg(last5["TargetFinish_num"]),          # spl-cl: clean finish window
+                "AvgGridLast3":    avg(last3_full["GridPosition_num"]),     # spl-cl: full history (grid unaffected by DNF)
+                "AvgGridLast5":    avg(last5_full["GridPosition_num"]),     # spl-cl: full history
+                "AvgPointsLast3":  avg(last3_full["Points_num"]),           # spl-cl: full history
+                "AvgPointsLast5":  avg(last5_full["Points_num"]),           # spl-cl: full history
                 "PositionsGainedLastRace":  positions_gained,
-                "FinishStdLast5": round(np.std(last5["TargetFinish_num"]), 2),
+                "FinishStdLast5": round(np.std(last5["TargetFinish_num"]), 2),  # spl-cl: clean finish window
                 "TargetFinish":    cur["TargetFinish"].iloc[0],
             })
 
@@ -156,6 +178,3 @@ if __name__ == "__main__":
     print(result.head(10).to_string())
     print(f"\nDone. Shape: {result.shape}")
     logs.write("Generated Feature Dataset: oracle_v2.csv")
-
-    
-

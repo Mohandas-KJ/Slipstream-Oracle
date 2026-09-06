@@ -86,22 +86,33 @@ def rolling_std(series: pd.Series, n: int) -> float:
     vals = pd.to_numeric(series, errors="coerce").dropna()
     if vals.empty:
         return 0
-    return round(vals.tail(n).std(), 2)
+    if len(vals) < 2:
+        return 0
+    # spl-cl: Fix — use np.std (ddof=0, population std) not pandas .std() which defaults
+    # spl-cl: to ddof=1 (sample std). Must match 03_building_feature.py which uses np.std.
+    # spl-cl: Example: NOR last5 valid finishes=[5,5,2,3] → ddof=1 gives 1.5, ddof=0 gives 1.3.
+    return round(float(np.std(vals.tail(n))), 2)  # spl-cl: was vals.tail(n).std() → ddof=1 wrong
 
 def poslast(df: pd.DataFrame) -> float:
+    # spl-cl: Fix — drop NaN finish rows before tail(1) so a DNF/R/W as the last race
+    # spl-cl: doesn't cause a silent return of 0. Use the last race the driver FINISHED.
+    # spl-cl: Example: ALO's R7 Barcelona=R (DNF). Old code: tail(1) hits R→NaN→returns 0.
+    # spl-cl: Correct: last valid finish was R6 Monaco (grid=21, finish=10) → +11 positions.
+    # spl-cl: Affected drivers in this prediction set: ALB, ALO, BOT, HUL, STR (all DNF at R7).
+    clean = df.copy()
+    clean["_fin"] = pd.to_numeric(clean["TargetFinish"], errors="coerce")  # spl-cl: temp numeric col
+    last = clean.dropna(subset=["_fin"]).tail(1)                            # spl-cl: last VALID finish
 
-    last = df.tail(1)
-    
     if last.empty:
         return 0
 
-    grid = pd.to_numeric(last["GridPosition"].iloc[0],errors="coerce")
-    finish = pd.to_numeric(last["TargetFinish"].iloc[0],errors="coerce")
+    grid   = pd.to_numeric(last["GridPosition"].iloc[0], errors="coerce")
+    finish = last["_fin"].iloc[0]
 
     if pd.isna(grid) or pd.isna(finish):
         return 0
 
-    return round(grid - finish,2)
+    return round(grid - finish, 2)
 
 # spl-cl: handle_driver_changes — processes runtime lineup changes passed via env var
 # spl-cl: reads full oracle_v1 for career history so reserve drivers get real avgs not NaN
@@ -277,4 +288,4 @@ def build_austria_dataset() -> pd.DataFrame:
 if __name__ == "__main__":
     print("\n── Building Austria 2026 Prediction Dataset ─────────")
     build_austria_dataset()
-    logs.write("Generated Training Dataset")
+    #logs.write("Generated Training Dataset")
