@@ -288,4 +288,4 @@ def build_austria_dataset() -> pd.DataFrame:
 if __name__ == "__main__":
     print("\n── Building Austria 2026 Prediction Dataset ─────────")
     build_austria_dataset()
-    #logs.write("Generated Training Dataset")
+    #logs.write("Generated Training Dataset")s
