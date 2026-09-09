@@ -12,8 +12,41 @@ Q_RESULT = "qualifying_results.csv"
 R_RESULT = "race_results.csv"
 R_LAPS = "race_laps.csv"
 
-# CONFIG
+#Config
 YEAR = [2022,2023,2024,2025,2026]
+
+# spl-cl: TEAM_CANONICAL — maps every historical team name variant to one
+# spl-cl: canonical current name. Without this the encoder sees AlphaTauri,
+# spl-cl: RB and Racing Bulls as 3 different teams, breaking TSU's career
+# spl-cl: history lookup and confusing the model's Team feature.
+#
+# spl-cl: Lineage confirmed from oracle_v1 data:
+# spl-cl:   AlphaTauri (2022-23) → RB (2024) → Racing Bulls (2025-26)
+# spl-cl:   Alfa Romeo (2022-23) → Kick Sauber (2024-25) → Audi (2026)
+TEAM_CANONICAL = {
+    # Faenza team lineage
+    "AlphaTauri":  "Racing Bulls",
+    "RB":          "Racing Bulls",
+    "Racing Bulls": "Racing Bulls",
+    # Hinwil team lineage
+    "Alfa Romeo":  "Audi",
+    "Kick Sauber": "Audi",
+    "Audi":        "Audi",
+    # Stable teams — listed explicitly for completeness
+    "Red Bull Racing": "Red Bull Racing",
+    "Mercedes":        "Mercedes",
+    "Ferrari":         "Ferrari",
+    "McLaren":         "McLaren",
+    "Alpine":          "Alpine",
+    "Aston Martin":    "Aston Martin",
+    "Williams":        "Williams",
+    "Haas F1 Team":    "Haas F1 Team",
+    "Cadillac":        "Cadillac",
+}
+
+def normalise_team(name: str) -> str:
+    # spl-cl: returns canonical name; falls back to original if not in map
+    return TEAM_CANONICAL.get(str(name).strip(), str(name).strip())
 
 df = {"Year": [],
       "Race": [],
@@ -97,7 +130,8 @@ for dt in YEAR:
             df["Driver"].append(driv)
 
             if driv in quali_res["Abbreviation"].values and driv in race_res["Abbreviation"].values:
-                df["Team"].append(quali_res[quali_res["Abbreviation"] == driv]["TeamName"].iloc[0])
+                raw_team = quali_res[quali_res["Abbreviation"] == driv]["TeamName"].iloc[0]
+                df["Team"].append(normalise_team(raw_team))  # spl-cl: normalise here
                 df["QualiPosition"].append(quali_res[quali_res["Abbreviation"] == driv]["Position"].iloc[0])
                 df["GridPosition"].append(race_res[race_res["Abbreviation"] == driv]["GridPosition"].iloc[0])
                 df["TargetFinish"].append(race_res[race_res["Abbreviation"] == driv]["ClassifiedPosition"].iloc[0])
@@ -115,8 +149,3 @@ print("CSV Exported Successfully!")
 dataframe.to_pickle("outputs/oracle_v1_pickle.pkl")
 print("Pickle File Generated!")
 logs.write("Generated Training dataset: Updated files oracle_v1.csv and pickle file")
-
-
-
-
-
