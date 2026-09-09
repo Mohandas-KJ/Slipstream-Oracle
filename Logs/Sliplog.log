@@ -27,8 +27,4 @@
 [06-09-2026 10:07:09][13 - Italian_Grand_Prix] - Trained Random Forest model on new datas
 [06-09-2026 10:10:31][13 - Italian_Grand_Prix] - Performed Postquali check and updated grid
 [06-09-2026 10:10:33][13 - Italian_Grand_Prix] - Race Prediction Generated
-[06-09-2026 17:06:15][13 - Italian_Grand_Prix] - Generated Training dataset: Updated files oracle_v1.csv and pickle file
-[06-09-2026 17:06:17][13 - Italian_Grand_Prix] - Generated Feature Dataset: oracle_v2.csv
-[06-09-2026 17:06:24][13 - Italian_Grand_Prix] - Trained Random Forest model on new datas
-[06-09-2026 17:11:46][13 - Italian_Grand_Prix] - Performed Postquali check and updated grid
-[06-09-2026 17:11:47][13 - Italian_Grand_Prix] - Race Prediction Generated
+[07-09-2026 09:46:57][13 - Italian_Grand_Prix] - Performed post race routines: Calculated Errors
