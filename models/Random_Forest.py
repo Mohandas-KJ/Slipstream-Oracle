@@ -20,7 +20,7 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score  # spl-cl: kept for future use
 from sklearn.preprocessing import LabelEncoder
 
 # ============================================================
@@ -54,8 +54,14 @@ FEATURES = [
 ]
 
 TARGET       = "TargetFinish"
-TEST_SIZE    = 0.20
 RANDOM_STATE = 42
+# spl-cl: ROLLING SPLIT — no fixed test year.
+# spl-cl: train = everything except the latest round in the dataset
+# spl-cl: test  = latest round only (the most recently completed race)
+# spl-cl: This mirrors real deployment exactly: you always train on all
+# spl-cl: completed races and the next one is what you predict.
+# spl-cl: When oracle_v2 spans 2022-2026, the model trains on 4+ years
+# spl-cl: of history and tests on Round 13 (Monza) — truly unseen.
 
 # ============================================================
 # 1. LOAD & ENCODE
@@ -97,10 +103,28 @@ def load_and_encode(path: Path) -> tuple[pd.DataFrame, dict[str, LabelEncoder]]:
 # ============================================================
 
 def split(df: pd.DataFrame):
-    """Return X_train, X_test, y_train, y_test."""
-    X = df[FEATURES]
-    y = df[TARGET]
-    return train_test_split(X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE)
+    # spl-cl: rolling split — finds the latest (Year, RoundNumber) in the dataset
+    # spl-cl: and uses it as test. Everything before = train.
+    # spl-cl: Works correctly whether oracle_v2 has 1 year or 5 years of data.
+    # spl-cl: Example with full data: train=2022R1→2026R12, test=2026R13 (Monza)
+    # spl-cl: No hardcoding needed — updates automatically every race weekend.
+
+    latest_year  = int(df["Year"].max())
+    latest_round = int(df[df["Year"] == latest_year]["RoundNumber"].max())
+
+    test_mask  = (df["Year"] == latest_year) & (df["RoundNumber"] == latest_round)
+    train_mask = ~test_mask
+
+    train = df[train_mask]
+    test  = df[test_mask]
+
+    test_race = test["Race"].iloc[0] if not test.empty else "?"
+
+    print(f"  Latest round detected : Year {latest_year}  Round {latest_round}  ({test_race})")
+    print(f"  Train : {len(train)} rows  (everything before R{latest_round})")
+    print(f"  Test  : {len(test)} rows   (R{latest_round} — held out as unseen)\n")
+
+    return train[FEATURES], test[FEATURES], train[TARGET], test[TARGET]
 
 # ============================================================
 # 3. TRAIN
@@ -108,10 +132,16 @@ def split(df: pd.DataFrame):
 
 def train(X_train: pd.DataFrame, y_train: pd.Series) -> RandomForestRegressor:
     """Fit and return a RandomForestRegressor."""
+    # spl-cl: min_samples_leaf scales with data size — hardcoded 2 was tuned for
+    # spl-cl: 165 rows. With ~1466 train rows it creates overfit micro-leaves.
+    # spl-cl: 1% of training rows is the standard rule of thumb for RF leaf size.
+    min_leaf = max(2, len(X_train) // 100)  # spl-cl: ~1% of train rows, min 2
+    print(f"  min_samples_leaf : {min_leaf}  (1% of {len(X_train)} train rows)")
+
     model = RandomForestRegressor(
-        n_estimators=200,
+        n_estimators=300,        # spl-cl: 200→300: more trees = more stable with larger data
         max_depth=None,
-        min_samples_leaf=2,
+        min_samples_leaf=min_leaf,  # spl-cl: dynamic, was hardcoded 2
         random_state=RANDOM_STATE,
         n_jobs=-1,
     )
@@ -197,8 +227,8 @@ def print_summary(X_train, X_test, metrics, fi) -> None:
     print("  ╔" + "═" * W + "╗")
     print("  ║" + " SLIPSTREAM ORACLE — RANDOM FOREST ".center(W) + "║")
     print("  ╠" + "═" * W + "╣")
-    row("Training samples",  len(X_train))
-    row("Testing  samples",  len(X_test))
+    row("Train (all prev rounds)", len(X_train))
+    row("Test  (latest round)",    len(X_test))
     rule()
     row("MAE",  metrics["mae"])
     row("RMSE", metrics["rmse"])
