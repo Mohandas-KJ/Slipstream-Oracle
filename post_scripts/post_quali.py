@@ -1,143 +1,257 @@
-# Imports
-import pandas as pd
+"""
+Slipstream Oracle — Post Qualifying Update
+==========================================
+Hybrid data architecture:
+
+    FastF1  →  QualiPosition   (pure qualifying result, ~45 min after session)
+    Manual  →  GridPosition    (final grid after FIA penalty decisions, Sat morning)
+
+WHY HYBRID:
+  FastF1 Q session GridPosition is always empty before the race happens.
+  FastF1 R session GridPosition is only populated after the race finishes.
+  FIA publishes the official Starting Grid document (PDF/web) on Saturday
+  morning before the race — that is the only reliable source for final grid
+  positions including all penalties.
+
+WORKFLOW:
+  1. Run this script ~45 min after qualifying ends
+     → QualiPosition auto-fetched from FastF1
+  2. Check FIA Starting Grid Saturday morning (fia.com or F1 app)
+  3. If any grid penalties exist, enter them when prompted
+  4. Script writes updated Prediction.csv ready for race_predictor.py
+"""
+
 import fastf1
+import pandas as pd
+import numpy as np
 import Generals.streamlib as stlib
 from sliplog import logs
 
-fastf1.Cache.enable_cache("cache")  # spl-cl: reuse cache from data_collector
-
-# Read the prediction dataset for current GP
-df = pd.read_csv(f"outputs/2026_{stlib.get_eventname(stlib.get_current_gp_no())}/Prediction.csv")
+fastf1.Cache.enable_cache("cache")
 
 # ============================================================
-# spl-cl: fetch_quali_grid — pulls QualiPosition and GridPosition
-# spl-cl: separately from FastF1 so grid penalties are correctly
-# spl-cl: reflected. Old code set both to the same value which
-# spl-cl: contradicted how the model was trained (Belgian GP etc.)
-# spl-cl: QualiPosition = where driver qualified (pure pace)
-# spl-cl: GridPosition  = actual grid slot after penalties applied
+# CONFIG
 # ============================================================
-def fetch_quali_grid(year: int, round_number: int) -> pd.DataFrame:
+
+YEAR      = 2026
+ROUND     = stlib.get_current_gp_no()
+EVENT     = stlib.get_eventname(ROUND)
+CSV_PATH  = f"outputs/{YEAR}_{EVENT}/Prediction.csv"
+
+# ============================================================
+# STEP 1 — FastF1: fetch QualiPosition
+# ============================================================
+
+# spl-cl: fetch_quali_positions — pulls Q session Position from FastF1.
+# spl-cl: This is the ONLY reliable thing FastF1 gives us before the race.
+# spl-cl: GridPosition in Q results is always empty (confirmed empirically).
+def fetch_quali_positions(year: int, round_number: int) -> pd.DataFrame:
     """
-    Fetch QualiPosition and GridPosition for every driver from FastF1.
-    Returns a DataFrame with columns: Driver, QualiPosition, GridPosition.
-
-    QualiPosition — from the qualifying session results (Q result position)
-    GridPosition  — from the race session results (GridPosition column),
-                    which reflects any grid penalties applied after quali.
-
-    Available roughly 45-60 min after quali session ends on FastF1.
+    Returns DataFrame with columns: Driver, QualiPosition
+    Source: FastF1 qualifying session results → Position column
+    Available: ~45 min after qualifying chequered flag
     """
+    print(f"  Fetching FastF1 qualifying session (Year={year}, Round={round_number}) ...")
+    q = fastf1.get_session(year, round_number, "Q")
 
-    print(f"  Fetching qualifying session  (Year={year}, Round={round_number}) ...")
-    q_session = fastf1.get_session(year, round_number, "Q")
-    q_session.load(laps=False, telemetry=False, weather=False, messages=False)
+    # spl-cl: bare q.load() — no arguments. Passing ANY kwarg (laps=False etc.)
+    # spl-cl: causes results to come back all NaN. Confirmed empirically.
+    q.load()
 
-    quali_df = q_session.results[["Abbreviation", "Position"]].copy()
-    quali_df.columns = ["Driver", "QualiPosition"]
-    quali_df["QualiPosition"] = pd.to_numeric(quali_df["QualiPosition"], errors="coerce")
-    print(f"  Qualifying positions fetched : {len(quali_df)} drivers")
+    if q.results.empty:
+        raise ValueError("FastF1 returned empty qualifying results. Session may not be available yet.")
 
-    # spl-cl: GridPosition comes from the Race session results, NOT quali.
-    # spl-cl: FastF1 populates race results GridPosition after grid drops are applied.
-    # spl-cl: This is available after qualifying + any steward decisions (usually Sat evening).
-    print(f"  Fetching race session grid   (Year={year}, Round={round_number}) ...")
-    r_session = fastf1.get_session(year, round_number, "R")
-    r_session.load(laps=False, telemetry=False, weather=False, messages=False)
+    df = q.results[["Abbreviation", "Position", "Q1", "Q2", "Q3"]].copy()
+    df.columns = ["Driver", "QualiPosition", "Q1", "Q2", "Q3"]
+    df["QualiPosition"] = pd.to_numeric(df["QualiPosition"], errors="coerce")
+    df = df.sort_values("QualiPosition").reset_index(drop=True)
 
-    race_df = r_session.results[["Abbreviation", "GridPosition"]].copy()
-    race_df.columns = ["Driver", "GridPosition"]
-    race_df["GridPosition"] = pd.to_numeric(race_df["GridPosition"], errors="coerce")
-    print(f"  Grid positions fetched       : {len(race_df)} drivers")
+    # spl-cl: display full FastF1 quali table so user can verify before penalty prompt
+    print(f"\n  ── FastF1 Qualifying Results ───────────────────────────")
+    print(f"  {'P':<4} {'Driver':<8} {'Q1':>10} {'Q2':>10} {'Q3':>10}")
+    print("  " + "─" * 46)
+    for _, row in df.iterrows():
+        q1 = str(row["Q1"])[:10] if pd.notna(row["Q1"]) else "    —"
+        q2 = str(row["Q2"])[:10] if pd.notna(row["Q2"]) else "    —"
+        q3 = str(row["Q3"])[:10] if pd.notna(row["Q3"]) else "    —"
+        print(f"  {int(row['QualiPosition']) if pd.notna(row['QualiPosition']) else '?':<4} {row['Driver']:<8} {q1:>10} {q2:>10} {q3:>10}")
+    print()
+    print(f"  ✓  {df['QualiPosition'].notna().sum()} drivers fetched. Verify above before continuing.")
+    print()
+    input("  Press ENTER to continue → ")
 
-    merged = quali_df.merge(race_df, on="Driver", how="outer")
-    return merged
-# spl-cl: end fetch_quali_grid
+    return df[["Driver", "QualiPosition"]]
 
 
-# spl-cl: add_grid — updates Prediction.csv with real QualiPosition and GridPosition
-def add_grid(data: pd.DataFrame, grid_data: pd.DataFrame) -> pd.DataFrame:
+# ============================================================
+# STEP 2 — Manual: collect GridPosition from FIA starting grid
+# ============================================================
+
+# spl-cl: collect_grid_positions — prompts user to enter the FIA official
+# spl-cl: starting grid order. FastF1 cannot give this before the race.
+# spl-cl: Source: fia.com → Documents → Starting Grid (published Sat morning)
+# spl-cl: or F1 app → Race Hub → Starting Grid tab.
+def collect_grid_positions(quali_df: pd.DataFrame) -> pd.DataFrame:
     """
-    Update QualiPosition and GridPosition columns in prediction DataFrame
-    using real FastF1 data. Drivers not found in FastF1 (e.g. reserve drivers
-    added manually) retain their existing values.
-    """
-    df1 = data.copy()
+    Two-step grid collection:
+      A) Default: assume GridPosition = QualiPosition (no penalties)
+      B) User enters any penalty changes on top
 
-    for _, row in grid_data.iterrows():
-        d = row["Driver"]
-        mask = df1["Driver"] == d
+    Returns quali_df with GridPosition column added.
+    """
+    grid_df = quali_df.copy()
+
+    # spl-cl: start with GridPosition = QualiPosition as default
+    grid_df["GridPosition"] = grid_df["QualiPosition"]
+
+    print()
+    print("  ── FIA Starting Grid ──────────────────────────────────")
+    print("  Source: fia.com → Documents → Starting Grid")
+    print("          OR  F1 app → Race Hub → Starting Grid")
+    print()
+
+    # spl-cl: ask if any grid penalties exist — skip entire block if clean grid
+    has_penalties = input("  Any grid penalties or changes from quali order? [y/n]: ").strip().lower()
+
+    if has_penalties == "y":
+        print()
+        print("  Enter each penalty as:  DRIVER  FINAL_GRID_POSITION")
+        print("  Example:  NOR 13   (NOR drops from P3 to P13)")
+        print("  Empty line to finish.")
+        print()
+
+        penalties = {}
+        while True:
+            entry = input("  Penalty > ").strip().upper()
+            if not entry:
+                break
+            parts = entry.split()
+            if len(parts) != 2:
+                print("  ⚠  Format: DRIVER POSITION  (e.g. NOR 13)")
+                continue
+            driver, pos = parts[0], parts[1]
+            if not pos.isdigit():
+                print("  ⚠  Position must be a number")
+                continue
+            penalties[driver] = int(pos)
+            print(f"  ✓  {driver} → Grid P{pos}")
+
+        # spl-cl: apply penalties to GridPosition column
+        for driver, final_pos in penalties.items():
+            mask = grid_df["Driver"] == driver
+            if mask.any():
+                grid_df.loc[mask, "GridPosition"] = final_pos
+            else:
+                print(f"  ⚠  {driver} not found in qualifying results — skipping")
+
+    return grid_df
+
+
+# ============================================================
+# STEP 3 — Update Prediction.csv
+# ============================================================
+
+def update_prediction_csv(csv_path: str, grid_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Write QualiPosition and GridPosition into Prediction.csv.
+    Sort by GridPosition (actual race start order).
+    """
+    df = pd.read_csv(csv_path)
+
+    for _, row in grid_df.iterrows():
+        driver = row["Driver"]
+        mask   = df["Driver"] == driver
 
         if not mask.any():
-            print(f"  ⚠  {d} in FastF1 results but not in Prediction.csv — skipping")
+            print(f"  ⚠  {driver} in FastF1 results but not in Prediction.csv — skipping")
             continue
 
-        # spl-cl: set separately — these will differ when grid penalties exist
-        if not pd.isna(row["QualiPosition"]):
-            df1.loc[mask, "QualiPosition"] = row["QualiPosition"]
-        if not pd.isna(row["GridPosition"]):
-            df1.loc[mask, "GridPosition"] = row["GridPosition"]
+        df.loc[mask, "QualiPosition"] = row["QualiPosition"]
+        df.loc[mask, "GridPosition"]  = row["GridPosition"]
 
-    # spl-cl: sort by GridPosition (actual race start order, not quali order)
-    df1 = df1.sort_values("GridPosition", ascending=True).reset_index(drop=True)
-    return df1
-# spl-cl: end add_grid
+    # spl-cl: sort by final grid position — this is race start order
+    df = df.sort_values("GridPosition", ascending=True).reset_index(drop=True)
+    df.to_csv(csv_path, index=False)
+    return df
+
+
+# ============================================================
+# DISPLAY
+# ============================================================
+
+def print_grid(df: pd.DataFrame) -> None:
+    """Print the final grid with penalty flags for visual verification."""
+
+    print()
+    print(f"  ╔{'═'*52}╗")
+    print(f"  ║{'STARTING GRID  —  ' + EVENT.replace('_',' ').upper():^52}║")
+    print(f"  ╠{'═'*52}╣")
+    print(f"  │  {'P':<4} {'Driver':<8} {'Team':<22} {'Quali':>5} {'Grid':>5}  │")
+    print(f"  ├{'─'*52}┤")
+
+    for _, row in df.sort_values("GridPosition").iterrows():
+        q = row["QualiPosition"]; g = row["GridPosition"]
+        try:
+            penalty_flag = f" ▼{int(g-q):+d}" if int(g) != int(q) else "     "
+        except:
+            penalty_flag = "     "
+        print(
+            f"  │  {int(g) if not pd.isna(g) else '?':<4}"
+            f" {row['Driver']:<8}"
+            f" {str(row.get('Team','')):<22}"
+            f" {str(int(q)) if not pd.isna(q) else 'NaN':>5}"
+            f" {str(int(g)) if not pd.isna(g) else 'NaN':>5}"
+            f"  {penalty_flag}│"
+        )
+
+    print(f"  ╚{'═'*52}╝")
+    print()
 
 
 # ============================================================
 # MAIN
 # ============================================================
 
-year        = 2026
-round_no    = stlib.get_current_gp_no()
-event_name  = stlib.get_eventname(round_no)
-out_path    = f"outputs/{year}_{event_name}/Prediction.csv"
+def main():
+    print(f"\n── Post-Quali Update : {EVENT}  (Round {ROUND}) ──────")
+    print()
+    print("  HYBRID ARCHITECTURE:")
+    print("  FastF1  →  QualiPosition  (auto)")
+    print("  FIA     →  GridPosition   (manual — from FIA starting grid doc)")
+    print()
 
-print(f"\n── Post-Quali Update : {event_name} (Round {round_no}) ──")
+    # spl-cl: Step 1 — FastF1 quali fetch with graceful fallback
+    try:
+        quali_df = fetch_quali_positions(YEAR, ROUND)
 
-# spl-cl: try FastF1 first; fall back to manual entry if session not yet available
-try:
-    grid_data = fetch_quali_grid(year, round_no)
+    except Exception as e:
+        # spl-cl: FastF1 not ready yet (~45 min after quali ends)
+        print(f"  ⚠  FastF1 unavailable: {e}")
+        print(f"  Falling back to manual quali order entry.")
+        print(f"  Re-run in ~45 min for automatic fetch.\n")
 
-    # spl-cl: show the diff so user can spot penalties visually
-    print(f"\n  {'Driver':<8} {'Quali':>6} {'Grid':>6} {'Penalty?':>10}")
-    print("  " + "─" * 34)
-    for _, r in grid_data.sort_values("GridPosition").iterrows():
-        q = r["QualiPosition"]; g = r["GridPosition"]
-        penalty = f"  ▲ {int(g-q):+d}" if not pd.isna(q) and not pd.isna(g) and q != g else ""
-        print(f"  {r['Driver']:<8} {str(q):>6} {str(g):>6}{penalty}")
+        d = input("  Enter drivers in QUALI order (space-separated): ").split()
+        quali_df = pd.DataFrame({
+            "Driver":       d,
+            "QualiPosition": list(range(1, len(d) + 1))
+        })
 
-    df_updated = add_grid(df, grid_data)
-    df_updated.to_csv(out_path, index=False)
-    print(f"\n  ✓  Prediction.csv updated → {out_path}")
-    logs.write(f"Post-quali update complete: {event_name} R{round_no} (FastF1)")
+    # spl-cl: Step 2 — manual FIA grid (penalties on top of quali)
+    print()
+    grid_df = collect_grid_positions(quali_df)
 
-except Exception as e:
-    # spl-cl: FastF1 fallback — session not available yet, use manual entry
-    # spl-cl: This happens if quali just ended and data isn't on the API yet (~45 min delay)
-    print(f"\n  ⚠  FastF1 fetch failed: {e}")
-    print(f"  Falling back to manual entry.")
-    print(f"  (Re-run in ~45 min after quali ends for automatic fetch)\n")
+    # spl-cl: Step 3 — update and save Prediction.csv
+    print()
+    print("  Updating Prediction.csv ...")
+    df_updated = update_prediction_csv(CSV_PATH, grid_df)
 
-    d   = input("Enter Drivers in GRID order (space-separated): ").split()
-    pos = list(range(1, len(d) + 1))
+    print_grid(df_updated)
 
-    # spl-cl: manual fallback still separates quali from grid
-    print("Any grid penalties? Enter as 'DRIVER GRIDPOS' one per line. Empty to finish:")
-    penalties = {}
-    while True:
-        entry = input("  Penalty > ").strip().upper()
-        if not entry:
-            break
-        parts = entry.split()
-        if len(parts) == 2:
-            penalties[parts[0]] = int(parts[1])
+    print(f"  ✓  Saved → {CSV_PATH}")
+    print(f"  Next: run race_predictor.py on race day\n")
 
-    grid_data_manual = pd.DataFrame({"Driver": d, "QualiPosition": pos})
-    grid_data_manual["GridPosition"] = grid_data_manual.apply(
-        lambda r: penalties.get(r["Driver"], r["QualiPosition"]), axis=1
-    )
-    df_updated = add_grid(df, grid_data_manual)
-    df_updated.to_csv(out_path, index=False)
-    print(f"\n  ✓  Prediction.csv updated → {out_path}")
-    logs.write(f"Post-quali update complete: {event_name} R{round_no} (manual fallback)")
+    logs.write(f"Post-quali complete: {EVENT} R{ROUND} — hybrid FastF1 + FIA grid")
+
+
+if __name__ == "__main__":
+    main()

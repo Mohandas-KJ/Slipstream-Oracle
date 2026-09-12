@@ -1,9 +1,9 @@
 ,Year,Race,Driver,Team,QualiPosition,GridPosition,TargetFinish,Points
 0,2022,Bahrain_Grand_Prix,ALB,Williams,14.0,14.0,13,0.0
 1,2022,Bahrain_Grand_Prix,ALO,Alpine,8.0,8.0,9,2.0
-2,2022,Bahrain_Grand_Prix,BOT,Alfa Romeo,6.0,6.0,6,8.0
+2,2022,Bahrain_Grand_Prix,BOT,Audi,6.0,6.0,6,8.0
 3,2022,Bahrain_Grand_Prix,DEV,,,,,
-4,2022,Bahrain_Grand_Prix,GAS,AlphaTauri,10.0,10.0,R,0.0
+4,2022,Bahrain_Grand_Prix,GAS,Racing Bulls,10.0,10.0,R,0.0
 5,2022,Bahrain_Grand_Prix,HAM,Mercedes,5.0,5.0,3,15.0
 6,2022,Bahrain_Grand_Prix,HUL,Aston Martin,17.0,17.0,17,0.0
 7,2022,Bahrain_Grand_Prix,LAT,Williams,20.0,20.0,16,0.0
@@ -17,15 +17,15 @@
 15,2022,Bahrain_Grand_Prix,RUS,Mercedes,9.0,9.0,4,12.0
 16,2022,Bahrain_Grand_Prix,SAI,Ferrari,3.0,3.0,2,18.0
 17,2022,Bahrain_Grand_Prix,STR,Aston Martin,19.0,19.0,12,0.0
-18,2022,Bahrain_Grand_Prix,TSU,AlphaTauri,16.0,16.0,8,4.0
+18,2022,Bahrain_Grand_Prix,TSU,Racing Bulls,16.0,16.0,8,4.0
 19,2022,Bahrain_Grand_Prix,VER,Red Bull Racing,2.0,2.0,19,0.0
 20,2022,Bahrain_Grand_Prix,VET,,,,,
-21,2022,Bahrain_Grand_Prix,ZHO,Alfa Romeo,15.0,15.0,10,1.0
+21,2022,Bahrain_Grand_Prix,ZHO,Audi,15.0,15.0,10,1.0
 22,2022,Saudi_Arabian_Grand_Prix,ALB,Williams,17.0,16.0,14,0.0
 23,2022,Saudi_Arabian_Grand_Prix,ALO,Alpine,7.0,7.0,R,0.0
-24,2022,Saudi_Arabian_Grand_Prix,BOT,Alfa Romeo,8.0,8.0,R,0.0
+24,2022,Saudi_Arabian_Grand_Prix,BOT,Audi,8.0,8.0,R,0.0
 25,2022,Saudi_Arabian_Grand_Prix,DEV,,,,,
-26,2022,Saudi_Arabian_Grand_Prix,GAS,AlphaTauri,9.0,9.0,8,4.0
+26,2022,Saudi_Arabian_Grand_Prix,GAS,Racing Bulls,9.0,9.0,8,4.0
 27,2022,Saudi_Arabian_Grand_Prix,HAM,Mercedes,16.0,15.0,10,1.0
 28,2022,Saudi_Arabian_Grand_Prix,HUL,Aston Martin,18.0,17.0,12,0.0
 29,2022,Saudi_Arabian_Grand_Prix,LAT,Williams,19.0,18.0,R,0.0
@@ -39,15 +39,15 @@
 37,2022,Saudi_Arabian_Grand_Prix,RUS,Mercedes,6.0,6.0,5,10.0
 38,2022,Saudi_Arabian_Grand_Prix,SAI,Ferrari,3.0,3.0,3,15.0
 39,2022,Saudi_Arabian_Grand_Prix,STR,Aston Martin,15.0,13.0,13,0.0
-40,2022,Saudi_Arabian_Grand_Prix,TSU,AlphaTauri,20.0,19.0,R,0.0
+40,2022,Saudi_Arabian_Grand_Prix,TSU,Racing Bulls,20.0,19.0,R,0.0
 41,2022,Saudi_Arabian_Grand_Prix,VER,Red Bull Racing,4.0,4.0,1,25.0
 42,2022,Saudi_Arabian_Grand_Prix,VET,,,,,
-43,2022,Saudi_Arabian_Grand_Prix,ZHO,Alfa Romeo,13.0,12.0,11,0.0
+43,2022,Saudi_Arabian_Grand_Prix,ZHO,Audi,13.0,12.0,11,0.0
 44,2022,Australian_Grand_Prix,ALB,Williams,16.0,20.0,10,1.0
 45,2022,Australian_Grand_Prix,ALO,Alpine,10.0,10.0,17,0.0
-46,2022,Australian_Grand_Prix,BOT,Alfa Romeo,12.0,12.0,8,4.0
+46,2022,Australian_Grand_Prix,BOT,Audi,12.0,12.0,8,4.0
 47,2022,Australian_Grand_Prix,DEV,,,,,
-48,2022,Australian_Grand_Prix,GAS,AlphaTauri,11.0,11.0,9,2.0
+48,2022,Australian_Grand_Prix,GAS,Racing Bulls,11.0,11.0,9,2.0
 49,2022,Australian_Grand_Prix,HAM,Mercedes,5.0,5.0,4,12.0
 50,2022,Australian_Grand_Prix,HUL,,,,,
 51,2022,Australian_Grand_Prix,LAT,Williams,19.0,18.0,16,0.0
@@ -61,15 +61,15 @@
 59,2022,Australian_Grand_Prix,RUS,Mercedes,6.0,6.0,3,15.0
 60,2022,Australian_Grand_Prix,SAI,Ferrari,9.0,9.0,R,0.0
 61,2022,Australian_Grand_Prix,STR,Aston Martin,20.0,19.0,12,0.0
-62,2022,Australian_Grand_Prix,TSU,AlphaTauri,13.0,13.0,15,0.0
+62,2022,Australian_Grand_Prix,TSU,Racing Bulls,13.0,13.0,15,0.0
 63,2022,Australian_Grand_Prix,VER,Red Bull Racing,2.0,2.0,R,0.0
 64,2022,Australian_Grand_Prix,VET,Aston Martin,18.0,17.0,R,0.0
-65,2022,Australian_Grand_Prix,ZHO,Alfa Romeo,14.0,14.0,11,0.0
+65,2022,Australian_Grand_Prix,ZHO,Audi,14.0,14.0,11,0.0
 66,2022,Emilia_Romagna_Grand_Prix,ALB,Williams,20.0,18.0,11,0.0
 67,2022,Emilia_Romagna_Grand_Prix,ALO,Alpine,5.0,9.0,R,0.0
-68,2022,Emilia_Romagna_Grand_Prix,BOT,Alfa Romeo,8.0,7.0,5,10.0
+68,2022,Emilia_Romagna_Grand_Prix,BOT,Audi,8.0,7.0,5,10.0
 69,2022,Emilia_Romagna_Grand_Prix,DEV,,,,,
-70,2022,Emilia_Romagna_Grand_Prix,GAS,AlphaTauri,17.0,17.0,12,0.0
+70,2022,Emilia_Romagna_Grand_Prix,GAS,Racing Bulls,17.0,17.0,12,0.0
 71,2022,Emilia_Romagna_Grand_Prix,HAM,Mercedes,13.0,14.0,13,0.0
 72,2022,Emilia_Romagna_Grand_Prix,HUL,,,,,
 73,2022,Emilia_Romagna_Grand_Prix,LAT,Williams,18.0,19.0,16,0.0
@@ -83,15 +83,15 @@
 81,2022,Emilia_Romagna_Grand_Prix,RUS,Mercedes,11.0,11.0,4,12.0
 82,2022,Emilia_Romagna_Grand_Prix,SAI,Ferrari,10.0,4.0,R,0.0
 83,2022,Emilia_Romagna_Grand_Prix,STR,Aston Martin,15.0,15.0,10,1.0
-84,2022,Emilia_Romagna_Grand_Prix,TSU,AlphaTauri,16.0,12.0,7,6.0
+84,2022,Emilia_Romagna_Grand_Prix,TSU,Racing Bulls,16.0,12.0,7,6.0
 85,2022,Emilia_Romagna_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,26.0
 86,2022,Emilia_Romagna_Grand_Prix,VET,Aston Martin,9.0,13.0,8,4.0
-87,2022,Emilia_Romagna_Grand_Prix,ZHO,Alfa Romeo,14.0,0.0,15,0.0
+87,2022,Emilia_Romagna_Grand_Prix,ZHO,Audi,14.0,0.0,15,0.0
 88,2022,Miami_Grand_Prix,ALB,Williams,18.0,18.0,9,2.0
 89,2022,Miami_Grand_Prix,ALO,Alpine,11.0,11.0,11,0.0
-90,2022,Miami_Grand_Prix,BOT,Alfa Romeo,5.0,5.0,7,6.0
+90,2022,Miami_Grand_Prix,BOT,Audi,5.0,5.0,7,6.0
 91,2022,Miami_Grand_Prix,DEV,,,,,
-92,2022,Miami_Grand_Prix,GAS,AlphaTauri,7.0,7.0,R,0.0
+92,2022,Miami_Grand_Prix,GAS,Racing Bulls,7.0,7.0,R,0.0
 93,2022,Miami_Grand_Prix,HAM,Mercedes,6.0,6.0,6,8.0
 94,2022,Miami_Grand_Prix,HUL,,,,,
 95,2022,Miami_Grand_Prix,LAT,Williams,19.0,19.0,14,0.0
@@ -105,15 +105,15 @@
 103,2022,Miami_Grand_Prix,RUS,Mercedes,12.0,12.0,5,10.0
 104,2022,Miami_Grand_Prix,SAI,Ferrari,2.0,2.0,3,15.0
 105,2022,Miami_Grand_Prix,STR,Aston Martin,10.0,0.0,10,1.0
-106,2022,Miami_Grand_Prix,TSU,AlphaTauri,9.0,9.0,12,0.0
+106,2022,Miami_Grand_Prix,TSU,Racing Bulls,9.0,9.0,12,0.0
 107,2022,Miami_Grand_Prix,VER,Red Bull Racing,3.0,3.0,1,26.0
 108,2022,Miami_Grand_Prix,VET,Aston Martin,13.0,0.0,17,0.0
-109,2022,Miami_Grand_Prix,ZHO,Alfa Romeo,17.0,17.0,R,0.0
+109,2022,Miami_Grand_Prix,ZHO,Audi,17.0,17.0,R,0.0
 110,2022,Spanish_Grand_Prix,ALB,Williams,19.0,18.0,18,0.0
 111,2022,Spanish_Grand_Prix,ALO,Alpine,17.0,20.0,9,2.0
-112,2022,Spanish_Grand_Prix,BOT,Alfa Romeo,7.0,7.0,6,8.0
+112,2022,Spanish_Grand_Prix,BOT,Audi,7.0,7.0,6,8.0
 113,2022,Spanish_Grand_Prix,DEV,,,,,
-114,2022,Spanish_Grand_Prix,GAS,AlphaTauri,14.0,14.0,13,0.0
+114,2022,Spanish_Grand_Prix,GAS,Racing Bulls,14.0,14.0,13,0.0
 115,2022,Spanish_Grand_Prix,HAM,Mercedes,6.0,6.0,5,10.0
 116,2022,Spanish_Grand_Prix,HUL,,,,,
 117,2022,Spanish_Grand_Prix,LAT,Williams,20.0,19.0,16,0.0
@@ -127,15 +127,15 @@
 125,2022,Spanish_Grand_Prix,RUS,Mercedes,4.0,4.0,3,15.0
 126,2022,Spanish_Grand_Prix,SAI,Ferrari,3.0,3.0,4,12.0
 127,2022,Spanish_Grand_Prix,STR,Aston Martin,18.0,17.0,15,0.0
-128,2022,Spanish_Grand_Prix,TSU,AlphaTauri,13.0,13.0,10,1.0
+128,2022,Spanish_Grand_Prix,TSU,Racing Bulls,13.0,13.0,10,1.0
 129,2022,Spanish_Grand_Prix,VER,Red Bull Racing,2.0,2.0,1,25.0
 130,2022,Spanish_Grand_Prix,VET,Aston Martin,16.0,16.0,11,0.0
-131,2022,Spanish_Grand_Prix,ZHO,Alfa Romeo,15.0,15.0,R,0.0
+131,2022,Spanish_Grand_Prix,ZHO,Audi,15.0,15.0,R,0.0
 132,2022,Monaco_Grand_Prix,ALB,Williams,16.0,16.0,R,0.0
 133,2022,Monaco_Grand_Prix,ALO,Alpine,7.0,7.0,7,6.0
-134,2022,Monaco_Grand_Prix,BOT,Alfa Romeo,12.0,12.0,9,2.0
+134,2022,Monaco_Grand_Prix,BOT,Audi,12.0,12.0,9,2.0
 135,2022,Monaco_Grand_Prix,DEV,,,,,
-136,2022,Monaco_Grand_Prix,GAS,AlphaTauri,17.0,17.0,11,0.0
+136,2022,Monaco_Grand_Prix,GAS,Racing Bulls,17.0,17.0,11,0.0
 137,2022,Monaco_Grand_Prix,HAM,Mercedes,8.0,8.0,8,4.0
 138,2022,Monaco_Grand_Prix,HUL,,,,,
 139,2022,Monaco_Grand_Prix,LAT,Williams,19.0,19.0,15,0.0
@@ -149,15 +149,15 @@
 147,2022,Monaco_Grand_Prix,RUS,Mercedes,6.0,6.0,5,10.0
 148,2022,Monaco_Grand_Prix,SAI,Ferrari,2.0,2.0,2,18.0
 149,2022,Monaco_Grand_Prix,STR,Aston Martin,18.0,18.0,14,0.0
-150,2022,Monaco_Grand_Prix,TSU,AlphaTauri,11.0,11.0,17,0.0
+150,2022,Monaco_Grand_Prix,TSU,Racing Bulls,11.0,11.0,17,0.0
 151,2022,Monaco_Grand_Prix,VER,Red Bull Racing,4.0,4.0,3,15.0
 152,2022,Monaco_Grand_Prix,VET,Aston Martin,9.0,9.0,10,1.0
-153,2022,Monaco_Grand_Prix,ZHO,Alfa Romeo,20.0,20.0,16,0.0
+153,2022,Monaco_Grand_Prix,ZHO,Audi,20.0,20.0,16,0.0
 154,2022,Azerbaijan_Grand_Prix,ALB,Williams,17.0,17.0,12,0.0
 155,2022,Azerbaijan_Grand_Prix,ALO,Alpine,10.0,10.0,7,6.0
-156,2022,Azerbaijan_Grand_Prix,BOT,Alfa Romeo,15.0,15.0,11,0.0
+156,2022,Azerbaijan_Grand_Prix,BOT,Audi,15.0,15.0,11,0.0
 157,2022,Azerbaijan_Grand_Prix,DEV,,,,,
-158,2022,Azerbaijan_Grand_Prix,GAS,AlphaTauri,6.0,6.0,5,10.0
+158,2022,Azerbaijan_Grand_Prix,GAS,Racing Bulls,6.0,6.0,5,10.0
 159,2022,Azerbaijan_Grand_Prix,HAM,Mercedes,7.0,7.0,4,12.0
 160,2022,Azerbaijan_Grand_Prix,HUL,,,,,
 161,2022,Azerbaijan_Grand_Prix,LAT,Williams,18.0,18.0,15,0.0
@@ -171,15 +171,15 @@
 169,2022,Azerbaijan_Grand_Prix,RUS,Mercedes,5.0,5.0,3,15.0
 170,2022,Azerbaijan_Grand_Prix,SAI,Ferrari,4.0,4.0,R,0.0
 171,2022,Azerbaijan_Grand_Prix,STR,Aston Martin,19.0,19.0,16,0.0
-172,2022,Azerbaijan_Grand_Prix,TSU,AlphaTauri,8.0,8.0,13,0.0
+172,2022,Azerbaijan_Grand_Prix,TSU,Racing Bulls,8.0,8.0,13,0.0
 173,2022,Azerbaijan_Grand_Prix,VER,Red Bull Racing,3.0,3.0,1,25.0
 174,2022,Azerbaijan_Grand_Prix,VET,Aston Martin,9.0,9.0,6,8.0
-175,2022,Azerbaijan_Grand_Prix,ZHO,Alfa Romeo,14.0,14.0,R,0.0
+175,2022,Azerbaijan_Grand_Prix,ZHO,Audi,14.0,14.0,R,0.0
 176,2022,Canadian_Grand_Prix,ALB,Williams,12.0,12.0,13,0.0
 177,2022,Canadian_Grand_Prix,ALO,Alpine,2.0,2.0,9,2.0
-178,2022,Canadian_Grand_Prix,BOT,Alfa Romeo,11.0,11.0,7,6.0
+178,2022,Canadian_Grand_Prix,BOT,Audi,11.0,11.0,7,6.0
 179,2022,Canadian_Grand_Prix,DEV,,,,,
-180,2022,Canadian_Grand_Prix,GAS,AlphaTauri,16.0,15.0,14,0.0
+180,2022,Canadian_Grand_Prix,GAS,Racing Bulls,16.0,15.0,14,0.0
 181,2022,Canadian_Grand_Prix,HAM,Mercedes,4.0,4.0,3,15.0
 182,2022,Canadian_Grand_Prix,HUL,,,,,
 183,2022,Canadian_Grand_Prix,LAT,Williams,19.0,18.0,16,0.0
@@ -193,15 +193,15 @@
 191,2022,Canadian_Grand_Prix,RUS,Mercedes,8.0,8.0,4,12.0
 192,2022,Canadian_Grand_Prix,SAI,Ferrari,3.0,3.0,2,19.0
 193,2022,Canadian_Grand_Prix,STR,Aston Martin,18.0,17.0,10,1.0
-194,2022,Canadian_Grand_Prix,TSU,AlphaTauri,20.0,20.0,R,0.0
+194,2022,Canadian_Grand_Prix,TSU,Racing Bulls,20.0,20.0,R,0.0
 195,2022,Canadian_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,25.0
 196,2022,Canadian_Grand_Prix,VET,Aston Martin,17.0,16.0,12,0.0
-197,2022,Canadian_Grand_Prix,ZHO,Alfa Romeo,10.0,10.0,8,4.0
+197,2022,Canadian_Grand_Prix,ZHO,Audi,10.0,10.0,8,4.0
 198,2022,British_Grand_Prix,ALB,Williams,16.0,16.0,R,0.0
 199,2022,British_Grand_Prix,ALO,Alpine,7.0,7.0,5,10.0
-200,2022,British_Grand_Prix,BOT,Alfa Romeo,12.0,12.0,R,0.0
+200,2022,British_Grand_Prix,BOT,Audi,12.0,12.0,R,0.0
 201,2022,British_Grand_Prix,DEV,,,,,
-202,2022,British_Grand_Prix,GAS,AlphaTauri,11.0,11.0,R,0.0
+202,2022,British_Grand_Prix,GAS,Racing Bulls,11.0,11.0,R,0.0
 203,2022,British_Grand_Prix,HAM,Mercedes,5.0,5.0,3,16.0
 204,2022,British_Grand_Prix,HUL,,,,,
 205,2022,British_Grand_Prix,LAT,Williams,10.0,10.0,12,0.0
@@ -215,15 +215,15 @@
 213,2022,British_Grand_Prix,RUS,Mercedes,8.0,8.0,R,0.0
 214,2022,British_Grand_Prix,SAI,Ferrari,1.0,1.0,1,25.0
 215,2022,British_Grand_Prix,STR,Aston Martin,20.0,20.0,11,0.0
-216,2022,British_Grand_Prix,TSU,AlphaTauri,13.0,13.0,14,0.0
+216,2022,British_Grand_Prix,TSU,Racing Bulls,13.0,13.0,14,0.0
 217,2022,British_Grand_Prix,VER,Red Bull Racing,2.0,2.0,7,6.0
 218,2022,British_Grand_Prix,VET,Aston Martin,18.0,18.0,9,2.0
-219,2022,British_Grand_Prix,ZHO,Alfa Romeo,9.0,9.0,R,0.0
+219,2022,British_Grand_Prix,ZHO,Audi,9.0,9.0,R,0.0
 220,2022,Austrian_Grand_Prix,ALB,Williams,11.0,15.0,12,0.0
 221,2022,Austrian_Grand_Prix,ALO,Alpine,8.0,19.0,10,1.0
-222,2022,Austrian_Grand_Prix,BOT,Alfa Romeo,12.0,0.0,11,0.0
+222,2022,Austrian_Grand_Prix,BOT,Audi,12.0,0.0,11,0.0
 223,2022,Austrian_Grand_Prix,DEV,,,,,
-224,2022,Austrian_Grand_Prix,GAS,AlphaTauri,10.0,14.0,15,0.0
+224,2022,Austrian_Grand_Prix,GAS,Racing Bulls,10.0,14.0,15,0.0
 225,2022,Austrian_Grand_Prix,HAM,Mercedes,9.0,8.0,3,15.0
 226,2022,Austrian_Grand_Prix,HUL,,,,,
 227,2022,Austrian_Grand_Prix,LAT,Williams,19.0,17.0,R,0.0
@@ -237,15 +237,15 @@
 235,2022,Austrian_Grand_Prix,RUS,Mercedes,4.0,4.0,4,12.0
 236,2022,Austrian_Grand_Prix,SAI,Ferrari,3.0,3.0,R,0.0
 237,2022,Austrian_Grand_Prix,STR,Aston Martin,17.0,12.0,13,0.0
-238,2022,Austrian_Grand_Prix,TSU,AlphaTauri,14.0,16.0,16,0.0
+238,2022,Austrian_Grand_Prix,TSU,Racing Bulls,14.0,16.0,16,0.0
 239,2022,Austrian_Grand_Prix,VER,Red Bull Racing,1.0,1.0,2,19.0
 240,2022,Austrian_Grand_Prix,VET,Aston Martin,20.0,18.0,17,0.0
-241,2022,Austrian_Grand_Prix,ZHO,Alfa Romeo,18.0,13.0,14,0.0
+241,2022,Austrian_Grand_Prix,ZHO,Audi,18.0,13.0,14,0.0
 242,2022,French_Grand_Prix,ALB,Williams,15.0,13.0,13,0.0
 243,2022,French_Grand_Prix,ALO,Alpine,7.0,7.0,6,8.0
-244,2022,French_Grand_Prix,BOT,Alfa Romeo,13.0,11.0,14,0.0
+244,2022,French_Grand_Prix,BOT,Audi,13.0,11.0,14,0.0
 245,2022,French_Grand_Prix,DEV,,,,,
-246,2022,French_Grand_Prix,GAS,AlphaTauri,16.0,14.0,12,0.0
+246,2022,French_Grand_Prix,GAS,Racing Bulls,16.0,14.0,12,0.0
 247,2022,French_Grand_Prix,HAM,Mercedes,4.0,4.0,2,18.0
 248,2022,French_Grand_Prix,HUL,,,,,
 249,2022,French_Grand_Prix,LAT,Williams,20.0,18.0,R,0.0
@@ -259,15 +259,15 @@
 257,2022,French_Grand_Prix,RUS,Mercedes,6.0,6.0,3,15.0
 258,2022,French_Grand_Prix,SAI,Ferrari,9.0,19.0,5,11.0
 259,2022,French_Grand_Prix,STR,Aston Martin,17.0,15.0,10,1.0
-260,2022,French_Grand_Prix,TSU,AlphaTauri,8.0,8.0,R,0.0
+260,2022,French_Grand_Prix,TSU,Racing Bulls,8.0,8.0,R,0.0
 261,2022,French_Grand_Prix,VER,Red Bull Racing,2.0,2.0,1,25.0
 262,2022,French_Grand_Prix,VET,Aston Martin,14.0,12.0,11,0.0
-263,2022,French_Grand_Prix,ZHO,Alfa Romeo,18.0,16.0,16,0.0
+263,2022,French_Grand_Prix,ZHO,Audi,18.0,16.0,16,0.0
 264,2022,Hungarian_Grand_Prix,ALB,Williams,17.0,17.0,17,0.0
 265,2022,Hungarian_Grand_Prix,ALO,Alpine,6.0,6.0,8,4.0
-266,2022,Hungarian_Grand_Prix,BOT,Alfa Romeo,8.0,8.0,20,0.0
+266,2022,Hungarian_Grand_Prix,BOT,Audi,8.0,8.0,20,0.0
 267,2022,Hungarian_Grand_Prix,DEV,,,,,
-268,2022,Hungarian_Grand_Prix,GAS,AlphaTauri,19.0,0.0,12,0.0
+268,2022,Hungarian_Grand_Prix,GAS,Racing Bulls,19.0,0.0,12,0.0
 269,2022,Hungarian_Grand_Prix,HAM,Mercedes,7.0,7.0,2,19.0
 270,2022,Hungarian_Grand_Prix,HUL,,,,,
 271,2022,Hungarian_Grand_Prix,LAT,Williams,20.0,19.0,18,0.0
@@ -281,15 +281,15 @@
 279,2022,Hungarian_Grand_Prix,RUS,Mercedes,1.0,1.0,3,15.0
 280,2022,Hungarian_Grand_Prix,SAI,Ferrari,2.0,2.0,4,12.0
 281,2022,Hungarian_Grand_Prix,STR,Aston Martin,14.0,14.0,11,0.0
-282,2022,Hungarian_Grand_Prix,TSU,AlphaTauri,16.0,16.0,19,0.0
+282,2022,Hungarian_Grand_Prix,TSU,Racing Bulls,16.0,16.0,19,0.0
 283,2022,Hungarian_Grand_Prix,VER,Red Bull Racing,10.0,10.0,1,25.0
 284,2022,Hungarian_Grand_Prix,VET,Aston Martin,18.0,18.0,10,1.0
-285,2022,Hungarian_Grand_Prix,ZHO,Alfa Romeo,12.0,12.0,13,0.0
+285,2022,Hungarian_Grand_Prix,ZHO,Audi,12.0,12.0,13,0.0
 286,2022,Belgian_Grand_Prix,ALB,Williams,9.0,6.0,10,1.0
 287,2022,Belgian_Grand_Prix,ALO,Alpine,6.0,3.0,5,10.0
-288,2022,Belgian_Grand_Prix,BOT,Alfa Romeo,20.0,13.0,R,0.0
+288,2022,Belgian_Grand_Prix,BOT,Audi,20.0,13.0,R,0.0
 289,2022,Belgian_Grand_Prix,DEV,,,,,
-290,2022,Belgian_Grand_Prix,GAS,AlphaTauri,12.0,0.0,9,2.0
+290,2022,Belgian_Grand_Prix,GAS,Racing Bulls,12.0,0.0,9,2.0
 291,2022,Belgian_Grand_Prix,HAM,Mercedes,7.0,4.0,R,0.0
 292,2022,Belgian_Grand_Prix,HUL,,,,,
 293,2022,Belgian_Grand_Prix,LAT,Williams,17.0,11.0,18,0.0
@@ -303,15 +303,15 @@
 301,2022,Belgian_Grand_Prix,RUS,Mercedes,8.0,5.0,4,12.0
 302,2022,Belgian_Grand_Prix,SAI,Ferrari,2.0,1.0,3,15.0
 303,2022,Belgian_Grand_Prix,STR,Aston Martin,14.0,9.0,11,0.0
-304,2022,Belgian_Grand_Prix,TSU,AlphaTauri,19.0,0.0,13,0.0
+304,2022,Belgian_Grand_Prix,TSU,Racing Bulls,19.0,0.0,13,0.0
 305,2022,Belgian_Grand_Prix,VER,Red Bull Racing,1.0,14.0,1,26.0
 306,2022,Belgian_Grand_Prix,VET,Aston Martin,16.0,10.0,8,4.0
-307,2022,Belgian_Grand_Prix,ZHO,Alfa Romeo,13.0,18.0,14,0.0
+307,2022,Belgian_Grand_Prix,ZHO,Audi,13.0,18.0,14,0.0
 308,2022,Dutch_Grand_Prix,ALB,Williams,15.0,15.0,12,0.0
 309,2022,Dutch_Grand_Prix,ALO,Alpine,13.0,13.0,6,8.0
-310,2022,Dutch_Grand_Prix,BOT,Alfa Romeo,16.0,16.0,R,0.0
+310,2022,Dutch_Grand_Prix,BOT,Audi,16.0,16.0,R,0.0
 311,2022,Dutch_Grand_Prix,DEV,,,,,
-312,2022,Dutch_Grand_Prix,GAS,AlphaTauri,11.0,11.0,11,0.0
+312,2022,Dutch_Grand_Prix,GAS,Racing Bulls,11.0,11.0,11,0.0
 313,2022,Dutch_Grand_Prix,HAM,Mercedes,4.0,4.0,4,12.0
 314,2022,Dutch_Grand_Prix,HUL,,,,,
 315,2022,Dutch_Grand_Prix,LAT,Williams,20.0,20.0,18,0.0
@@ -325,15 +325,15 @@
 323,2022,Dutch_Grand_Prix,RUS,Mercedes,6.0,6.0,2,18.0
 324,2022,Dutch_Grand_Prix,SAI,Ferrari,3.0,3.0,8,4.0
 325,2022,Dutch_Grand_Prix,STR,Aston Martin,10.0,10.0,10,1.0
-326,2022,Dutch_Grand_Prix,TSU,AlphaTauri,9.0,9.0,R,0.0
+326,2022,Dutch_Grand_Prix,TSU,Racing Bulls,9.0,9.0,R,0.0
 327,2022,Dutch_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,26.0
 328,2022,Dutch_Grand_Prix,VET,Aston Martin,19.0,19.0,14,0.0
-329,2022,Dutch_Grand_Prix,ZHO,Alfa Romeo,14.0,14.0,16,0.0
+329,2022,Dutch_Grand_Prix,ZHO,Audi,14.0,14.0,16,0.0
 330,2022,Italian_Grand_Prix,ALB,,,,,
 331,2022,Italian_Grand_Prix,ALO,Alpine,10.0,6.0,R,0.0
-332,2022,Italian_Grand_Prix,BOT,Alfa Romeo,12.0,15.0,13,0.0
+332,2022,Italian_Grand_Prix,BOT,Audi,12.0,15.0,13,0.0
 333,2022,Italian_Grand_Prix,DEV,Williams,13.0,8.0,9,2.0
-334,2022,Italian_Grand_Prix,GAS,AlphaTauri,9.0,5.0,8,4.0
+334,2022,Italian_Grand_Prix,GAS,Racing Bulls,9.0,5.0,8,4.0
 335,2022,Italian_Grand_Prix,HAM,Mercedes,5.0,19.0,5,10.0
 336,2022,Italian_Grand_Prix,HUL,,,,,
 337,2022,Italian_Grand_Prix,LAT,Williams,16.0,10.0,15,0.0
@@ -347,15 +347,15 @@
 345,2022,Italian_Grand_Prix,RUS,Mercedes,6.0,2.0,3,15.0
 346,2022,Italian_Grand_Prix,SAI,Ferrari,3.0,18.0,4,12.0
 347,2022,Italian_Grand_Prix,STR,Aston Martin,18.0,12.0,R,0.0
-348,2022,Italian_Grand_Prix,TSU,AlphaTauri,15.0,20.0,14,0.0
+348,2022,Italian_Grand_Prix,TSU,Racing Bulls,15.0,20.0,14,0.0
 349,2022,Italian_Grand_Prix,VER,Red Bull Racing,2.0,7.0,1,25.0
 350,2022,Italian_Grand_Prix,VET,Aston Martin,17.0,11.0,R,0.0
-351,2022,Italian_Grand_Prix,ZHO,Alfa Romeo,14.0,9.0,10,1.0
+351,2022,Italian_Grand_Prix,ZHO,Audi,14.0,9.0,10,1.0
 352,2022,Singapore_Grand_Prix,ALB,Williams,19.0,18.0,R,0.0
 353,2022,Singapore_Grand_Prix,ALO,Alpine,5.0,5.0,R,0.0
-354,2022,Singapore_Grand_Prix,BOT,Alfa Romeo,16.0,15.0,11,0.0
+354,2022,Singapore_Grand_Prix,BOT,Audi,16.0,15.0,11,0.0
 355,2022,Singapore_Grand_Prix,DEV,,,,,
-356,2022,Singapore_Grand_Prix,GAS,AlphaTauri,7.0,7.0,10,1.0
+356,2022,Singapore_Grand_Prix,GAS,Racing Bulls,7.0,7.0,10,1.0
 357,2022,Singapore_Grand_Prix,HAM,Mercedes,3.0,3.0,9,2.0
 358,2022,Singapore_Grand_Prix,HUL,,,,,
 359,2022,Singapore_Grand_Prix,LAT,Williams,20.0,19.0,R,0.0
@@ -369,15 +369,15 @@
 367,2022,Singapore_Grand_Prix,RUS,Mercedes,11.0,0.0,14,0.0
 368,2022,Singapore_Grand_Prix,SAI,Ferrari,4.0,4.0,3,15.0
 369,2022,Singapore_Grand_Prix,STR,Aston Martin,12.0,11.0,6,8.0
-370,2022,Singapore_Grand_Prix,TSU,AlphaTauri,10.0,10.0,R,0.0
+370,2022,Singapore_Grand_Prix,TSU,Racing Bulls,10.0,10.0,R,0.0
 371,2022,Singapore_Grand_Prix,VER,Red Bull Racing,8.0,8.0,7,6.0
 372,2022,Singapore_Grand_Prix,VET,Aston Martin,14.0,13.0,8,4.0
-373,2022,Singapore_Grand_Prix,ZHO,Alfa Romeo,15.0,14.0,R,0.0
+373,2022,Singapore_Grand_Prix,ZHO,Audi,15.0,14.0,R,0.0
 374,2022,Japanese_Grand_Prix,ALB,Williams,16.0,16.0,R,0.0
 375,2022,Japanese_Grand_Prix,ALO,Alpine,7.0,7.0,7,6.0
-376,2022,Japanese_Grand_Prix,BOT,Alfa Romeo,12.0,12.0,15,0.0
+376,2022,Japanese_Grand_Prix,BOT,Audi,12.0,12.0,15,0.0
 377,2022,Japanese_Grand_Prix,DEV,,,,,
-378,2022,Japanese_Grand_Prix,GAS,AlphaTauri,17.0,17.0,18,0.0
+378,2022,Japanese_Grand_Prix,GAS,Racing Bulls,17.0,17.0,18,0.0
 379,2022,Japanese_Grand_Prix,HAM,Mercedes,6.0,6.0,5,10.0
 380,2022,Japanese_Grand_Prix,HUL,,,,,
 381,2022,Japanese_Grand_Prix,LAT,Williams,20.0,20.0,9,2.0
@@ -391,15 +391,15 @@
 389,2022,Japanese_Grand_Prix,RUS,Mercedes,8.0,8.0,8,4.0
 390,2022,Japanese_Grand_Prix,SAI,Ferrari,3.0,3.0,R,0.0
 391,2022,Japanese_Grand_Prix,STR,Aston Martin,19.0,19.0,12,0.0
-392,2022,Japanese_Grand_Prix,TSU,AlphaTauri,13.0,13.0,13,0.0
+392,2022,Japanese_Grand_Prix,TSU,Racing Bulls,13.0,13.0,13,0.0
 393,2022,Japanese_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,25.0
 394,2022,Japanese_Grand_Prix,VET,Aston Martin,9.0,9.0,6,8.0
-395,2022,Japanese_Grand_Prix,ZHO,Alfa Romeo,14.0,14.0,16,0.0
+395,2022,Japanese_Grand_Prix,ZHO,Audi,14.0,14.0,16,0.0
 396,2022,United_States_Grand_Prix,ALB,Williams,11.0,8.0,13,0.0
 397,2022,United_States_Grand_Prix,ALO,Alpine,9.0,14.0,7,6.0
-398,2022,United_States_Grand_Prix,BOT,Alfa Romeo,10.0,7.0,R,0.0
+398,2022,United_States_Grand_Prix,BOT,Audi,10.0,7.0,R,0.0
 399,2022,United_States_Grand_Prix,DEV,,,,,
-400,2022,United_States_Grand_Prix,GAS,AlphaTauri,13.0,11.0,14,0.0
+400,2022,United_States_Grand_Prix,GAS,Racing Bulls,13.0,11.0,14,0.0
 401,2022,United_States_Grand_Prix,HAM,Mercedes,5.0,3.0,2,18.0
 402,2022,United_States_Grand_Prix,HUL,,,,,
 403,2022,United_States_Grand_Prix,LAT,Williams,20.0,17.0,17,0.0
@@ -413,15 +413,15 @@
 411,2022,United_States_Grand_Prix,RUS,Mercedes,6.0,4.0,5,11.0
 412,2022,United_States_Grand_Prix,SAI,Ferrari,1.0,1.0,R,0.0
 413,2022,United_States_Grand_Prix,STR,Aston Martin,7.0,5.0,R,0.0
-414,2022,United_States_Grand_Prix,TSU,AlphaTauri,15.0,19.0,10,1.0
+414,2022,United_States_Grand_Prix,TSU,Racing Bulls,15.0,19.0,10,1.0
 415,2022,United_States_Grand_Prix,VER,Red Bull Racing,3.0,2.0,1,25.0
 416,2022,United_States_Grand_Prix,VET,Aston Martin,12.0,10.0,8,4.0
-417,2022,United_States_Grand_Prix,ZHO,Alfa Romeo,14.0,18.0,12,0.0
+417,2022,United_States_Grand_Prix,ZHO,Audi,14.0,18.0,12,0.0
 418,2022,Mexico_City_Grand_Prix,ALB,Williams,19.0,17.0,12,0.0
 419,2022,Mexico_City_Grand_Prix,ALO,Alpine,9.0,9.0,19,0.0
-420,2022,Mexico_City_Grand_Prix,BOT,Alfa Romeo,6.0,6.0,10,1.0
+420,2022,Mexico_City_Grand_Prix,BOT,Audi,6.0,6.0,10,1.0
 421,2022,Mexico_City_Grand_Prix,DEV,,,,,
-422,2022,Mexico_City_Grand_Prix,GAS,AlphaTauri,14.0,14.0,11,0.0
+422,2022,Mexico_City_Grand_Prix,GAS,Racing Bulls,14.0,14.0,11,0.0
 423,2022,Mexico_City_Grand_Prix,HAM,Mercedes,3.0,3.0,2,18.0
 424,2022,Mexico_City_Grand_Prix,HUL,,,,,
 425,2022,Mexico_City_Grand_Prix,LAT,Williams,20.0,18.0,18,0.0
@@ -435,15 +435,15 @@
 433,2022,Mexico_City_Grand_Prix,RUS,Mercedes,2.0,2.0,4,13.0
 434,2022,Mexico_City_Grand_Prix,SAI,Ferrari,5.0,5.0,5,10.0
 435,2022,Mexico_City_Grand_Prix,STR,Aston Martin,18.0,20.0,15,0.0
-436,2022,Mexico_City_Grand_Prix,TSU,AlphaTauri,13.0,13.0,R,0.0
+436,2022,Mexico_City_Grand_Prix,TSU,Racing Bulls,13.0,13.0,R,0.0
 437,2022,Mexico_City_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,25.0
 438,2022,Mexico_City_Grand_Prix,VET,Aston Martin,17.0,16.0,14,0.0
-439,2022,Mexico_City_Grand_Prix,ZHO,Alfa Romeo,12.0,12.0,13,0.0
+439,2022,Mexico_City_Grand_Prix,ZHO,Audi,12.0,12.0,13,0.0
 440,2022,São_Paulo_Grand_Prix,ALB,Williams,11.0,19.0,15,0.0
 441,2022,São_Paulo_Grand_Prix,ALO,Alpine,7.0,17.0,5,10.0
-442,2022,São_Paulo_Grand_Prix,BOT,Alfa Romeo,18.0,14.0,9,2.0
+442,2022,São_Paulo_Grand_Prix,BOT,Audi,18.0,14.0,9,2.0
 443,2022,São_Paulo_Grand_Prix,DEV,,,,,
-444,2022,São_Paulo_Grand_Prix,GAS,AlphaTauri,12.0,10.0,14,0.0
+444,2022,São_Paulo_Grand_Prix,GAS,Racing Bulls,12.0,10.0,14,0.0
 445,2022,São_Paulo_Grand_Prix,HAM,Mercedes,8.0,2.0,2,18.0
 446,2022,São_Paulo_Grand_Prix,HUL,,,,,
 447,2022,São_Paulo_Grand_Prix,LAT,Williams,16.0,18.0,16,0.0
@@ -457,15 +457,15 @@
 455,2022,São_Paulo_Grand_Prix,RUS,Mercedes,3.0,1.0,1,26.0
 456,2022,São_Paulo_Grand_Prix,SAI,Ferrari,5.0,7.0,3,15.0
 457,2022,São_Paulo_Grand_Prix,STR,Aston Martin,15.0,15.0,10,1.0
-458,2022,São_Paulo_Grand_Prix,TSU,AlphaTauri,19.0,0.0,17,0.0
+458,2022,São_Paulo_Grand_Prix,TSU,Racing Bulls,19.0,0.0,17,0.0
 459,2022,São_Paulo_Grand_Prix,VER,Red Bull Racing,2.0,3.0,6,8.0
 460,2022,São_Paulo_Grand_Prix,VET,Aston Martin,13.0,9.0,11,0.0
-461,2022,São_Paulo_Grand_Prix,ZHO,Alfa Romeo,17.0,13.0,12,0.0
+461,2022,São_Paulo_Grand_Prix,ZHO,Audi,17.0,13.0,12,0.0
 462,2022,Abu_Dhabi_Grand_Prix,ALB,Williams,19.0,19.0,13,0.0
 463,2022,Abu_Dhabi_Grand_Prix,ALO,Alpine,11.0,10.0,R,0.0
-464,2022,Abu_Dhabi_Grand_Prix,BOT,Alfa Romeo,18.0,18.0,15,0.0
+464,2022,Abu_Dhabi_Grand_Prix,BOT,Audi,18.0,18.0,15,0.0
 465,2022,Abu_Dhabi_Grand_Prix,DEV,,,,,
-466,2022,Abu_Dhabi_Grand_Prix,GAS,AlphaTauri,17.0,17.0,14,0.0
+466,2022,Abu_Dhabi_Grand_Prix,GAS,Racing Bulls,17.0,17.0,14,0.0
 467,2022,Abu_Dhabi_Grand_Prix,HAM,Mercedes,5.0,5.0,18,0.0
 468,2022,Abu_Dhabi_Grand_Prix,HUL,,,,,
 469,2022,Abu_Dhabi_Grand_Prix,LAT,Williams,20.0,20.0,19,0.0
@@ -479,14 +479,14 @@
 477,2022,Abu_Dhabi_Grand_Prix,RUS,Mercedes,6.0,6.0,5,10.0
 478,2022,Abu_Dhabi_Grand_Prix,SAI,Ferrari,4.0,4.0,4,12.0
 479,2022,Abu_Dhabi_Grand_Prix,STR,Aston Martin,14.0,14.0,8,4.0
-480,2022,Abu_Dhabi_Grand_Prix,TSU,AlphaTauri,12.0,11.0,11,0.0
+480,2022,Abu_Dhabi_Grand_Prix,TSU,Racing Bulls,12.0,11.0,11,0.0
 481,2022,Abu_Dhabi_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,25.0
 482,2022,Abu_Dhabi_Grand_Prix,VET,Aston Martin,9.0,9.0,10,1.0
-483,2022,Abu_Dhabi_Grand_Prix,ZHO,Alfa Romeo,15.0,15.0,12,0.0
+483,2022,Abu_Dhabi_Grand_Prix,ZHO,Audi,15.0,15.0,12,0.0
 484,2023,Bahrain_Grand_Prix,ALB,Williams,15.0,15.0,10,1.0
 485,2023,Bahrain_Grand_Prix,ALO,Aston Martin,5.0,5.0,3,15.0
-486,2023,Bahrain_Grand_Prix,BOT,Alfa Romeo,12.0,12.0,8,4.0
-487,2023,Bahrain_Grand_Prix,DEV,AlphaTauri,19.0,19.0,14,0.0
+486,2023,Bahrain_Grand_Prix,BOT,Audi,12.0,12.0,8,4.0
+487,2023,Bahrain_Grand_Prix,DEV,Racing Bulls,19.0,19.0,14,0.0
 488,2023,Bahrain_Grand_Prix,GAS,Alpine,20.0,20.0,9,2.0
 489,2023,Bahrain_Grand_Prix,HAM,Mercedes,7.0,7.0,5,10.0
 490,2023,Bahrain_Grand_Prix,HUL,Haas F1 Team,10.0,10.0,15,0.0
@@ -502,13 +502,13 @@
 500,2023,Bahrain_Grand_Prix,SAI,Ferrari,4.0,4.0,4,12.0
 501,2023,Bahrain_Grand_Prix,SAR,Williams,16.0,16.0,12,0.0
 502,2023,Bahrain_Grand_Prix,STR,Aston Martin,8.0,8.0,6,8.0
-503,2023,Bahrain_Grand_Prix,TSU,AlphaTauri,14.0,14.0,11,0.0
+503,2023,Bahrain_Grand_Prix,TSU,Racing Bulls,14.0,14.0,11,0.0
 504,2023,Bahrain_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,25.0
-505,2023,Bahrain_Grand_Prix,ZHO,Alfa Romeo,13.0,13.0,16,0.0
+505,2023,Bahrain_Grand_Prix,ZHO,Audi,13.0,13.0,16,0.0
 506,2023,Saudi_Arabian_Grand_Prix,ALB,Williams,17.0,17.0,R,0.0
 507,2023,Saudi_Arabian_Grand_Prix,ALO,Aston Martin,3.0,2.0,3,15.0
-508,2023,Saudi_Arabian_Grand_Prix,BOT,Alfa Romeo,14.0,14.0,18,0.0
-509,2023,Saudi_Arabian_Grand_Prix,DEV,AlphaTauri,18.0,18.0,14,0.0
+508,2023,Saudi_Arabian_Grand_Prix,BOT,Audi,14.0,14.0,18,0.0
+509,2023,Saudi_Arabian_Grand_Prix,DEV,Racing Bulls,18.0,18.0,14,0.0
 510,2023,Saudi_Arabian_Grand_Prix,GAS,Alpine,10.0,9.0,9,2.0
 511,2023,Saudi_Arabian_Grand_Prix,HAM,Mercedes,8.0,7.0,5,10.0
 512,2023,Saudi_Arabian_Grand_Prix,HUL,Haas F1 Team,11.0,10.0,12,0.0
@@ -524,13 +524,13 @@
 522,2023,Saudi_Arabian_Grand_Prix,SAI,Ferrari,5.0,4.0,6,8.0
 523,2023,Saudi_Arabian_Grand_Prix,SAR,Williams,20.0,20.0,16,0.0
 524,2023,Saudi_Arabian_Grand_Prix,STR,Aston Martin,6.0,5.0,R,0.0
-525,2023,Saudi_Arabian_Grand_Prix,TSU,AlphaTauri,16.0,16.0,11,0.0
+525,2023,Saudi_Arabian_Grand_Prix,TSU,Racing Bulls,16.0,16.0,11,0.0
 526,2023,Saudi_Arabian_Grand_Prix,VER,Red Bull Racing,15.0,15.0,2,19.0
-527,2023,Saudi_Arabian_Grand_Prix,ZHO,Alfa Romeo,12.0,11.0,13,0.0
+527,2023,Saudi_Arabian_Grand_Prix,ZHO,Audi,12.0,11.0,13,0.0
 528,2023,Australian_Grand_Prix,ALB,Williams,8.0,8.0,R,0.0
 529,2023,Australian_Grand_Prix,ALO,Aston Martin,4.0,4.0,3,15.0
-530,2023,Australian_Grand_Prix,BOT,Alfa Romeo,19.0,19.0,11,0.0
-531,2023,Australian_Grand_Prix,DEV,AlphaTauri,15.0,15.0,15,0.0
+530,2023,Australian_Grand_Prix,BOT,Audi,19.0,19.0,11,0.0
+531,2023,Australian_Grand_Prix,DEV,Racing Bulls,15.0,15.0,15,0.0
 532,2023,Australian_Grand_Prix,GAS,Alpine,9.0,9.0,13,0.0
 533,2023,Australian_Grand_Prix,HAM,Mercedes,3.0,3.0,2,18.0
 534,2023,Australian_Grand_Prix,HUL,Haas F1 Team,10.0,10.0,7,6.0
@@ -546,13 +546,13 @@
 544,2023,Australian_Grand_Prix,SAI,Ferrari,5.0,5.0,12,0.0
 545,2023,Australian_Grand_Prix,SAR,Williams,18.0,18.0,16,0.0
 546,2023,Australian_Grand_Prix,STR,Aston Martin,6.0,6.0,4,12.0
-547,2023,Australian_Grand_Prix,TSU,AlphaTauri,12.0,12.0,10,1.0
+547,2023,Australian_Grand_Prix,TSU,Racing Bulls,12.0,12.0,10,1.0
 548,2023,Australian_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,25.0
-549,2023,Australian_Grand_Prix,ZHO,Alfa Romeo,17.0,17.0,9,2.0
+549,2023,Australian_Grand_Prix,ZHO,Audi,17.0,17.0,9,2.0
 550,2023,Azerbaijan_Grand_Prix,ALB,Williams,13.0,12.0,12,0.0
 551,2023,Azerbaijan_Grand_Prix,ALO,Aston Martin,6.0,6.0,4,12.0
-552,2023,Azerbaijan_Grand_Prix,BOT,Alfa Romeo,14.0,13.0,18,0.0
-553,2023,Azerbaijan_Grand_Prix,DEV,AlphaTauri,20.0,18.0,R,0.0
+552,2023,Azerbaijan_Grand_Prix,BOT,Audi,14.0,13.0,18,0.0
+553,2023,Azerbaijan_Grand_Prix,DEV,Racing Bulls,20.0,18.0,R,0.0
 554,2023,Azerbaijan_Grand_Prix,GAS,Alpine,19.0,17.0,14,0.0
 555,2023,Azerbaijan_Grand_Prix,HAM,Mercedes,5.0,5.0,6,8.0
 556,2023,Azerbaijan_Grand_Prix,HUL,Haas F1 Team,17.0,20.0,17,0.0
@@ -568,13 +568,13 @@
 566,2023,Azerbaijan_Grand_Prix,SAI,Ferrari,4.0,4.0,5,10.0
 567,2023,Azerbaijan_Grand_Prix,SAR,Williams,15.0,14.0,16,0.0
 568,2023,Azerbaijan_Grand_Prix,STR,Aston Martin,9.0,9.0,7,6.0
-569,2023,Azerbaijan_Grand_Prix,TSU,AlphaTauri,8.0,8.0,10,1.0
+569,2023,Azerbaijan_Grand_Prix,TSU,Racing Bulls,8.0,8.0,10,1.0
 570,2023,Azerbaijan_Grand_Prix,VER,Red Bull Racing,2.0,2.0,2,18.0
-571,2023,Azerbaijan_Grand_Prix,ZHO,Alfa Romeo,16.0,15.0,R,0.0
+571,2023,Azerbaijan_Grand_Prix,ZHO,Audi,16.0,15.0,R,0.0
 572,2023,Miami_Grand_Prix,ALB,Williams,11.0,11.0,14,0.0
 573,2023,Miami_Grand_Prix,ALO,Aston Martin,2.0,2.0,3,15.0
-574,2023,Miami_Grand_Prix,BOT,Alfa Romeo,10.0,10.0,13,0.0
-575,2023,Miami_Grand_Prix,DEV,AlphaTauri,15.0,15.0,18,0.0
+574,2023,Miami_Grand_Prix,BOT,Audi,10.0,10.0,13,0.0
+575,2023,Miami_Grand_Prix,DEV,Racing Bulls,15.0,15.0,18,0.0
 576,2023,Miami_Grand_Prix,GAS,Alpine,5.0,5.0,8,4.0
 577,2023,Miami_Grand_Prix,HAM,Mercedes,13.0,13.0,6,8.0
 578,2023,Miami_Grand_Prix,HUL,Haas F1 Team,12.0,12.0,15,0.0
@@ -590,13 +590,13 @@
 588,2023,Miami_Grand_Prix,SAI,Ferrari,3.0,3.0,5,10.0
 589,2023,Miami_Grand_Prix,SAR,Williams,20.0,20.0,20,0.0
 590,2023,Miami_Grand_Prix,STR,Aston Martin,18.0,18.0,12,0.0
-591,2023,Miami_Grand_Prix,TSU,AlphaTauri,17.0,17.0,11,0.0
+591,2023,Miami_Grand_Prix,TSU,Racing Bulls,17.0,17.0,11,0.0
 592,2023,Miami_Grand_Prix,VER,Red Bull Racing,9.0,9.0,1,26.0
-593,2023,Miami_Grand_Prix,ZHO,Alfa Romeo,14.0,14.0,16,0.0
+593,2023,Miami_Grand_Prix,ZHO,Audi,14.0,14.0,16,0.0
 594,2023,Monaco_Grand_Prix,ALB,Williams,13.0,13.0,14,0.0
 595,2023,Monaco_Grand_Prix,ALO,Aston Martin,2.0,2.0,2,18.0
-596,2023,Monaco_Grand_Prix,BOT,Alfa Romeo,15.0,15.0,11,0.0
-597,2023,Monaco_Grand_Prix,DEV,AlphaTauri,12.0,12.0,12,0.0
+596,2023,Monaco_Grand_Prix,BOT,Audi,15.0,15.0,11,0.0
+597,2023,Monaco_Grand_Prix,DEV,Racing Bulls,12.0,12.0,12,0.0
 598,2023,Monaco_Grand_Prix,GAS,Alpine,7.0,7.0,7,6.0
 599,2023,Monaco_Grand_Prix,HAM,Mercedes,6.0,5.0,4,13.0
 600,2023,Monaco_Grand_Prix,HUL,Haas F1 Team,18.0,18.0,17,0.0
@@ -612,13 +612,13 @@
 610,2023,Monaco_Grand_Prix,SAI,Ferrari,5.0,4.0,8,4.0
 611,2023,Monaco_Grand_Prix,SAR,Williams,16.0,16.0,18,0.0
 612,2023,Monaco_Grand_Prix,STR,Aston Martin,14.0,14.0,R,0.0
-613,2023,Monaco_Grand_Prix,TSU,AlphaTauri,9.0,9.0,15,0.0
+613,2023,Monaco_Grand_Prix,TSU,Racing Bulls,9.0,9.0,15,0.0
 614,2023,Monaco_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,25.0
-615,2023,Monaco_Grand_Prix,ZHO,Alfa Romeo,19.0,19.0,13,0.0
+615,2023,Monaco_Grand_Prix,ZHO,Audi,19.0,19.0,13,0.0
 616,2023,Spanish_Grand_Prix,ALB,Williams,18.0,18.0,16,0.0
 617,2023,Spanish_Grand_Prix,ALO,Aston Martin,9.0,8.0,7,6.0
-618,2023,Spanish_Grand_Prix,BOT,Alfa Romeo,16.0,16.0,19,0.0
-619,2023,Spanish_Grand_Prix,DEV,AlphaTauri,14.0,14.0,14,0.0
+618,2023,Spanish_Grand_Prix,BOT,Audi,16.0,16.0,19,0.0
+619,2023,Spanish_Grand_Prix,DEV,Racing Bulls,14.0,14.0,14,0.0
 620,2023,Spanish_Grand_Prix,GAS,Alpine,4.0,10.0,10,1.0
 621,2023,Spanish_Grand_Prix,HAM,Mercedes,5.0,4.0,2,18.0
 622,2023,Spanish_Grand_Prix,HUL,Haas F1 Team,8.0,7.0,15,0.0
@@ -634,13 +634,13 @@
 632,2023,Spanish_Grand_Prix,SAI,Ferrari,2.0,2.0,5,10.0
 633,2023,Spanish_Grand_Prix,SAR,Williams,20.0,20.0,20,0.0
 634,2023,Spanish_Grand_Prix,STR,Aston Martin,6.0,5.0,6,8.0
-635,2023,Spanish_Grand_Prix,TSU,AlphaTauri,15.0,15.0,12,0.0
+635,2023,Spanish_Grand_Prix,TSU,Racing Bulls,15.0,15.0,12,0.0
 636,2023,Spanish_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,26.0
-637,2023,Spanish_Grand_Prix,ZHO,Alfa Romeo,13.0,13.0,9,2.0
+637,2023,Spanish_Grand_Prix,ZHO,Audi,13.0,13.0,9,2.0
 638,2023,Canadian_Grand_Prix,ALB,Williams,10.0,9.0,7,6.0
 639,2023,Canadian_Grand_Prix,ALO,Aston Martin,3.0,2.0,2,18.0
-640,2023,Canadian_Grand_Prix,BOT,Alfa Romeo,15.0,14.0,10,1.0
-641,2023,Canadian_Grand_Prix,DEV,AlphaTauri,18.0,17.0,18,0.0
+640,2023,Canadian_Grand_Prix,BOT,Audi,15.0,14.0,10,1.0
+641,2023,Canadian_Grand_Prix,DEV,Racing Bulls,18.0,17.0,18,0.0
 642,2023,Canadian_Grand_Prix,GAS,Alpine,17.0,15.0,12,0.0
 643,2023,Canadian_Grand_Prix,HAM,Mercedes,4.0,3.0,3,15.0
 644,2023,Canadian_Grand_Prix,HUL,Haas F1 Team,2.0,5.0,15,0.0
@@ -656,13 +656,13 @@
 654,2023,Canadian_Grand_Prix,SAI,Ferrari,8.0,11.0,5,10.0
 655,2023,Canadian_Grand_Prix,SAR,Williams,19.0,18.0,R,0.0
 656,2023,Canadian_Grand_Prix,STR,Aston Martin,13.0,16.0,9,2.0
-657,2023,Canadian_Grand_Prix,TSU,AlphaTauri,16.0,19.0,14,0.0
+657,2023,Canadian_Grand_Prix,TSU,Racing Bulls,16.0,19.0,14,0.0
 658,2023,Canadian_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,25.0
-659,2023,Canadian_Grand_Prix,ZHO,Alfa Romeo,20.0,20.0,16,0.0
+659,2023,Canadian_Grand_Prix,ZHO,Audi,20.0,20.0,16,0.0
 660,2023,Austrian_Grand_Prix,ALB,Williams,10.0,10.0,11,0.0
 661,2023,Austrian_Grand_Prix,ALO,Aston Martin,7.0,7.0,5,10.0
-662,2023,Austrian_Grand_Prix,BOT,Alfa Romeo,14.0,14.0,15,0.0
-663,2023,Austrian_Grand_Prix,DEV,AlphaTauri,20.0,20.0,17,0.0
+662,2023,Austrian_Grand_Prix,BOT,Audi,14.0,14.0,15,0.0
+663,2023,Austrian_Grand_Prix,DEV,Racing Bulls,20.0,20.0,17,0.0
 664,2023,Austrian_Grand_Prix,GAS,Alpine,9.0,9.0,10,1.0
 665,2023,Austrian_Grand_Prix,HAM,Mercedes,5.0,5.0,8,4.0
 666,2023,Austrian_Grand_Prix,HUL,Haas F1 Team,8.0,8.0,R,0.0
@@ -678,13 +678,13 @@
 676,2023,Austrian_Grand_Prix,SAI,Ferrari,3.0,3.0,6,8.0
 677,2023,Austrian_Grand_Prix,SAR,Williams,18.0,18.0,13,0.0
 678,2023,Austrian_Grand_Prix,STR,Aston Martin,6.0,6.0,9,2.0
-679,2023,Austrian_Grand_Prix,TSU,AlphaTauri,16.0,16.0,19,0.0
+679,2023,Austrian_Grand_Prix,TSU,Racing Bulls,16.0,16.0,19,0.0
 680,2023,Austrian_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,26.0
-681,2023,Austrian_Grand_Prix,ZHO,Alfa Romeo,17.0,17.0,12,0.0
+681,2023,Austrian_Grand_Prix,ZHO,Audi,17.0,17.0,12,0.0
 682,2023,British_Grand_Prix,ALB,Williams,8.0,8.0,8,4.0
 683,2023,British_Grand_Prix,ALO,Aston Martin,9.0,9.0,7,6.0
-684,2023,British_Grand_Prix,BOT,Alfa Romeo,15.0,20.0,12,0.0
-685,2023,British_Grand_Prix,DEV,AlphaTauri,18.0,18.0,17,0.0
+684,2023,British_Grand_Prix,BOT,Audi,15.0,20.0,12,0.0
+685,2023,British_Grand_Prix,DEV,Racing Bulls,18.0,18.0,17,0.0
 686,2023,British_Grand_Prix,GAS,Alpine,10.0,10.0,18,0.0
 687,2023,British_Grand_Prix,HAM,Mercedes,7.0,7.0,3,15.0
 688,2023,British_Grand_Prix,HUL,Haas F1 Team,11.0,11.0,13,0.0
@@ -700,12 +700,12 @@
 698,2023,British_Grand_Prix,SAI,Ferrari,5.0,5.0,10,1.0
 699,2023,British_Grand_Prix,SAR,Williams,14.0,14.0,11,0.0
 700,2023,British_Grand_Prix,STR,Aston Martin,12.0,12.0,14,0.0
-701,2023,British_Grand_Prix,TSU,AlphaTauri,16.0,16.0,16,0.0
+701,2023,British_Grand_Prix,TSU,Racing Bulls,16.0,16.0,16,0.0
 702,2023,British_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,26.0
-703,2023,British_Grand_Prix,ZHO,Alfa Romeo,17.0,17.0,15,0.0
+703,2023,British_Grand_Prix,ZHO,Audi,17.0,17.0,15,0.0
 704,2023,Hungarian_Grand_Prix,ALB,Williams,16.0,16.0,11,0.0
 705,2023,Hungarian_Grand_Prix,ALO,Aston Martin,8.0,8.0,9,2.0
-706,2023,Hungarian_Grand_Prix,BOT,Alfa Romeo,7.0,7.0,12,0.0
+706,2023,Hungarian_Grand_Prix,BOT,Audi,7.0,7.0,12,0.0
 707,2023,Hungarian_Grand_Prix,DEV,,,,,
 708,2023,Hungarian_Grand_Prix,GAS,Alpine,15.0,15.0,R,0.0
 709,2023,Hungarian_Grand_Prix,HAM,Mercedes,1.0,1.0,4,12.0
@@ -717,17 +717,17 @@
 715,2023,Hungarian_Grand_Prix,OCO,Alpine,12.0,12.0,R,0.0
 716,2023,Hungarian_Grand_Prix,PER,Red Bull Racing,9.0,9.0,3,15.0
 717,2023,Hungarian_Grand_Prix,PIA,McLaren,4.0,4.0,5,10.0
-718,2023,Hungarian_Grand_Prix,RIC,AlphaTauri,13.0,13.0,13,0.0
+718,2023,Hungarian_Grand_Prix,RIC,Racing Bulls,13.0,13.0,13,0.0
 719,2023,Hungarian_Grand_Prix,RUS,Mercedes,18.0,18.0,6,8.0
 720,2023,Hungarian_Grand_Prix,SAI,Ferrari,11.0,11.0,8,4.0
 721,2023,Hungarian_Grand_Prix,SAR,Williams,20.0,20.0,18,0.0
 722,2023,Hungarian_Grand_Prix,STR,Aston Martin,14.0,14.0,10,1.0
-723,2023,Hungarian_Grand_Prix,TSU,AlphaTauri,17.0,17.0,15,0.0
+723,2023,Hungarian_Grand_Prix,TSU,Racing Bulls,17.0,17.0,15,0.0
 724,2023,Hungarian_Grand_Prix,VER,Red Bull Racing,2.0,2.0,1,26.0
-725,2023,Hungarian_Grand_Prix,ZHO,Alfa Romeo,5.0,5.0,16,0.0
+725,2023,Hungarian_Grand_Prix,ZHO,Audi,5.0,5.0,16,0.0
 726,2023,Belgian_Grand_Prix,ALB,Williams,16.0,15.0,14,0.0
 727,2023,Belgian_Grand_Prix,ALO,Aston Martin,9.0,9.0,5,10.0
-728,2023,Belgian_Grand_Prix,BOT,Alfa Romeo,14.0,13.0,12,0.0
+728,2023,Belgian_Grand_Prix,BOT,Audi,14.0,13.0,12,0.0
 729,2023,Belgian_Grand_Prix,DEV,,,,,
 730,2023,Belgian_Grand_Prix,GAS,Alpine,12.0,12.0,11,0.0
 731,2023,Belgian_Grand_Prix,HAM,Mercedes,4.0,3.0,4,13.0
@@ -739,22 +739,22 @@
 737,2023,Belgian_Grand_Prix,OCO,Alpine,15.0,14.0,8,4.0
 738,2023,Belgian_Grand_Prix,PER,Red Bull Racing,3.0,2.0,2,18.0
 739,2023,Belgian_Grand_Prix,PIA,McLaren,6.0,5.0,R,0.0
-740,2023,Belgian_Grand_Prix,RIC,AlphaTauri,19.0,19.0,16,0.0
+740,2023,Belgian_Grand_Prix,RIC,Racing Bulls,19.0,19.0,16,0.0
 741,2023,Belgian_Grand_Prix,RUS,Mercedes,8.0,8.0,6,8.0
 742,2023,Belgian_Grand_Prix,SAI,Ferrari,5.0,4.0,R,0.0
 743,2023,Belgian_Grand_Prix,SAR,Williams,18.0,18.0,17,0.0
 744,2023,Belgian_Grand_Prix,STR,Aston Martin,10.0,10.0,9,2.0
-745,2023,Belgian_Grand_Prix,TSU,AlphaTauri,11.0,11.0,10,1.0
+745,2023,Belgian_Grand_Prix,TSU,Racing Bulls,11.0,11.0,10,1.0
 746,2023,Belgian_Grand_Prix,VER,Red Bull Racing,1.0,6.0,1,25.0
-747,2023,Belgian_Grand_Prix,ZHO,Alfa Romeo,17.0,17.0,13,0.0
+747,2023,Belgian_Grand_Prix,ZHO,Audi,17.0,17.0,13,0.0
 748,2023,Dutch_Grand_Prix,ALB,Williams,4.0,4.0,8,4.0
 749,2023,Dutch_Grand_Prix,ALO,Aston Martin,5.0,5.0,2,19.0
-750,2023,Dutch_Grand_Prix,BOT,Alfa Romeo,19.0,18.0,14,0.0
+750,2023,Dutch_Grand_Prix,BOT,Audi,19.0,18.0,14,0.0
 751,2023,Dutch_Grand_Prix,DEV,,,,,
 752,2023,Dutch_Grand_Prix,GAS,Alpine,12.0,12.0,3,15.0
 753,2023,Dutch_Grand_Prix,HAM,Mercedes,13.0,13.0,6,8.0
 754,2023,Dutch_Grand_Prix,HUL,Haas F1 Team,15.0,14.0,12,0.0
-755,2023,Dutch_Grand_Prix,LAW,AlphaTauri,20.0,19.0,13,0.0
+755,2023,Dutch_Grand_Prix,LAW,Racing Bulls,20.0,19.0,13,0.0
 756,2023,Dutch_Grand_Prix,LEC,Ferrari,9.0,9.0,R,0.0
 757,2023,Dutch_Grand_Prix,MAG,Haas F1 Team,18.0,0.0,16,0.0
 758,2023,Dutch_Grand_Prix,NOR,McLaren,2.0,2.0,7,6.0
@@ -766,17 +766,17 @@
 764,2023,Dutch_Grand_Prix,SAI,Ferrari,6.0,6.0,5,10.0
 765,2023,Dutch_Grand_Prix,SAR,Williams,10.0,10.0,R,0.0
 766,2023,Dutch_Grand_Prix,STR,Aston Martin,11.0,11.0,11,0.0
-767,2023,Dutch_Grand_Prix,TSU,AlphaTauri,14.0,17.0,15,0.0
+767,2023,Dutch_Grand_Prix,TSU,Racing Bulls,14.0,17.0,15,0.0
 768,2023,Dutch_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,25.0
-769,2023,Dutch_Grand_Prix,ZHO,Alfa Romeo,16.0,15.0,R,0.0
+769,2023,Dutch_Grand_Prix,ZHO,Audi,16.0,15.0,R,0.0
 770,2023,Italian_Grand_Prix,ALB,Williams,6.0,6.0,7,6.0
 771,2023,Italian_Grand_Prix,ALO,Aston Martin,10.0,10.0,9,2.0
-772,2023,Italian_Grand_Prix,BOT,Alfa Romeo,14.0,14.0,10,1.0
+772,2023,Italian_Grand_Prix,BOT,Audi,14.0,14.0,10,1.0
 773,2023,Italian_Grand_Prix,DEV,,,,,
 774,2023,Italian_Grand_Prix,GAS,Alpine,17.0,17.0,15,0.0
 775,2023,Italian_Grand_Prix,HAM,Mercedes,8.0,8.0,6,8.0
 776,2023,Italian_Grand_Prix,HUL,Haas F1 Team,13.0,13.0,17,0.0
-777,2023,Italian_Grand_Prix,LAW,AlphaTauri,12.0,12.0,11,0.0
+777,2023,Italian_Grand_Prix,LAW,Racing Bulls,12.0,12.0,11,0.0
 778,2023,Italian_Grand_Prix,LEC,Ferrari,3.0,3.0,4,12.0
 779,2023,Italian_Grand_Prix,MAG,Haas F1 Team,19.0,19.0,18,0.0
 780,2023,Italian_Grand_Prix,NOR,McLaren,9.0,9.0,8,4.0
@@ -788,17 +788,17 @@
 786,2023,Italian_Grand_Prix,SAI,Ferrari,1.0,1.0,3,15.0
 787,2023,Italian_Grand_Prix,SAR,Williams,15.0,15.0,13,0.0
 788,2023,Italian_Grand_Prix,STR,Aston Martin,20.0,20.0,16,0.0
-789,2023,Italian_Grand_Prix,TSU,AlphaTauri,11.0,11.0,W,0.0
+789,2023,Italian_Grand_Prix,TSU,Racing Bulls,11.0,11.0,W,0.0
 790,2023,Italian_Grand_Prix,VER,Red Bull Racing,2.0,2.0,1,25.0
-791,2023,Italian_Grand_Prix,ZHO,Alfa Romeo,16.0,16.0,14,0.0
+791,2023,Italian_Grand_Prix,ZHO,Audi,16.0,16.0,14,0.0
 792,2023,Singapore_Grand_Prix,ALB,Williams,14.0,14.0,11,0.0
 793,2023,Singapore_Grand_Prix,ALO,Aston Martin,7.0,7.0,15,0.0
-794,2023,Singapore_Grand_Prix,BOT,Alfa Romeo,16.0,16.0,R,0.0
+794,2023,Singapore_Grand_Prix,BOT,Audi,16.0,16.0,R,0.0
 795,2023,Singapore_Grand_Prix,DEV,,,,,
 796,2023,Singapore_Grand_Prix,GAS,Alpine,12.0,12.0,6,8.0
 797,2023,Singapore_Grand_Prix,HAM,Mercedes,5.0,5.0,3,16.0
 798,2023,Singapore_Grand_Prix,HUL,Haas F1 Team,9.0,9.0,13,0.0
-799,2023,Singapore_Grand_Prix,LAW,AlphaTauri,10.0,10.0,9,2.0
+799,2023,Singapore_Grand_Prix,LAW,Racing Bulls,10.0,10.0,9,2.0
 800,2023,Singapore_Grand_Prix,LEC,Ferrari,3.0,3.0,4,12.0
 801,2023,Singapore_Grand_Prix,MAG,Haas F1 Team,6.0,6.0,10,1.0
 802,2023,Singapore_Grand_Prix,NOR,McLaren,4.0,4.0,2,18.0
@@ -810,17 +810,17 @@
 808,2023,Singapore_Grand_Prix,SAI,Ferrari,1.0,1.0,1,25.0
 809,2023,Singapore_Grand_Prix,SAR,Williams,18.0,18.0,14,0.0
 810,2023,Singapore_Grand_Prix,STR,Aston Martin,20.0,,W,0.0
-811,2023,Singapore_Grand_Prix,TSU,AlphaTauri,15.0,15.0,R,0.0
+811,2023,Singapore_Grand_Prix,TSU,Racing Bulls,15.0,15.0,R,0.0
 812,2023,Singapore_Grand_Prix,VER,Red Bull Racing,11.0,11.0,5,10.0
-813,2023,Singapore_Grand_Prix,ZHO,Alfa Romeo,19.0,19.0,12,0.0
+813,2023,Singapore_Grand_Prix,ZHO,Audi,19.0,19.0,12,0.0
 814,2023,Japanese_Grand_Prix,ALB,Williams,13.0,13.0,R,0.0
 815,2023,Japanese_Grand_Prix,ALO,Aston Martin,10.0,10.0,8,4.0
-816,2023,Japanese_Grand_Prix,BOT,Alfa Romeo,16.0,16.0,R,0.0
+816,2023,Japanese_Grand_Prix,BOT,Audi,16.0,16.0,R,0.0
 817,2023,Japanese_Grand_Prix,DEV,,,,,
 818,2023,Japanese_Grand_Prix,GAS,Alpine,12.0,12.0,10,1.0
 819,2023,Japanese_Grand_Prix,HAM,Mercedes,7.0,7.0,5,10.0
 820,2023,Japanese_Grand_Prix,HUL,Haas F1 Team,18.0,18.0,14,0.0
-821,2023,Japanese_Grand_Prix,LAW,AlphaTauri,11.0,11.0,11,0.0
+821,2023,Japanese_Grand_Prix,LAW,Racing Bulls,11.0,11.0,11,0.0
 822,2023,Japanese_Grand_Prix,LEC,Ferrari,4.0,4.0,4,12.0
 823,2023,Japanese_Grand_Prix,MAG,Haas F1 Team,15.0,15.0,15,0.0
 824,2023,Japanese_Grand_Prix,NOR,McLaren,3.0,3.0,2,18.0
@@ -832,17 +832,17 @@
 830,2023,Japanese_Grand_Prix,SAI,Ferrari,6.0,6.0,6,8.0
 831,2023,Japanese_Grand_Prix,SAR,Williams,20.0,20.0,R,0.0
 832,2023,Japanese_Grand_Prix,STR,Aston Martin,17.0,17.0,R,0.0
-833,2023,Japanese_Grand_Prix,TSU,AlphaTauri,9.0,9.0,12,0.0
+833,2023,Japanese_Grand_Prix,TSU,Racing Bulls,9.0,9.0,12,0.0
 834,2023,Japanese_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,26.0
-835,2023,Japanese_Grand_Prix,ZHO,Alfa Romeo,19.0,19.0,13,0.0
+835,2023,Japanese_Grand_Prix,ZHO,Audi,19.0,19.0,13,0.0
 836,2023,Qatar_Grand_Prix,ALB,Williams,14.0,13.0,13,0.0
 837,2023,Qatar_Grand_Prix,ALO,Aston Martin,4.0,4.0,6,8.0
-838,2023,Qatar_Grand_Prix,BOT,Alfa Romeo,9.0,9.0,8,4.0
+838,2023,Qatar_Grand_Prix,BOT,Audi,9.0,9.0,8,4.0
 839,2023,Qatar_Grand_Prix,DEV,,,,,
 840,2023,Qatar_Grand_Prix,GAS,Alpine,7.0,7.0,12,0.0
 841,2023,Qatar_Grand_Prix,HAM,Mercedes,3.0,3.0,R,0.0
 842,2023,Qatar_Grand_Prix,HUL,Haas F1 Team,15.0,14.0,16,0.0
-843,2023,Qatar_Grand_Prix,LAW,AlphaTauri,18.0,17.0,17,0.0
+843,2023,Qatar_Grand_Prix,LAW,Racing Bulls,18.0,17.0,17,0.0
 844,2023,Qatar_Grand_Prix,LEC,Ferrari,5.0,5.0,5,10.0
 845,2023,Qatar_Grand_Prix,MAG,Haas F1 Team,19.0,18.0,14,0.0
 846,2023,Qatar_Grand_Prix,NOR,McLaren,10.0,10.0,3,15.0
@@ -854,12 +854,12 @@
 852,2023,Qatar_Grand_Prix,SAI,Ferrari,12.0,12.0,W,0.0
 853,2023,Qatar_Grand_Prix,SAR,Williams,16.0,15.0,R,0.0
 854,2023,Qatar_Grand_Prix,STR,Aston Martin,17.0,16.0,11,0.0
-855,2023,Qatar_Grand_Prix,TSU,AlphaTauri,11.0,11.0,15,0.0
+855,2023,Qatar_Grand_Prix,TSU,Racing Bulls,11.0,11.0,15,0.0
 856,2023,Qatar_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,26.0
-857,2023,Qatar_Grand_Prix,ZHO,Alfa Romeo,20.0,19.0,9,2.0
+857,2023,Qatar_Grand_Prix,ZHO,Audi,20.0,19.0,9,2.0
 858,2023,United_States_Grand_Prix,ALB,Williams,18.0,15.0,9,2.0
 859,2023,United_States_Grand_Prix,ALO,Aston Martin,17.0,19.0,R,0.0
-860,2023,United_States_Grand_Prix,BOT,Alfa Romeo,13.0,13.0,12,0.0
+860,2023,United_States_Grand_Prix,BOT,Audi,13.0,13.0,12,0.0
 861,2023,United_States_Grand_Prix,DEV,,,,,
 862,2023,United_States_Grand_Prix,GAS,Alpine,7.0,7.0,6,8.0
 863,2023,United_States_Grand_Prix,HAM,Mercedes,3.0,3.0,19,0.0
@@ -871,17 +871,17 @@
 869,2023,United_States_Grand_Prix,OCO,Alpine,8.0,8.0,R,0.0
 870,2023,United_States_Grand_Prix,PER,Red Bull Racing,9.0,9.0,4,12.0
 871,2023,United_States_Grand_Prix,PIA,McLaren,10.0,10.0,R,0.0
-872,2023,United_States_Grand_Prix,RIC,AlphaTauri,15.0,14.0,15,0.0
+872,2023,United_States_Grand_Prix,RIC,Racing Bulls,15.0,14.0,15,0.0
 873,2023,United_States_Grand_Prix,RUS,Mercedes,5.0,5.0,5,10.0
 874,2023,United_States_Grand_Prix,SAI,Ferrari,4.0,4.0,3,15.0
 875,2023,United_States_Grand_Prix,SAR,Williams,20.0,16.0,10,1.0
 876,2023,United_States_Grand_Prix,STR,Aston Martin,19.0,20.0,7,6.0
-877,2023,United_States_Grand_Prix,TSU,AlphaTauri,11.0,11.0,8,5.0
+877,2023,United_States_Grand_Prix,TSU,Racing Bulls,11.0,11.0,8,5.0
 878,2023,United_States_Grand_Prix,VER,Red Bull Racing,6.0,6.0,1,25.0
-879,2023,United_States_Grand_Prix,ZHO,Alfa Romeo,12.0,12.0,13,0.0
+879,2023,United_States_Grand_Prix,ZHO,Audi,12.0,12.0,13,0.0
 880,2023,Mexico_City_Grand_Prix,ALB,Williams,14.0,14.0,9,2.0
 881,2023,Mexico_City_Grand_Prix,ALO,Aston Martin,13.0,13.0,W,0.0
-882,2023,Mexico_City_Grand_Prix,BOT,Alfa Romeo,9.0,9.0,15,0.0
+882,2023,Mexico_City_Grand_Prix,BOT,Audi,9.0,9.0,15,0.0
 883,2023,Mexico_City_Grand_Prix,DEV,,,,,
 884,2023,Mexico_City_Grand_Prix,GAS,Alpine,11.0,11.0,11,0.0
 885,2023,Mexico_City_Grand_Prix,HAM,Mercedes,6.0,6.0,2,19.0
@@ -893,17 +893,17 @@
 891,2023,Mexico_City_Grand_Prix,OCO,Alpine,16.0,15.0,10,1.0
 892,2023,Mexico_City_Grand_Prix,PER,Red Bull Racing,5.0,5.0,R,0.0
 893,2023,Mexico_City_Grand_Prix,PIA,McLaren,7.0,7.0,8,4.0
-894,2023,Mexico_City_Grand_Prix,RIC,AlphaTauri,4.0,4.0,7,6.0
+894,2023,Mexico_City_Grand_Prix,RIC,Racing Bulls,4.0,4.0,7,6.0
 895,2023,Mexico_City_Grand_Prix,RUS,Mercedes,8.0,8.0,6,8.0
 896,2023,Mexico_City_Grand_Prix,SAI,Ferrari,2.0,2.0,4,12.0
 897,2023,Mexico_City_Grand_Prix,SAR,Williams,20.0,19.0,16,0.0
 898,2023,Mexico_City_Grand_Prix,STR,Aston Martin,18.0,0.0,17,0.0
-899,2023,Mexico_City_Grand_Prix,TSU,AlphaTauri,15.0,18.0,12,0.0
+899,2023,Mexico_City_Grand_Prix,TSU,Racing Bulls,15.0,18.0,12,0.0
 900,2023,Mexico_City_Grand_Prix,VER,Red Bull Racing,3.0,3.0,1,25.0
-901,2023,Mexico_City_Grand_Prix,ZHO,Alfa Romeo,10.0,10.0,14,0.0
+901,2023,Mexico_City_Grand_Prix,ZHO,Audi,10.0,10.0,14,0.0
 902,2023,São_Paulo_Grand_Prix,ALB,Williams,15.0,13.0,R,0.0
 903,2023,São_Paulo_Grand_Prix,ALO,Aston Martin,4.0,4.0,3,15.0
-904,2023,São_Paulo_Grand_Prix,BOT,Alfa Romeo,18.0,18.0,R,0.0
+904,2023,São_Paulo_Grand_Prix,BOT,Audi,18.0,18.0,R,0.0
 905,2023,São_Paulo_Grand_Prix,DEV,,,,,
 906,2023,São_Paulo_Grand_Prix,GAS,Alpine,13.0,15.0,7,6.0
 907,2023,São_Paulo_Grand_Prix,HAM,Mercedes,5.0,5.0,8,4.0
@@ -915,17 +915,17 @@
 913,2023,São_Paulo_Grand_Prix,OCO,Alpine,12.0,14.0,10,1.0
 914,2023,São_Paulo_Grand_Prix,PER,Red Bull Racing,9.0,9.0,4,12.0
 915,2023,São_Paulo_Grand_Prix,PIA,McLaren,10.0,10.0,14,0.0
-916,2023,São_Paulo_Grand_Prix,RIC,AlphaTauri,17.0,17.0,13,0.0
+916,2023,São_Paulo_Grand_Prix,RIC,Racing Bulls,17.0,17.0,13,0.0
 917,2023,São_Paulo_Grand_Prix,RUS,Mercedes,6.0,8.0,R,0.0
 918,2023,São_Paulo_Grand_Prix,SAI,Ferrari,8.0,7.0,6,8.0
 919,2023,São_Paulo_Grand_Prix,SAR,Williams,19.0,19.0,11,0.0
 920,2023,São_Paulo_Grand_Prix,STR,Aston Martin,3.0,3.0,5,10.0
-921,2023,São_Paulo_Grand_Prix,TSU,AlphaTauri,16.0,16.0,9,2.0
+921,2023,São_Paulo_Grand_Prix,TSU,Racing Bulls,16.0,16.0,9,2.0
 922,2023,São_Paulo_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,25.0
-923,2023,São_Paulo_Grand_Prix,ZHO,Alfa Romeo,20.0,20.0,R,0.0
+923,2023,São_Paulo_Grand_Prix,ZHO,Audi,20.0,20.0,R,0.0
 924,2023,Las_Vegas_Grand_Prix,ALB,Williams,6.0,5.0,12,0.0
 925,2023,Las_Vegas_Grand_Prix,ALO,Aston Martin,10.0,9.0,9,2.0
-926,2023,Las_Vegas_Grand_Prix,BOT,Alfa Romeo,8.0,7.0,17,0.0
+926,2023,Las_Vegas_Grand_Prix,BOT,Audi,8.0,7.0,17,0.0
 927,2023,Las_Vegas_Grand_Prix,DEV,,,,,
 928,2023,Las_Vegas_Grand_Prix,GAS,Alpine,5.0,4.0,11,0.0
 929,2023,Las_Vegas_Grand_Prix,HAM,Mercedes,11.0,10.0,7,6.0
@@ -937,17 +937,17 @@
 935,2023,Las_Vegas_Grand_Prix,OCO,Alpine,17.0,16.0,4,12.0
 936,2023,Las_Vegas_Grand_Prix,PER,Red Bull Racing,12.0,11.0,3,15.0
 937,2023,Las_Vegas_Grand_Prix,PIA,McLaren,19.0,18.0,10,2.0
-938,2023,Las_Vegas_Grand_Prix,RIC,AlphaTauri,15.0,14.0,14,0.0
+938,2023,Las_Vegas_Grand_Prix,RIC,Racing Bulls,15.0,14.0,14,0.0
 939,2023,Las_Vegas_Grand_Prix,RUS,Mercedes,4.0,3.0,8,4.0
 940,2023,Las_Vegas_Grand_Prix,SAI,Ferrari,2.0,12.0,6,8.0
 941,2023,Las_Vegas_Grand_Prix,SAR,Williams,7.0,6.0,16,0.0
 942,2023,Las_Vegas_Grand_Prix,STR,Aston Martin,14.0,19.0,5,10.0
-943,2023,Las_Vegas_Grand_Prix,TSU,AlphaTauri,20.0,20.0,18,0.0
+943,2023,Las_Vegas_Grand_Prix,TSU,Racing Bulls,20.0,20.0,18,0.0
 944,2023,Las_Vegas_Grand_Prix,VER,Red Bull Racing,3.0,2.0,1,25.0
-945,2023,Las_Vegas_Grand_Prix,ZHO,Alfa Romeo,18.0,17.0,15,0.0
+945,2023,Las_Vegas_Grand_Prix,ZHO,Audi,18.0,17.0,15,0.0
 946,2023,Abu_Dhabi_Grand_Prix,ALB,Williams,14.0,14.0,14,0.0
 947,2023,Abu_Dhabi_Grand_Prix,ALO,Aston Martin,7.0,7.0,7,6.0
-948,2023,Abu_Dhabi_Grand_Prix,BOT,Alfa Romeo,18.0,18.0,19,0.0
+948,2023,Abu_Dhabi_Grand_Prix,BOT,Audi,18.0,18.0,19,0.0
 949,2023,Abu_Dhabi_Grand_Prix,DEV,,,,,
 950,2023,Abu_Dhabi_Grand_Prix,GAS,Alpine,10.0,10.0,13,0.0
 951,2023,Abu_Dhabi_Grand_Prix,HAM,Mercedes,11.0,11.0,9,2.0
@@ -959,18 +959,18 @@
 957,2023,Abu_Dhabi_Grand_Prix,OCO,Alpine,12.0,12.0,12,0.0
 958,2023,Abu_Dhabi_Grand_Prix,PER,Red Bull Racing,9.0,9.0,4,12.0
 959,2023,Abu_Dhabi_Grand_Prix,PIA,McLaren,3.0,3.0,6,8.0
-960,2023,Abu_Dhabi_Grand_Prix,RIC,AlphaTauri,15.0,15.0,11,0.0
+960,2023,Abu_Dhabi_Grand_Prix,RIC,Racing Bulls,15.0,15.0,11,0.0
 961,2023,Abu_Dhabi_Grand_Prix,RUS,Mercedes,4.0,4.0,3,15.0
 962,2023,Abu_Dhabi_Grand_Prix,SAI,Ferrari,16.0,16.0,18,0.0
 963,2023,Abu_Dhabi_Grand_Prix,SAR,Williams,20.0,20.0,16,0.0
 964,2023,Abu_Dhabi_Grand_Prix,STR,Aston Martin,13.0,13.0,10,1.0
-965,2023,Abu_Dhabi_Grand_Prix,TSU,AlphaTauri,6.0,6.0,8,4.0
+965,2023,Abu_Dhabi_Grand_Prix,TSU,Racing Bulls,6.0,6.0,8,4.0
 966,2023,Abu_Dhabi_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,26.0
-967,2023,Abu_Dhabi_Grand_Prix,ZHO,Alfa Romeo,19.0,19.0,17,0.0
+967,2023,Abu_Dhabi_Grand_Prix,ZHO,Audi,19.0,19.0,17,0.0
 968,2024,Bahrain_Grand_Prix,ALB,Williams,13.0,13.0,15,0.0
 969,2024,Bahrain_Grand_Prix,ALO,Aston Martin,6.0,6.0,9,2.0
 970,2024,Bahrain_Grand_Prix,BEA,,,,,
-971,2024,Bahrain_Grand_Prix,BOT,Kick Sauber,16.0,16.0,19,0.0
+971,2024,Bahrain_Grand_Prix,BOT,Audi,16.0,16.0,19,0.0
 972,2024,Bahrain_Grand_Prix,COL,,,,,
 973,2024,Bahrain_Grand_Prix,DOO,,,,,
 974,2024,Bahrain_Grand_Prix,GAS,Alpine,20.0,20.0,18,0.0
@@ -983,18 +983,18 @@
 981,2024,Bahrain_Grand_Prix,OCO,Alpine,19.0,19.0,17,0.0
 982,2024,Bahrain_Grand_Prix,PER,Red Bull Racing,5.0,5.0,2,18.0
 983,2024,Bahrain_Grand_Prix,PIA,McLaren,8.0,8.0,8,4.0
-984,2024,Bahrain_Grand_Prix,RIC,RB,14.0,14.0,13,0.0
+984,2024,Bahrain_Grand_Prix,RIC,Racing Bulls,14.0,14.0,13,0.0
 985,2024,Bahrain_Grand_Prix,RUS,Mercedes,3.0,3.0,5,10.0
 986,2024,Bahrain_Grand_Prix,SAI,Ferrari,4.0,4.0,3,15.0
 987,2024,Bahrain_Grand_Prix,SAR,Williams,18.0,18.0,20,0.0
 988,2024,Bahrain_Grand_Prix,STR,Aston Martin,12.0,12.0,10,1.0
-989,2024,Bahrain_Grand_Prix,TSU,RB,11.0,11.0,14,0.0
+989,2024,Bahrain_Grand_Prix,TSU,Racing Bulls,11.0,11.0,14,0.0
 990,2024,Bahrain_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,26.0
-991,2024,Bahrain_Grand_Prix,ZHO,Kick Sauber,17.0,17.0,11,0.0
+991,2024,Bahrain_Grand_Prix,ZHO,Audi,17.0,17.0,11,0.0
 992,2024,Saudi_Arabian_Grand_Prix,ALB,Williams,12.0,12.0,11,0.0
 993,2024,Saudi_Arabian_Grand_Prix,ALO,Aston Martin,4.0,4.0,5,10.0
 994,2024,Saudi_Arabian_Grand_Prix,BEA,Ferrari,11.0,11.0,7,6.0
-995,2024,Saudi_Arabian_Grand_Prix,BOT,Kick Sauber,16.0,16.0,17,0.0
+995,2024,Saudi_Arabian_Grand_Prix,BOT,Audi,16.0,16.0,17,0.0
 996,2024,Saudi_Arabian_Grand_Prix,COL,,,,,
 997,2024,Saudi_Arabian_Grand_Prix,DOO,,,,,
 998,2024,Saudi_Arabian_Grand_Prix,GAS,Alpine,18.0,18.0,R,0.0
@@ -1007,18 +1007,18 @@
 1005,2024,Saudi_Arabian_Grand_Prix,OCO,Alpine,17.0,17.0,13,0.0
 1006,2024,Saudi_Arabian_Grand_Prix,PER,Red Bull Racing,3.0,3.0,2,18.0
 1007,2024,Saudi_Arabian_Grand_Prix,PIA,McLaren,5.0,5.0,4,12.0
-1008,2024,Saudi_Arabian_Grand_Prix,RIC,RB,14.0,14.0,16,0.0
+1008,2024,Saudi_Arabian_Grand_Prix,RIC,Racing Bulls,14.0,14.0,16,0.0
 1009,2024,Saudi_Arabian_Grand_Prix,RUS,Mercedes,7.0,7.0,6,8.0
 1010,2024,Saudi_Arabian_Grand_Prix,SAI,,,,,
 1011,2024,Saudi_Arabian_Grand_Prix,SAR,Williams,19.0,19.0,14,0.0
 1012,2024,Saudi_Arabian_Grand_Prix,STR,Aston Martin,10.0,10.0,R,0.0
-1013,2024,Saudi_Arabian_Grand_Prix,TSU,RB,9.0,9.0,15,0.0
+1013,2024,Saudi_Arabian_Grand_Prix,TSU,Racing Bulls,9.0,9.0,15,0.0
 1014,2024,Saudi_Arabian_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,25.0
-1015,2024,Saudi_Arabian_Grand_Prix,ZHO,Kick Sauber,20.0,20.0,18,0.0
+1015,2024,Saudi_Arabian_Grand_Prix,ZHO,Audi,20.0,20.0,18,0.0
 1016,2024,Australian_Grand_Prix,ALB,Williams,12.0,12.0,11,0.0
 1017,2024,Australian_Grand_Prix,ALO,Aston Martin,10.0,10.0,8,4.0
 1018,2024,Australian_Grand_Prix,BEA,,,,,
-1019,2024,Australian_Grand_Prix,BOT,Kick Sauber,13.0,13.0,14,0.0
+1019,2024,Australian_Grand_Prix,BOT,Audi,13.0,13.0,14,0.0
 1020,2024,Australian_Grand_Prix,COL,,,,,
 1021,2024,Australian_Grand_Prix,DOO,,,,,
 1022,2024,Australian_Grand_Prix,GAS,Alpine,17.0,17.0,13,0.0
@@ -1031,18 +1031,18 @@
 1029,2024,Australian_Grand_Prix,OCO,Alpine,15.0,15.0,16,0.0
 1030,2024,Australian_Grand_Prix,PER,Red Bull Racing,3.0,6.0,5,10.0
 1031,2024,Australian_Grand_Prix,PIA,McLaren,6.0,5.0,4,12.0
-1032,2024,Australian_Grand_Prix,RIC,RB,18.0,18.0,12,0.0
+1032,2024,Australian_Grand_Prix,RIC,Racing Bulls,18.0,18.0,12,0.0
 1033,2024,Australian_Grand_Prix,RUS,Mercedes,7.0,7.0,17,0.0
 1034,2024,Australian_Grand_Prix,SAI,Ferrari,2.0,2.0,1,25.0
 1035,2024,Australian_Grand_Prix,SAR,,,,,
 1036,2024,Australian_Grand_Prix,STR,Aston Martin,9.0,9.0,6,8.0
-1037,2024,Australian_Grand_Prix,TSU,RB,8.0,8.0,7,6.0
+1037,2024,Australian_Grand_Prix,TSU,Racing Bulls,8.0,8.0,7,6.0
 1038,2024,Australian_Grand_Prix,VER,Red Bull Racing,1.0,1.0,R,0.0
-1039,2024,Australian_Grand_Prix,ZHO,Kick Sauber,19.0,19.0,15,0.0
+1039,2024,Australian_Grand_Prix,ZHO,Audi,19.0,19.0,15,0.0
 1040,2024,Japanese_Grand_Prix,ALB,Williams,14.0,14.0,R,0.0
 1041,2024,Japanese_Grand_Prix,ALO,Aston Martin,5.0,5.0,6,8.0
 1042,2024,Japanese_Grand_Prix,BEA,,,,,
-1043,2024,Japanese_Grand_Prix,BOT,Kick Sauber,13.0,13.0,14,0.0
+1043,2024,Japanese_Grand_Prix,BOT,Audi,13.0,13.0,14,0.0
 1044,2024,Japanese_Grand_Prix,COL,,,,,
 1045,2024,Japanese_Grand_Prix,DOO,,,,,
 1046,2024,Japanese_Grand_Prix,GAS,Alpine,17.0,17.0,16,0.0
@@ -1055,18 +1055,18 @@
 1053,2024,Japanese_Grand_Prix,OCO,Alpine,15.0,15.0,15,0.0
 1054,2024,Japanese_Grand_Prix,PER,Red Bull Racing,2.0,2.0,2,18.0
 1055,2024,Japanese_Grand_Prix,PIA,McLaren,6.0,6.0,8,4.0
-1056,2024,Japanese_Grand_Prix,RIC,RB,11.0,11.0,R,0.0
+1056,2024,Japanese_Grand_Prix,RIC,Racing Bulls,11.0,11.0,R,0.0
 1057,2024,Japanese_Grand_Prix,RUS,Mercedes,9.0,9.0,7,6.0
 1058,2024,Japanese_Grand_Prix,SAI,Ferrari,4.0,4.0,3,15.0
 1059,2024,Japanese_Grand_Prix,SAR,Williams,19.0,19.0,17,0.0
 1060,2024,Japanese_Grand_Prix,STR,Aston Martin,16.0,16.0,12,0.0
-1061,2024,Japanese_Grand_Prix,TSU,RB,10.0,10.0,10,1.0
+1061,2024,Japanese_Grand_Prix,TSU,Racing Bulls,10.0,10.0,10,1.0
 1062,2024,Japanese_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,26.0
-1063,2024,Japanese_Grand_Prix,ZHO,Kick Sauber,20.0,20.0,R,0.0
+1063,2024,Japanese_Grand_Prix,ZHO,Audi,20.0,20.0,R,0.0
 1064,2024,Chinese_Grand_Prix,ALB,Williams,14.0,14.0,12,0.0
 1065,2024,Chinese_Grand_Prix,ALO,Aston Martin,3.0,3.0,7,7.0
 1066,2024,Chinese_Grand_Prix,BEA,,,,,
-1067,2024,Chinese_Grand_Prix,BOT,Kick Sauber,10.0,10.0,R,0.0
+1067,2024,Chinese_Grand_Prix,BOT,Audi,10.0,10.0,R,0.0
 1068,2024,Chinese_Grand_Prix,COL,,,,,
 1069,2024,Chinese_Grand_Prix,DOO,,,,,
 1070,2024,Chinese_Grand_Prix,GAS,Alpine,15.0,15.0,13,0.0
@@ -1079,18 +1079,18 @@
 1077,2024,Chinese_Grand_Prix,OCO,Alpine,13.0,13.0,11,0.0
 1078,2024,Chinese_Grand_Prix,PER,Red Bull Racing,2.0,2.0,3,15.0
 1079,2024,Chinese_Grand_Prix,PIA,McLaren,5.0,5.0,8,4.0
-1080,2024,Chinese_Grand_Prix,RIC,RB,12.0,12.0,R,0.0
+1080,2024,Chinese_Grand_Prix,RIC,Racing Bulls,12.0,12.0,R,0.0
 1081,2024,Chinese_Grand_Prix,RUS,Mercedes,8.0,8.0,6,8.0
 1082,2024,Chinese_Grand_Prix,SAI,Ferrari,7.0,7.0,5,10.0
 1083,2024,Chinese_Grand_Prix,SAR,Williams,20.0,20.0,17,0.0
 1084,2024,Chinese_Grand_Prix,STR,Aston Martin,11.0,11.0,15,0.0
-1085,2024,Chinese_Grand_Prix,TSU,RB,19.0,19.0,R,0.0
+1085,2024,Chinese_Grand_Prix,TSU,Racing Bulls,19.0,19.0,R,0.0
 1086,2024,Chinese_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,25.0
-1087,2024,Chinese_Grand_Prix,ZHO,Kick Sauber,16.0,16.0,14,0.0
+1087,2024,Chinese_Grand_Prix,ZHO,Audi,16.0,16.0,14,0.0
 1088,2024,Miami_Grand_Prix,ALB,Williams,14.0,14.0,18,0.0
 1089,2024,Miami_Grand_Prix,ALO,Aston Martin,15.0,15.0,9,2.0
 1090,2024,Miami_Grand_Prix,BEA,,,,,
-1091,2024,Miami_Grand_Prix,BOT,Kick Sauber,16.0,16.0,16,0.0
+1091,2024,Miami_Grand_Prix,BOT,Audi,16.0,16.0,16,0.0
 1092,2024,Miami_Grand_Prix,COL,,,,,
 1093,2024,Miami_Grand_Prix,DOO,,,,,
 1094,2024,Miami_Grand_Prix,GAS,Alpine,12.0,12.0,12,0.0
@@ -1103,18 +1103,18 @@
 1101,2024,Miami_Grand_Prix,OCO,Alpine,13.0,13.0,10,1.0
 1102,2024,Miami_Grand_Prix,PER,Red Bull Racing,4.0,4.0,4,12.0
 1103,2024,Miami_Grand_Prix,PIA,McLaren,6.0,6.0,13,0.0
-1104,2024,Miami_Grand_Prix,RIC,RB,18.0,20.0,15,0.0
+1104,2024,Miami_Grand_Prix,RIC,Racing Bulls,18.0,20.0,15,0.0
 1105,2024,Miami_Grand_Prix,RUS,Mercedes,7.0,7.0,8,4.0
 1106,2024,Miami_Grand_Prix,SAI,Ferrari,3.0,3.0,5,10.0
 1107,2024,Miami_Grand_Prix,SAR,Williams,17.0,17.0,R,0.0
 1108,2024,Miami_Grand_Prix,STR,Aston Martin,11.0,11.0,17,0.0
-1109,2024,Miami_Grand_Prix,TSU,RB,10.0,10.0,7,6.0
+1109,2024,Miami_Grand_Prix,TSU,Racing Bulls,10.0,10.0,7,6.0
 1110,2024,Miami_Grand_Prix,VER,Red Bull Racing,1.0,1.0,2,18.0
-1111,2024,Miami_Grand_Prix,ZHO,Kick Sauber,20.0,19.0,14,0.0
+1111,2024,Miami_Grand_Prix,ZHO,Audi,20.0,19.0,14,0.0
 1112,2024,Emilia_Romagna_Grand_Prix,ALB,Williams,14.0,14.0,R,0.0
 1113,2024,Emilia_Romagna_Grand_Prix,ALO,Aston Martin,19.0,20.0,19,0.0
 1114,2024,Emilia_Romagna_Grand_Prix,BEA,,,,,
-1115,2024,Emilia_Romagna_Grand_Prix,BOT,Kick Sauber,16.0,16.0,18,0.0
+1115,2024,Emilia_Romagna_Grand_Prix,BOT,Audi,16.0,16.0,18,0.0
 1116,2024,Emilia_Romagna_Grand_Prix,COL,,,,,
 1117,2024,Emilia_Romagna_Grand_Prix,DOO,,,,,
 1118,2024,Emilia_Romagna_Grand_Prix,GAS,Alpine,15.0,15.0,16,0.0
@@ -1127,18 +1127,18 @@
 1125,2024,Emilia_Romagna_Grand_Prix,OCO,Alpine,12.0,12.0,14,0.0
 1126,2024,Emilia_Romagna_Grand_Prix,PER,Red Bull Racing,11.0,11.0,8,4.0
 1127,2024,Emilia_Romagna_Grand_Prix,PIA,McLaren,2.0,5.0,4,12.0
-1128,2024,Emilia_Romagna_Grand_Prix,RIC,RB,9.0,9.0,13,0.0
+1128,2024,Emilia_Romagna_Grand_Prix,RIC,Racing Bulls,9.0,9.0,13,0.0
 1129,2024,Emilia_Romagna_Grand_Prix,RUS,Mercedes,6.0,6.0,7,7.0
 1130,2024,Emilia_Romagna_Grand_Prix,SAI,Ferrari,5.0,4.0,5,10.0
 1131,2024,Emilia_Romagna_Grand_Prix,SAR,Williams,20.0,19.0,17,0.0
 1132,2024,Emilia_Romagna_Grand_Prix,STR,Aston Martin,13.0,13.0,9,2.0
-1133,2024,Emilia_Romagna_Grand_Prix,TSU,RB,7.0,7.0,10,1.0
+1133,2024,Emilia_Romagna_Grand_Prix,TSU,Racing Bulls,7.0,7.0,10,1.0
 1134,2024,Emilia_Romagna_Grand_Prix,VER,Red Bull Racing,1.0,1.0,1,25.0
-1135,2024,Emilia_Romagna_Grand_Prix,ZHO,Kick Sauber,17.0,17.0,15,0.0
+1135,2024,Emilia_Romagna_Grand_Prix,ZHO,Audi,17.0,17.0,15,0.0
 1136,2024,Monaco_Grand_Prix,ALB,Williams,9.0,9.0,9,2.0
 1137,2024,Monaco_Grand_Prix,ALO,Aston Martin,14.0,14.0,11,0.0
 1138,2024,Monaco_Grand_Prix,BEA,,,,,
-1139,2024,Monaco_Grand_Prix,BOT,Kick Sauber,17.0,17.0,13,0.0
+1139,2024,Monaco_Grand_Prix,BOT,Audi,17.0,17.0,13,0.0
 1140,2024,Monaco_Grand_Prix,COL,,,,,
 1141,2024,Monaco_Grand_Prix,DOO,,,,,
 1142,2024,Monaco_Grand_Prix,GAS,Alpine,10.0,10.0,10,1.0
@@ -1151,18 +1151,18 @@
 1149,2024,Monaco_Grand_Prix,OCO,Alpine,11.0,11.0,R,0.0
 1150,2024,Monaco_Grand_Prix,PER,Red Bull Racing,16.0,16.0,R,0.0
 1151,2024,Monaco_Grand_Prix,PIA,McLaren,2.0,2.0,2,18.0
-1152,2024,Monaco_Grand_Prix,RIC,RB,12.0,12.0,12,0.0
+1152,2024,Monaco_Grand_Prix,RIC,Racing Bulls,12.0,12.0,12,0.0
 1153,2024,Monaco_Grand_Prix,RUS,Mercedes,5.0,5.0,5,10.0
 1154,2024,Monaco_Grand_Prix,SAI,Ferrari,3.0,3.0,3,15.0
 1155,2024,Monaco_Grand_Prix,SAR,Williams,15.0,15.0,15,0.0
 1156,2024,Monaco_Grand_Prix,STR,Aston Martin,13.0,13.0,14,0.0
-1157,2024,Monaco_Grand_Prix,TSU,RB,8.0,8.0,8,4.0
+1157,2024,Monaco_Grand_Prix,TSU,Racing Bulls,8.0,8.0,8,4.0
 1158,2024,Monaco_Grand_Prix,VER,Red Bull Racing,6.0,6.0,6,8.0
-1159,2024,Monaco_Grand_Prix,ZHO,Kick Sauber,18.0,18.0,16,0.0
+1159,2024,Monaco_Grand_Prix,ZHO,Audi,18.0,18.0,16,0.0
 1160,2024,Canadian_Grand_Prix,ALB,Williams,10.0,10.0,R,0.0
 1161,2024,Canadian_Grand_Prix,ALO,Aston Martin,6.0,6.0,6,8.0
 1162,2024,Canadian_Grand_Prix,BEA,,,,,
-1163,2024,Canadian_Grand_Prix,BOT,Kick Sauber,17.0,19.0,13,0.0
+1163,2024,Canadian_Grand_Prix,BOT,Audi,17.0,19.0,13,0.0
 1164,2024,Canadian_Grand_Prix,COL,,,,,
 1165,2024,Canadian_Grand_Prix,DOO,,,,,
 1166,2024,Canadian_Grand_Prix,GAS,Alpine,15.0,15.0,9,2.0
@@ -1175,18 +1175,18 @@
 1173,2024,Canadian_Grand_Prix,OCO,Alpine,18.0,18.0,10,1.0
 1174,2024,Canadian_Grand_Prix,PER,Red Bull Racing,16.0,16.0,R,0.0
 1175,2024,Canadian_Grand_Prix,PIA,McLaren,4.0,4.0,5,10.0
-1176,2024,Canadian_Grand_Prix,RIC,RB,5.0,5.0,8,4.0
+1176,2024,Canadian_Grand_Prix,RIC,Racing Bulls,5.0,5.0,8,4.0
 1177,2024,Canadian_Grand_Prix,RUS,Mercedes,1.0,1.0,3,15.0
 1178,2024,Canadian_Grand_Prix,SAI,Ferrari,12.0,12.0,R,0.0
 1179,2024,Canadian_Grand_Prix,SAR,Williams,13.0,13.0,R,0.0
 1180,2024,Canadian_Grand_Prix,STR,Aston Martin,9.0,9.0,7,6.0
-1181,2024,Canadian_Grand_Prix,TSU,RB,8.0,8.0,14,0.0
+1181,2024,Canadian_Grand_Prix,TSU,Racing Bulls,8.0,8.0,14,0.0
 1182,2024,Canadian_Grand_Prix,VER,Red Bull Racing,2.0,2.0,1,25.0
-1183,2024,Canadian_Grand_Prix,ZHO,Kick Sauber,20.0,20.0,15,0.0
+1183,2024,Canadian_Grand_Prix,ZHO,Audi,20.0,20.0,15,0.0
 1184,2024,Spanish_Grand_Prix,ALB,Williams,19.0,20.0,18,0.0
 1185,2024,Spanish_Grand_Prix,ALO,Aston Martin,11.0,10.0,12,0.0
 1186,2024,Spanish_Grand_Prix,BEA,,,,,
-1187,2024,Spanish_Grand_Prix,BOT,Kick Sauber,12.0,12.0,16,0.0
+1187,2024,Spanish_Grand_Prix,BOT,Audi,12.0,12.0,16,0.0
 1188,2024,Spanish_Grand_Prix,COL,,,,,
 1189,2024,Spanish_Grand_Prix,DOO,,,,,
 1190,2024,Spanish_Grand_Prix,GAS,Alpine,7.0,7.0,9,2.0
@@ -1199,18 +1199,18 @@
 1197,2024,Spanish_Grand_Prix,OCO,Alpine,9.0,8.0,10,1.0
 1198,2024,Spanish_Grand_Prix,PER,Red Bull Racing,8.0,11.0,8,4.0
 1199,2024,Spanish_Grand_Prix,PIA,McLaren,10.0,9.0,7,6.0
-1200,2024,Spanish_Grand_Prix,RIC,RB,18.0,18.0,15,0.0
+1200,2024,Spanish_Grand_Prix,RIC,Racing Bulls,18.0,18.0,15,0.0
 1201,2024,Spanish_Grand_Prix,RUS,Mercedes,4.0,4.0,4,12.0
 1202,2024,Spanish_Grand_Prix,SAI,Ferrari,6.0,6.0,6,8.0
 1203,2024,Spanish_Grand_Prix,SAR,Williams,20.0,19.0,20,0.0
 1204,2024,Spanish_Grand_Prix,STR,Aston Martin,14.0,14.0,14,0.0
-1205,2024,Spanish_Grand_Prix,TSU,RB,17.0,17.0,19,0.0
+1205,2024,Spanish_Grand_Prix,TSU,Racing Bulls,17.0,17.0,19,0.0
 1206,2024,Spanish_Grand_Prix,VER,Red Bull Racing,2.0,2.0,1,25.0
-1207,2024,Spanish_Grand_Prix,ZHO,Kick Sauber,15.0,15.0,13,0.0
+1207,2024,Spanish_Grand_Prix,ZHO,Audi,15.0,15.0,13,0.0
 1208,2024,Austrian_Grand_Prix,ALB,Williams,16.0,16.0,15,0.0
 1209,2024,Austrian_Grand_Prix,ALO,Aston Martin,15.0,15.0,18,0.0
 1210,2024,Austrian_Grand_Prix,BEA,,,,,
-1211,2024,Austrian_Grand_Prix,BOT,Kick Sauber,18.0,18.0,16,0.0
+1211,2024,Austrian_Grand_Prix,BOT,Audi,18.0,18.0,16,0.0
 1212,2024,Austrian_Grand_Prix,COL,,,,,
 1213,2024,Austrian_Grand_Prix,DOO,,,,,
 1214,2024,Austrian_Grand_Prix,GAS,Alpine,13.0,13.0,10,1.0
@@ -1223,18 +1223,18 @@
 1221,2024,Austrian_Grand_Prix,OCO,Alpine,10.0,10.0,12,0.0
 1222,2024,Austrian_Grand_Prix,PER,Red Bull Racing,8.0,8.0,7,6.0
 1223,2024,Austrian_Grand_Prix,PIA,McLaren,7.0,7.0,2,18.0
-1224,2024,Austrian_Grand_Prix,RIC,RB,11.0,11.0,9,2.0
+1224,2024,Austrian_Grand_Prix,RIC,Racing Bulls,11.0,11.0,9,2.0
 1225,2024,Austrian_Grand_Prix,RUS,Mercedes,3.0,3.0,1,25.0
 1226,2024,Austrian_Grand_Prix,SAI,Ferrari,4.0,4.0,3,15.0
 1227,2024,Austrian_Grand_Prix,SAR,Williams,19.0,19.0,19,0.0
 1228,2024,Austrian_Grand_Prix,STR,Aston Martin,17.0,17.0,13,0.0
-1229,2024,Austrian_Grand_Prix,TSU,RB,14.0,14.0,14,0.0
+1229,2024,Austrian_Grand_Prix,TSU,Racing Bulls,14.0,14.0,14,0.0
 1230,2024,Austrian_Grand_Prix,VER,Red Bull Racing,1.0,1.0,5,10.0
-1231,2024,Austrian_Grand_Prix,ZHO,Kick Sauber,20.0,20.0,17,0.0
+1231,2024,Austrian_Grand_Prix,ZHO,Audi,20.0,20.0,17,0.0
 1232,2024,British_Grand_Prix,ALB,Williams,9.0,9.0,9,2.0
 1233,2024,British_Grand_Prix,ALO,Aston Martin,10.0,10.0,8,4.0
 1234,2024,British_Grand_Prix,BEA,,,,,
-1235,2024,British_Grand_Prix,BOT,Kick Sauber,16.0,16.0,15,0.0
+1235,2024,British_Grand_Prix,BOT,Audi,16.0,16.0,15,0.0
 1236,2024,British_Grand_Prix,COL,,,,,
 1237,2024,British_Grand_Prix,DOO,,,,,
 1238,2024,British_Grand_Prix,GAS,Alpine,20.0,19.0,W,0.0
@@ -1247,18 +1247,18 @@
 1245,2024,British_Grand_Prix,OCO,Alpine,18.0,18.0,16,0.0
 1246,2024,British_Grand_Prix,PER,Red Bull Racing,19.0,20.0,17,0.0
 1247,2024,British_Grand_Prix,PIA,McLaren,5.0,5.0,4,12.0
-1248,2024,British_Grand_Prix,RIC,RB,15.0,15.0,13,0.0
+1248,2024,British_Grand_Prix,RIC,Racing Bulls,15.0,15.0,13,0.0
 1249,2024,British_Grand_Prix,RUS,Mercedes,1.0,1.0,R,0.0
 1250,2024,British_Grand_Prix,SAI,Ferrari,7.0,7.0,5,11.0
 1251,2024,British_Grand_Prix,SAR,Williams,12.0,12.0,11,0.0
 1252,2024,British_Grand_Prix,STR,Aston Martin,8.0,8.0,7,6.0
-1253,2024,British_Grand_Prix,TSU,RB,13.0,13.0,10,1.0
+1253,2024,British_Grand_Prix,TSU,Racing Bulls,13.0,13.0,10,1.0
 1254,2024,British_Grand_Prix,VER,Red Bull Racing,4.0,4.0,2,18.0
-1255,2024,British_Grand_Prix,ZHO,Kick Sauber,14.0,14.0,18,0.0
+1255,2024,British_Grand_Prix,ZHO,Audi,14.0,14.0,18,0.0
 1256,2024,Hungarian_Grand_Prix,ALB,Williams,13.0,13.0,14,0.0
 1257,2024,Hungarian_Grand_Prix,ALO,Aston Martin,7.0,7.0,11,0.0
 1258,2024,Hungarian_Grand_Prix,BEA,,,,,
-1259,2024,Hungarian_Grand_Prix,BOT,Kick Sauber,12.0,12.0,16,0.0
+1259,2024,Hungarian_Grand_Prix,BOT,Audi,12.0,12.0,16,0.0
 1260,2024,Hungarian_Grand_Prix,COL,,,,,
 1261,2024,Hungarian_Grand_Prix,DOO,,,,,
 1262,2024,Hungarian_Grand_Prix,GAS,Alpine,20.0,20.0,R,0.0
@@ -1271,18 +1271,18 @@
 1269,2024,Hungarian_Grand_Prix,OCO,Alpine,19.0,19.0,18,0.0
 1270,2024,Hungarian_Grand_Prix,PER,Red Bull Racing,16.0,16.0,7,6.0
 1271,2024,Hungarian_Grand_Prix,PIA,McLaren,2.0,2.0,1,25.0
-1272,2024,Hungarian_Grand_Prix,RIC,RB,9.0,9.0,12,0.0
+1272,2024,Hungarian_Grand_Prix,RIC,Racing Bulls,9.0,9.0,12,0.0
 1273,2024,Hungarian_Grand_Prix,RUS,Mercedes,17.0,17.0,8,5.0
 1274,2024,Hungarian_Grand_Prix,SAI,Ferrari,4.0,4.0,6,8.0
 1275,2024,Hungarian_Grand_Prix,SAR,Williams,14.0,14.0,17,0.0
 1276,2024,Hungarian_Grand_Prix,STR,Aston Martin,8.0,8.0,10,1.0
-1277,2024,Hungarian_Grand_Prix,TSU,RB,10.0,10.0,9,2.0
+1277,2024,Hungarian_Grand_Prix,TSU,Racing Bulls,10.0,10.0,9,2.0
 1278,2024,Hungarian_Grand_Prix,VER,Red Bull Racing,3.0,3.0,5,10.0
-1279,2024,Hungarian_Grand_Prix,ZHO,Kick Sauber,18.0,18.0,19,0.0
+1279,2024,Hungarian_Grand_Prix,ZHO,Audi,18.0,18.0,19,0.0
 1280,2024,Belgian_Grand_Prix,ALB,Williams,11.0,10.0,12,0.0
 1281,2024,Belgian_Grand_Prix,ALO,Aston Martin,9.0,8.0,8,4.0
 1282,2024,Belgian_Grand_Prix,BEA,,,,,
-1283,2024,Belgian_Grand_Prix,BOT,Kick Sauber,14.0,14.0,15,0.0
+1283,2024,Belgian_Grand_Prix,BOT,Audi,14.0,14.0,15,0.0
 1284,2024,Belgian_Grand_Prix,COL,,,,,
 1285,2024,Belgian_Grand_Prix,DOO,,,,,
 1286,2024,Belgian_Grand_Prix,GAS,Alpine,12.0,12.0,13,0.0
@@ -1295,18 +1295,18 @@
 1293,2024,Belgian_Grand_Prix,OCO,Alpine,10.0,9.0,9,2.0
 1294,2024,Belgian_Grand_Prix,PER,Red Bull Racing,3.0,2.0,7,7.0
 1295,2024,Belgian_Grand_Prix,PIA,McLaren,6.0,5.0,2,18.0
-1296,2024,Belgian_Grand_Prix,RIC,RB,13.0,13.0,10,1.0
+1296,2024,Belgian_Grand_Prix,RIC,Racing Bulls,13.0,13.0,10,1.0
 1297,2024,Belgian_Grand_Prix,RUS,Mercedes,7.0,6.0,20,0.0
 1298,2024,Belgian_Grand_Prix,SAI,Ferrari,8.0,7.0,6,8.0
 1299,2024,Belgian_Grand_Prix,SAR,Williams,19.0,18.0,17,0.0
 1300,2024,Belgian_Grand_Prix,STR,Aston Martin,15.0,15.0,11,0.0
-1301,2024,Belgian_Grand_Prix,TSU,RB,18.0,20.0,16,0.0
+1301,2024,Belgian_Grand_Prix,TSU,Racing Bulls,18.0,20.0,16,0.0
 1302,2024,Belgian_Grand_Prix,VER,Red Bull Racing,1.0,11.0,4,12.0
-1303,2024,Belgian_Grand_Prix,ZHO,Kick Sauber,20.0,19.0,R,0.0
+1303,2024,Belgian_Grand_Prix,ZHO,Audi,20.0,19.0,R,0.0
 1304,2024,Dutch_Grand_Prix,ALB,Williams,10.0,19.0,14,0.0
 1305,2024,Dutch_Grand_Prix,ALO,Aston Martin,7.0,7.0,10,1.0
 1306,2024,Dutch_Grand_Prix,BEA,,,,,
-1307,2024,Dutch_Grand_Prix,BOT,Kick Sauber,17.0,16.0,19,0.0
+1307,2024,Dutch_Grand_Prix,BOT,Audi,17.0,16.0,19,0.0
 1308,2024,Dutch_Grand_Prix,COL,,,,,
 1309,2024,Dutch_Grand_Prix,DOO,,,,,
 1310,2024,Dutch_Grand_Prix,GAS,Alpine,9.0,9.0,9,2.0
@@ -1319,18 +1319,18 @@
 1317,2024,Dutch_Grand_Prix,OCO,Alpine,16.0,15.0,15,0.0
 1318,2024,Dutch_Grand_Prix,PER,Red Bull Racing,5.0,5.0,6,8.0
 1319,2024,Dutch_Grand_Prix,PIA,McLaren,3.0,3.0,4,12.0
-1320,2024,Dutch_Grand_Prix,RIC,RB,15.0,13.0,12,0.0
+1320,2024,Dutch_Grand_Prix,RIC,Racing Bulls,15.0,13.0,12,0.0
 1321,2024,Dutch_Grand_Prix,RUS,Mercedes,4.0,4.0,7,6.0
 1322,2024,Dutch_Grand_Prix,SAI,Ferrari,10.0,10.0,5,10.0
 1323,2024,Dutch_Grand_Prix,SAR,Williams,20.0,18.0,16,0.0
 1324,2024,Dutch_Grand_Prix,STR,Aston Martin,8.0,8.0,13,0.0
-1325,2024,Dutch_Grand_Prix,TSU,RB,12.0,11.0,17,0.0
+1325,2024,Dutch_Grand_Prix,TSU,Racing Bulls,12.0,11.0,17,0.0
 1326,2024,Dutch_Grand_Prix,VER,Red Bull Racing,2.0,2.0,2,18.0
-1327,2024,Dutch_Grand_Prix,ZHO,Kick Sauber,18.0,17.0,20,0.0
+1327,2024,Dutch_Grand_Prix,ZHO,Audi,18.0,17.0,20,0.0
 1328,2024,Italian_Grand_Prix,ALB,Williams,9.0,9.0,9,2.0
 1329,2024,Italian_Grand_Prix,ALO,Aston Martin,11.0,11.0,11,0.0
 1330,2024,Italian_Grand_Prix,BEA,,,,,
-1331,2024,Italian_Grand_Prix,BOT,Kick Sauber,19.0,19.0,16,0.0
+1331,2024,Italian_Grand_Prix,BOT,Audi,19.0,19.0,16,0.0
 1332,2024,Italian_Grand_Prix,COL,Williams,18.0,18.0,12,0.0
 1333,2024,Italian_Grand_Prix,DOO,,,,,
 1334,2024,Italian_Grand_Prix,GAS,Alpine,14.0,14.0,15,0.0
@@ -1343,18 +1343,18 @@
 1341,2024,Italian_Grand_Prix,OCO,Alpine,15.0,15.0,14,0.0
 1342,2024,Italian_Grand_Prix,PER,Red Bull Racing,8.0,8.0,8,4.0
 1343,2024,Italian_Grand_Prix,PIA,McLaren,2.0,2.0,2,18.0
-1344,2024,Italian_Grand_Prix,RIC,RB,12.0,12.0,13,0.0
+1344,2024,Italian_Grand_Prix,RIC,Racing Bulls,12.0,12.0,13,0.0
 1345,2024,Italian_Grand_Prix,RUS,Mercedes,3.0,3.0,7,6.0
 1346,2024,Italian_Grand_Prix,SAI,Ferrari,5.0,5.0,4,12.0
 1347,2024,Italian_Grand_Prix,SAR,,,,,
 1348,2024,Italian_Grand_Prix,STR,Aston Martin,17.0,17.0,19,0.0
-1349,2024,Italian_Grand_Prix,TSU,RB,16.0,16.0,R,0.0
+1349,2024,Italian_Grand_Prix,TSU,Racing Bulls,16.0,16.0,R,0.0
 1350,2024,Italian_Grand_Prix,VER,Red Bull Racing,7.0,7.0,6,8.0
-1351,2024,Italian_Grand_Prix,ZHO,Kick Sauber,20.0,20.0,18,0.0
+1351,2024,Italian_Grand_Prix,ZHO,Audi,20.0,20.0,18,0.0
 1352,2024,Azerbaijan_Grand_Prix,ALB,Williams,10.0,9.0,7,6.0
 1353,2024,Azerbaijan_Grand_Prix,ALO,Aston Martin,8.0,7.0,6,8.0
 1354,2024,Azerbaijan_Grand_Prix,BEA,Haas F1 Team,11.0,10.0,10,1.0
-1355,2024,Azerbaijan_Grand_Prix,BOT,Kick Sauber,17.0,16.0,16,0.0
+1355,2024,Azerbaijan_Grand_Prix,BOT,Audi,17.0,16.0,16,0.0
 1356,2024,Azerbaijan_Grand_Prix,COL,Williams,9.0,8.0,8,4.0
 1357,2024,Azerbaijan_Grand_Prix,DOO,,,,,
 1358,2024,Azerbaijan_Grand_Prix,GAS,Alpine,15.0,18.0,12,0.0
@@ -1367,18 +1367,18 @@
 1365,2024,Azerbaijan_Grand_Prix,OCO,Alpine,19.0,20.0,15,0.0
 1366,2024,Azerbaijan_Grand_Prix,PER,Red Bull Racing,4.0,4.0,17,0.0
 1367,2024,Azerbaijan_Grand_Prix,PIA,McLaren,2.0,2.0,1,25.0
-1368,2024,Azerbaijan_Grand_Prix,RIC,RB,15.0,14.0,13,0.0
+1368,2024,Azerbaijan_Grand_Prix,RIC,Racing Bulls,15.0,14.0,13,0.0
 1369,2024,Azerbaijan_Grand_Prix,RUS,Mercedes,5.0,5.0,3,15.0
 1370,2024,Azerbaijan_Grand_Prix,SAI,Ferrari,3.0,3.0,18,0.0
 1371,2024,Azerbaijan_Grand_Prix,SAR,,,,,
 1372,2024,Azerbaijan_Grand_Prix,STR,Aston Martin,14.0,13.0,19,0.0
-1373,2024,Azerbaijan_Grand_Prix,TSU,RB,12.0,11.0,R,0.0
+1373,2024,Azerbaijan_Grand_Prix,TSU,Racing Bulls,12.0,11.0,R,0.0
 1374,2024,Azerbaijan_Grand_Prix,VER,Red Bull Racing,6.0,6.0,5,10.0
-1375,2024,Azerbaijan_Grand_Prix,ZHO,Kick Sauber,18.0,17.0,14,0.0
+1375,2024,Azerbaijan_Grand_Prix,ZHO,Audi,18.0,17.0,14,0.0
 1376,2024,Singapore_Grand_Prix,ALB,Williams,11.0,11.0,R,0.0
 1377,2024,Singapore_Grand_Prix,ALO,Aston Martin,7.0,7.0,8,4.0
 1378,2024,Singapore_Grand_Prix,BEA,,,,,
-1379,2024,Singapore_Grand_Prix,BOT,Kick Sauber,19.0,19.0,16,0.0
+1379,2024,Singapore_Grand_Prix,BOT,Audi,19.0,19.0,16,0.0
 1380,2024,Singapore_Grand_Prix,COL,Williams,12.0,12.0,11,0.0
 1381,2024,Singapore_Grand_Prix,DOO,,,,,
 1382,2024,Singapore_Grand_Prix,GAS,Alpine,18.0,18.0,17,0.0
@@ -1391,24 +1391,24 @@
 1389,2024,Singapore_Grand_Prix,OCO,Alpine,15.0,15.0,13,0.0
 1390,2024,Singapore_Grand_Prix,PER,Red Bull Racing,13.0,13.0,10,1.0
 1391,2024,Singapore_Grand_Prix,PIA,McLaren,5.0,5.0,3,15.0
-1392,2024,Singapore_Grand_Prix,RIC,RB,16.0,16.0,18,0.0
+1392,2024,Singapore_Grand_Prix,RIC,Racing Bulls,16.0,16.0,18,0.0
 1393,2024,Singapore_Grand_Prix,RUS,Mercedes,4.0,4.0,4,12.0
 1394,2024,Singapore_Grand_Prix,SAI,Ferrari,10.0,10.0,7,6.0
 1395,2024,Singapore_Grand_Prix,SAR,,,,,
 1396,2024,Singapore_Grand_Prix,STR,Aston Martin,17.0,17.0,14,0.0
-1397,2024,Singapore_Grand_Prix,TSU,RB,8.0,8.0,12,0.0
+1397,2024,Singapore_Grand_Prix,TSU,Racing Bulls,8.0,8.0,12,0.0
 1398,2024,Singapore_Grand_Prix,VER,Red Bull Racing,2.0,2.0,2,18.0
-1399,2024,Singapore_Grand_Prix,ZHO,Kick Sauber,20.0,20.0,15,0.0
+1399,2024,Singapore_Grand_Prix,ZHO,Audi,20.0,20.0,15,0.0
 1400,2024,United_States_Grand_Prix,ALB,Williams,16.0,14.0,16,0.0
 1401,2024,United_States_Grand_Prix,ALO,Aston Martin,8.0,7.0,13,0.0
 1402,2024,United_States_Grand_Prix,BEA,,,,,
-1403,2024,United_States_Grand_Prix,BOT,Kick Sauber,18.0,16.0,17,0.0
+1403,2024,United_States_Grand_Prix,BOT,Audi,18.0,16.0,17,0.0
 1404,2024,United_States_Grand_Prix,COL,Williams,17.0,15.0,10,1.0
 1405,2024,United_States_Grand_Prix,DOO,,,,,
 1406,2024,United_States_Grand_Prix,GAS,Alpine,7.0,6.0,12,0.0
 1407,2024,United_States_Grand_Prix,HAM,Mercedes,19.0,17.0,R,0.0
 1408,2024,United_States_Grand_Prix,HUL,Haas F1 Team,12.0,11.0,8,4.0
-1409,2024,United_States_Grand_Prix,LAW,RB,15.0,19.0,9,2.0
+1409,2024,United_States_Grand_Prix,LAW,Racing Bulls,15.0,19.0,9,2.0
 1410,2024,United_States_Grand_Prix,LEC,Ferrari,4.0,4.0,1,25.0
 1411,2024,United_States_Grand_Prix,MAG,Haas F1 Team,9.0,8.0,11,0.0
 1412,2024,United_States_Grand_Prix,NOR,McLaren,1.0,1.0,4,12.0
@@ -1420,19 +1420,19 @@
 1418,2024,United_States_Grand_Prix,SAI,Ferrari,3.0,3.0,2,18.0
 1419,2024,United_States_Grand_Prix,SAR,,,,,
 1420,2024,United_States_Grand_Prix,STR,Aston Martin,14.0,13.0,15,0.0
-1421,2024,United_States_Grand_Prix,TSU,RB,11.0,10.0,14,0.0
+1421,2024,United_States_Grand_Prix,TSU,Racing Bulls,11.0,10.0,14,0.0
 1422,2024,United_States_Grand_Prix,VER,Red Bull Racing,2.0,2.0,3,15.0
-1423,2024,United_States_Grand_Prix,ZHO,Kick Sauber,20.0,18.0,19,0.0
+1423,2024,United_States_Grand_Prix,ZHO,Audi,20.0,18.0,19,0.0
 1424,2024,Mexico_City_Grand_Prix,ALB,Williams,9.0,9.0,R,0.0
 1425,2024,Mexico_City_Grand_Prix,ALO,Aston Martin,13.0,13.0,R,0.0
 1426,2024,Mexico_City_Grand_Prix,BEA,,,,,
-1427,2024,Mexico_City_Grand_Prix,BOT,Kick Sauber,15.0,15.0,14,0.0
+1427,2024,Mexico_City_Grand_Prix,BOT,Audi,15.0,15.0,14,0.0
 1428,2024,Mexico_City_Grand_Prix,COL,Williams,16.0,16.0,12,0.0
 1429,2024,Mexico_City_Grand_Prix,DOO,,,,,
 1430,2024,Mexico_City_Grand_Prix,GAS,Alpine,8.0,8.0,10,1.0
 1431,2024,Mexico_City_Grand_Prix,HAM,Mercedes,6.0,6.0,4,12.0
 1432,2024,Mexico_City_Grand_Prix,HUL,Haas F1 Team,10.0,10.0,9,2.0
-1433,2024,Mexico_City_Grand_Prix,LAW,RB,12.0,12.0,16,0.0
+1433,2024,Mexico_City_Grand_Prix,LAW,Racing Bulls,12.0,12.0,16,0.0
 1434,2024,Mexico_City_Grand_Prix,LEC,Ferrari,4.0,4.0,3,16.0
 1435,2024,Mexico_City_Grand_Prix,MAG,Haas F1 Team,7.0,7.0,7,6.0
 1436,2024,Mexico_City_Grand_Prix,NOR,McLaren,3.0,3.0,2,18.0
@@ -1444,19 +1444,19 @@
 1442,2024,Mexico_City_Grand_Prix,SAI,Ferrari,1.0,1.0,1,25.0
 1443,2024,Mexico_City_Grand_Prix,SAR,,,,,
 1444,2024,Mexico_City_Grand_Prix,STR,Aston Martin,14.0,14.0,11,0.0
-1445,2024,Mexico_City_Grand_Prix,TSU,RB,11.0,11.0,R,0.0
+1445,2024,Mexico_City_Grand_Prix,TSU,Racing Bulls,11.0,11.0,R,0.0
 1446,2024,Mexico_City_Grand_Prix,VER,Red Bull Racing,2.0,2.0,6,8.0
-1447,2024,Mexico_City_Grand_Prix,ZHO,Kick Sauber,20.0,19.0,15,0.0
+1447,2024,Mexico_City_Grand_Prix,ZHO,Audi,20.0,19.0,15,0.0
 1448,2024,São_Paulo_Grand_Prix,ALB,Williams,7.0,7.0,W,0.0
 1449,2024,São_Paulo_Grand_Prix,ALO,Aston Martin,9.0,9.0,14,0.0
 1450,2024,São_Paulo_Grand_Prix,BEA,Haas F1 Team,17.0,15.0,12,0.0
-1451,2024,São_Paulo_Grand_Prix,BOT,Kick Sauber,11.0,11.0,13,0.0
+1451,2024,São_Paulo_Grand_Prix,BOT,Audi,11.0,11.0,13,0.0
 1452,2024,São_Paulo_Grand_Prix,COL,Williams,18.0,16.0,R,0.0
 1453,2024,São_Paulo_Grand_Prix,DOO,,,,,
 1454,2024,São_Paulo_Grand_Prix,GAS,Alpine,15.0,13.0,3,15.0
 1455,2024,São_Paulo_Grand_Prix,HAM,Mercedes,16.0,14.0,10,1.0
 1456,2024,São_Paulo_Grand_Prix,HUL,Haas F1 Team,19.0,18.0,D,0.0
-1457,2024,São_Paulo_Grand_Prix,LAW,RB,5.0,5.0,9,2.0
+1457,2024,São_Paulo_Grand_Prix,LAW,Racing Bulls,5.0,5.0,9,2.0
 1458,2024,São_Paulo_Grand_Prix,LEC,Ferrari,6.0,6.0,5,10.0
 1459,2024,São_Paulo_Grand_Prix,MAG,,,,,
 1460,2024,São_Paulo_Grand_Prix,NOR,McLaren,1.0,1.0,6,8.0
@@ -1468,19 +1468,19 @@
 1466,2024,São_Paulo_Grand_Prix,SAI,Ferrari,14.0,20.0,R,0.0
 1467,2024,São_Paulo_Grand_Prix,SAR,,,,,
 1468,2024,São_Paulo_Grand_Prix,STR,Aston Martin,10.0,10.0,W,0.0
-1469,2024,São_Paulo_Grand_Prix,TSU,RB,3.0,3.0,7,6.0
+1469,2024,São_Paulo_Grand_Prix,TSU,Racing Bulls,3.0,3.0,7,6.0
 1470,2024,São_Paulo_Grand_Prix,VER,Red Bull Racing,12.0,17.0,1,26.0
-1471,2024,São_Paulo_Grand_Prix,ZHO,Kick Sauber,20.0,19.0,15,0.0
+1471,2024,São_Paulo_Grand_Prix,ZHO,Audi,20.0,19.0,15,0.0
 1472,2024,Las_Vegas_Grand_Prix,ALB,Williams,18.0,17.0,R,0.0
 1473,2024,Las_Vegas_Grand_Prix,ALO,Aston Martin,17.0,16.0,11,0.0
 1474,2024,Las_Vegas_Grand_Prix,BEA,,,,,
-1475,2024,Las_Vegas_Grand_Prix,BOT,Kick Sauber,19.0,19.0,18,0.0
+1475,2024,Las_Vegas_Grand_Prix,BOT,Audi,19.0,19.0,18,0.0
 1476,2024,Las_Vegas_Grand_Prix,COL,Williams,14.0,20.0,14,0.0
 1477,2024,Las_Vegas_Grand_Prix,DOO,,,,,
 1478,2024,Las_Vegas_Grand_Prix,GAS,Alpine,3.0,3.0,R,0.0
 1479,2024,Las_Vegas_Grand_Prix,HAM,Mercedes,10.0,10.0,2,18.0
 1480,2024,Las_Vegas_Grand_Prix,HUL,Haas F1 Team,9.0,9.0,8,4.0
-1481,2024,Las_Vegas_Grand_Prix,LAW,RB,15.0,14.0,16,0.0
+1481,2024,Las_Vegas_Grand_Prix,LAW,Racing Bulls,15.0,14.0,16,0.0
 1482,2024,Las_Vegas_Grand_Prix,LEC,Ferrari,4.0,4.0,4,12.0
 1483,2024,Las_Vegas_Grand_Prix,MAG,Haas F1 Team,12.0,12.0,12,0.0
 1484,2024,Las_Vegas_Grand_Prix,NOR,McLaren,6.0,6.0,6,9.0
@@ -1492,19 +1492,19 @@
 1490,2024,Las_Vegas_Grand_Prix,SAI,Ferrari,2.0,2.0,3,15.0
 1491,2024,Las_Vegas_Grand_Prix,SAR,,,,,
 1492,2024,Las_Vegas_Grand_Prix,STR,Aston Martin,20.0,18.0,15,0.0
-1493,2024,Las_Vegas_Grand_Prix,TSU,RB,7.0,7.0,9,2.0
+1493,2024,Las_Vegas_Grand_Prix,TSU,Racing Bulls,7.0,7.0,9,2.0
 1494,2024,Las_Vegas_Grand_Prix,VER,Red Bull Racing,5.0,5.0,5,10.0
-1495,2024,Las_Vegas_Grand_Prix,ZHO,Kick Sauber,13.0,13.0,13,0.0
+1495,2024,Las_Vegas_Grand_Prix,ZHO,Audi,13.0,13.0,13,0.0
 1496,2024,Qatar_Grand_Prix,ALB,Williams,16.0,16.0,15,0.0
 1497,2024,Qatar_Grand_Prix,ALO,Aston Martin,8.0,8.0,7,6.0
 1498,2024,Qatar_Grand_Prix,BEA,,,,,
-1499,2024,Qatar_Grand_Prix,BOT,Kick Sauber,13.0,13.0,11,0.0
+1499,2024,Qatar_Grand_Prix,BOT,Audi,13.0,13.0,11,0.0
 1500,2024,Qatar_Grand_Prix,COL,Williams,19.0,19.0,R,0.0
 1501,2024,Qatar_Grand_Prix,DOO,,,,,
 1502,2024,Qatar_Grand_Prix,GAS,Alpine,11.0,11.0,5,10.0
 1503,2024,Qatar_Grand_Prix,HAM,Mercedes,6.0,6.0,12,0.0
 1504,2024,Qatar_Grand_Prix,HUL,Haas F1 Team,18.0,18.0,R,0.0
-1505,2024,Qatar_Grand_Prix,LAW,RB,17.0,17.0,14,0.0
+1505,2024,Qatar_Grand_Prix,LAW,Racing Bulls,17.0,17.0,14,0.0
 1506,2024,Qatar_Grand_Prix,LEC,Ferrari,5.0,5.0,2,18.0
 1507,2024,Qatar_Grand_Prix,MAG,Haas F1 Team,10.0,10.0,9,2.0
 1508,2024,Qatar_Grand_Prix,NOR,McLaren,3.0,3.0,10,2.0
@@ -1516,19 +1516,19 @@
 1514,2024,Qatar_Grand_Prix,SAI,Ferrari,7.0,7.0,6,8.0
 1515,2024,Qatar_Grand_Prix,SAR,,,,,
 1516,2024,Qatar_Grand_Prix,STR,Aston Martin,15.0,15.0,R,0.0
-1517,2024,Qatar_Grand_Prix,TSU,RB,14.0,14.0,13,0.0
+1517,2024,Qatar_Grand_Prix,TSU,Racing Bulls,14.0,14.0,13,0.0
 1518,2024,Qatar_Grand_Prix,VER,Red Bull Racing,1.0,2.0,1,25.0
-1519,2024,Qatar_Grand_Prix,ZHO,Kick Sauber,12.0,12.0,8,4.0
+1519,2024,Qatar_Grand_Prix,ZHO,Audi,12.0,12.0,8,4.0
 1520,2024,Abu_Dhabi_Grand_Prix,ALB,Williams,16.0,18.0,11,0.0
 1521,2024,Abu_Dhabi_Grand_Prix,ALO,Aston Martin,8.0,8.0,9,2.0
 1522,2024,Abu_Dhabi_Grand_Prix,BEA,,,,,
-1523,2024,Abu_Dhabi_Grand_Prix,BOT,Kick Sauber,9.0,9.0,R,0.0
+1523,2024,Abu_Dhabi_Grand_Prix,BOT,Audi,9.0,9.0,R,0.0
 1524,2024,Abu_Dhabi_Grand_Prix,COL,Williams,19.0,20.0,R,0.0
 1525,2024,Abu_Dhabi_Grand_Prix,DOO,Alpine,20.0,17.0,15,0.0
 1526,2024,Abu_Dhabi_Grand_Prix,GAS,Alpine,6.0,5.0,7,6.0
 1527,2024,Abu_Dhabi_Grand_Prix,HAM,Mercedes,18.0,16.0,4,12.0
 1528,2024,Abu_Dhabi_Grand_Prix,HUL,Haas F1 Team,4.0,7.0,8,4.0
-1529,2024,Abu_Dhabi_Grand_Prix,LAW,RB,12.0,12.0,17,0.0
+1529,2024,Abu_Dhabi_Grand_Prix,LAW,Racing Bulls,12.0,12.0,17,0.0
 1530,2024,Abu_Dhabi_Grand_Prix,LEC,Ferrari,14.0,19.0,3,15.0
 1531,2024,Abu_Dhabi_Grand_Prix,MAG,Haas F1 Team,15.0,14.0,16,0.0
 1532,2024,Abu_Dhabi_Grand_Prix,NOR,McLaren,1.0,1.0,1,25.0
@@ -1540,20 +1540,20 @@
 1538,2024,Abu_Dhabi_Grand_Prix,SAI,Ferrari,3.0,3.0,2,18.0
 1539,2024,Abu_Dhabi_Grand_Prix,SAR,,,,,
 1540,2024,Abu_Dhabi_Grand_Prix,STR,Aston Martin,13.0,13.0,14,0.0
-1541,2024,Abu_Dhabi_Grand_Prix,TSU,RB,11.0,11.0,12,0.0
+1541,2024,Abu_Dhabi_Grand_Prix,TSU,Racing Bulls,11.0,11.0,12,0.0
 1542,2024,Abu_Dhabi_Grand_Prix,VER,Red Bull Racing,5.0,4.0,6,8.0
-1543,2024,Abu_Dhabi_Grand_Prix,ZHO,Kick Sauber,17.0,15.0,13,0.0
+1543,2024,Abu_Dhabi_Grand_Prix,ZHO,Audi,17.0,15.0,13,0.0
 1544,2025,Australian_Grand_Prix,ALB,Williams,6.0,6.0,5,10.0
 1545,2025,Australian_Grand_Prix,ALO,Aston Martin,12.0,12.0,R,0.0
 1546,2025,Australian_Grand_Prix,ANT,Mercedes,16.0,16.0,4,12.0
 1547,2025,Australian_Grand_Prix,BEA,Haas F1 Team,20.0,20.0,14,0.0
-1548,2025,Australian_Grand_Prix,BOR,Kick Sauber,15.0,15.0,R,0.0
+1548,2025,Australian_Grand_Prix,BOR,Audi,15.0,15.0,R,0.0
 1549,2025,Australian_Grand_Prix,COL,,,,,
 1550,2025,Australian_Grand_Prix,DOO,Alpine,14.0,14.0,R,0.0
 1551,2025,Australian_Grand_Prix,GAS,Alpine,9.0,9.0,11,0.0
 1552,2025,Australian_Grand_Prix,HAD,Racing Bulls,11.0,11.0,R,0.0
 1553,2025,Australian_Grand_Prix,HAM,Ferrari,8.0,8.0,10,1.0
-1554,2025,Australian_Grand_Prix,HUL,Kick Sauber,17.0,17.0,7,6.0
+1554,2025,Australian_Grand_Prix,HUL,Audi,17.0,17.0,7,6.0
 1555,2025,Australian_Grand_Prix,LAW,Red Bull Racing,18.0,18.0,R,0.0
 1556,2025,Australian_Grand_Prix,LEC,Ferrari,7.0,7.0,8,4.0
 1557,2025,Australian_Grand_Prix,NOR,McLaren,1.0,1.0,1,25.0
@@ -1568,13 +1568,13 @@
 1566,2025,Chinese_Grand_Prix,ALO,Aston Martin,13.0,13.0,R,0.0
 1567,2025,Chinese_Grand_Prix,ANT,Mercedes,8.0,8.0,6,8.0
 1568,2025,Chinese_Grand_Prix,BEA,Haas F1 Team,17.0,17.0,8,4.0
-1569,2025,Chinese_Grand_Prix,BOR,Kick Sauber,19.0,19.0,14,0.0
+1569,2025,Chinese_Grand_Prix,BOR,Audi,19.0,19.0,14,0.0
 1570,2025,Chinese_Grand_Prix,COL,,,,,
 1571,2025,Chinese_Grand_Prix,DOO,Alpine,18.0,18.0,13,0.0
 1572,2025,Chinese_Grand_Prix,GAS,Alpine,16.0,16.0,D,0.0
 1573,2025,Chinese_Grand_Prix,HAD,Racing Bulls,7.0,7.0,11,0.0
 1574,2025,Chinese_Grand_Prix,HAM,Ferrari,5.0,5.0,D,0.0
-1575,2025,Chinese_Grand_Prix,HUL,Kick Sauber,12.0,12.0,15,0.0
+1575,2025,Chinese_Grand_Prix,HUL,Audi,12.0,12.0,15,0.0
 1576,2025,Chinese_Grand_Prix,LAW,Red Bull Racing,20.0,20.0,12,0.0
 1577,2025,Chinese_Grand_Prix,LEC,Ferrari,6.0,6.0,D,0.0
 1578,2025,Chinese_Grand_Prix,NOR,McLaren,3.0,3.0,2,18.0
@@ -1589,13 +1589,13 @@
 1587,2025,Japanese_Grand_Prix,ALO,Aston Martin,13.0,12.0,11,0.0
 1588,2025,Japanese_Grand_Prix,ANT,Mercedes,6.0,6.0,6,8.0
 1589,2025,Japanese_Grand_Prix,BEA,Haas F1 Team,10.0,10.0,10,1.0
-1590,2025,Japanese_Grand_Prix,BOR,Kick Sauber,17.0,17.0,19,0.0
+1590,2025,Japanese_Grand_Prix,BOR,Audi,17.0,17.0,19,0.0
 1591,2025,Japanese_Grand_Prix,COL,,,,,
 1592,2025,Japanese_Grand_Prix,DOO,Alpine,19.0,19.0,15,0.0
 1593,2025,Japanese_Grand_Prix,GAS,Alpine,11.0,11.0,13,0.0
 1594,2025,Japanese_Grand_Prix,HAD,Racing Bulls,7.0,7.0,8,4.0
 1595,2025,Japanese_Grand_Prix,HAM,Ferrari,8.0,8.0,7,6.0
-1596,2025,Japanese_Grand_Prix,HUL,Kick Sauber,16.0,16.0,16,0.0
+1596,2025,Japanese_Grand_Prix,HUL,Audi,16.0,16.0,16,0.0
 1597,2025,Japanese_Grand_Prix,LAW,Racing Bulls,14.0,13.0,17,0.0
 1598,2025,Japanese_Grand_Prix,LEC,Ferrari,4.0,4.0,4,12.0
 1599,2025,Japanese_Grand_Prix,NOR,McLaren,2.0,2.0,2,18.0
@@ -1610,13 +1610,13 @@
 1608,2025,Bahrain_Grand_Prix,ALO,Aston Martin,13.0,13.0,15,0.0
 1609,2025,Bahrain_Grand_Prix,ANT,Mercedes,4.0,5.0,11,0.0
 1610,2025,Bahrain_Grand_Prix,BEA,Haas F1 Team,20.0,20.0,10,1.0
-1611,2025,Bahrain_Grand_Prix,BOR,Kick Sauber,18.0,18.0,18,0.0
+1611,2025,Bahrain_Grand_Prix,BOR,Audi,18.0,18.0,18,0.0
 1612,2025,Bahrain_Grand_Prix,COL,,,,,
 1613,2025,Bahrain_Grand_Prix,DOO,Alpine,11.0,11.0,14,0.0
 1614,2025,Bahrain_Grand_Prix,GAS,Alpine,5.0,4.0,7,6.0
 1615,2025,Bahrain_Grand_Prix,HAD,Racing Bulls,12.0,12.0,13,0.0
 1616,2025,Bahrain_Grand_Prix,HAM,Ferrari,9.0,9.0,5,10.0
-1617,2025,Bahrain_Grand_Prix,HUL,Kick Sauber,16.0,16.0,D,0.0
+1617,2025,Bahrain_Grand_Prix,HUL,Audi,16.0,16.0,D,0.0
 1618,2025,Bahrain_Grand_Prix,LAW,Racing Bulls,17.0,17.0,16,0.0
 1619,2025,Bahrain_Grand_Prix,LEC,Ferrari,3.0,2.0,4,12.0
 1620,2025,Bahrain_Grand_Prix,NOR,McLaren,6.0,6.0,3,15.0
@@ -1631,13 +1631,13 @@
 1629,2025,Saudi_Arabian_Grand_Prix,ALO,Aston Martin,13.0,13.0,11,0.0
 1630,2025,Saudi_Arabian_Grand_Prix,ANT,Mercedes,5.0,5.0,6,8.0
 1631,2025,Saudi_Arabian_Grand_Prix,BEA,Haas F1 Team,15.0,15.0,13,0.0
-1632,2025,Saudi_Arabian_Grand_Prix,BOR,Kick Sauber,20.0,20.0,18,0.0
+1632,2025,Saudi_Arabian_Grand_Prix,BOR,Audi,20.0,20.0,18,0.0
 1633,2025,Saudi_Arabian_Grand_Prix,COL,,,,,
 1634,2025,Saudi_Arabian_Grand_Prix,DOO,Alpine,17.0,17.0,17,0.0
 1635,2025,Saudi_Arabian_Grand_Prix,GAS,Alpine,9.0,9.0,R,0.0
 1636,2025,Saudi_Arabian_Grand_Prix,HAD,Racing Bulls,14.0,14.0,10,1.0
 1637,2025,Saudi_Arabian_Grand_Prix,HAM,Ferrari,7.0,7.0,7,6.0
-1638,2025,Saudi_Arabian_Grand_Prix,HUL,Kick Sauber,18.0,18.0,15,0.0
+1638,2025,Saudi_Arabian_Grand_Prix,HUL,Audi,18.0,18.0,15,0.0
 1639,2025,Saudi_Arabian_Grand_Prix,LAW,Racing Bulls,12.0,12.0,12,0.0
 1640,2025,Saudi_Arabian_Grand_Prix,LEC,Ferrari,4.0,4.0,3,15.0
 1641,2025,Saudi_Arabian_Grand_Prix,NOR,McLaren,10.0,10.0,4,12.0
@@ -1652,13 +1652,13 @@
 1650,2025,Miami_Grand_Prix,ALO,Aston Martin,17.0,17.0,15,0.0
 1651,2025,Miami_Grand_Prix,ANT,Mercedes,3.0,3.0,6,8.0
 1652,2025,Miami_Grand_Prix,BEA,Haas F1 Team,20.0,19.0,R,0.0
-1653,2025,Miami_Grand_Prix,BOR,Kick Sauber,13.0,13.0,R,0.0
+1653,2025,Miami_Grand_Prix,BOR,Audi,13.0,13.0,R,0.0
 1654,2025,Miami_Grand_Prix,COL,,,,,
 1655,2025,Miami_Grand_Prix,DOO,Alpine,14.0,14.0,R,0.0
 1656,2025,Miami_Grand_Prix,GAS,Alpine,18.0,20.0,13,0.0
 1657,2025,Miami_Grand_Prix,HAD,Racing Bulls,11.0,11.0,11,0.0
 1658,2025,Miami_Grand_Prix,HAM,Ferrari,12.0,12.0,8,4.0
-1659,2025,Miami_Grand_Prix,HUL,Kick Sauber,16.0,16.0,14,0.0
+1659,2025,Miami_Grand_Prix,HUL,Audi,16.0,16.0,14,0.0
 1660,2025,Miami_Grand_Prix,LAW,Racing Bulls,15.0,15.0,R,0.0
 1661,2025,Miami_Grand_Prix,LEC,Ferrari,8.0,8.0,7,6.0
 1662,2025,Miami_Grand_Prix,NOR,McLaren,2.0,2.0,2,18.0
@@ -1673,13 +1673,13 @@
 1671,2025,Emilia_Romagna_Grand_Prix,ALO,Aston Martin,5.0,5.0,11,0.0
 1672,2025,Emilia_Romagna_Grand_Prix,ANT,Mercedes,13.0,13.0,R,0.0
 1673,2025,Emilia_Romagna_Grand_Prix,BEA,Haas F1 Team,19.0,19.0,17,0.0
-1674,2025,Emilia_Romagna_Grand_Prix,BOR,Kick Sauber,14.0,14.0,18,0.0
+1674,2025,Emilia_Romagna_Grand_Prix,BOR,Audi,14.0,14.0,18,0.0
 1675,2025,Emilia_Romagna_Grand_Prix,COL,Alpine,15.0,16.0,16,0.0
 1676,2025,Emilia_Romagna_Grand_Prix,DOO,,,,,
 1677,2025,Emilia_Romagna_Grand_Prix,GAS,Alpine,10.0,10.0,13,0.0
 1678,2025,Emilia_Romagna_Grand_Prix,HAD,Racing Bulls,9.0,9.0,9,2.0
 1679,2025,Emilia_Romagna_Grand_Prix,HAM,Ferrari,12.0,12.0,4,12.0
-1680,2025,Emilia_Romagna_Grand_Prix,HUL,Kick Sauber,17.0,17.0,12,0.0
+1680,2025,Emilia_Romagna_Grand_Prix,HUL,Audi,17.0,17.0,12,0.0
 1681,2025,Emilia_Romagna_Grand_Prix,LAW,Racing Bulls,16.0,15.0,14,0.0
 1682,2025,Emilia_Romagna_Grand_Prix,LEC,Ferrari,11.0,11.0,6,8.0
 1683,2025,Emilia_Romagna_Grand_Prix,NOR,McLaren,4.0,4.0,2,18.0
@@ -1694,13 +1694,13 @@
 1692,2025,Monaco_Grand_Prix,ALO,Aston Martin,7.0,6.0,R,0.0
 1693,2025,Monaco_Grand_Prix,ANT,Mercedes,15.0,15.0,18,0.0
 1694,2025,Monaco_Grand_Prix,BEA,Haas F1 Team,17.0,20.0,12,0.0
-1695,2025,Monaco_Grand_Prix,BOR,Kick Sauber,16.0,16.0,14,0.0
+1695,2025,Monaco_Grand_Prix,BOR,Audi,16.0,16.0,14,0.0
 1696,2025,Monaco_Grand_Prix,COL,Alpine,20.0,18.0,13,0.0
 1697,2025,Monaco_Grand_Prix,DOO,,,,,
 1698,2025,Monaco_Grand_Prix,GAS,Alpine,18.0,17.0,R,0.0
 1699,2025,Monaco_Grand_Prix,HAD,Racing Bulls,6.0,5.0,6,8.0
 1700,2025,Monaco_Grand_Prix,HAM,Ferrari,4.0,7.0,5,10.0
-1701,2025,Monaco_Grand_Prix,HUL,Kick Sauber,13.0,13.0,16,0.0
+1701,2025,Monaco_Grand_Prix,HUL,Audi,13.0,13.0,16,0.0
 1702,2025,Monaco_Grand_Prix,LAW,Racing Bulls,9.0,9.0,8,4.0
 1703,2025,Monaco_Grand_Prix,LEC,Ferrari,2.0,2.0,2,18.0
 1704,2025,Monaco_Grand_Prix,NOR,McLaren,1.0,1.0,1,25.0
@@ -1715,13 +1715,13 @@
 1713,2025,Spanish_Grand_Prix,ALO,Aston Martin,10.0,10.0,9,2.0
 1714,2025,Spanish_Grand_Prix,ANT,Mercedes,6.0,6.0,R,0.0
 1715,2025,Spanish_Grand_Prix,BEA,Haas F1 Team,15.0,14.0,17,0.0
-1716,2025,Spanish_Grand_Prix,BOR,Kick Sauber,12.0,12.0,12,0.0
+1716,2025,Spanish_Grand_Prix,BOR,Audi,12.0,12.0,12,0.0
 1717,2025,Spanish_Grand_Prix,COL,Alpine,19.0,18.0,15,0.0
 1718,2025,Spanish_Grand_Prix,DOO,,,,,
 1719,2025,Spanish_Grand_Prix,GAS,Alpine,8.0,8.0,8,4.0
 1720,2025,Spanish_Grand_Prix,HAD,Racing Bulls,9.0,9.0,7,6.0
 1721,2025,Spanish_Grand_Prix,HAM,Ferrari,5.0,5.0,6,8.0
-1722,2025,Spanish_Grand_Prix,HUL,Kick Sauber,16.0,15.0,5,10.0
+1722,2025,Spanish_Grand_Prix,HUL,Audi,16.0,15.0,5,10.0
 1723,2025,Spanish_Grand_Prix,LAW,Racing Bulls,13.0,13.0,11,0.0
 1724,2025,Spanish_Grand_Prix,LEC,Ferrari,7.0,7.0,3,15.0
 1725,2025,Spanish_Grand_Prix,NOR,McLaren,2.0,2.0,2,18.0
@@ -1736,13 +1736,13 @@
 1734,2025,Canadian_Grand_Prix,ALO,Aston Martin,6.0,6.0,7,6.0
 1735,2025,Canadian_Grand_Prix,ANT,Mercedes,4.0,4.0,3,15.0
 1736,2025,Canadian_Grand_Prix,BEA,Haas F1 Team,14.0,13.0,11,0.0
-1737,2025,Canadian_Grand_Prix,BOR,Kick Sauber,16.0,15.0,14,0.0
+1737,2025,Canadian_Grand_Prix,BOR,Audi,16.0,15.0,14,0.0
 1738,2025,Canadian_Grand_Prix,COL,Alpine,12.0,10.0,13,0.0
 1739,2025,Canadian_Grand_Prix,DOO,,,,,
 1740,2025,Canadian_Grand_Prix,GAS,Alpine,20.0,20.0,15,0.0
 1741,2025,Canadian_Grand_Prix,HAD,Racing Bulls,9.0,12.0,16,0.0
 1742,2025,Canadian_Grand_Prix,HAM,Ferrari,5.0,5.0,6,8.0
-1743,2025,Canadian_Grand_Prix,HUL,Kick Sauber,13.0,11.0,8,4.0
+1743,2025,Canadian_Grand_Prix,HUL,Audi,13.0,11.0,8,4.0
 1744,2025,Canadian_Grand_Prix,LAW,Racing Bulls,19.0,19.0,R,0.0
 1745,2025,Canadian_Grand_Prix,LEC,Ferrari,8.0,8.0,5,10.0
 1746,2025,Canadian_Grand_Prix,NOR,McLaren,7.0,7.0,18,0.0
@@ -1757,13 +1757,13 @@
 1755,2025,Austrian_Grand_Prix,ALO,Aston Martin,11.0,11.0,7,6.0
 1756,2025,Austrian_Grand_Prix,ANT,Mercedes,9.0,9.0,R,0.0
 1757,2025,Austrian_Grand_Prix,BEA,Haas F1 Team,15.0,15.0,11,0.0
-1758,2025,Austrian_Grand_Prix,BOR,Kick Sauber,8.0,8.0,8,4.0
+1758,2025,Austrian_Grand_Prix,BOR,Audi,8.0,8.0,8,4.0
 1759,2025,Austrian_Grand_Prix,COL,Alpine,14.0,14.0,15,0.0
 1760,2025,Austrian_Grand_Prix,DOO,,,,,
 1761,2025,Austrian_Grand_Prix,GAS,Alpine,10.0,10.0,13,0.0
 1762,2025,Austrian_Grand_Prix,HAD,Racing Bulls,13.0,13.0,12,0.0
 1763,2025,Austrian_Grand_Prix,HAM,Ferrari,4.0,4.0,4,12.0
-1764,2025,Austrian_Grand_Prix,HUL,Kick Sauber,20.0,20.0,9,2.0
+1764,2025,Austrian_Grand_Prix,HUL,Audi,20.0,20.0,9,2.0
 1765,2025,Austrian_Grand_Prix,LAW,Racing Bulls,6.0,6.0,6,8.0
 1766,2025,Austrian_Grand_Prix,LEC,Ferrari,2.0,2.0,3,15.0
 1767,2025,Austrian_Grand_Prix,NOR,McLaren,1.0,1.0,1,25.0
@@ -1778,13 +1778,13 @@
 1776,2025,British_Grand_Prix,ALO,Aston Martin,9.0,7.0,9,2.0
 1777,2025,British_Grand_Prix,ANT,Mercedes,7.0,10.0,R,0.0
 1778,2025,British_Grand_Prix,BEA,Haas F1 Team,8.0,18.0,11,0.0
-1779,2025,British_Grand_Prix,BOR,Kick Sauber,17.0,16.0,R,0.0
+1779,2025,British_Grand_Prix,BOR,Audi,17.0,16.0,R,0.0
 1780,2025,British_Grand_Prix,COL,Alpine,20.0,20.0,W,0.0
 1781,2025,British_Grand_Prix,DOO,,,,,
 1782,2025,British_Grand_Prix,GAS,Alpine,10.0,8.0,6,8.0
 1783,2025,British_Grand_Prix,HAD,Racing Bulls,13.0,12.0,R,0.0
 1784,2025,British_Grand_Prix,HAM,Ferrari,5.0,5.0,4,12.0
-1785,2025,British_Grand_Prix,HUL,Kick Sauber,19.0,19.0,3,15.0
+1785,2025,British_Grand_Prix,HUL,Audi,19.0,19.0,3,15.0
 1786,2025,British_Grand_Prix,LAW,Racing Bulls,16.0,15.0,R,0.0
 1787,2025,British_Grand_Prix,LEC,Ferrari,6.0,6.0,14,0.0
 1788,2025,British_Grand_Prix,NOR,McLaren,3.0,3.0,1,25.0
@@ -1799,13 +1799,13 @@
 1797,2025,Belgian_Grand_Prix,ALO,Aston Martin,19.0,20.0,17,0.0
 1798,2025,Belgian_Grand_Prix,ANT,Mercedes,18.0,19.0,16,0.0
 1799,2025,Belgian_Grand_Prix,BEA,Haas F1 Team,12.0,12.0,11,0.0
-1800,2025,Belgian_Grand_Prix,BOR,Kick Sauber,10.0,10.0,9,2.0
+1800,2025,Belgian_Grand_Prix,BOR,Audi,10.0,10.0,9,2.0
 1801,2025,Belgian_Grand_Prix,COL,Alpine,17.0,15.0,19,0.0
 1802,2025,Belgian_Grand_Prix,DOO,,,,,
 1803,2025,Belgian_Grand_Prix,GAS,Alpine,13.0,13.0,10,1.0
 1804,2025,Belgian_Grand_Prix,HAD,Racing Bulls,8.0,8.0,20,0.0
 1805,2025,Belgian_Grand_Prix,HAM,Ferrari,16.0,18.0,7,6.0
-1806,2025,Belgian_Grand_Prix,HUL,Kick Sauber,14.0,14.0,12,0.0
+1806,2025,Belgian_Grand_Prix,HUL,Audi,14.0,14.0,12,0.0
 1807,2025,Belgian_Grand_Prix,LAW,Racing Bulls,9.0,9.0,8,4.0
 1808,2025,Belgian_Grand_Prix,LEC,Ferrari,3.0,3.0,3,15.0
 1809,2025,Belgian_Grand_Prix,NOR,McLaren,1.0,1.0,2,18.0
@@ -1820,13 +1820,13 @@
 1818,2025,Hungarian_Grand_Prix,ALO,Aston Martin,5.0,5.0,5,10.0
 1819,2025,Hungarian_Grand_Prix,ANT,Mercedes,15.0,15.0,10,1.0
 1820,2025,Hungarian_Grand_Prix,BEA,Haas F1 Team,11.0,11.0,R,0.0
-1821,2025,Hungarian_Grand_Prix,BOR,Kick Sauber,7.0,7.0,6,8.0
+1821,2025,Hungarian_Grand_Prix,BOR,Audi,7.0,7.0,6,8.0
 1822,2025,Hungarian_Grand_Prix,COL,Alpine,14.0,14.0,18,0.0
 1823,2025,Hungarian_Grand_Prix,DOO,,,,,
 1824,2025,Hungarian_Grand_Prix,GAS,Alpine,17.0,16.0,19,0.0
 1825,2025,Hungarian_Grand_Prix,HAD,Racing Bulls,10.0,10.0,11,0.0
 1826,2025,Hungarian_Grand_Prix,HAM,Ferrari,12.0,12.0,12,0.0
-1827,2025,Hungarian_Grand_Prix,HUL,Kick Sauber,19.0,18.0,13,0.0
+1827,2025,Hungarian_Grand_Prix,HUL,Audi,19.0,18.0,13,0.0
 1828,2025,Hungarian_Grand_Prix,LAW,Racing Bulls,9.0,9.0,8,4.0
 1829,2025,Hungarian_Grand_Prix,LEC,Ferrari,1.0,1.0,4,12.0
 1830,2025,Hungarian_Grand_Prix,NOR,McLaren,3.0,3.0,1,25.0
@@ -1841,13 +1841,13 @@
 1839,2025,Dutch_Grand_Prix,ALO,Aston Martin,10.0,10.0,8,4.0
 1840,2025,Dutch_Grand_Prix,ANT,Mercedes,11.0,11.0,16,0.0
 1841,2025,Dutch_Grand_Prix,BEA,Haas F1 Team,19.0,20.0,6,8.0
-1842,2025,Dutch_Grand_Prix,BOR,Kick Sauber,13.0,13.0,15,0.0
+1842,2025,Dutch_Grand_Prix,BOR,Audi,13.0,13.0,15,0.0
 1843,2025,Dutch_Grand_Prix,COL,Alpine,16.0,16.0,11,0.0
 1844,2025,Dutch_Grand_Prix,DOO,,,,,
 1845,2025,Dutch_Grand_Prix,GAS,Alpine,14.0,14.0,17,0.0
 1846,2025,Dutch_Grand_Prix,HAD,Racing Bulls,4.0,4.0,3,15.0
 1847,2025,Dutch_Grand_Prix,HAM,Ferrari,7.0,7.0,R,0.0
-1848,2025,Dutch_Grand_Prix,HUL,Kick Sauber,17.0,17.0,14,0.0
+1848,2025,Dutch_Grand_Prix,HUL,Audi,17.0,17.0,14,0.0
 1849,2025,Dutch_Grand_Prix,LAW,Racing Bulls,8.0,8.0,12,0.0
 1850,2025,Dutch_Grand_Prix,LEC,Ferrari,6.0,6.0,R,0.0
 1851,2025,Dutch_Grand_Prix,NOR,McLaren,2.0,2.0,18,0.0
@@ -1862,13 +1862,13 @@
 1860,2025,Italian_Grand_Prix,ALO,Aston Martin,9.0,8.0,R,0.0
 1861,2025,Italian_Grand_Prix,ANT,Mercedes,7.0,6.0,9,2.0
 1862,2025,Italian_Grand_Prix,BEA,Haas F1 Team,11.0,11.0,12,0.0
-1863,2025,Italian_Grand_Prix,BOR,Kick Sauber,8.0,7.0,8,4.0
+1863,2025,Italian_Grand_Prix,BOR,Audi,8.0,7.0,8,4.0
 1864,2025,Italian_Grand_Prix,COL,Alpine,18.0,17.0,17,0.0
 1865,2025,Italian_Grand_Prix,DOO,,,,,
 1866,2025,Italian_Grand_Prix,GAS,Alpine,19.0,20.0,16,0.0
 1867,2025,Italian_Grand_Prix,HAD,Racing Bulls,16.0,19.0,10,1.0
 1868,2025,Italian_Grand_Prix,HAM,Ferrari,5.0,10.0,6,8.0
-1869,2025,Italian_Grand_Prix,HUL,Kick Sauber,12.0,12.0,W,0.0
+1869,2025,Italian_Grand_Prix,HUL,Audi,12.0,12.0,W,0.0
 1870,2025,Italian_Grand_Prix,LAW,Racing Bulls,20.0,18.0,14,0.0
 1871,2025,Italian_Grand_Prix,LEC,Ferrari,4.0,4.0,4,12.0
 1872,2025,Italian_Grand_Prix,NOR,McLaren,2.0,2.0,2,18.0
@@ -1883,13 +1883,13 @@
 1881,2025,Azerbaijan_Grand_Prix,ALO,Aston Martin,11.0,11.0,15,0.0
 1882,2025,Azerbaijan_Grand_Prix,ANT,Mercedes,4.0,4.0,4,12.0
 1883,2025,Azerbaijan_Grand_Prix,BEA,Haas F1 Team,15.0,15.0,12,0.0
-1884,2025,Azerbaijan_Grand_Prix,BOR,Kick Sauber,13.0,13.0,11,0.0
+1884,2025,Azerbaijan_Grand_Prix,BOR,Audi,13.0,13.0,11,0.0
 1885,2025,Azerbaijan_Grand_Prix,COL,Alpine,16.0,16.0,19,0.0
 1886,2025,Azerbaijan_Grand_Prix,DOO,,,,,
 1887,2025,Azerbaijan_Grand_Prix,GAS,Alpine,18.0,18.0,18,0.0
 1888,2025,Azerbaijan_Grand_Prix,HAD,Racing Bulls,8.0,8.0,10,1.0
 1889,2025,Azerbaijan_Grand_Prix,HAM,Ferrari,12.0,12.0,8,4.0
-1890,2025,Azerbaijan_Grand_Prix,HUL,Kick Sauber,17.0,17.0,16,0.0
+1890,2025,Azerbaijan_Grand_Prix,HUL,Audi,17.0,17.0,16,0.0
 1891,2025,Azerbaijan_Grand_Prix,LAW,Racing Bulls,3.0,3.0,5,10.0
 1892,2025,Azerbaijan_Grand_Prix,LEC,Ferrari,10.0,10.0,9,2.0
 1893,2025,Azerbaijan_Grand_Prix,NOR,McLaren,7.0,7.0,7,6.0
@@ -1904,13 +1904,13 @@
 1902,2025,Singapore_Grand_Prix,ALO,Aston Martin,10.0,10.0,7,6.0
 1903,2025,Singapore_Grand_Prix,ANT,Mercedes,4.0,4.0,5,10.0
 1904,2025,Singapore_Grand_Prix,BEA,Haas F1 Team,9.0,9.0,9,2.0
-1905,2025,Singapore_Grand_Prix,BOR,Kick Sauber,14.0,14.0,17,0.0
+1905,2025,Singapore_Grand_Prix,BOR,Audi,14.0,14.0,17,0.0
 1906,2025,Singapore_Grand_Prix,COL,Alpine,16.0,16.0,16,0.0
 1907,2025,Singapore_Grand_Prix,DOO,,,,,
 1908,2025,Singapore_Grand_Prix,GAS,Alpine,18.0,19.0,19,0.0
 1909,2025,Singapore_Grand_Prix,HAD,Racing Bulls,8.0,8.0,11,0.0
 1910,2025,Singapore_Grand_Prix,HAM,Ferrari,6.0,6.0,8,4.0
-1911,2025,Singapore_Grand_Prix,HUL,Kick Sauber,11.0,11.0,20,0.0
+1911,2025,Singapore_Grand_Prix,HUL,Audi,11.0,11.0,20,0.0
 1912,2025,Singapore_Grand_Prix,LAW,Racing Bulls,12.0,12.0,15,0.0
 1913,2025,Singapore_Grand_Prix,LEC,Ferrari,7.0,7.0,6,8.0
 1914,2025,Singapore_Grand_Prix,NOR,McLaren,5.0,5.0,3,15.0
@@ -1925,13 +1925,13 @@
 1923,2025,United_States_Grand_Prix,ALO,Aston Martin,10.0,10.0,10,1.0
 1924,2025,United_States_Grand_Prix,ANT,Mercedes,7.0,7.0,13,0.0
 1925,2025,United_States_Grand_Prix,BEA,Haas F1 Team,8.0,8.0,9,2.0
-1926,2025,United_States_Grand_Prix,BOR,Kick Sauber,16.0,16.0,18,0.0
+1926,2025,United_States_Grand_Prix,BOR,Audi,16.0,16.0,18,0.0
 1927,2025,United_States_Grand_Prix,COL,Alpine,15.0,15.0,17,0.0
 1928,2025,United_States_Grand_Prix,DOO,,,,,
 1929,2025,United_States_Grand_Prix,GAS,Alpine,14.0,14.0,19,0.0
 1930,2025,United_States_Grand_Prix,HAD,Racing Bulls,20.0,20.0,16,0.0
 1931,2025,United_States_Grand_Prix,HAM,Ferrari,5.0,5.0,4,12.0
-1932,2025,United_States_Grand_Prix,HUL,Kick Sauber,11.0,11.0,8,4.0
+1932,2025,United_States_Grand_Prix,HUL,Audi,11.0,11.0,8,4.0
 1933,2025,United_States_Grand_Prix,LAW,Racing Bulls,12.0,12.0,11,0.0
 1934,2025,United_States_Grand_Prix,LEC,Ferrari,3.0,3.0,3,15.0
 1935,2025,United_States_Grand_Prix,NOR,McLaren,2.0,2.0,2,18.0
@@ -1946,13 +1946,13 @@
 1944,2025,Mexico_City_Grand_Prix,ALO,Aston Martin,14.0,14.0,R,0.0
 1945,2025,Mexico_City_Grand_Prix,ANT,Mercedes,6.0,6.0,6,8.0
 1946,2025,Mexico_City_Grand_Prix,BEA,Haas F1 Team,10.0,9.0,4,12.0
-1947,2025,Mexico_City_Grand_Prix,BOR,Kick Sauber,16.0,16.0,10,1.0
+1947,2025,Mexico_City_Grand_Prix,BOR,Audi,16.0,16.0,10,1.0
 1948,2025,Mexico_City_Grand_Prix,COL,Alpine,20.0,20.0,16,0.0
 1949,2025,Mexico_City_Grand_Prix,DOO,,,,,
 1950,2025,Mexico_City_Grand_Prix,GAS,Alpine,18.0,18.0,15,0.0
 1951,2025,Mexico_City_Grand_Prix,HAD,Racing Bulls,9.0,8.0,13,0.0
 1952,2025,Mexico_City_Grand_Prix,HAM,Ferrari,3.0,3.0,8,4.0
-1953,2025,Mexico_City_Grand_Prix,HUL,Kick Sauber,13.0,13.0,R,0.0
+1953,2025,Mexico_City_Grand_Prix,HUL,Audi,13.0,13.0,R,0.0
 1954,2025,Mexico_City_Grand_Prix,LAW,Racing Bulls,15.0,15.0,R,0.0
 1955,2025,Mexico_City_Grand_Prix,LEC,Ferrari,2.0,2.0,2,18.0
 1956,2025,Mexico_City_Grand_Prix,NOR,McLaren,1.0,1.0,1,25.0
@@ -1967,13 +1967,13 @@
 1965,2025,São_Paulo_Grand_Prix,ALO,Aston Martin,11.0,11.0,14,0.0
 1966,2025,São_Paulo_Grand_Prix,ANT,Mercedes,2.0,2.0,2,18.0
 1967,2025,São_Paulo_Grand_Prix,BEA,Haas F1 Team,8.0,8.0,6,8.0
-1968,2025,São_Paulo_Grand_Prix,BOR,Kick Sauber,,18.0,R,0.0
+1968,2025,São_Paulo_Grand_Prix,BOR,Audi,,18.0,R,0.0
 1969,2025,São_Paulo_Grand_Prix,COL,Alpine,18.0,16.0,15,0.0
 1970,2025,São_Paulo_Grand_Prix,DOO,,,,,
 1971,2025,São_Paulo_Grand_Prix,GAS,Alpine,9.0,9.0,10,1.0
 1972,2025,São_Paulo_Grand_Prix,HAD,Racing Bulls,5.0,5.0,8,4.0
 1973,2025,São_Paulo_Grand_Prix,HAM,Ferrari,13.0,13.0,R,0.0
-1974,2025,São_Paulo_Grand_Prix,HUL,Kick Sauber,10.0,10.0,9,2.0
+1974,2025,São_Paulo_Grand_Prix,HUL,Audi,10.0,10.0,9,2.0
 1975,2025,São_Paulo_Grand_Prix,LAW,Racing Bulls,7.0,7.0,7,6.0
 1976,2025,São_Paulo_Grand_Prix,LEC,Ferrari,3.0,3.0,R,0.0
 1977,2025,São_Paulo_Grand_Prix,NOR,McLaren,1.0,1.0,1,25.0
@@ -1988,13 +1988,13 @@
 1986,2025,Las_Vegas_Grand_Prix,ALO,Aston Martin,7.0,7.0,11,0.0
 1987,2025,Las_Vegas_Grand_Prix,ANT,Mercedes,17.0,17.0,3,15.0
 1988,2025,Las_Vegas_Grand_Prix,BEA,Haas F1 Team,14.0,14.0,10,1.0
-1989,2025,Las_Vegas_Grand_Prix,BOR,Kick Sauber,18.0,18.0,R,0.0
+1989,2025,Las_Vegas_Grand_Prix,BOR,Audi,18.0,18.0,R,0.0
 1990,2025,Las_Vegas_Grand_Prix,COL,Alpine,15.0,15.0,15,0.0
 1991,2025,Las_Vegas_Grand_Prix,DOO,,,,,
 1992,2025,Las_Vegas_Grand_Prix,GAS,Alpine,10.0,10.0,13,0.0
 1993,2025,Las_Vegas_Grand_Prix,HAD,Racing Bulls,8.0,8.0,6,8.0
 1994,2025,Las_Vegas_Grand_Prix,HAM,Ferrari,20.0,19.0,8,4.0
-1995,2025,Las_Vegas_Grand_Prix,HUL,Kick Sauber,11.0,11.0,7,6.0
+1995,2025,Las_Vegas_Grand_Prix,HUL,Audi,11.0,11.0,7,6.0
 1996,2025,Las_Vegas_Grand_Prix,LAW,Racing Bulls,6.0,6.0,14,0.0
 1997,2025,Las_Vegas_Grand_Prix,LEC,Ferrari,9.0,9.0,4,12.0
 1998,2025,Las_Vegas_Grand_Prix,NOR,McLaren,1.0,1.0,D,0.0
@@ -2009,13 +2009,13 @@
 2007,2025,Qatar_Grand_Prix,ALO,Aston Martin,8.0,8.0,7,6.0
 2008,2025,Qatar_Grand_Prix,ANT,Mercedes,5.0,5.0,5,10.0
 2009,2025,Qatar_Grand_Prix,BEA,Haas F1 Team,13.0,13.0,R,0.0
-2010,2025,Qatar_Grand_Prix,BOR,Kick Sauber,14.0,19.0,13,0.0
+2010,2025,Qatar_Grand_Prix,BOR,Audi,14.0,19.0,13,0.0
 2011,2025,Qatar_Grand_Prix,COL,Alpine,20.0,20.0,14,0.0
 2012,2025,Qatar_Grand_Prix,DOO,,,,,
 2013,2025,Qatar_Grand_Prix,GAS,Alpine,9.0,9.0,16,0.0
 2014,2025,Qatar_Grand_Prix,HAD,Racing Bulls,6.0,6.0,18,0.0
 2015,2025,Qatar_Grand_Prix,HAM,Ferrari,18.0,17.0,12,0.0
-2016,2025,Qatar_Grand_Prix,HUL,Kick Sauber,11.0,11.0,R,0.0
+2016,2025,Qatar_Grand_Prix,HUL,Audi,11.0,11.0,R,0.0
 2017,2025,Qatar_Grand_Prix,LAW,Racing Bulls,12.0,12.0,9,2.0
 2018,2025,Qatar_Grand_Prix,LEC,Ferrari,10.0,10.0,8,4.0
 2019,2025,Qatar_Grand_Prix,NOR,McLaren,2.0,2.0,4,12.0
@@ -2030,13 +2030,13 @@
 2028,2025,Abu_Dhabi_Grand_Prix,ALO,Aston Martin,6.0,6.0,6,8.0
 2029,2025,Abu_Dhabi_Grand_Prix,ANT,Mercedes,14.0,14.0,15,0.0
 2030,2025,Abu_Dhabi_Grand_Prix,BEA,Haas F1 Team,11.0,11.0,12,0.0
-2031,2025,Abu_Dhabi_Grand_Prix,BOR,Kick Sauber,7.0,7.0,11,0.0
+2031,2025,Abu_Dhabi_Grand_Prix,BOR,Audi,7.0,7.0,11,0.0
 2032,2025,Abu_Dhabi_Grand_Prix,COL,Alpine,20.0,20.0,20,0.0
 2033,2025,Abu_Dhabi_Grand_Prix,DOO,,,,,
 2034,2025,Abu_Dhabi_Grand_Prix,GAS,Alpine,19.0,19.0,19,0.0
 2035,2025,Abu_Dhabi_Grand_Prix,HAD,Racing Bulls,9.0,9.0,17,0.0
 2036,2025,Abu_Dhabi_Grand_Prix,HAM,Ferrari,16.0,16.0,8,4.0
-2037,2025,Abu_Dhabi_Grand_Prix,HUL,Kick Sauber,18.0,18.0,9,2.0
+2037,2025,Abu_Dhabi_Grand_Prix,HUL,Audi,18.0,18.0,9,2.0
 2038,2025,Abu_Dhabi_Grand_Prix,LAW,Racing Bulls,13.0,13.0,18,0.0
 2039,2025,Abu_Dhabi_Grand_Prix,LEC,Ferrari,5.0,5.0,4,12.0
 2040,2025,Abu_Dhabi_Grand_Prix,NOR,McLaren,2.0,2.0,3,15.0
@@ -2323,3 +2323,26 @@
 2321,2026,Dutch_Grand_Prix,STR,Aston Martin,19.0,19.0,R,0.0
 2322,2026,Dutch_Grand_Prix,TSU,Racing Bulls,12.0,12.0,11,0.0
 2323,2026,Dutch_Grand_Prix,VER,Red Bull Racing,7.0,7.0,R,0.0
+2324,2026,Italian_Grand_Prix,ALB,Williams,18.0,20.0,17,0.0
+2325,2026,Italian_Grand_Prix,ALO,Aston Martin,21.0,21.0,R,0.0
+2326,2026,Italian_Grand_Prix,ANT,Mercedes,7.0,19.0,1,25.0
+2327,2026,Italian_Grand_Prix,BEA,Haas F1 Team,12.0,11.0,15,0.0
+2328,2026,Italian_Grand_Prix,BOR,Audi,11.0,10.0,11,0.0
+2329,2026,Italian_Grand_Prix,BOT,Cadillac,19.0,16.0,19,0.0
+2330,2026,Italian_Grand_Prix,COL,Alpine,8.0,7.0,9,2.0
+2331,2026,Italian_Grand_Prix,GAS,Alpine,1.0,1.0,7,6.0
+2332,2026,Italian_Grand_Prix,HAD,,,,,
+2333,2026,Italian_Grand_Prix,HAM,Ferrari,5.0,4.0,6,8.0
+2334,2026,Italian_Grand_Prix,HUL,Audi,13.0,12.0,12,0.0
+2335,2026,Italian_Grand_Prix,LAW,Red Bull Racing,14.0,22.0,14,0.0
+2336,2026,Italian_Grand_Prix,LEC,Ferrari,4.0,3.0,R,0.0
+2337,2026,Italian_Grand_Prix,LIN,Racing Bulls,10.0,9.0,8,4.0
+2338,2026,Italian_Grand_Prix,NOR,McLaren,9.0,8.0,4,12.0
+2339,2026,Italian_Grand_Prix,OCO,Haas F1 Team,16.0,14.0,16,0.0
+2340,2026,Italian_Grand_Prix,PER,Cadillac,20.0,17.0,18,0.0
+2341,2026,Italian_Grand_Prix,PIA,McLaren,3.0,6.0,5,10.0
+2342,2026,Italian_Grand_Prix,RUS,Mercedes,2.0,2.0,2,18.0
+2343,2026,Italian_Grand_Prix,SAI,Williams,15.0,13.0,13,0.0
+2344,2026,Italian_Grand_Prix,STR,Aston Martin,22.0,18.0,R,0.0
+2345,2026,Italian_Grand_Prix,TSU,Racing Bulls,17.0,15.0,10,1.0
+2346,2026,Italian_Grand_Prix,VER,Red Bull Racing,6.0,5.0,3,15.0
