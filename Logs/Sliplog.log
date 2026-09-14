@@ -33,4 +33,5 @@
 [13-09-2026 01:22:55][14 - Spanish_Grand_Prix] - Generated Feature Dataset: oracle_v2.csv — years [np.int64(2022), np.int64(2023), np.int64(2024), np.int64(2025), np.int64(2026)]
 [13-09-2026 01:22:57][14 - Spanish_Grand_Prix] - Trained Random Forest model on new datas
 [13-09-2026 01:23:37][14 - Spanish_Grand_Prix] - Post-quali complete: Spanish_Grand_Prix R14 — hybrid FastF1 + FIA grid
-[13-09-2026 01:23:38][14 - Spanish_Grand_Prix] - Race Prediction Generated
+[13-09-2026 01:23:38][14 - Spanish_Grand_Prix] - Race Prediction Generateds
+[14-09-2026 08:29:49][14 - Spanish_Grand_Prix] - Performed post race routines: Calculated Errors
