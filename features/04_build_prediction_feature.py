@@ -66,10 +66,7 @@ if not Save_Path.exists():
 # ── 2 extra drivers for Austria (reserve / new entries) ─────
 # Fill in their real team once confirmed.
 # QualiPosition / GridPosition will be filled before prediction.
-EXTRA_DRIVERS = [
-    {"Driver": "LAW", "Team": "Red Bull Racing"},
-    {"Driver": "TSU", "Team": "Racing Bulls"},
-]
+EXTRA_DRIVERS = []
 
 # ============================================================
 # HELPERS
