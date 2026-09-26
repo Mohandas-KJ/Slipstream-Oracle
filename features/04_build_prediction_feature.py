@@ -28,6 +28,7 @@ V1_CSV      = "outputs/oracle_v1.csv"
 OUTPUT_CSV  = Path("outputs")
 COMPLETED_TAB = "catalog/2026/completed.json" # Hardcoded Year for now
 ROUND_MAP = "catalog/2026/Schedule.csv"
+LINEUP    = "catalog/2026/Lineup.csv"   # spl-cl: official 22-driver lineup source
 
 YEAR        = 2026
 
@@ -201,12 +202,18 @@ def build_austria_dataset() -> pd.DataFrame:
     df_2026["Round"] = df_2026["Race"].map(ROUND_MAP_2026)
     df_2026 = df_2026.sort_values("Round").reset_index(drop=True)
 
-    # latest team per driver (in case they changed mid-season)
-    team_map = df_2026.groupby("Driver")["Team"].last().to_dict()
-    drivers  = sorted(df_2026["Driver"].unique())
+    # ── load official lineup ─────────────────────────────────
+    # spl-cl: drivers and teams come from Lineup.csv, NOT oracle_v1.
+    # spl-cl: oracle_v1 had 23 drivers because reserve drivers (LAW, TSU)
+    # spl-cl: appeared mid-season and were captured in the training data.
+    # spl-cl: Lineup.csv is the official 22-driver season roster, maintained
+    # spl-cl: manually in catalog/2026/ — always correct regardless of reserves.
+    lineup_df = pd.read_csv(LINEUP)
+    drivers   = sorted(lineup_df["Driver"].unique())
+    team_map  = dict(zip(lineup_df["Driver"], lineup_df["Team"]))
 
-    print(f"  Base drivers (from v1 2026) : {len(drivers)}")
-    print(f"  Extra drivers (Austria only): {len(EXTRA_DRIVERS)}")
+    print(f"  Base drivers (from Lineup.csv)  : {len(drivers)}")
+    print(f"  Extra drivers                   : {len(EXTRA_DRIVERS)}")
 
     rows = []
 
@@ -285,4 +292,4 @@ def build_austria_dataset() -> pd.DataFrame:
 if __name__ == "__main__":
     print("\n── Building Austria 2026 Prediction Dataset ─────────")
     build_austria_dataset()
-    #logs.write("Generated Training Dataset")s
+    logs.write("Generated Training Dataset")

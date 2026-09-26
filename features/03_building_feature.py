@@ -178,4 +178,4 @@ if __name__ == "__main__":
     print(f"  Years      : {sorted(oracle_v2['Year'].unique())}")
     print(f"  Usable rows: {pd.to_numeric(oracle_v2['TargetFinish'], errors='coerce').notna().sum()}")
     print(f"  Saved → outputs/oracle_v2.csv")
-    logs.write(f"Generated Feature Dataset: oracle_v2.csv — years {list(years)}")
+    logs.write(f"Generated Feature Dataset: oracle_v2.csv — years {[int(y) for y in years]}")

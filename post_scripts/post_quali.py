@@ -94,14 +94,16 @@ def fetch_quali_positions(year: int, round_number: int) -> pd.DataFrame:
 def collect_grid_positions(quali_df: pd.DataFrame) -> pd.DataFrame:
     """
     Two-step grid collection:
-      A) Default: assume GridPosition = QualiPosition (no penalties)
-      B) User enters any penalty changes on top
+      A) Default: GridPosition = QualiPosition (no penalties)
+      B) User enters penalties → cascade algorithm shifts all affected drivers
 
-    Returns quali_df with GridPosition column added.
+    The cascade works like inserting a card into a sorted deck:
+      1. Remove penalised drivers from the clean order
+      2. Pack remaining drivers into sequential slots 1,2,3...
+      3. Insert each penalised driver at their penalty slot,
+         pushing everyone at that slot and below down by 1
     """
     grid_df = quali_df.copy()
-
-    # spl-cl: start with GridPosition = QualiPosition as default
     grid_df["GridPosition"] = grid_df["QualiPosition"]
 
     print()
@@ -110,13 +112,13 @@ def collect_grid_positions(quali_df: pd.DataFrame) -> pd.DataFrame:
     print("          OR  F1 app → Race Hub → Starting Grid")
     print()
 
-    # spl-cl: ask if any grid penalties exist — skip entire block if clean grid
     has_penalties = input("  Any grid penalties or changes from quali order? [y/n]: ").strip().lower()
 
     if has_penalties == "y":
         print()
         print("  Enter each penalty as:  DRIVER  FINAL_GRID_POSITION")
-        print("  Example:  NOR 13   (NOR drops from P3 to P13)")
+        print("  Example:  SAI 14   (SAI drops from P9 to P14)")
+        print("  Back of grid (BOG) penalties: enter their final position (e.g. ALO 21)")
         print("  Empty line to finish.")
         print()
 
@@ -127,7 +129,7 @@ def collect_grid_positions(quali_df: pd.DataFrame) -> pd.DataFrame:
                 break
             parts = entry.split()
             if len(parts) != 2:
-                print("  ⚠  Format: DRIVER POSITION  (e.g. NOR 13)")
+                print("  ⚠  Format: DRIVER POSITION  (e.g. SAI 14)")
                 continue
             driver, pos = parts[0], parts[1]
             if not pos.isdigit():
@@ -136,13 +138,34 @@ def collect_grid_positions(quali_df: pd.DataFrame) -> pd.DataFrame:
             penalties[driver] = int(pos)
             print(f"  ✓  {driver} → Grid P{pos}")
 
-        # spl-cl: apply penalties to GridPosition column
-        for driver, final_pos in penalties.items():
-            mask = grid_df["Driver"] == driver
-            if mask.any():
-                grid_df.loc[mask, "GridPosition"] = final_pos
-            else:
-                print(f"  ⚠  {driver} not found in qualifying results — skipping")
+        if penalties:
+            # spl-cl: CASCADE ALGORITHM
+            # spl-cl: Old code: just set grid[penalised_driver] = penalty_pos
+            # spl-cl: Bug: left all other drivers at their original quali positions
+            # spl-cl: creating gaps and duplicates (OCO stayed P13 when SAI vacated P9)
+            # spl-cl:
+            # spl-cl: Fix: treat the grid like a sorted deck of cards
+            # spl-cl: Step 1 — split into clean drivers and penalised drivers
+            penalised_set = set(penalties.keys())
+            clean = grid_df[~grid_df["Driver"].isin(penalised_set)].copy()
+
+            # spl-cl: Step 2 — pack clean drivers into sequential slots by quali order
+            clean = clean.sort_values("QualiPosition").reset_index(drop=True)
+            clean_grid = {row["Driver"]: i + 1 for i, (_, row) in enumerate(clean.iterrows())}
+
+            # spl-cl: Step 3 — insert each penalised driver at their target slot
+            # spl-cl: sorted by penalty position so earlier insertions don't corrupt later ones
+            for driver, pen_pos in sorted(penalties.items(), key=lambda x: x[1]):
+                for d in clean_grid:
+                    if clean_grid[d] >= pen_pos:
+                        clean_grid[d] += 1      # spl-cl: push everyone below down by 1
+                clean_grid[driver] = pen_pos    # spl-cl: place penalised driver
+
+            # spl-cl: write final grid positions back into grid_df
+            for driver, final_pos in clean_grid.items():
+                grid_df.loc[grid_df["Driver"] == driver, "GridPosition"] = final_pos
+
+            print(f"\n  ✓  Cascade applied — {len(penalties)} penalised driver(s) inserted correctly")
 
     return grid_df
 
