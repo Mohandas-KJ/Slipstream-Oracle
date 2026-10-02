@@ -4,42 +4,42 @@
     {
       "name": "Austrian Grand Prix",
       "slug": "Austrian_Grand_Prix",
-      "data": "Austrian_Grand_Prix/Finaldata.csv"
+      "data": "Austrian_Grand_Prix/Final_Data.csv"
     },
     {
       "name": "Azerbaijan Grand Prix",
       "slug": "Azerbaijan_Grand_Prix",
-      "data": "Azerbaijan_Grand_Prix/Finaldata.csv"
+      "data": "Azerbaijan_Grand_Prix/Final_Data.csv"
     },
     {
       "name": "Belgian Grand Prix",
       "slug": "Belgian_Grand_Prix",
-      "data": "Belgian_Grand_Prix/Finaldata.csv"
+      "data": "Belgian_Grand_Prix/Final_Data.csv"
     },
     {
       "name": "British Grand Prix",
       "slug": "British_Grand_Prix",
-      "data": "British_Grand_Prix/Finaldata.csv"
+      "data": "British_Grand_Prix/Final_Data.csv"
     },
     {
       "name": "Dutch Grand Prix",
       "slug": "Dutch_Grand_Prix",
-      "data": "Dutch_Grand_Prix/Finaldata.csv"
+      "data": "Dutch_Grand_Prix/Final_Data.csv"
     },
     {
       "name": "Hungarian Grand Prix",
       "slug": "Hungarian_Grand_Prix",
-      "data": "Hungarian_Grand_Prix/Finaldata.csv"
+      "data": "Hungarian_Grand_Prix/Final_Data.csv"
     },
     {
       "name": "Italian Grand Prix",
       "slug": "Italian_Grand_Prix",
-      "data": "Italian_Grand_Prix/Finaldata.csv"
+      "data": "Italian_Grand_Prix/Final_Data.csv"
     },
     {
       "name": "Spanish Grand Prix",
       "slug": "Spanish_Grand_Prix",
-      "data": "Spanish_Grand_Prix/Finaldata.csv"
+      "data": "Spanish_Grand_Prix/Final_Data.csv"
     }
   ]
 }

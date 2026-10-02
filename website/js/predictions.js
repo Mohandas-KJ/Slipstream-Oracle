@@ -2,381 +2,1373 @@
  * ==========================================================================
  * SLIPSTREAM ORACLE - DataHub & Predictions Module
  * Handles loading GP datasets, rendering podium telemetry, full race control
- * leaderboard, delta calculations, and commented dynamic discovery logic.
+ * leaderboard, delta calculations, and manifest-based GP discovery.
  * ==========================================================================
  */
 
 let activePredictionsData = [];
 let currentSortColumn = 'PredictedPosition';
 let currentSortAsc = true;
+let predictionManifest = null;
+
+
+/* ==========================================================================
+   DATAHUB INITIALIZATION
+   ========================================================================== */
 
 /**
  * Initializes DataHub Tab
  */
 async function initDataHubTab() {
-  const dataHubContainer = document.getElementById('datahub-content-container');
+
+  const dataHubContainer =
+    document.getElementById('datahub-content-container');
+
   if (!dataHubContainer) return;
 
-  // Render the Grand Prix Banner Card
   renderGrandPrixCard();
 
-  // Load and parse the Azerbaijan Grand Prix prediction dataset
-  await loadGrandPrixPredictions('Azerbaijan_Grand_Prix');
+  /*
+   * Load the first GP from manifest.
+   *
+   * We do NOT hard-code the CSV filename here.
+   * manifest.json decides which datasets exist.
+   */
+  const races = await getAvailableGrandPrix();
+
+  if (races.length === 0) {
+    console.error(
+      '[Slipstream Oracle] No Grand Prix datasets found.'
+    );
+
+    activePredictionsData = [];
+
+    renderDataHubView();
+
+    return;
+  }
+
+  /*
+   * Prefer Azerbaijan if it exists, otherwise use the first
+   * GP available in manifest.json.
+   */
+  const defaultRace =
+    races.find(
+      race => race.slug === 'Azerbaijan_Grand_Prix'
+    ) || races[0];
+
+  renderGrandPrixCard(defaultRace);
+
+  await loadGrandPrixPredictions(defaultRace.slug);
 }
 
+
+/* ==========================================================================
+   GRAND PRIX BANNER
+   ========================================================================== */
+
 /**
- * Renders the primary Grand Prix selection card
+ * Renders the primary Grand Prix selection card.
  */
-function renderGrandPrixCard() {
-  const container = document.getElementById('gp-banner-container');
+function renderGrandPrixCard(race = null) {
+
+  const container =
+    document.getElementById('gp-banner-container');
+
   if (!container) return;
 
-  // Clean Grand Prix name without underscores
-  const rawGpName = 'Azerbaijan_Grand_Prix';
-  const cleanGpName = rawGpName.replace(/_/g, ' ');
+  const rawGpName =
+    race?.slug || 'Azerbaijan_Grand_Prix';
+
+  const cleanGpName =
+    race?.name ||
+    rawGpName.replace(/_/g, ' ');
 
   container.innerHTML = `
+
     <div class="gp-selection-card">
+
       <div class="gp-meta-details">
-        <span class="tech-badge red">CURRENT ACTIVE ROUND // 2026</span>
-        <h3>${cleanGpName}</h3>
-        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem;">
-          Baku City Circuit &bull; 6.003 km &bull; 51 Laps &bull; High-Speed Street Circuit
+
+        <span class="tech-badge red">
+          CURRENT ACTIVE ROUND // 2026
+        </span>
+
+        <h3>
+          ${cleanGpName}
+        </h3>
+
+        <p
+          style="
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+          "
+        >
+          Prediction Dataset &bull;
+          Slipstream Oracle
         </p>
+
       </div>
 
+
       <div class="gp-stats-row">
+
         <div class="gp-stat-item">
-          <span class="gp-stat-title">Dataset Status</span>
-          <span class="gp-stat-val" style="color: var(--telemetry-green); font-size: 0.95rem;">
-            <span class="beacon-led" style="display:inline-block; margin-right:4px;"></span>
-            Final_Data.csv VERIFIED
+
+          <span class="gp-stat-title">
+            Dataset Status
           </span>
+
+          <span
+            class="gp-stat-val"
+            style="
+              color: var(--telemetry-green);
+              font-size: 0.95rem;
+            "
+          >
+
+            <span
+              class="beacon-led"
+              style="
+                display:inline-block;
+                margin-right:4px;
+              "
+            ></span>
+
+            Manifest Dataset
+          </span>
+
         </div>
+
+
         <div class="gp-stat-item">
-          <span class="gp-stat-title">Grid Size</span>
-          <span class="gp-stat-val">22 Drivers</span>
+
+          <span class="gp-stat-title">
+            Grid Size
+          </span>
+
+          <span class="gp-stat-val">
+            ${activePredictionsData.length || '--'} Drivers
+          </span>
+
         </div>
+
+
         <div class="gp-stat-item">
-          <span class="gp-stat-title">Inference Engine</span>
-          <span class="gp-stat-val" style="color: var(--telemetry-cyan); font-size: 0.95rem;">Random Forest (RF-REG-26)</span>
+
+          <span class="gp-stat-title">
+            Inference Engine
+          </span>
+
+          <span
+            class="gp-stat-val"
+            style="
+              color: var(--telemetry-cyan);
+              font-size: 0.95rem;
+            "
+          >
+            Random Forest (RF-REG-26)
+          </span>
+
         </div>
+
       </div>
+
     </div>
   `;
 }
 
-/**
- * Fetches and parses Final_Data.csv for a given GP
- */
-async function loadGrandPrixPredictions(gpSlug) {
-  // Support both relative paths: direct from workspace root or nested
-  const primaryPath = `predictions/2026/${gpSlug}/Final_Data.csv`;
-  const secondaryPath = `../predictions/2026/${gpSlug}/Final_Data.csv`;
 
-  let csvContent = null;
+/* ==========================================================================
+   PREDICTION DATA PATH
+   ========================================================================== */
+
+/*
+ * IMPORTANT:
+ *
+ * The page is:
+ *
+ *     website/index.html
+ *
+ * The prediction data is:
+ *
+ *     predictions/2026/
+ *
+ * fetch() resolves relative URLs from the HTML document URL.
+ *
+ * Therefore:
+ *
+ *     ../predictions/2026
+ *
+ * is correct.
+ *
+ * DO NOT use:
+ *
+ *     ../../predictions/2026
+ *
+ * because that moves outside the repository root.
+ *
+ * ========================================================================== */
+
+const PREDICTIONS_2026_BASE =
+  '../predictions/2026';
+
+
+/* ==========================================================================
+   MANIFEST LOADING
+   ========================================================================== */
+
+/**
+ * Loads the generated 2026 race manifest.
+ *
+ * Expected structure:
+ *
+ * {
+ *   "season": 2026,
+ *   "races": [
+ *     {
+ *       "name": "Azerbaijan Grand Prix",
+ *       "slug": "Azerbaijan_Grand_Prix",
+ *       "data": "Azerbaijan_Grand_Prix/Finaldata.csv"
+ *     }
+ *   ]
+ * }
+ */
+async function loadPredictionManifest() {
+
+  if (predictionManifest) {
+    return predictionManifest;
+  }
+
+  const manifestUrl =
+    `${PREDICTIONS_2026_BASE}/manifest.json`;
+
+  console.log(
+    '[Slipstream Oracle] Loading manifest:',
+    manifestUrl
+  );
 
   try {
-    let res = await fetch(primaryPath);
-    if (!res.ok) {
-      res = await fetch(secondaryPath);
+
+    const response =
+      await fetch(
+        manifestUrl,
+        {
+          cache: 'no-cache'
+        }
+      );
+
+    if (!response.ok) {
+
+      throw new Error(
+        `Manifest request failed: ${response.status} ${response.statusText}`
+      );
+
     }
-    if (res.ok) {
-      csvContent = await res.text();
+
+
+    predictionManifest =
+      await response.json();
+
+
+    if (
+      !predictionManifest ||
+      !Array.isArray(predictionManifest.races)
+    ) {
+
+      throw new Error(
+        'Invalid manifest format. Expected a "races" array.'
+      );
+
     }
-  } catch (err) {
-    console.warn('[Slipstream Oracle] Fetch failed for prediction CSV (likely file:// protocol). Falling back to sample dataset.', err);
+
+
+    console.log(
+      '[Slipstream Oracle] Manifest loaded:',
+      predictionManifest
+    );
+
+
+    return predictionManifest;
+
+  } catch (error) {
+
+    console.error(
+      '[Slipstream Oracle] Failed to load prediction manifest:',
+      error
+    );
+
+    predictionManifest = null;
+
+    return null;
+  }
+}
+
+
+/* ==========================================================================
+   GRAND PRIX DISCOVERY
+   ========================================================================== */
+
+/**
+ * Returns all GP entries available in manifest.json.
+ */
+async function getAvailableGrandPrix() {
+
+  const manifest =
+    await loadPredictionManifest();
+
+  if (!manifest) {
+    return [];
   }
 
-  if (csvContent) {
-    activePredictionsData = parseCSV(csvContent);
-  } else {
-    activePredictionsData = getSamplePredictionData();
+  return manifest.races || [];
+}
+
+
+/* ==========================================================================
+   GRAND PRIX DATA LOADING
+   ========================================================================== */
+
+/**
+ * Fetches and parses the prediction CSV for a given GP.
+ *
+ * The CSV filename/path comes entirely from manifest.json.
+ */
+async function loadGrandPrixPredictions(gpSlug) {
+
+  const races =
+    await getAvailableGrandPrix();
+
+
+  const race =
+    races.find(
+      item => item.slug === gpSlug
+    );
+
+
+  if (!race) {
+
+    console.error(
+      `[Slipstream Oracle] GP "${gpSlug}" was not found in manifest.json.`
+    );
+
+    activePredictionsData = [];
+
+    renderDataHubView();
+
+    return;
   }
 
-  // Ensure drivers metadata is loaded to cross-reference
-  if (Object.keys(allDriversData).length === 0) {
-    allDriversData = await loadDriversMetadata();
+
+  if (!race.data) {
+
+    console.error(
+      `[Slipstream Oracle] No dataset path defined for "${race.name}".`
+    );
+
+    activePredictionsData = [];
+
+    renderDataHubView();
+
+    return;
   }
+
+
+  /*
+   * Construct the final CSV URL.
+   *
+   * Example:
+   *
+   * ../predictions/2026/Azerbaijan_Grand_Prix/Finaldata.csv
+   */
+  const csvUrl =
+    new URL(
+      `${PREDICTIONS_2026_BASE}/${race.data}`,
+      window.location.href
+    );
+
+
+  console.log(
+    '[Slipstream Oracle] Loading GP dataset:',
+    csvUrl.href
+  );
+
+
+  try {
+
+    const response =
+      await fetch(
+        csvUrl,
+        {
+          cache: 'no-cache'
+        }
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        `CSV request failed: ${response.status} ${response.statusText}`
+      );
+
+    }
+
+
+    const csvContent =
+      await response.text();
+
+
+    if (!csvContent.trim()) {
+
+      throw new Error(
+        'CSV file is empty.'
+      );
+
+    }
+
+
+    activePredictionsData =
+      parseCSV(csvContent);
+
+
+    if (
+      !Array.isArray(activePredictionsData) ||
+      activePredictionsData.length === 0
+    ) {
+
+      throw new Error(
+        'CSV was loaded but produced no prediction rows.'
+      );
+
+    }
+
+
+    console.log(
+      `[Slipstream Oracle] Loaded ${race.name}: ${activePredictionsData.length} drivers`
+    );
+
+
+    /*
+     * Update GP banner with actual loaded dataset.
+     */
+    renderGrandPrixCard(race);
+
+
+  } catch (error) {
+
+    console.error(
+      `[Slipstream Oracle] Failed to load prediction data for ${race.name}:`,
+      error
+    );
+
+
+    /*
+     * DO NOT silently hide the problem with sample data.
+     *
+     * Empty DataHub previously made debugging difficult.
+     *
+     * If the CSV cannot be loaded, display the error state instead.
+     */
+    activePredictionsData = [];
+
+
+    showPredictionLoadError(
+      race,
+      error
+    );
+
+  }
+
+
+  /*
+   * Load driver metadata if necessary.
+   */
+  if (
+    typeof allDriversData === 'undefined' ||
+    !allDriversData ||
+    Object.keys(allDriversData).length === 0
+  ) {
+
+    if (typeof loadDriversMetadata === 'function') {
+
+      allDriversData =
+        await loadDriversMetadata();
+
+    }
+
+  }
+
 
   renderDataHubView();
 }
 
+
+/* ==========================================================================
+   ERROR STATE
+   ========================================================================== */
+
+function showPredictionLoadError(
+  race,
+  error
+) {
+
+  const container =
+    document.getElementById(
+      'datahub-content-container'
+    );
+
+  if (!container) return;
+
+
+  container.insertAdjacentHTML(
+    'beforeend',
+    `
+
+      <div
+        class="prediction-error"
+        style="
+          margin: 1rem 0;
+          padding: 1rem;
+          border: 1px solid rgba(255, 70, 70, 0.4);
+          border-radius: 12px;
+          background: rgba(255, 50, 50, 0.06);
+        "
+      >
+
+        <strong>
+          Prediction dataset could not be loaded.
+        </strong>
+
+        <p
+          style="
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+          "
+        >
+          ${race?.name || 'Selected Grand Prix'}
+        </p>
+
+        <code
+          style="
+            display:block;
+            margin-top:0.5rem;
+            font-size:0.78rem;
+            word-break:break-all;
+          "
+        >
+          ${error?.message || 'Unknown error'}
+        </code>
+
+      </div>
+
+    `
+  );
+}
+
+
+/* ==========================================================================
+   DATAHUB RENDERING
+   ========================================================================== */
+
 /**
- * Renders both the Podium Showcase and Full Telemetry Table
+ * Renders both the Podium Showcase and Full Telemetry Table.
  */
 function renderDataHubView() {
+
   renderPodiumStage();
+
   renderTelemetryTable();
 }
 
+
+/* ==========================================================================
+   PODIUM
+   ========================================================================== */
+
 /**
- * Renders top 3 predicted finishers on the podium stage
+ * Renders top 3 predicted finishers.
  */
 function renderPodiumStage() {
-  const container = document.getElementById('podium-stage-container');
-  if (!container || activePredictionsData.length < 3) return;
 
-  // Sort by PredictedPosition ascending
-  const sorted = [...activePredictionsData].sort((a, b) => a.PredictedPosition - b.PredictedPosition);
+  const container =
+    document.getElementById(
+      'podium-stage-container'
+    );
+
+
+  if (!container) {
+    return;
+  }
+
+
+  if (
+    !activePredictionsData ||
+    activePredictionsData.length < 3
+  ) {
+
+    container.innerHTML = '';
+
+    return;
+  }
+
+
+  const sorted =
+    [...activePredictionsData]
+      .sort(
+        (a, b) =>
+          Number(a.PredictedPosition) -
+          Number(b.PredictedPosition)
+      );
+
+
   const p1 = sorted[0];
   const p2 = sorted[1];
   const p3 = sorted[2];
 
-  const p1Driver = resolveDriver(p1.Driver, allDriversData);
-  const p2Driver = resolveDriver(p2.Driver, allDriversData);
-  const p3Driver = resolveDriver(p3.Driver, allDriversData);
+
+  const p1Driver =
+    resolveDriver(
+      p1.Driver,
+      allDriversData
+    );
+
+
+  const p2Driver =
+    resolveDriver(
+      p2.Driver,
+      allDriversData
+    );
+
+
+  const p3Driver =
+    resolveDriver(
+      p3.Driver,
+      allDriversData
+    );
+
 
   container.innerHTML = `
-    <h3 class="podium-stage-title">Predicted Podium Telemetry</h3>
+
+    <h3 class="podium-stage-title">
+      Predicted Podium Telemetry
+    </h3>
+
     <div class="podium-grid">
-      <!-- P2 Second Step -->
+
+
+      <!-- P2 -->
+
       <div class="podium-card p2">
-        <div class="podium-badge">P2</div>
+
+        <div class="podium-badge">
+          P2
+        </div>
+
         <div class="podium-headshot-wrap">
-          <img 
-            src="${normalizeHeadshotUrl(p2Driver.headshot)}" 
-            alt="${p2Driver.name}" 
-            class="podium-headshot" 
+
+          <img
+            src="${normalizeHeadshotUrl(p2Driver.headshot)}"
+            alt="${p2Driver.name}"
+            class="podium-headshot"
             onerror="handleImageFallback(this, '${p2Driver.headshot}')"
           />
+
         </div>
-        <h4 class="podium-driver-name">${p2Driver.name}</h4>
-        <div class="podium-driver-team">${p2.Team} #${p2Driver.number}</div>
-        <div class="podium-score-pill">Model Score: ${p2.PredictedFinish.toFixed(2)}</div>
-        <div style="margin-top: 0.6rem;">${renderDeltaBadge(p2.GridPosition, p2.PredictedPosition)}</div>
+
+        <h4 class="podium-driver-name">
+          ${p2Driver.name}
+        </h4>
+
+        <div class="podium-driver-team">
+          ${p2.Team} #${p2Driver.number}
+        </div>
+
+        <div class="podium-score-pill">
+          Model Score: ${Number(p2.PredictedFinish).toFixed(2)}
+        </div>
+
+        <div style="margin-top: 0.6rem;">
+          ${renderDeltaBadge(
+            p2.GridPosition,
+            p2.PredictedPosition
+          )}
+        </div>
+
       </div>
 
-      <!-- P1 Center Apex Step -->
+
+      <!-- P1 -->
+
       <div class="podium-card p1">
-        <div class="podium-badge">P1 WINNER</div>
-        <div class="podium-headshot-wrap" style="height: 220px;">
-          <img 
-            src="${normalizeHeadshotUrl(p1Driver.headshot)}" 
-            alt="${p1Driver.name}" 
-            class="podium-headshot" 
+
+        <div class="podium-badge">
+          P1 WINNER
+        </div>
+
+        <div
+          class="podium-headshot-wrap"
+          style="height: 220px;"
+        >
+
+          <img
+            src="${normalizeHeadshotUrl(p1Driver.headshot)}"
+            alt="${p1Driver.name}"
+            class="podium-headshot"
             onerror="handleImageFallback(this, '${p1Driver.headshot}')"
           />
+
         </div>
-        <h4 class="podium-driver-name" style="font-size: 1.55rem;">${p1Driver.name}</h4>
-        <div class="podium-driver-team" style="color: var(--telemetry-gold);">${p1.Team} #${p1Driver.number}</div>
-        <div class="podium-score-pill" style="border: 1px solid var(--telemetry-gold); color: var(--telemetry-gold);">
-          Model Score: ${p1.PredictedFinish.toFixed(2)}
+
+        <h4
+          class="podium-driver-name"
+          style="font-size: 1.55rem;"
+        >
+          ${p1Driver.name}
+        </h4>
+
+        <div
+          class="podium-driver-team"
+          style="color: var(--telemetry-gold);"
+        >
+          ${p1.Team} #${p1Driver.number}
         </div>
-        <div style="margin-top: 0.6rem;">${renderDeltaBadge(p1.GridPosition, p1.PredictedPosition)}</div>
+
+        <div
+          class="podium-score-pill"
+          style="
+            border: 1px solid var(--telemetry-gold);
+            color: var(--telemetry-gold);
+          "
+        >
+          Model Score:
+          ${Number(p1.PredictedFinish).toFixed(2)}
+        </div>
+
+        <div style="margin-top: 0.6rem;">
+          ${renderDeltaBadge(
+            p1.GridPosition,
+            p1.PredictedPosition
+          )}
+        </div>
+
       </div>
 
-      <!-- P3 Third Step -->
+
+      <!-- P3 -->
+
       <div class="podium-card p3">
-        <div class="podium-badge">P3</div>
+
+        <div class="podium-badge">
+          P3
+        </div>
+
         <div class="podium-headshot-wrap">
-          <img 
-            src="${normalizeHeadshotUrl(p3Driver.headshot)}" 
-            alt="${p3Driver.name}" 
-            class="podium-headshot" 
+
+          <img
+            src="${normalizeHeadshotUrl(p3Driver.headshot)}"
+            alt="${p3Driver.name}"
+            class="podium-headshot"
             onerror="handleImageFallback(this, '${p3Driver.headshot}')"
           />
+
         </div>
-        <h4 class="podium-driver-name">${p3Driver.name}</h4>
-        <div class="podium-driver-team">${p3.Team} #${p3Driver.number}</div>
-        <div class="podium-score-pill">Model Score: ${p3.PredictedFinish.toFixed(2)}</div>
-        <div style="margin-top: 0.6rem;">${renderDeltaBadge(p3.GridPosition, p3.PredictedPosition)}</div>
+
+        <h4 class="podium-driver-name">
+          ${p3Driver.name}
+        </h4>
+
+        <div class="podium-driver-team">
+          ${p3.Team} #${p3Driver.number}
+        </div>
+
+        <div class="podium-score-pill">
+          Model Score:
+          ${Number(p3.PredictedFinish).toFixed(2)}
+        </div>
+
+        <div style="margin-top: 0.6rem;">
+          ${renderDeltaBadge(
+            p3.GridPosition,
+            p3.PredictedPosition
+          )}
+        </div>
+
       </div>
+
     </div>
   `;
 }
 
-/**
- * Calculates position change delta between starting grid and predicted finish rank
- */
-function renderDeltaBadge(gridPos, predPos) {
-  const delta = gridPos - predPos; // Positive = gained positions (started 3, predicted 1 = +2)
-  if (delta > 0) {
-    return `<span class="delta-badge gain">&blacktriangle; +${delta} GAINED</span>`;
-  } else if (delta < 0) {
-    return `<span class="delta-badge loss">&blacktriangledown; ${delta} LOST</span>`;
-  } else {
-    return `<span class="delta-badge even">&boxh; MAINTAIN</span>`;
-  }
-}
-
-/**
- * Renders the full 22-car telemetry classification table
- */
-function renderTelemetryTable() {
-  const tableBody = document.getElementById('telemetry-table-body');
-  if (!tableBody) return;
-
-  const data = [...activePredictionsData];
-
-  // Apply sorting
-  data.sort((a, b) => {
-    let valA = a[currentSortColumn];
-    let valB = b[currentSortColumn];
-    if (typeof valA === 'string') valA = valA.toLowerCase();
-    if (typeof valB === 'string') valB = valB.toLowerCase();
-    if (valA < valB) return currentSortAsc ? -1 : 1;
-    if (valA > valB) return currentSortAsc ? 1 : -1;
-    return 0;
-  });
-
-  tableBody.innerHTML = data.map(row => {
-    const driver = resolveDriver(row.Driver, allDriversData);
-    const teamColor = getTeamColor(row.Team);
-    const headshot = normalizeHeadshotUrl(driver.headshot);
-
-    return `
-      <tr>
-        <td class="pos-cell">
-          <span style="border-left: 3px solid ${teamColor}; padding-left: 0.5rem;">
-            ${row.PredictedPosition}
-          </span>
-        </td>
-        <td>
-          <div class="driver-cell">
-            <img 
-              src="${headshot}" 
-              alt="${driver.name}" 
-              class="driver-table-thumb" 
-              onerror="handleImageFallback(this, '${driver.headshot}')"
-            />
-            <div>
-              <span class="driver-name-text">${driver.name}</span>
-              <span class="driver-code-tag">${row.Driver}</span>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div class="team-badge-cell">
-            <span class="team-color-indicator" style="background-color: ${teamColor};"></span>
-            <span>${row.Team}</span>
-          </div>
-        </td>
-        <td style="font-family: var(--font-mono);">${row.GridPosition}</td>
-        <td style="font-family: var(--font-mono);">${row.QualiPosition}</td>
-        <td class="score-cell">${row.PredictedFinish.toFixed(2)}</td>
-        <td>${renderDeltaBadge(row.GridPosition, row.PredictedPosition)}</td>
-      </tr>
-    `;
-  }).join('');
-}
-
-/**
- * Fallback prediction dataset matching the Azerbaijan Grand Prix sample
- */
-function getSamplePredictionData() {
-  return [
-    { Driver: "NOR", Team: "McLaren", QualiPosition: 1, GridPosition: 1, PredictedFinish: 1.18, PredictedPosition: 1 },
-    { Driver: "VER", Team: "Red Bull Racing", QualiPosition: 3, GridPosition: 3, PredictedFinish: 1.84, PredictedPosition: 2 },
-    { Driver: "LEC", Team: "Ferrari", QualiPosition: 2, GridPosition: 2, PredictedFinish: 2.42, PredictedPosition: 3 },
-    { Driver: "PIA", Team: "McLaren", QualiPosition: 4, GridPosition: 4, PredictedFinish: 3.75, PredictedPosition: 4 },
-    { Driver: "HAM", Team: "Ferrari", QualiPosition: 5, GridPosition: 5, PredictedFinish: 4.90, PredictedPosition: 5 },
-    { Driver: "RUS", Team: "Mercedes", QualiPosition: 6, GridPosition: 6, PredictedFinish: 5.82, PredictedPosition: 6 },
-    { Driver: "ANT", Team: "Mercedes", QualiPosition: 8, GridPosition: 8, PredictedFinish: 7.15, PredictedPosition: 7 },
-    { Driver: "SAI", Team: "Williams", QualiPosition: 7, GridPosition: 7, PredictedFinish: 7.80, PredictedPosition: 8 },
-    { Driver: "ALB", Team: "Williams", QualiPosition: 10, GridPosition: 10, PredictedFinish: 8.95, PredictedPosition: 9 },
-    { Driver: "ALO", Team: "Aston Martin", QualiPosition: 9, GridPosition: 9, PredictedFinish: 9.40, PredictedPosition: 10 },
-    { Driver: "HAD", Team: "Red Bull Racing", QualiPosition: 12, GridPosition: 12, PredictedFinish: 11.20, PredictedPosition: 11 },
-    { Driver: "GAS", Team: "Alpine", QualiPosition: 11, GridPosition: 11, PredictedFinish: 11.65, PredictedPosition: 12 },
-    { Driver: "OCO", Team: "Haas F1 Team", QualiPosition: 14, GridPosition: 14, PredictedFinish: 12.85, PredictedPosition: 13 },
-    { Driver: "BEA", Team: "Haas F1 Team", QualiPosition: 13, GridPosition: 13, PredictedFinish: 13.40, PredictedPosition: 14 },
-    { Driver: "LAW", Team: "Racing Bulls", QualiPosition: 16, GridPosition: 16, PredictedFinish: 14.60, PredictedPosition: 15 },
-    { Driver: "HUL", Team: "Audi", QualiPosition: 15, GridPosition: 15, PredictedFinish: 15.10, PredictedPosition: 16 },
-    { Driver: "COL", Team: "Alpine", QualiPosition: 17, GridPosition: 17, PredictedFinish: 16.20, PredictedPosition: 17 },
-    { Driver: "STR", Team: "Aston Martin", QualiPosition: 18, GridPosition: 18, PredictedFinish: 17.35, PredictedPosition: 18 },
-    { Driver: "BOR", Team: "Audi", QualiPosition: 19, GridPosition: 19, PredictedFinish: 18.50, PredictedPosition: 19 },
-    { Driver: "LIN", Team: "Racing Bulls", QualiPosition: 20, GridPosition: 20, PredictedFinish: 19.25, PredictedPosition: 20 },
-    { Driver: "BOT", Team: "Cadillac", QualiPosition: 21, GridPosition: 21, PredictedFinish: 20.40, PredictedPosition: 21 },
-    { Driver: "PER", Team: "Cadillac", QualiPosition: 22, GridPosition: 22, PredictedFinish: 21.15, PredictedPosition: 22 }
-  ];
-}
 
 /* ==========================================================================
-   DYNAMIC GP FOLDER DISCOVERY LOGIC (EXPERIMENTAL)
-   
-   NOTE PER WEBSITE_PLAN.MD:
-   Browsers cannot natively enumerate arbitrary server filesystem directories
-   on static GitHub Pages hosting without an index or manifest.
-   
-   Below is the complete architectural implementation for dynamic GP discovery:
-   - It checks a generated static manifest (manifest.json) OR iterates through
-     known Grand Prix season directories, verifying the presence of Final_Data.csv
-     before instantiating a GP card.
-   - Keep this section commented out as requested. When ready, uncomment and wire
-     it into initDataHubTab().
+   POSITION DELTA
    ========================================================================== */
 
-/*
-async function discoverGrandPrixDatasets() {
-  const discoveredGps = [];
-  
-  // Approach A: Manifest-based discovery (Recommended for GitHub Pages)
-  // try {
-  //   const manifestRes = await fetch('data/gp_manifest.json');
-  //   if (manifestRes.ok) {
-  //     const manifest = await manifestRes.json();
-  //     for (const item of manifest) {
-  //       // Verify Final_Data.csv exists before creating card
-  //       const testRes = await fetch(item.file, { method: 'HEAD' });
-  //       if (testRes.ok) {
-  //         discoveredGps.push({
-  //           rawName: item.slug,
-  //           displayName: item.slug.replace(/_/g, ' '),
-  //           filePath: item.file
-  //         });
-  //       }
-  //     }
-  //     return discoveredGps;
-  //   }
-  // } catch (e) {
-  //   console.log('Manifest discovery bypassed:', e);
-  // }
+/**
+ * Calculates position change between starting grid
+ * and predicted finish rank.
+ */
+function renderDeltaBadge(
+  gridPos,
+  predPos
+) {
 
-  // Approach B: Probing directory structure for 2026 calendar rounds
-  // const seasonCalendar = [
-  //   "Bahrain_Grand_Prix",
-  //   "Saudi_Arabian_Grand_Prix",
-  //   "Australian_Grand_Prix",
-  //   "Japanese_Grand_Prix",
-  //   "Chinese_Grand_Prix",
-  //   "Miami_Grand_Prix",
-  //   "Emilia_Romagna_Grand_Prix",
-  //   "Monaco_Grand_Prix",
-  //   "Canadian_Grand_Prix",
-  //   "Spanish_Grand_Prix",
-  //   "Austrian_Grand_Prix",
-  //   "British_Grand_Prix",
-  //   "Hungarian_Grand_Prix",
-  //   "Belgian_Grand_Prix",
-  //   "Dutch_Grand_Prix",
-  //   "Italian_Grand_Prix",
-  //   "Azerbaijan_Grand_Prix",
-  //   "Singapore_Grand_Prix",
-  //   "United_States_Grand_Prix",
-  //   "Mexico_City_Grand_Prix",
-  //   "Sao_Paulo_Grand_Prix",
-  //   "Las_Vegas_Grand_Prix",
-  //   "Qatar_Grand_Prix",
-  //   "Abu_Dhabi_Grand_Prix"
-  // ];
+  const grid =
+    Number(gridPos);
 
-  // for (const gpSlug of seasonCalendar) {
-  //   const targetCsvPath = `predictions/2026/${gpSlug}/Final_Data.csv`;
-  //   try {
-  //     const check = await fetch(targetCsvPath, { method: 'HEAD' });
-  //     // Only consider GP available when Final_Data.csv actually exists!
-  //     if (check.ok) {
-  //       discoveredGps.push({
-  //         rawName: gpSlug,
-  //         displayName: gpSlug.replace(/_/g, ' '),
-  //         filePath: targetCsvPath
-  //       });
-  //     }
-  //   } catch (err) {
-  //     // File does not exist for this round, omit card per spec
-  //   }
-  // }
+  const prediction =
+    Number(predPos);
 
-  // return discoveredGps;
+  const delta =
+    grid - prediction;
+
+
+  if (delta > 0) {
+
+    return `
+      <span class="delta-badge gain">
+        &blacktriangle; +${delta} GAINED
+      </span>
+    `;
+
+  }
+
+
+  if (delta < 0) {
+
+    return `
+      <span class="delta-badge loss">
+        &blacktriangledown; ${Math.abs(delta)} LOST
+      </span>
+    `;
+
+  }
+
+
+  return `
+    <span class="delta-badge even">
+      &boxh; MAINTAIN
+    </span>
+  `;
 }
-*/
+
+
+/* ==========================================================================
+   TELEMETRY TABLE
+   ========================================================================== */
+
+/**
+ * Renders the full prediction classification table.
+ */
+function renderTelemetryTable() {
+
+  const tableBody =
+    document.getElementById(
+      'telemetry-table-body'
+    );
+
+
+  if (!tableBody) {
+    return;
+  }
+
+
+  if (
+    !activePredictionsData ||
+    activePredictionsData.length === 0
+  ) {
+
+    tableBody.innerHTML = `
+      <tr>
+        <td
+          colspan="7"
+          style="
+            text-align:center;
+            padding:2rem;
+            color:var(--text-muted);
+          "
+        >
+          No prediction data available.
+        </td>
+      </tr>
+    `;
+
+    return;
+  }
+
+
+  const data =
+    [...activePredictionsData];
+
+
+  data.sort(
+    (a, b) => {
+
+      let valA =
+        a[currentSortColumn];
+
+      let valB =
+        b[currentSortColumn];
+
+
+      if (
+        typeof valA === 'string'
+      ) {
+
+        valA =
+          valA.toLowerCase();
+
+      }
+
+
+      if (
+        typeof valB === 'string'
+      ) {
+
+        valB =
+          valB.toLowerCase();
+
+      }
+
+
+      if (valA < valB) {
+
+        return currentSortAsc
+          ? -1
+          : 1;
+
+      }
+
+
+      if (valA > valB) {
+
+        return currentSortAsc
+          ? 1
+          : -1;
+
+      }
+
+
+      return 0;
+
+    }
+  );
+
+
+  tableBody.innerHTML =
+    data
+      .map(
+        row => {
+
+          const driver =
+            resolveDriver(
+              row.Driver,
+              allDriversData
+            );
+
+
+          const teamColor =
+            getTeamColor(
+              row.Team
+            );
+
+
+          const headshot =
+            normalizeHeadshotUrl(
+              driver.headshot
+            );
+
+
+          return `
+
+            <tr>
+
+              <td class="pos-cell">
+
+                <span
+                  style="
+                    border-left: 3px solid ${teamColor};
+                    padding-left: 0.5rem;
+                  "
+                >
+                  ${row.PredictedPosition}
+                </span>
+
+              </td>
+
+
+              <td>
+
+                <div class="driver-cell">
+
+                  <img
+                    src="${headshot}"
+                    alt="${driver.name}"
+                    class="driver-table-thumb"
+                    onerror="handleImageFallback(this, '${driver.headshot}')"
+                  />
+
+                  <div>
+
+                    <span class="driver-name-text">
+                      ${driver.name}
+                    </span>
+
+                    <span class="driver-code-tag">
+                      ${row.Driver}
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </td>
+
+
+              <td>
+
+                <div class="team-badge-cell">
+
+                  <span
+                    class="team-color-indicator"
+                    style="
+                      background-color:${teamColor};
+                    "
+                  ></span>
+
+                  <span>
+                    ${row.Team}
+                  </span>
+
+                </div>
+
+              </td>
+
+
+              <td
+                style="
+                  font-family:var(--font-mono);
+                "
+              >
+                ${row.GridPosition}
+              </td>
+
+
+              <td
+                style="
+                  font-family:var(--font-mono);
+                "
+              >
+                ${row.QualiPosition}
+              </td>
+
+
+              <td class="score-cell">
+                ${Number(row.PredictedFinish).toFixed(2)}
+              </td>
+
+
+              <td>
+                ${renderDeltaBadge(
+                  row.GridPosition,
+                  row.PredictedPosition
+                )}
+              </td>
+
+            </tr>
+
+          `;
+
+        }
+      )
+      .join('');
+}
+
+
+/* ==========================================================================
+   CSV PARSER
+   ========================================================================== */
+
+/**
+ * Simple CSV parser.
+ *
+ * Supports:
+ * - comma-separated values
+ * - quoted fields
+ * - commas inside quoted fields
+ */
+function parseCSV(csvText) {
+
+  const rows = [];
+
+  let row = [];
+
+  let field = '';
+
+  let insideQuotes = false;
+
+
+  for (
+    let i = 0;
+    i < csvText.length;
+    i++
+  ) {
+
+    const char =
+      csvText[i];
+
+    const next =
+      csvText[i + 1];
+
+
+    if (
+      char === '"' &&
+      insideQuotes &&
+      next === '"'
+    ) {
+
+      field += '"';
+
+      i++;
+
+      continue;
+    }
+
+
+    if (char === '"') {
+
+      insideQuotes =
+        !insideQuotes;
+
+      continue;
+    }
+
+
+    if (
+      char === ',' &&
+      !insideQuotes
+    ) {
+
+      row.push(field.trim());
+
+      field = '';
+
+      continue;
+    }
+
+
+    if (
+      (char === '\n' || char === '\r') &&
+      !insideQuotes
+    ) {
+
+      if (
+        char === '\r' &&
+        next === '\n'
+      ) {
+
+        i++;
+
+      }
+
+
+      row.push(field.trim());
+
+      field = '';
+
+
+      if (
+        row.some(
+          value => value !== ''
+        )
+      ) {
+
+        rows.push(row);
+
+      }
+
+
+      row = [];
+
+      continue;
+    }
+
+
+    field += char;
+
+  }
+
+
+  if (field.length > 0 || row.length > 0) {
+
+    row.push(
+      field.trim()
+    );
+
+    if (
+      row.some(
+        value => value !== ''
+      )
+    ) {
+
+      rows.push(row);
+
+    }
+
+  }
+
+
+  if (rows.length < 2) {
+    return [];
+  }
+
+
+  const headers =
+    rows[0].map(
+      header =>
+        header.trim()
+    );
+
+
+  return rows
+    .slice(1)
+    .map(
+      values => {
+
+        const object = {};
+
+        headers.forEach(
+          (header, index) => {
+
+            let value =
+              values[index] ?? '';
+
+            value =
+              value.trim();
+
+
+            /*
+             * Convert numeric prediction fields.
+             */
+            if (
+              [
+                'PredictedPosition',
+                'PredictedFinish',
+                'GridPosition',
+                'QualiPosition'
+              ].includes(header)
+            ) {
+
+              const numericValue =
+                Number(value);
+
+
+              object[header] =
+                Number.isNaN(numericValue)
+                  ? value
+                  : numericValue;
+
+            } else {
+
+              object[header] =
+                value;
+
+            }
+
+          }
+        );
+
+        return object;
+
+      }
+    );
+}
+
+
+/* ==========================================================================
+   OPTIONAL SORT CONTROLS
+   ========================================================================== */
+
+/**
+ * Allows the HTML table headers to call:
+ *
+ * sortPredictionTable('PredictedPosition')
+ */
+function sortPredictionTable(
+  column
+) {
+
+  if (
+    currentSortColumn === column
+  ) {
+
+    currentSortAsc =
+      !currentSortAsc;
+
+  } else {
+
+    currentSortColumn =
+      column;
+
+    currentSortAsc =
+      true;
+
+  }
+
+
+  renderTelemetryTable();
+}
+
+
+/* ==========================================================================
+   DEBUG HELPERS
+   ========================================================================== */
+
+/**
+ * Useful from browser console:
+ *
+ * await debugPredictionPaths()
+ */
+async function debugPredictionPaths() {
+
+  const manifestUrl =
+    `${PREDICTIONS_2026_BASE}/manifest.json`;
+
+
+  console.log(
+    'Prediction base:',
+    PREDICTIONS_2026_BASE
+  );
+
+
+  console.log(
+    'Manifest URL:',
+    new URL(
+      manifestUrl,
+      window.location.href
+    ).href
+  );
+
+
+  const manifest =
+    await loadPredictionManifest();
+
+
+  console.log(
+    'Manifest:',
+    manifest
+  );
+
+
+  console.log(
+    'Available GPs:',
+    manifest?.races || []
+  );
+
+}
+
+
+/* ==========================================================================
+   END
+   ========================================================================== */
