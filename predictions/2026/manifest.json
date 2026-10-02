@@ -1,0 +1,45 @@
+{
+  "season": 2026,
+  "races": [
+    {
+      "name": "Austrian Grand Prix",
+      "slug": "Austrian_Grand_Prix",
+      "data": "Austrian_Grand_Prix/Finaldata.csv"
+    },
+    {
+      "name": "Azerbaijan Grand Prix",
+      "slug": "Azerbaijan_Grand_Prix",
+      "data": "Azerbaijan_Grand_Prix/Finaldata.csv"
+    },
+    {
+      "name": "Belgian Grand Prix",
+      "slug": "Belgian_Grand_Prix",
+      "data": "Belgian_Grand_Prix/Finaldata.csv"
+    },
+    {
+      "name": "British Grand Prix",
+      "slug": "British_Grand_Prix",
+      "data": "British_Grand_Prix/Finaldata.csv"
+    },
+    {
+      "name": "Dutch Grand Prix",
+      "slug": "Dutch_Grand_Prix",
+      "data": "Dutch_Grand_Prix/Finaldata.csv"
+    },
+    {
+      "name": "Hungarian Grand Prix",
+      "slug": "Hungarian_Grand_Prix",
+      "data": "Hungarian_Grand_Prix/Finaldata.csv"
+    },
+    {
+      "name": "Italian Grand Prix",
+      "slug": "Italian_Grand_Prix",
+      "data": "Italian_Grand_Prix/Finaldata.csv"
+    },
+    {
+      "name": "Spanish Grand Prix",
+      "slug": "Spanish_Grand_Prix",
+      "data": "Spanish_Grand_Prix/Finaldata.csv"
+    }
+  ]
+}
