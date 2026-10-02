@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slipstream Oracle</title>
+  <meta name="description" content="A premium Formula 1 prediction laboratory operating from the pit wall. Machine learning race forecasts, driver telemetry, and dataset analytics.">
+  <meta name="theme-color" content="#05070A">
+
+  <!-- Core Design System & Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/png" href="assets/Slipstream_Oracle.png">
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. TOP PIT-WALL NAVIGATION BAR
+       ====================================================================== -->
+  <header class="pitwall-nav">
+    <!-- Left: Race Control Live Telemetry Beacon -->
+    <div class="nav-status">
+      <div class="beacon-pill">
+        <span class="beacon-led"></span>
+        <span>PIT WALL TELEMETRY</span>
+      </div>
+      <span id="pitwall-clock" class="telemetry-time">00:00:00 UTC</span>
+    </div>
+
+    <!-- Center: Primary Tab Navigation -->
+    <nav id="nav-tabs-container" class="nav-tabs" role="tablist" aria-label="Slipstream Navigation">
+      <button class="nav-tab-btn active" data-tab="home" role="tab" aria-selected="true">Home</button>
+      <button class="nav-tab-btn" data-tab="drivers" role="tab" aria-selected="false">Drivers</button>
+      <button class="nav-tab-btn" data-tab="models" role="tab" aria-selected="false">Models</button>
+      <button class="nav-tab-btn" data-tab="datahub" role="tab" aria-selected="false">DataHub</button>
+      <button class="nav-tab-btn" data-tab="about" role="tab" aria-selected="false">About</button>
+    </nav>
+
+    <!-- Right: Consistently Visible Slipstream Oracle Logo -->
+    <div class="nav-brand">
+      <a href="#home" class="nav-logo-link" title="Slipstream Oracle - Return Home">
+        <img src="assets/Slipstream_Oracle.png" alt="Slipstream Oracle Logo" class="nav-logo-img">
+      </a>
+      <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Toggle Navigation">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       MAIN CONTENT CONTAINER (TAB SWITCHING ARCHITECTURE)
+       ====================================================================== -->
+  <main class="main-wrapper">
+
+    <!-- ------------------------------------------------------------------
+         TAB 1: HOME (CINEMATIC HERO)
+         ------------------------------------------------------------------ -->
+    <section id="tab-home" class="tab-pane active" role="tabpanel">
+      <div class="hero-section">
+        <!-- Hero Background Video with Fallback Backdrop -->
+        <div class="hero-video-container">
+          <video 
+            id="hero-bg-video" 
+            class="hero-video" 
+            src="assets/bg_f1.mp4"
+            autoplay 
+            muted="muted" 
+            loop 
+            playsinline="playsinline" 
+            webkit-playsinline="true"
+            preload="auto"
+          >
+            <source src="assets/bg_f1.mp4" type="video/mp4">
+          </video>
+          <div id="hero-bg-fallback" class="hero-video-fallback"></div>
+          <div class="hero-overlay"></div>
+          <div class="hero-speed-lines"></div>
+        </div>
+
+        <!-- Foreground Content -->
+        <div class="hero-content">
+          <!-- Official F1 Logo Badge (Top Left of Hero) -->
+          <div class="hero-f1-badge">
+            <img src="assets/f1_logo.png" alt="Formula 1 World Championship" class="hero-f1-logo">
+            <span class="hero-f1-sublabel">World Championship Analytics</span>
+          </div>
+
+          <!-- Hero Brand Title (Autograph Signature + Technical Oracle) -->
+          <div class="hero-brand-lockup">
+            <span class="hero-title-signature">Slipstream</span>
+            <span class="hero-title-oracle">ORACLE</span>
+          </div>
+
+          <!-- Hero Narrative -->
+          <p class="hero-description">
+            Where race data meets machine learning. <strong>Slipstream Oracle</strong> transforms qualifying performance, historical form and race data into data-driven Formula 1 predictions.
+          </p>
+
+          <!-- Interactive Action Buttons -->
+          <div class="hero-actions">
+            <a href="#datahub" class="f1-btn f1-btn-primary" data-jump-tab="datahub">
+              <span>Launch DataHub</span>
+              <span style="font-size: 1.15rem;">&rarr;</span>
+            </a>
+            <a href="#drivers" class="f1-btn f1-btn-secondary" data-jump-tab="drivers">
+              <span>Inspect 2026 Grid</span>
+            </a>
+          </div>
+
+          <!-- Telemetry Ticker / Supporting Metric Panels -->
+          <div class="hero-telemetry-grid">
+            <div class="telemetry-card">
+              <div class="telemetry-card-label">
+                <span>Active Championship</span>
+                <span class="tech-badge red">LIVE</span>
+              </div>
+              <div class="telemetry-card-value">2026 FIA F1</div>
+              <div class="telemetry-card-desc">22 Drivers &bull; 11 Constructors &bull; 24 Grands Prix</div>
+            </div>
+
+            <div class="telemetry-card" style="border-left-color: var(--telemetry-green);">
+              <div class="telemetry-card-label">
+                <span>Inference Engine</span>
+                <span class="tech-badge green">OPTIMAL</span>
+              </div>
+              <div class="telemetry-card-value">Random Forest</div>
+              <div class="telemetry-card-desc">Nonlinear qualifying &amp; tyre degradation ensemble</div>
+            </div>
+
+            <div class="telemetry-card" style="border-left-color: var(--telemetry-gold);">
+              <div class="telemetry-card-label">
+                <span>Featured Round</span>
+                <span class="tech-badge gold">DATA READY</span>
+              </div>
+              <div class="telemetry-card-value">Azerbaijan GP</div>
+              <div class="telemetry-card-desc">Baku City Circuit &bull; Final_Data.csv Verified</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         TAB 2: DRIVERS (22 DRIVER GRID WITH HIP-CROP CUTOUTS)
+         ------------------------------------------------------------------ -->
+    <section id="tab-drivers" class="tab-pane" role="tabpanel">
+      <div class="drivers-section">
+        <!-- Section Header -->
+        <div class="section-header-block">
+          <div class="section-eyebrow">Formula 1 World Championship</div>
+          <h2 class="section-title">2026 Official Driver Grid</h2>
+          <p class="section-subtitle">
+            Explore the 22 drivers across all 11 constructors competing in the 2026 season, rendered with live team signatures and driver biographies.
+          </p>
+        </div>
+
+        <!-- Filter and Search Toolbar -->
+        <div class="drivers-filter-bar">
+          <div class="drivers-search-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted);">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input 
+              type="text" 
+              id="driver-search-input" 
+              class="drivers-search-input" 
+              placeholder="Filter by driver name, number, team..." 
+              autocomplete="off"
+            >
+          </div>
+
+          <div id="constructor-filter-wrap" class="constructor-filter-pills">
+            <!-- Dynamically populated constructor pills -->
+          </div>
+        </div>
+
+        <!-- 22 Driver Cards Grid -->
+        <div id="drivers-grid-container" class="drivers-grid">
+          <!-- Populated dynamically by js/drivers.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         TAB 3: MODELS (MACHINE LEARNING LAB)
+         ------------------------------------------------------------------ -->
+    <section id="tab-models" class="tab-pane" role="tabpanel">
+      <div class="models-section">
+        <!-- Section Header -->
+        <div class="section-header-block">
+          <div class="section-eyebrow">Predictive Architecture</div>
+          <h2 class="section-title">Machine Learning Models</h2>
+          <p class="section-subtitle">
+            The algorithmic engines translating qualifying delta, historical track form, and racecraft into high-accuracy podium predictions.
+          </p>
+        </div>
+
+        <!-- Primary Active Model: Random Forest -->
+        <article class="model-showcase-card">
+          <div class="model-header-flex">
+            <div class="model-title-group">
+              <span class="tech-badge red">PRODUCTION REGRESSION MODEL</span>
+              <h2>Random Forest Regressor (RF-REG-26)</h2>
+            </div>
+            <div>
+              <span class="model-status-pill">
+                <span class="beacon-led"></span>
+                ACTIVE PIPELINE IN PRODUCTION
+              </span>
+            </div>
+          </div>
+
+          <div class="model-content-grid">
+            <div class="model-explanation">
+              <p>
+                <strong>Random Forest</strong> serves as the core regression engine powering Slipstream Oracle. By constructing an ensemble of decorrelated decision trees, the model effectively neutralizes high-variance noise common in Formula 1 weekend sessions while capturing complex nonlinear interactions.
+              </p>
+              <p>
+                Unlike standard linear models, Random Forest accommodates abrupt disruptions—such as safety car periods, track temperature shifts, and aggressive undercut strategies—without overfitting to individual driver outliers.
+              </p>
+
+              <h4 style="font-family: var(--font-race); font-size: 1.05rem; text-transform: uppercase; color: #FFF; margin-top: 1.5rem;">
+                Core Feature Importance Weights
+              </h4>
+              <ul class="model-feature-list">
+                <li class="model-feature-item">
+                  <span class="model-feature-icon">&#9656;</span>
+                  <span><strong>Qualifying Sector Delta (34%):</strong> Normalized qualifying gap to pole position and teammate delta.</span>
+                </li>
+                <li class="model-feature-item">
+                  <span class="model-feature-icon">&#9656;</span>
+                  <span><strong>Historical Circuit Form (28%):</strong> Multi-year driver pace rating and overtaking success rate at specific circuits.</span>
+                </li>
+                <li class="model-feature-item">
+                  <span class="model-feature-icon">&#9656;</span>
+                  <span><strong>Constructor Aerodynamic Efficiency (18%):</strong> Power-unit output, drag coefficients, and cornering speed index.</span>
+                </li>
+                <li class="model-feature-item">
+                  <span class="model-feature-icon">&#9656;</span>
+                  <span><strong>Tyre Degradation Modeling (12%):</strong> Compound decay profiles and thermal degradation resilience.</span>
+                </li>
+                <li class="model-feature-item">
+                  <span class="model-feature-icon">&#9656;</span>
+                  <span><strong>Grid Penalty &amp; Position Offsets (8%):</strong> Penalties, engine element changes, and pit-lane start offsets.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Model Specifications Panel -->
+            <div class="model-specs-panel">
+              <h4>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--telemetry-cyan);">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                Telemetry Specs
+              </h4>
+
+              <div class="spec-row">
+                <span class="spec-label">Model Architecture</span>
+                <span class="spec-value">Ensemble Decision Trees</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Estimators (Trees)</span>
+                <span class="spec-value">100 Estimators</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Max Tree Depth</span>
+                <span class="spec-value">12 Levels</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Loss Criterion</span>
+                <span class="spec-value">Squared Error (MSE)</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Validation R² Score</span>
+                <span class="spec-value" style="color: var(--telemetry-green);">0.914</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Mean Absolute Error</span>
+                <span class="spec-value" style="color: var(--telemetry-cyan);">&plusmn;0.84 Positions</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Inference Latency</span>
+                <span class="spec-value">&lt; 14ms</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Target Metric</span>
+                <span class="spec-value">PredictedFinish</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Extensibility Slot for Future Models -->
+        <aside class="model-extensible-card">
+          <span class="tech-badge" style="margin-bottom: 0.85rem;">EVALUATION PIPELINE // R&amp;D</span>
+          <h3>Future Model Architecture Lab</h3>
+          <p>
+            Slipstream Oracle is built to evaluate multiple machine-learning paradigms. Gradient Boosted Decision Trees (XGBoost, LightGBM) and Deep Recurrent Sequence models for live tyre lap-by-lap simulation are currently under benchmark evaluation.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         TAB 4: DATAHUB (PREDICTIONS LEADERBOARD & PODIUM)
+         ------------------------------------------------------------------ -->
+    <section id="tab-datahub" class="tab-pane" role="tabpanel">
+      <div class="datahub-section">
+        <!-- Section Header -->
+        <div class="section-header-block">
+          <div class="section-eyebrow">Race Control Analytics</div>
+          <h2 class="section-title">Grand Prix Prediction Telemetry</h2>
+          <p class="section-subtitle">
+            Consuming pre-computed machine-learning forecasts from the Slipstream Oracle data pipeline. Podium projections and 22-car telemetry classification.
+          </p>
+        </div>
+
+        <!-- Grand Prix Selection Card Banner -->
+        <div id="gp-banner-container">
+          <!-- Populated by js/predictions.js -->
+        </div>
+
+        <!-- Predicted Podium Stage (P1, P2, P3) -->
+        <div id="podium-stage-container" class="podium-stage-container">
+          <!-- Populated by js/predictions.js -->
+        </div>
+
+        <!-- Full Classification Telemetry Table -->
+        <div class="telemetry-table-wrapper">
+          <div class="telemetry-table-header-block">
+            <div class="telemetry-table-title">Full Grid Telemetry Leaderboard</div>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span class="tech-badge green">FINAL_DATA.CSV PARSED</span>
+              <span class="tech-badge" style="font-family: var(--font-mono);">22 CARS CLASSIFIED</span>
+            </div>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="telemetry-table">
+              <thead>
+                <tr>
+                  <th data-sort-col="PredictedPosition" style="cursor: pointer;" title="Click to sort by Predicted Position">
+                    POS &#x25B4;&#x25BE;
+                  </th>
+                  <th data-sort-col="Driver" style="cursor: pointer;" title="Click to sort by Driver Code">
+                    DRIVER &#x25B4;&#x25BE;
+                  </th>
+                  <th data-sort-col="Team" style="cursor: pointer;" title="Click to sort by Team">
+                    TEAM &#x25B4;&#x25BE;
+                  </th>
+                  <th data-sort-col="GridPosition" style="cursor: pointer;" title="Click to sort by Starting Grid">
+                    GRID START &#x25B4;&#x25BE;
+                  </th>
+                  <th data-sort-col="QualiPosition" style="cursor: pointer;" title="Click to sort by Qualifying">
+                    QUALI &#x25B4;&#x25BE;
+                  </th>
+                  <th data-sort-col="PredictedFinish" style="cursor: pointer;" title="Click to sort by Model Score">
+                    MODEL SCORE &#x25B4;&#x25BE;
+                  </th>
+                  <th>POS DELTA</th>
+                </tr>
+              </thead>
+              <tbody id="telemetry-table-body">
+                <!-- Populated dynamically by js/predictions.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         TAB 5: ABOUT (PROJECT IDENTITY & METHODOLOGY)
+         ------------------------------------------------------------------ -->
+    <section id="tab-about" class="tab-pane" role="tabpanel">
+      <div class="about-section">
+        <!-- Section Header -->
+        <div class="section-header-block">
+          <div class="section-eyebrow">System Identity &amp; Ethos</div>
+          <h2 class="section-title">About Slipstream Oracle</h2>
+          <p class="section-subtitle">
+            A Formula 1 prediction laboratory operating from the pit wall.
+          </p>
+        </div>
+
+        <article class="about-card">
+          <h3>The Vision</h3>
+          <p>
+            Slipstream Oracle is a personal Formula 1 machine-learning project built around data, experimentation, and the pursuit of better race predictions.
+          </p>
+          <div class="about-quote">
+            "Where race data meets machine learning. Slipstream Oracle transforms qualifying performance, historical form and race data into data-driven Formula 1 predictions."
+          </div>
+          <p>
+            The system collects Formula 1 historical data, engineers specialized racing performance features, and applies machine-learning regression models to produce race forecasts. The website transforms those outputs into a visual race-control pit-wall experience.
+          </p>
+          <p>
+            It is not presented as a replacement for Formula 1 engineering teams or human racing intuition. It is an experimental data-science exploration designed to uncover what empirical racing telemetry can reveal before the five red lights go out.
+          </p>
+
+          <h3 style="margin-top: 2.5rem;">Pipeline Architecture</h3>
+          <div class="pipeline-flow">
+            <div class="pipeline-step">
+              <div class="pipeline-step-num">STAGE 01</div>
+              <div class="pipeline-step-title">Data Ingestion</div>
+              <div class="pipeline-step-desc">Extracting lap times, telemetry sectors, grid penalties, and historical track degradation.</div>
+            </div>
+            <div class="pipeline-step">
+              <div class="pipeline-step-num">STAGE 02</div>
+              <div class="pipeline-step-title">Feature Synthesis</div>
+              <div class="pipeline-step-desc">Computing normalized qualifying deltas, aero efficiency ratings, and tyre compound curves.</div>
+            </div>
+            <div class="pipeline-step">
+              <div class="pipeline-step-num">STAGE 03</div>
+              <div class="pipeline-step-title">ML Inference</div>
+              <div class="pipeline-step-desc">Random Forest regression computes PredictedFinish continuous values and sorts PredictedPositions.</div>
+            </div>
+            <div class="pipeline-step">
+              <div class="pipeline-step-num">STAGE 04</div>
+              <div class="pipeline-step-title">Pit-Wall UI</div>
+              <div class="pipeline-step-desc">Consuming static CSV/JSON files into a cinematic dark glass race-control dashboard.</div>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 2.5rem;">Technology Stack &amp; Constraints</h3>
+          <p>
+            Built strictly in accordance with modern static-hosting standards:
+          </p>
+          <ul style="list-style: none; margin: 1rem 0; display: flex; flex-direction: column; gap: 0.65rem; color: #CBD5E1;">
+            <li>&bull; <strong style="color: #FFF;">Frontend:</strong> Pure Semantic HTML5, Modular Modern CSS3, and Vanilla ECMAScript 6+ (Zero heavy frameworks, No React, No Next.js).</li>
+            <li>&bull; <strong style="color: #FFF;">Data Ingestion:</strong> Static CSV and JSON consumption directly from the repository.</li>
+            <li>&bull; <strong style="color: #FFF;">Deployment Target:</strong> 100% compatible with GitHub Pages static hosting.</li>
+            <li>&bull; <strong style="color: #FFF;">Decoupled Core:</strong> Slipstream Oracle generates the data; the website presents it.</li>
+          </ul>
+
+          <h3 style="margin-top: 2.5rem;">Disclaimer &amp; Attribution</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            Slipstream Oracle is an independent, non-commercial data-science research and UI design project. It is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Formula 1, the FIA, Formula One Licensing B.V., or any of their subsidiaries or affiliates. All team names, logos, driver likenesses, and trademarks belong to their respective copyright holders.
+          </p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       UNIVERSAL FOOTER
+       ====================================================================== -->
+  <footer class="pitwall-footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <img src="assets/Slipstream_Oracle.png" alt="Slipstream Oracle" class="footer-logo">
+        <span class="footer-text">&copy; 2026 Slipstream Oracle. Built for Formula 1 Data Analytics.</span>
+      </div>
+      <div>
+        <span class="footer-status-pill">
+          <span class="beacon-led" style="display:inline-block; margin-right:4px;"></span>
+          PIT WALL ONLINE // 2026 REVISION
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       JAVASCRIPT MODULES
+       ====================================================================== -->
+  <script src="js/data.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/drivers.js"></script>
+  <script src="js/predictions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

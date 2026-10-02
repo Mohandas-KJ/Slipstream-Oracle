@@ -1,0 +1,283 @@
+/* ==========================================================================
+   SLIPSTREAM ORACLE - Responsive Design & Accessibility Stylesheet
+   Mobile, Tablet, Desktop Breakpoints, Prefers-Reduced-Motion
+   ========================================================================== */
+
+/* Tablet & Smaller Desktops (<= 1024px) */
+@media (max-width: 1024px) {
+  .pitwall-nav {
+    padding: 0 1.25rem;
+    height: 68px;
+  }
+
+  .nav-status .telemetry-time {
+    display: none; /* Hide non-critical clock to save space */
+  }
+
+  .nav-tab-btn {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.85rem;
+  }
+
+  .model-content-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .podium-grid {
+    gap: 1rem;
+  }
+
+  .hero-telemetry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile & Small Tablets (<= 768px) */
+@media (max-width: 768px) {
+  .pitwall-nav {
+    padding: 0 1rem;
+    height: 64px;
+  }
+
+  .nav-status {
+    display: none; /* Keep header clean on mobile */
+  }
+
+  /* Mobile Nav Drawer */
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .nav-tabs {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(6, 9, 14, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    flex-direction: column;
+    padding: 1.25rem;
+    gap: 0.75rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid var(--border-glass);
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+    z-index: 999;
+  }
+
+  .nav-tabs.mobile-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-tab-btn {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  .nav-logo-img {
+    height: 36px;
+    max-width: 160px;
+  }
+
+  /* Hero Mobile */
+  .hero-section {
+    padding: 2rem 1.25rem 3.5rem 1.25rem;
+    min-height: auto;
+  }
+
+  .hero-f1-badge {
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.85rem;
+  }
+
+  .hero-title-signature {
+    font-size: 3.2rem;
+    transform: rotate(-1.5deg);
+  }
+
+  .hero-title-oracle {
+    font-size: 1.85rem;
+    letter-spacing: 0.18em;
+  }
+
+  .hero-description {
+    font-size: 0.98rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .f1-btn {
+    width: 100%;
+    padding: 0.95rem;
+  }
+
+  .hero-telemetry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Drivers Mobile */
+  .drivers-section {
+    padding: 2rem 1rem 4rem 1rem;
+  }
+
+  .drivers-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .drivers-search-box {
+    min-width: 100%;
+  }
+
+  .constructor-filter-pills {
+    overflow-x: auto;
+    padding-bottom: 0.4rem;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .drivers-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .driver-card {
+    height: 480px;
+  }
+
+  .driver-card-image-wrap {
+    height: 340px;
+  }
+
+  /* Models Mobile */
+  .models-section {
+    padding: 2rem 1rem 4rem 1rem;
+  }
+
+  .model-showcase-card {
+    padding: 1.5rem;
+  }
+
+  .model-title-group h2 {
+    font-size: 1.65rem;
+  }
+
+  /* DataHub Mobile */
+  .datahub-section {
+    padding: 2rem 1rem 4rem 1rem;
+  }
+
+  .gp-selection-card {
+    padding: 1.25rem;
+  }
+
+  .gp-meta-details h3 {
+    font-size: 1.45rem;
+  }
+
+  .gp-stats-row {
+    gap: 1rem;
+  }
+
+  /* Stack Podium on Mobile */
+  .podium-grid {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .podium-card.p1 {
+    order: -1;
+    transform: none;
+  }
+
+  .podium-headshot-wrap {
+    height: 160px;
+  }
+
+  /* Telemetry Table Mobile Scroll */
+  .telemetry-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .telemetry-table th,
+  .telemetry-table td {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.82rem;
+  }
+
+  .driver-table-thumb {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* About Mobile */
+  .about-section {
+    padding: 2rem 1rem 4rem 1rem;
+  }
+
+  .about-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Very Small Screens (<= 480px) */
+@media (max-width: 480px) {
+  .hero-title-signature {
+    font-size: 2.75rem;
+  }
+
+  .hero-title-oracle {
+    font-size: 1.55rem;
+    letter-spacing: 0.14em;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* ==========================================================================
+   Reduced Motion Accessibility (prefers-reduced-motion: reduce)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .beacon-led {
+    animation: none;
+  }
+
+  .driver-card:hover {
+    transform: none;
+  }
+
+  .driver-card:hover .driver-card-image {
+    transform: none;
+  }
+
+  .podium-card.p1 {
+    transform: none;
+  }
+}
