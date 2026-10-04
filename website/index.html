@@ -308,7 +308,7 @@
          TAB 4: DATAHUB (PREDICTIONS LEADERBOARD & PODIUM)
          ------------------------------------------------------------------ -->
     <section id="tab-datahub" class="tab-pane" role="tabpanel">
-      <div class="datahub-section">
+      <div class="datahub-section" id="datahub-content-container">
         <!-- Section Header -->
         <div class="section-header-block">
           <div class="section-eyebrow">Race Control Analytics</div>
@@ -316,6 +316,23 @@
           <p class="section-subtitle">
             Consuming pre-computed machine-learning forecasts from the Slipstream Oracle data pipeline. Podium projections and 22-car telemetry classification.
           </p>
+        </div>
+
+        <!-- Grand Prix Selection Tabs Bar -->
+        <div class="gp-tabs-panel">
+          <div class="gp-tabs-bar-header">
+            <div class="gp-tabs-title-group">
+              <span class="beacon-led"></span>
+              <span class="gp-tabs-heading">Select Championship Grand Prix</span>
+            </div>
+            <div class="gp-tabs-badges">
+              <span id="gp-count-badge" class="tech-badge" style="font-family: var(--font-mono);">8 RACES DETECTED</span>
+              <span class="tech-badge red">2026 SEASON</span>
+            </div>
+          </div>
+          <div id="gp-tabs-container" class="gp-tabs-container" role="tablist" aria-label="Grand Prix Selection">
+            <!-- Dynamically populated from manifest.json -->
+          </div>
         </div>
 
         <!-- Grand Prix Selection Card Banner -->
@@ -328,17 +345,35 @@
           <!-- Populated by js/predictions.js -->
         </div>
 
-        <!-- Full Classification Telemetry Table -->
-        <div class="telemetry-table-wrapper">
+        <!-- Full Classification Telemetry Table Wrapper -->
+        <div class="telemetry-table-wrapper" id="telemetry-table-wrapper">
           <div class="telemetry-table-header-block">
-            <div class="telemetry-table-title">Full Grid Telemetry Leaderboard</div>
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-              <span class="tech-badge green">FINAL_DATA.CSV PARSED</span>
-              <span class="tech-badge" style="font-family: var(--font-mono);">22 CARS CLASSIFIED</span>
+            <div class="telemetry-table-title-group">
+              <div class="telemetry-table-title" id="telemetry-table-title">Full Grid Telemetry Leaderboard</div>
+              <span class="telemetry-table-subtitle" id="telemetry-table-subtitle">Final_Data.csv &bull; Slipstream Oracle Inference</span>
+            </div>
+
+            <!-- View Mode Switcher -->
+            <div class="datahub-view-controls">
+              <button type="button" class="datahub-view-btn active" data-view-mode="leaderboard" title="View driver classification leaderboard">
+                <span>Leaderboard</span>
+              </button>
+              <button type="button" class="datahub-view-btn" data-view-mode="fullcsv" title="View all columns from Final_Data.csv">
+                <span>All CSV Columns</span>
+              </button>
+              <button type="button" class="datahub-view-btn" data-view-mode="raw" title="View raw CSV text">
+                <span>Raw CSV</span>
+              </button>
+            </div>
+
+            <div class="telemetry-badges-group">
+              <span class="tech-badge green" id="dataset-status-badge">FINAL_DATA.CSV PARSED</span>
+              <span class="tech-badge" id="grid-classified-badge" style="font-family: var(--font-mono);">22 CARS CLASSIFIED</span>
             </div>
           </div>
 
-          <div style="overflow-x: auto;">
+          <!-- Subview 1: Classification Leaderboard -->
+          <div id="subview-leaderboard" class="datahub-subview active" style="overflow-x: auto;">
             <table class="telemetry-table">
               <thead>
                 <tr>
@@ -367,6 +402,27 @@
                 <!-- Populated dynamically by js/predictions.js -->
               </tbody>
             </table>
+          </div>
+
+          <!-- Subview 2: Full Final_Data.csv Table (All Columns) -->
+          <div id="subview-fullcsv" class="datahub-subview" style="display: none; overflow-x: auto;">
+            <table class="telemetry-table" id="full-csv-table">
+              <thead id="full-csv-thead">
+                <!-- Populated dynamically by js/predictions.js -->
+              </thead>
+              <tbody id="full-csv-tbody">
+                <!-- Populated dynamically by js/predictions.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Subview 3: Raw CSV View -->
+          <div id="subview-raw" class="datahub-subview" style="display: none; padding: 1.5rem;">
+            <div class="raw-csv-header-bar">
+              <span id="raw-csv-path" class="raw-csv-path">Final_Data.csv</span>
+              <button type="button" class="raw-csv-copy-btn" id="copy-raw-csv-btn">Copy CSV</button>
+            </div>
+            <pre class="raw-csv-pre"><code id="raw-csv-code"></code></pre>
           </div>
         </div>
       </div>
