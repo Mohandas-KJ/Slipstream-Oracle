@@ -993,6 +993,75 @@
   display: inline-block;
 }
 
+/* Actual Podium Stage */
+.actual-podium-stage {
+  margin-top: 1rem;
+  margin-bottom: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px dashed var(--border-subtle);
+}
+
+.podium-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.podium-stage-title.actual-stage-title::before {
+  background: var(--telemetry-gold);
+}
+
+.podium-card.actual-p1 {
+  border-color: rgba(255, 184, 0, 0.6);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 184, 0, 0.25);
+  transform: translateY(-16px);
+}
+
+.podium-card.actual-p2 {
+  border-color: rgba(192, 192, 192, 0.55);
+}
+
+.podium-card.actual-p3 {
+  border-color: rgba(205, 127, 50, 0.55);
+}
+
+.actual-result-pill {
+  font-family: var(--font-race);
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  display: inline-block;
+  color: #FFFFFF;
+}
+
+.podium-card.actual-p1 .actual-result-pill {
+  border: 1px solid var(--telemetry-gold);
+  color: var(--telemetry-gold);
+  background: rgba(255, 184, 0, 0.12);
+}
+
+.podium-comparison-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-technical);
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 4px;
+}
+
+.podium-comparison-pill.hit {
+  color: var(--telemetry-green);
+  background: rgba(0, 230, 118, 0.1);
+  border: 1px solid rgba(0, 230, 118, 0.25);
+  font-weight: 600;
+}
+
 /* Telemetry Leaderboard Table */
 .telemetry-table-wrapper {
   background: rgba(12, 17, 26, 0.75);

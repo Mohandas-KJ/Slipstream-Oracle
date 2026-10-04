@@ -599,10 +599,11 @@ function renderGrandPrixCard(race = null, data = []) {
    ========================================================================== */
 
 /**
- * Renders both the Podium Showcase and Full Telemetry Table.
+ * Renders both the Predicted Podium, Actual Race Podium, and Full Telemetry Table.
  */
 function renderDataHubView() {
   renderPodiumStage();
+  renderActualPodiumStage();
   renderTelemetryTable();
 }
 
@@ -631,14 +632,20 @@ function renderPodiumStage() {
   const p3Driver = resolveDriver(p3.Driver, allDriversData);
 
   container.innerHTML = `
-    <h3 class="podium-stage-title">
-      Predicted Podium Telemetry // ${activeGrandPrix?.name || 'Grand Prix'}
-    </h3>
+    <div class="podium-header-bar">
+      <h3 class="podium-stage-title predicted-stage-title">
+        Predicted Podium Telemetry // ${activeGrandPrix?.name || 'Grand Prix'}
+      </h3>
+      <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+        <span class="tech-badge cyan">ML ENSEMBLE FORECAST</span>
+        <span class="tech-badge" style="font-family: var(--font-mono);">PREDICTEDFINISH SCORE</span>
+      </div>
+    </div>
 
     <div class="podium-grid">
       <!-- P2 Runner-Up -->
       <div class="podium-card p2">
-        <div class="podium-badge">P2</div>
+        <div class="podium-badge">P2 PREDICTED</div>
         <div class="podium-headshot-wrap">
           <img
             src="${normalizeHeadshotUrl(p2Driver.headshot)}"
@@ -659,7 +666,7 @@ function renderPodiumStage() {
 
       <!-- P1 Winner -->
       <div class="podium-card p1">
-        <div class="podium-badge">P1 WINNER</div>
+        <div class="podium-badge">P1 WINNER // PREDICTED</div>
         <div class="podium-headshot-wrap" style="height: 220px;">
           <img
             src="${normalizeHeadshotUrl(p1Driver.headshot)}"
@@ -682,7 +689,7 @@ function renderPodiumStage() {
 
       <!-- P3 Third Place -->
       <div class="podium-card p3">
-        <div class="podium-badge">P3</div>
+        <div class="podium-badge">P3 PREDICTED</div>
         <div class="podium-headshot-wrap">
           <img
             src="${normalizeHeadshotUrl(p3Driver.headshot)}"
@@ -699,6 +706,140 @@ function renderPodiumStage() {
         <div style="margin-top: 0.6rem;">
           ${renderDeltaBadge(p3.GridPosition, p3.PredictedPosition)}
         </div>
+      </div>
+    </div>
+  `;
+}
+
+/**
+ * Renders the Actual Podium Stage (Official FIA race results)
+ * based on TargetFinish in Final_Data.csv.
+ */
+function renderActualPodiumStage() {
+  const container = document.getElementById('actual-podium-stage-container');
+  if (!container) return;
+
+  if (!activePredictionsData || activePredictionsData.length === 0) {
+    container.innerHTML = '';
+    return;
+  }
+
+  // Filter rows with valid TargetFinish and sort ascending (1, 2, 3)
+  const actualSorted = [...activePredictionsData]
+    .filter(r => r.TargetFinish !== undefined && r.TargetFinish !== null && r.TargetFinish !== '' && !Number.isNaN(Number(r.TargetFinish)))
+    .sort((a, b) => Number(a.TargetFinish) - Number(b.TargetFinish));
+
+  if (actualSorted.length < 3) {
+    container.innerHTML = '';
+    return;
+  }
+
+  const p1 = actualSorted[0];
+  const p2 = actualSorted[1];
+  const p3 = actualSorted[2];
+
+  const p1Driver = resolveDriver(p1.Driver, allDriversData);
+  const p2Driver = resolveDriver(p2.Driver, allDriversData);
+  const p3Driver = resolveDriver(p3.Driver, allDriversData);
+
+  function getComparisonPill(row, targetPos) {
+    const predPos = Number(row.PredictedPosition);
+    const score = Number(row.PredictedFinish).toFixed(2);
+    if (predPos === targetPos) {
+      return `
+        <div class="podium-comparison-pill hit">
+          <span>&check; Exact Model Match (P${predPos} &bull; Score: ${score})</span>
+        </div>
+      `;
+    }
+    const diff = Math.abs(predPos - targetPos);
+    return `
+      <div class="podium-comparison-pill">
+        <span>Predicted: P${predPos} (Score: ${score} &bull; &Delta;${diff})</span>
+      </div>
+    `;
+  }
+
+  container.innerHTML = `
+    <div class="podium-header-bar">
+      <h3 class="podium-stage-title actual-stage-title">
+        Official Race Podium // Actual Results // ${activeGrandPrix?.name || 'Grand Prix'}
+      </h3>
+      <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+        <span class="tech-badge gold">OFFICIAL FIA CLASSIFICATION</span>
+        <span class="tech-badge" style="font-family: var(--font-mono);">EMPIRICAL TARGETFINISH</span>
+      </div>
+    </div>
+
+    <div class="podium-grid">
+      <!-- Actual P2 -->
+      <div class="podium-card actual-p2">
+        <div class="podium-badge">P2 OFFICIAL</div>
+        <div class="podium-headshot-wrap">
+          <img
+            src="${normalizeHeadshotUrl(p2Driver.headshot)}"
+            alt="${p2Driver.name}"
+            class="podium-headshot"
+            onerror="handleImageFallback(this, '${p2Driver.headshot}')"
+          />
+        </div>
+        <h4 class="podium-driver-name">${p2Driver.name}</h4>
+        <div class="podium-driver-team">${p2.Team} #${p2Driver.number}</div>
+        <div class="actual-result-pill">
+          Official Finish: P2
+        </div>
+        <div style="margin-top: 0.6rem;">
+          ${renderDeltaBadge(p2.GridPosition, p2.TargetFinish)}
+        </div>
+        ${getComparisonPill(p2, 2)}
+      </div>
+
+      <!-- Actual P1 Winner -->
+      <div class="podium-card actual-p1">
+        <div class="podium-badge" style="background: linear-gradient(135deg, #FFB800 0%, #D48800 100%); color: #000;">
+          P1 OFFICIAL WINNER
+        </div>
+        <div class="podium-headshot-wrap" style="height: 220px;">
+          <img
+            src="${normalizeHeadshotUrl(p1Driver.headshot)}"
+            alt="${p1Driver.name}"
+            class="podium-headshot"
+            onerror="handleImageFallback(this, '${p1Driver.headshot}')"
+          />
+        </div>
+        <h4 class="podium-driver-name" style="font-size: 1.55rem;">${p1Driver.name}</h4>
+        <div class="podium-driver-team" style="color: var(--telemetry-gold);">
+          ${p1.Team} #${p1Driver.number}
+        </div>
+        <div class="actual-result-pill" style="border: 1px solid var(--telemetry-gold); color: var(--telemetry-gold); background: rgba(255, 184, 0, 0.12);">
+          Official Finish: P1 WINNER
+        </div>
+        <div style="margin-top: 0.6rem;">
+          ${renderDeltaBadge(p1.GridPosition, p1.TargetFinish)}
+        </div>
+        ${getComparisonPill(p1, 1)}
+      </div>
+
+      <!-- Actual P3 -->
+      <div class="podium-card actual-p3">
+        <div class="podium-badge">P3 OFFICIAL</div>
+        <div class="podium-headshot-wrap">
+          <img
+            src="${normalizeHeadshotUrl(p3Driver.headshot)}"
+            alt="${p3Driver.name}"
+            class="podium-headshot"
+            onerror="handleImageFallback(this, '${p3Driver.headshot}')"
+          />
+        </div>
+        <h4 class="podium-driver-name">${p3Driver.name}</h4>
+        <div class="podium-driver-team">${p3.Team} #${p3Driver.number}</div>
+        <div class="actual-result-pill">
+          Official Finish: P3
+        </div>
+        <div style="margin-top: 0.6rem;">
+          ${renderDeltaBadge(p3.GridPosition, p3.TargetFinish)}
+        </div>
+        ${getComparisonPill(p3, 3)}
       </div>
     </div>
   `;

@@ -222,7 +222,8 @@
     align-items: stretch;
   }
 
-  .podium-card.p1 {
+  .podium-card.p1,
+  .podium-card.actual-p1 {
     order: -1;
     transform: none;
   }
