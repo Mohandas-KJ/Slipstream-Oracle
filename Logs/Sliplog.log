@@ -43,6 +43,7 @@
 [26-09-2026 14:29:11][15 - Azerbaijan_Grand_Prix] - Post-quali complete: Azerbaijan_Grand_Prix R15 — hybrid FastF1 + FIA grid
 [26-09-2026 14:29:13][15 - Azerbaijan_Grand_Prix] - Race Prediction Generated
 [27-09-2026 18:27:04][15 - Azerbaijan_Grand_Prix] - Performed post race routines: Calculated Errors
+
 [04-10-2026 08:19:55][16 - Bahrain_Grand_Prix] - Generated Training dataset: Updated files oracle_v1.csv and pickle file
 [04-10-2026 08:20:02][16 - Bahrain_Grand_Prix] - Generated Feature Dataset: oracle_v2.csv — years [2022, 2023, 2024, 2025, 2026]
 [04-10-2026 08:20:02][16 - Bahrain_Grand_Prix] - Generated Training Dataset
