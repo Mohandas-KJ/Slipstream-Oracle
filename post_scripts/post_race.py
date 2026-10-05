@@ -16,6 +16,7 @@ from sliplog import logs
 COMPLETED_TAB = "catalog/2026/completed.json" # Hardcoded Year for now
 ROUND_MAP = "catalog/2026/Schedule.csv"
 DATA_DIR = Path("data/2026")
+MANIFEST_PATH = "predictions/2026/manifest.json"
 
 def read_prediction(location):
     df = pd.read_csv(location)
@@ -31,38 +32,79 @@ def get_race_result(round_no):
 
     fastf1.Cache.enable_cache("cache")
 
-    session = fastf1.get_session(2026,streamlib.get_eventname(round_no),"R")
+    session = fastf1.get_session(2026,round_no,"R")
     session.load()
 
     return session.results[["Abbreviation", "ClassifiedPosition"]].rename(
     columns={"Abbreviation": "Driver", "ClassifiedPosition": "Position"}
     ).reset_index(drop=True)
 
-def get_post_position_calc_error(pos_df,data,loc):
-    
+def get_post_position_calc_error(pos_df, data, loc):
+
     df1 = data.copy()
-    
+
+    # TargetFinish may contain numeric positions as well as "R", "DNF", etc.
+    df1["TargetFinish"] = df1["TargetFinish"].astype("object")
+
+    # Update actual race results
     for d in pos_df["Driver"]:
-        pos = pos_df.loc[pos_df["Driver"] == d, "Position"].iloc[0]
+        pos = pos_df.loc[
+            pos_df["Driver"] == d, "Position"
+        ].iloc[0]
 
-        df1.loc[df1["Driver"] == d, "TargetFinish"] = pos
+        df1.loc[
+            df1["Driver"] == d,
+            "TargetFinish"
+        ] = pos
 
+    # Preserve the original race classification
     df1["RaceStatus"] = df1["TargetFinish"]
 
-    df1["TargetFinish"] = pd.to_numeric(df1["TargetFinish"],errors="coerce")
-    df1["Error"] = abs(df1["TargetFinish"] - df1["PredictedFinish"])
+    # Numeric version for calculations
+    df1["TargetFinish_num"] = pd.to_numeric(
+        df1["TargetFinish"],
+        errors="coerce"
+    )
 
+    # Calculate prediction error
+    df1["Error"] = abs(
+        df1["TargetFinish_num"] -
+        df1["PredictedFinish"]
+    )
+
+    # Save
     dir_save = Path(loc).parent
-    
-    df1.to_csv(f"{dir_save}/Final_Data.csv",index=False)
+    output_path = dir_save / "Final_Data.csv"
+
+    df1.to_csv(output_path, index=False)
+
     print("Final File Generated Successfully!")
-    return f"{dir_save}/Final_Data.csv"
+
+    return str(output_path)
 
 def calculate_error(loc):
 
     df = pd.read_csv(loc)
 
     return df["Error"].mean()
+
+def mark_manifest(round_no):
+
+    #Get Round Name
+    round_sc = pd.read_csv(ROUND_MAP)
+    Round_name = round_sc[round_sc["RoundNumber"] == round_no]["EventName"].iloc[0] # We use this for Path
+
+    with open(MANIFEST_PATH,"r") as r_js:
+        manifest = json.load(r_js)
+
+    manifest["races"].append({
+        "name": Round_name.replace("_"," "),
+        "slug": Round_name,
+        "data": f"{Round_name}/Final_Data.csv"
+    })
+
+    with open(MANIFEST_PATH,"w") as f:
+        json.dump(manifest,f,indent=2)
 
 def mark_round_complete():
     """
@@ -139,6 +181,7 @@ if __name__ == "__main__":
 
     print("Loading Race data....")
     file = get_post_position_calc_error(get_race_result(streamlib.get_current_gp_no()),df,LOCATION)
+    mark_manifest(streamlib.get_current_gp_no())
 
     error = calculate_error(file)
     print(f"The Average Error: {error}\n")

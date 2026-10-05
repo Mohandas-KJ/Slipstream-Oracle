@@ -40,6 +40,11 @@
       "name": "Spanish Grand Prix",
       "slug": "Spanish_Grand_Prix",
       "data": "Spanish_Grand_Prix/Final_Data.csv"
+    },
+    {
+      "name": "Bahrain Grand Prix",
+      "slug": "Bahrain_Grand_Prix",
+      "data": "Bahrain_Grand_Prix/Final_Data.csv"
     }
   ]
 }
