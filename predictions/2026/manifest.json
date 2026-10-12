@@ -45,6 +45,11 @@
       "name": "Bahrain Grand Prix",
       "slug": "Bahrain_Grand_Prix",
       "data": "Bahrain_Grand_Prix/Final_Data.csv"
+    },
+    {
+      "name": "Singapore Grand Prix",
+      "slug": "Singapore_Grand_Prix",
+      "data": "Singapore_Grand_Prix/Final_Data.csv"
     }
   ]
 }
