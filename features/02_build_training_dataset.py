@@ -121,8 +121,25 @@ for y in YEAR:
 
 for dt in YEAR:
     for eve in events[dt]:
-        quali_res = pd.read_csv(DATA_DIR / str(dt) / eve / Q_RESULT)
-        race_res = pd.read_csv(DATA_DIR / str(dt) / eve / R_RESULT)
+
+        q_path = DATA_DIR / str(dt) / eve / Q_RESULT
+        r_path = DATA_DIR / str(dt) / eve / R_RESULT
+
+        # spl-cl: FALLBACK — if either CSV is missing, this GP's data hasn't
+        # spl-cl: been collected yet. This happens when get_event_list() marks
+        # spl-cl: a race as completed (Session5DateUtc is past) but we're still
+        # spl-cl: building the prediction dataset for it (data_collector not run).
+        # spl-cl: Example: US GP is "completed" by timestamp but we're predicting
+        # spl-cl: it — so no CSV exists. Warn and skip it; treat it as if it
+        # spl-cl: doesn't exist in the training data. No user input needed.
+        if not q_path.exists() or not r_path.exists():
+            print(f"  ⚠  [{dt}] {eve} — data not collected yet, skipping.")
+            print(f"     (This is expected if {eve} is the upcoming prediction race)")
+            continue
+        # spl-cl: end fallback block
+
+        quali_res = pd.read_csv(q_path)
+        race_res  = pd.read_csv(r_path)
 
         for driv in drivers[dt]:
             df["Year"].append(dt)

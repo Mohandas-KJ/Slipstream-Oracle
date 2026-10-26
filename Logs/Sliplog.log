@@ -51,6 +51,7 @@
 [04-10-2026 08:28:46][16 - Bahrain_Grand_Prix] - Post-quali complete: Bahrain_Grand_Prix R16 — hybrid FastF1 + FIA grid
 [04-10-2026 08:28:49][16 - Bahrain_Grand_Prix] - Race Prediction Generated
 [05-10-2026 08:13:12][16 - Bahrain_Grand_Prix] - Performed post race routines: Calculated Errors
+
 [11-10-2026 10:22:25][17 - Singapore_Grand_Prix] - Generated Training dataset: Updated files oracle_v1.csv and pickle file
 [11-10-2026 10:22:32][17 - Singapore_Grand_Prix] - Generated Feature Dataset: oracle_v2.csv — years [2022, 2023, 2024, 2025, 2026]
 [11-10-2026 10:22:33][17 - Singapore_Grand_Prix] - Generated Training Dataset
@@ -58,3 +59,10 @@
 [11-10-2026 10:25:33][17 - Singapore_Grand_Prix] - Post-quali complete: Singapore_Grand_Prix R17 — hybrid FastF1 + FIA grid
 [11-10-2026 10:25:36][17 - Singapore_Grand_Prix] - Race Prediction Generated
 [12-10-2026 14:55:31][17 - Singapore_Grand_Prix] - Performed post race routines: Calculated Errors
+
+[26-10-2026 10:28:19][18 - United_States_Grand_Prix] - Generated Training dataset: Updated files oracle_v1.csv and pickle file
+[26-10-2026 10:28:26][18 - United_States_Grand_Prix] - Generated Feature Dataset: oracle_v2.csv — years [2022, 2023, 2024, 2025, 2026]
+[26-10-2026 10:28:27][18 - United_States_Grand_Prix] - Generated Training Dataset
+[26-10-2026 10:28:42][18 - United_States_Grand_Prix] - Trained Random Forest model on new datas
+[26-10-2026 10:32:52][18 - United_States_Grand_Prix] - Post-quali complete: United_States_Grand_Prix R18 — hybrid FastF1 + FIA grid
+[26-10-2026 10:32:53][18 - United_States_Grand_Prix] - Race Prediction Generated
