@@ -67,3 +67,9 @@
 [26-10-2026 10:32:52][18 - United_States_Grand_Prix] - Post-quali complete: United_States_Grand_Prix R18 — hybrid FastF1 + FIA grid
 [26-10-2026 10:32:53][18 - United_States_Grand_Prix] - Race Prediction Generated
 [26-10-2026 13:16:18][18 - United_States_Grand_Prix] - Performed post race routines: Calculated Errors
+[01-11-2026 08:20:11][19 - Mexico_City_Grand_Prix] - Generated Training dataset: Updated files oracle_v1.csv and pickle file
+[01-11-2026 08:20:18][19 - Mexico_City_Grand_Prix] - Generated Feature Dataset: oracle_v2.csv — years [2022, 2023, 2024, 2025, 2026]
+[01-11-2026 08:20:19][19 - Mexico_City_Grand_Prix] - Generated Training Dataset
+[01-11-2026 08:20:35][19 - Mexico_City_Grand_Prix] - Trained Random Forest model on new datas
+[01-11-2026 08:22:57][19 - Mexico_City_Grand_Prix] - Post-quali complete: Mexico_City_Grand_Prix R19 — hybrid FastF1 + FIA grid
+[01-11-2026 08:22:58][19 - Mexico_City_Grand_Prix] - Race Prediction Generated
