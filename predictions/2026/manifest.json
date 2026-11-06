@@ -55,6 +55,11 @@
       "name": "United States Grand Prix",
       "slug": "United_States_Grand_Prix",
       "data": "United_States_Grand_Prix/Final_Data.csv"
+    },
+    {
+      "name": "Mexico City Grand Prix",
+      "slug": "Mexico_City_Grand_Prix",
+      "data": "Mexico_City_Grand_Prix/Final_Data.csv"
     }
   ]
 }

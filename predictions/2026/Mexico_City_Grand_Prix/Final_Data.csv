@@ -1,0 +1,23 @@
+PredictedPosition,Year,RoundNumber,Race,Driver,Team,QualiPosition,GridPosition,AvgFinishLast3,AvgFinishLast5,AvgGridLast3,AvgGridLast5,AvgPointsLast3,AvgPointsLast5,PositionsGainedLastRace,FinishStdLast5,TargetFinish,PredictedFinish,RaceStatus,TargetFinish_num,Error
+1,2026,19,Mexico_City_Grand_Prix,HAM,Ferrari,1.0,1.0,4.33,5.0,3.33,4.0,11.67,8.6,1.0,1.26,2,3.04,2,2.0,1.04
+2,2026,19,Mexico_City_Grand_Prix,VER,Red Bull Racing,4.0,5.0,1.67,1.8,1.33,3.0,21.67,20.2,-1.0,0.75,1,3.69,1,1.0,2.69
+3,2026,19,Mexico_City_Grand_Prix,ANT,Mercedes,5.0,4.0,2.0,2.4,2.67,5.2,19.33,18.6,0.0,1.5,3,3.75,3,3.0,0.75
+4,2026,19,Mexico_City_Grand_Prix,LEC,Ferrari,3.0,3.0,2.67,3.2,3.33,3.4,16.0,14.4,2.0,0.98,4,3.98,4,4.0,0.020000000000000018
+5,2026,19,Mexico_City_Grand_Prix,RUS,Mercedes,2.0,2.0,12.33,8.6,10.67,7.8,2.0,8.2,-2.0,6.34,6,4.25,6,6.0,1.75
+6,2026,19,Mexico_City_Grand_Prix,NOR,McLaren,6.0,6.0,6.0,5.0,6.0,4.8,8.0,7.8,3.0,2.1,5,5.93,5,5.0,0.9299999999999997
+7,2026,19,Mexico_City_Grand_Prix,HAD,Red Bull Racing,7.0,7.0,7.0,6.0,11.0,9.0,6.33,8.4,-3.0,2.28,9,6.72,9,9.0,2.2800000000000002
+8,2026,19,Mexico_City_Grand_Prix,LAW,Racing Bulls,8.0,22.0,7.67,8.2,9.33,9.4,4.67,4.4,0.0,2.14,7,8.51,7,7.0,1.5099999999999998
+9,2026,19,Mexico_City_Grand_Prix,PIA,McLaren,12.0,12.0,6.0,7.8,6.33,5.8,8.0,5.6,0.0,2.79,13,8.69,13,13.0,4.3100000000000005
+10,2026,19,Mexico_City_Grand_Prix,GAS,Alpine,9.0,9.0,12.33,11.2,8.67,9.4,0.33,0.2,0.0,2.93,17,10.11,17,17.0,6.890000000000001
+11,2026,19,Mexico_City_Grand_Prix,LIN,Racing Bulls,8.0,8.0,12.33,10.6,15.0,14.0,0.33,1.8,2.0,2.73,R,10.2,R,,
+12,2026,19,Mexico_City_Grand_Prix,HUL,Audi,10.0,10.0,10.0,10.2,12.0,13.0,1.33,1.0,0.0,1.17,14,10.66,14,14.0,3.34
+13,2026,19,Mexico_City_Grand_Prix,COL,Alpine,11.0,11.0,9.67,11.6,18.67,14.8,0.0,1.2,8.0,3.07,15,11.75,15,15.0,3.25
+14,2026,19,Mexico_City_Grand_Prix,BEA,Haas F1 Team,14.0,14.0,11.67,13.2,13.33,14.4,0.0,0.4,-1.0,2.48,R,12.96,R,,
+15,2026,19,Mexico_City_Grand_Prix,BOR,Audi,13.0,13.0,15.33,14.0,15.0,14.8,0.0,0.0,8.0,2.37,8,13.06,8,8.0,5.0600000000000005
+16,2026,19,Mexico_City_Grand_Prix,SAI,Williams,15.0,15.0,16.33,14.4,14.0,15.2,0.0,0.2,-2.0,2.87,12,13.16,12,12.0,1.1600000000000001
+17,2026,19,Mexico_City_Grand_Prix,ALO,Aston Martin,17.0,17.0,13.33,13.2,14.67,16.4,1.33,0.8,-4.0,3.87,R,14.45,R,,
+18,2026,19,Mexico_City_Grand_Prix,STR,Aston Martin,19.0,19.0,13.33,14.8,19.0,20.0,0.0,0.0,7.0,2.4,R,15.64,R,,
+19,2026,19,Mexico_City_Grand_Prix,ALB,Williams,16.0,16.0,16.67,16.8,17.0,15.8,0.0,0.0,0.0,0.98,11,15.68,11,11.0,4.68
+20,2026,19,Mexico_City_Grand_Prix,BOT,Cadillac,21.0,21.0,17.67,18.0,18.67,18.8,0.0,0.0,-1.0,1.1,R,16.71,R,,
+21,2026,19,Mexico_City_Grand_Prix,PER,Cadillac,20.0,20.0,18.33,17.4,18.33,18.6,0.0,0.0,-1.0,1.85,16,16.77,16,16.0,0.7699999999999996
+22,2026,19,Mexico_City_Grand_Prix,HIR,Haas F1 Team,18.0,18.0,,,,,,,,,10,,10,10.0,
